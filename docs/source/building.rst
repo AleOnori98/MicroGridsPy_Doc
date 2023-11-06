@@ -24,7 +24,7 @@ General introduction and description of the Model data parameters
 
 
 .. list-table:: Parameters
-   :widths: 20 25 150 20 20 20
+   :widths: 20 25 50
    :header-rows: 1
 
    * - **Parameter**
