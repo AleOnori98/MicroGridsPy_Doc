@@ -1,34 +1,24 @@
-Usage
+Download and installation
 =====
 
-.. _installation:
+.. _Requirements:
 
-Installation
+Requirements
 ------------
 
-To use Lumache, first install it using pip:
+MicroGridsPy has been tested on Linux, macOS, and Windows. Running MicroGridsPy requires:
 
-.. code-block:: console
+* The Python programming language, version ....
+* A number of Python add-on modules (see below for the complete list).
+* A solver: MicroGridsPy has been tested with GLPK, Gurobi, and HiGHS. Any other solver that is compatible with Pyomo should also work.
 
-   (.venv) $ pip install lumache
+The MicroGrids software itself.
 
-Creating recipes
+Recommended installation method
 ----------------
 
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
+The easiest way to get a working Calliope installation is to use the free conda package manager, which can install all of the four things described above in a single step. To get conda, download and install the “Miniconda” distribution for your operating system (using the version for Python 3).
 
-.. autofunction:: lumache.get_random_ingredients
-
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
-
-.. autoexception:: lumache.InvalidKindError
-
-For example:
-
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
+With Miniconda installed, you can create a new environment called "mgpy" with all the necessary modules, including the free and open source GLPK solver, by running the following command in a terminal or command-line window.
+......
 
