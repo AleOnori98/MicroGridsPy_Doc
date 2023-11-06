@@ -13,42 +13,13 @@ MicroGridsPy is a bottom-up, open-source optimization model, running on `Pyomo <
 Why it is developed
 =========================================
 MicroGridsPy is inspired by the other existing energy system optimization models 
-particularly `OSeMOSYS <http://www.osemosys.org/>`_ by [Howells2011]_, 
-`Calliope <https://calliope.readthedocs.io/en/stable/user/introduction.html>`_ by [Pfenninger-Pickering2018]_
-and `TIMES <https://iea-etsap.org/index.php/documentation>`_ by [Loulou2005]_.
-It is designed to complete the path of these frameworks by addressing the main 
-challenges of the modern energy system modelling frameworks that are shortly explained in the following:
+particularly ..... [1]
+It is designed to .... by addressing the main 
+challenges of ....
 
-* **Dynamic annual investments in the energy system:** With the aim of
-  exploring the possible evolution of the energy systems in the transition pathways,
-  the energy modelling frameworks need to cover both the operation and planning modes simultaneously 
-  delivering the required dynamic annual capacity expansions and full hourly dispatch of different technologies within the energy systems. 
-  However, most of the existing models with high temporal resolution are falling
-  short of delivering all the required annual investments in the long-term horizons and just
-  follow a snapshot approach for estimating the required new capacities to be installed for future growth in the final demand.
+* **Electricity Access in rural areas** With the aim of ....
 
 
-* **Resolution in time:** On the other hand, most of the planning models are not computationally
-  able to include fine temporal resolutions down to hourly timesteps within each modelling year
-  of the time horizon. Therefore, they may deliver inaccurate results due to missing the full variability
-  of the both demand and supply sides of the energy system.
-  
-* **Resolution in space:** The concept of spatial resolution contains not only the ability of
-  representing multiple regions in different dimensions but also the possibility to model the 
-  interconnections among various regions by modelling the inter-regional transmission links.
-  
-* **Sector coupling:** The interactions and synergies among different sectors of the energy system
-  must be considered in the energy modelling frameworks by following a comprehensive technology definition
-  similar to all the above mentioned models.
-    
-* **Transparency:** The concept of transparency and opennes has manifold aspects. The open science
-  approach for an energy model is not only about publishing the governing structures and equations but also
-  following several critieria such as:
-  
-  * Convenient access to source code, data and assumptions
-  * Providing understanble input data structure not only for the experts but also for any potential user
-  * Clear and modular core code
-  * Flexible source code to any possible future modification and integration
 
 Acknowledgement
 =========================================
@@ -57,7 +28,7 @@ Acknowledgement
   `Emanuela Colombo <https://www4.ceda.polimi.it/manifesti/manifesti/controller/ricerche/RicercaPerDocentiPublic.do?EVN_DIDATTICA=evento&k_doc=44891&lang=EN&aa=2014&tab_ricerca=1>`_.
   We are fully grateful for having the chance to work under her supervision and would like to express our gratitude for her unwavering support.
 
-* We would also like to acknowledge `Steve Dimond <https://stevediamond.github.io/WWW/>`_ for his kind support and guide that allows us to better understand and use CVXPY for this framework
+* We would also like to acknowledge .... for his kind support and guide that allows us to better understand and use .....
     
 License
 ========
@@ -70,9 +41,6 @@ This work is licensed under `Apache 2.0 <https://www.apache.org/licenses/>`_
 
 References
 =========================================
-.. [Diamond2016] Diamond, S., & Boyd, S. (2016). CVXPY: A Python-embedded modeling language for convex optimization. The Journal of Machine Learning Research, 17(1), 2909-2913.
-.. [Howells2011] Howells, M., Rogner, H., Strachan, N., Heaps, C., Huntington, H., Kypreos, S., ... & Roehrl, A. (2011). OSeMOSYS: the open source energy modeling system: an introduction to its ethos, structure and development. Energy Policy, 39(10), 5850-5870.
-.. [Pfenninger-Pickering2018] Pfenninger, S., & Pickering, B. (2018). Calliope: a multi-scale energy systems modelling framework. Journal of Open Source Software, 3(29), 825.
-.. [Loulou2005] Loulou, R., Remme, U., Kanudia, A., Lehtila, A., & Goldstein, G. (2005). Documentation for the times model part ii. Energy Technology Systems Analysis Programme.
+.. [1] .... 
 
 
