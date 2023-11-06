@@ -27,10 +27,10 @@ General introduction and description of the Model data parameters
    :widths: 20 25 150 20 20 20
    :header-rows: 1
 
-   * - Parameter
-     - Sheet Name
-     - Unit
-     - Description
+   * - **Parameter**
+     - **Sheet Name**
+     - **Unit**
+     - **Description**
    * - Periods
      - Model data
      - Time unit (e.g. hours/year)
