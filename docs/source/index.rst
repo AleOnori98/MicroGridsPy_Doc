@@ -18,7 +18,7 @@ Contents
 
    intro
    usage
-   formulation
    building
+   formulation
    contributors
    api
