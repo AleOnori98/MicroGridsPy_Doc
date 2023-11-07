@@ -2,7 +2,7 @@
 Contributors
 =============
 
-**Hypatia** has been developed within `SESAM group <http://sesam.polimi.it/>`_ in the Department of Energy Engineering at Politecnico di Milano.
+**MicroGridsPy** has been developed within `SESAM group <http://sesam.polimi.it/>`_ in the Department of Energy Engineering at Politecnico di Milano.
 The research activity of SESAM focuses on the use of mathematical models for the study of systems, components and processes in the energy field and 
 industrial ecology.
 
