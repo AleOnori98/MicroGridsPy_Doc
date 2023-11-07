@@ -49,16 +49,21 @@ Demand
 -------
 **Introduction**
 
-At the core of the optimization energy modelling process lies the load curve demand, a critical input parameter. This chapter aims to explain what load curve demand is, how it is used within MicroGridsPy, how it can be operated or estimated with external software tools like RAMP or within the model itself using the advanced feature of demand estimation through integrated archetypes referring to rural villages in Sub-Saharan Africa at different latitudes.
+At the core of the optimization energy modelling process lies the load curve demand, a critical input parameter. This chapter aims to explain what load curve demand is, how it is used within MicroGridsPy, how it can be operated or estimated with external software tools like RAMP or within the model itself using the advanced feature of demand estimation integrated into MicroGridsPy.
 
-_What is the load curve demand?_
+**What is the load curve demand?**
 
 Load Curve Demand represents the time-dependent electricity consumption of a given area or system. It is typically measured in Watts (or kilowatts, megawatts, etc.) and captures how electricity demand varies over years, usually in hourly or sub-hourly intervals. The Load Curve Demand curve illustrates the power required at each point in time, providing insights into when and how much electricity is needed. This curve serves as a foundational data source for MicroGridsPy since the model aims to size and operate mini-grid components, such as renewable energy sources (e.g., solar panels, wind turbines), energy storage systems (e.g., batteries), and backup generators, to meet the electricity demand of a specific area or community. The key role of Load Curve Demand in the model is optimizing resource allocation: MicroGridsPy uses the load curve demand to distribute available resources efficiently over the years, balancing the generation and storage resources to minimize costs while meeting the electricity demand throughout the day. In addition to optimizing resource allocation, the software can also predict, along the time horizon of the simulation run, when investment steps should be taken to expand the system's capacity to accommodate the projected increase in demand if such an increase is anticipated. 
-Load curve demand estimation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Load curve demand estimation**
+
 There are two key methods for operating load curve demand:
-* Using software tools such as RAMP which is a bottom-up stochastic model for the generation of high-resolution multi-energy profiles, conceived for application in contexts where only rough information about users' behaviour is obtainable. Those may range from remote villages to whole countries as well as informal settlements.
-* 
+*  Using software tools such as RAMP which is a bottom-up stochastic model for the generation of high-resolution multi-energy profiles, conceived for 
+   application in contexts where only rough information about users' behaviour is obtainable. Those may range from remote villages to whole countries as 
+   well as informal settlements.
+*  Using the advanced features integrated into MicroGridsPy which allows to use built-in archetypes referring referring to rural villages in Sub-Saharan 
+   Africa at different latitudes.
+
 
 
 Renewable Energy Sources
