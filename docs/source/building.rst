@@ -19,9 +19,6 @@ Definiton of the model structural inputs
 -------------------------------------------
 General introduction and description of the Model data parameters
 
-.. note::
-  Testo
-
 
 .. list-table:: Parameters
    :widths: 20 25 50
@@ -56,6 +53,25 @@ Renewable Energy Sources
 -------
 General description of the concept
 
+Technology Parameters
+================
+General description of the concept
+
+Renewables 
+-------
+General description of the concept
+
+Generator
+-------
+General description of the concept
+
+Battery bank
+-------
+General description of the concept
+
+Main grid
+-------
+General description of the concept
 
 Running a model
 ================
