@@ -58,10 +58,11 @@ Load Curve Demand represents the time-dependent electricity consumption of a giv
 **Load curve demand estimation**
 
 There are two key methods for operating load curve demand:
+
 *  Using software tools such as RAMP which is a bottom-up stochastic model for the generation of high-resolution multi-energy profiles, conceived for 
    application in contexts where only rough information about users' behaviour is obtainable. Those may range from remote villages to whole countries as 
    well as informal settlements.
-*  Using the advanced features integrated into MicroGridsPy which allows to use built-in archetypes referring referring to rural villages in Sub-Saharan 
+*  Using the advanced features integrated into MicroGridsPy which allows to use built-in archetypes referring to rural villages in Sub-Saharan 
    Africa at different latitudes.
 
 
