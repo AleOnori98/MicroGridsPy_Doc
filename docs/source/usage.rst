@@ -39,13 +39,16 @@ Gurobi is commercial but significantly faster than CBC and GLPK, which is releva
 
 It's recommended to download and install the installer from the Gurobi website, as the conda package has repeatedly shown various issues. After installing, log on to the Gurobi website and obtain a (free academic or paid commercial) license, then activate it on your system via the instructions given online (using the grbgetkey command).
 
+More info at `Gurobi documentation <https://www.gurobi.com/documentation/>`_
+
+
 HiGHS
 ----------------
 HiGHS is high-performance serial and parallel software for solving large-scale sparse linear programming (LP), mixed-integer programming (MIP) and quadratic programming (QP) models, developed in C++11, with interfaces to C, C#, FORTRAN, Julia and Python.
 
 HiGHS is freely available under the MIT licence and is downloaded from Github. Installing HiGHS from source code requires CMake minimum version 3.15, but no other third-party utilities. HiGHS can be used as a stand-alone executable on Windows, Linux and MacOS. There is a C++11 library which can be used within a C++ project or, via one of the interfaces, to a project written in other languages.
 
-More info on the online `HiGHS documentation <https://ergo-code.github.io/HiGHS/dev/>`_
+More info at `HiGHS documentation <https://ergo-code.github.io/HiGHS/dev/>`_
 
 
 
