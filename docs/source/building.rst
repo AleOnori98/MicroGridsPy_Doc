@@ -12,6 +12,10 @@ Building a model in MicroGridsPy is very simple and includes the following main 
 #. Delivering the structural inputs (sets) to the model through a number of Excel-based files
 #. Delivering the ....
 
+.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Mgpy_Scheme.png?raw=true
+   :width: 500
+   :align: center
+
 Terminology
 ===========
 The terminology defined here is used throughout the documentation and the model code and configuration files:
