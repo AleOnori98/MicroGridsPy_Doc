@@ -32,22 +32,22 @@ MicroGridsPy models are defined, mainly, through PY files, which are both human-
 
 All the input files are collected inside a single directory called 'Inputs'. The layout of that directory typically looks roughly like this (+ denotes directories, - files):
 
-#. + Parameters
+* +Parameters
 
-       * - Model Configuration.csv
-       * - Model Switches.csv
-       * - RES Estimation Parameters.csv
-       * - Demand Estimation Parameters.csv
-       * - RES Technology.csv
-       * - Generator Technology.csv
-       * - Battery Technology.csv
-       * - Grid Technology.csv
-       * - Plot settings.csv
+       * -Model Configuration.csv
+       * -Model Switches.csv
+       * -RES Estimation Parameters.csv
+       * -Demand Estimation Parameters.csv
+       * -RES Technology.csv
+       * -Generator Technology.csv
+       * -Battery Technology.csv
+       * -Grid Technology.csv
+       * -Plot settings.csv
 
-#. + Time Series
+* +Time Series
 
-       * - Demand.csv
-       * - Generation.csv
+       * -Demand.csv
+       * -Generation.csv
 
 Model Configuration
 -------------------------
@@ -57,7 +57,7 @@ Intro
 
 Intro
 
-.. list-table:: Configuration Parameters
+.. list-table:: 
    :widths: 25 25 50
    :header-rows: 1
 
@@ -75,7 +75,7 @@ Intro
 
 Intro
 
-.. list-table:: Switches Parameters
+.. list-table:: 
    :widths: 25 25 50
    :header-rows: 1
 
