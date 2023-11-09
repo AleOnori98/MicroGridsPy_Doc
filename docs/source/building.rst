@@ -5,8 +5,6 @@ Building and Running a Model
 .. role:: raw-html(raw)
     :format: html
 
-Building a model
-==================
 
 Building a model in MicroGridsPy is very simple and includes the following main steps:
 
@@ -15,8 +13,12 @@ Building a model in MicroGridsPy is very simple and includes the following main 
 #. Delivering the ....
 
 Terminology
---------------
-The terminology generally used in constrained optimisation is:
+===========
+The terminology defined here is used throughout the documentation and the model code and configuration files:
+
+* Periods: 
+
+As more generally in constrained optimisation, the following terms are also used:
 
 * Parameter: a fixed coefficient that enters into model equations
 * Variable: a variable coefficient (decision variable) that enters into model equations
@@ -24,42 +26,42 @@ The terminology generally used in constrained optimisation is:
 * Constraint: an equality or inequality expression that constrains one or several variables
 * ........
 
-Inputs Files
--------------------------------------------
+Inputs File
+======================
 MicroGridsPy models are defined, mainly, through PY files, which are both human-readable and computer-readable, and CSV files (a simple tabular format) for time series data and inputs.
 
 All the input files are collected inside a single directory called 'Inputs'. The layout of that directory typically looks roughly like this (+ denotes directories, - files):
 
-#. + Code
+#. + Inputs
 
-    * + Inputs
+    * + Parameters
 
-       * - Parameters.csv
+       * - Configuration Parameters.csv
+       * - Technology Parameters.csv
+       * - Plot settings.csv
+
+     * + Time Series
        * - Demand.csv
        * - Generation.csv
 
 
-Definition of the model structural inputs 
--------------------------------------------
-General introduction and description of the Model data parameters
+Model Configuration
+---------------------
+The model configuration specifies all aspects of the model to run. Here below the relevant parameters:
 
-
-.. list-table:: Parameters
-   :widths: 20 25 50
+.. list-table:: Configuration Parameters
+   :widths: 25 25 50
    :header-rows: 1
 
-   * - **Parameter**
-     - **Sheet Name**
-     - **Unit**
-     - **Description**
+   * - Parameter name
+     - Unit
+     - Description
    * - Periods
-     - Model data
      - Time unit (e.g. hours/year)
      - Periods considered in one year (e.g. 8760 hours/year)
    * - Years
-     - Model data
      - years
-     - Total duration of the project
+     - Total duration of the project (or 'time horizon')
 
   
 .. note::
