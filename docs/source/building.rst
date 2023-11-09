@@ -137,30 +137,10 @@ There are two key methods for operating load curve demand:
    Africa at different latitudes.
 
 
-
 Renewable Energy Sources
 -------
-General description of the concept
+Text
 
-Technology Parameters
-================
-General description of the concept
-
-Renewables 
--------
-General description of the concept
-
-Generator
--------
-General description of the concept
-
-Battery bank
--------
-General description of the concept
-
-Main grid
--------
-General description of the concept
 
 Running a model
 ================
@@ -172,11 +152,7 @@ When the inputs of the model are correctly parsed to the model, you can run the 
     solver = 'solver that you prefer'
   )
 
-If model finds an optimum solution, you can have access to the results through :guilabel:`&results` attribute. For saving the results to your computer, use :guilabel:`&to_csv` function:
+If model finds an optimum solution, you can have access to the results through :guilabel:`&results` attribute.
 
-.. code-block:: python
 
-  model.to_csv(
-    path = 'path/to/directory'
-  )
 
