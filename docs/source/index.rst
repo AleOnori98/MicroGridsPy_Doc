@@ -12,7 +12,7 @@ In the latest version of MicroGridsPy the following advanced features have been 
 
 * Modeling of the **Generator Partial Load Effect**;
 * **Endogenous Load Curve Estimation** based on structured *archetypes* referring to **rural villages in Sub-Saharan Africa** at different latitudes;
-* **Endogenous calculation of RES production times series**, solar and wind, relying on the *NASA POWER platform*;
+* **Endogenous calculation of RES production times series**, solar and wind, relying on the *NASA POWER platform* [2];
 * Possibility of simulating the connection of the mini-grid with an **existing main grid** by detailing electricity flows in both directions (electricity 
   taken from the grid or fed into the grid), as well as the **availability of the national grid** in the event of blackouts. 
  
@@ -38,3 +38,4 @@ Contents
 References
 =========================================
 .. [1] https://github.com/SESAM-Polimi/MicroGridsPy-SESAM/tree/Development_MILP 
+.. [2] https://power.larc.nasa.gov/api/temporal/
