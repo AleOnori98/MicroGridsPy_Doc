@@ -16,6 +16,8 @@ Building a model in MicroGridsPy is very simple and includes the following main 
    :width: 400
    :align: center
 
+
+
 Terminology
 ===========
 The terminology defined here is used throughout the documentation and the model code and configuration files:
@@ -138,7 +140,7 @@ There are two key methods for operating load curve demand:
    may range from remote villages to whole countries as well as informal settlements.
 
   .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/RAMP.png?raw=true
-     :width: 300
+     :width: 200
      :align: center
 
 *  Using the advanced features integrated into MicroGridsPy which allows to use built-in archetypes referring to rural villages in Sub-Saharan 
