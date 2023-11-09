@@ -32,22 +32,30 @@ MicroGridsPy models are defined, mainly, through PY files, which are both human-
 
 All the input files are collected inside a single directory called 'Inputs'. The layout of that directory typically looks roughly like this (+ denotes directories, - files):
 
-#. + Inputs
+#. + Parameters
 
-    * + Parameters
-
-       * - Configuration Parameters.csv
-       * - Technology Parameters.csv
+       * - Model Configuration.csv
+       * - Model Switches.csv
+       * - RES Estimation Parameters.csv
+       * - Demand Estimation Parameters.csv
+       * - RES Technology.csv
+       * - Generator Technology.csv
+       * - Battery Technology.csv
+       * - Grid Technology.csv
        * - Plot settings.csv
 
-     * + Time Series
+#. + Time Series
+
        * - Demand.csv
        * - Generation.csv
 
-
 Model Configuration
----------------------
-The model configuration specifies all aspects of the model to run. Here below the relevant parameters:
+-------------------------
+Intro
+
+**Model Configuration**
+
+Intro
 
 .. list-table:: Configuration Parameters
    :widths: 25 25 50
@@ -63,12 +71,48 @@ The model configuration specifies all aspects of the model to run. Here below th
      - years
      - Total duration of the project (or 'time horizon')
 
+**Model Switches**
+
+Intro
+
+.. list-table:: Switches Parameters
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter name
+     - Options
+     - Description
+   * - Optimization_Goal
+     - 1 = NPC / 0 = Operation cost
+     - It allows to switch between a NPC-oriented optimization and a NON-ACTUALIZED Operation
+   * - MILP_Formulation
+     - 1 = MILP / 0 = LP
+     - It allows to swtich between a MILP (for monodirectional energy flows) and LP formulation
+
+Technology Parameters
+----------------------
+
+**RES Technology**
+
+
+**Generator Technology**
+
+
+**Battery Technology**
+
+
+**Grid Technology**
+
+Plot settings
+--------------
+
+
   
 .. note::
   Please refer to the example gallery for a better understanding of the structure of both the set and parameter files.
 
 Time Series Data
-================
+===============
 General description of the concept
 
 Demand 
