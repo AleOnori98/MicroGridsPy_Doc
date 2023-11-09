@@ -45,5 +45,7 @@ HiGHS is high-performance serial and parallel software for solving large-scale s
 
 HiGHS is freely available under the MIT licence and is downloaded from Github. Installing HiGHS from source code requires CMake minimum version 3.15, but no other third-party utilities. HiGHS can be used as a stand-alone executable on Windows, Linux and MacOS. There is a C++11 library which can be used within a C++ project or, via one of the interfaces, to a project written in other languages.
 
+More info on the online `HiGHS documentation <https://ergo-code.github.io/HiGHS/dev/>`_
+
 
 
