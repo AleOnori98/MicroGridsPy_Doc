@@ -16,21 +16,24 @@ In the latest version of MicroGridsPy the following advanced features have been 
 * Possibility of simulating the connection of the mini-grid with an **existing main grid** by detailing electricity flows in both directions (electricity 
   taken from the grid or fed into the grid), as well as the **availability of the national grid** in the event of blackouts. 
 
-MicroGridsPy is developed in the open on GitHub [1] and contributions are very welcome: check out the :doc:`development`
+MicroGridsPy is developed in the open on GitHub [1] and contributions are very welcome: check out the :doc:`formulation`
 
 .. note::
 
    This project is under active development.
 
-User Guide
+Table of Contents
 --------
 
 .. toctree::
 
    intro
-   usage
+   installation
    building
+   running
+   advanced
    formulation
+   troubleshooting
    contributors
    API
 
