@@ -1,9 +1,4 @@
-Template for the Read the Docs tutorial
+Welcome to the MicroGridsPy Documentation!
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
-
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
+**MicroGridsPy** is a bottom-up, open-source optimization model, running on *Pyomo*, a Python library used to model optimisation problems, whose primary goal is to offer an open-source approach to the issue of *energy scaling and dispatch* in mini-grids in remote locations. The model enables the optimization of micro-grid size and its dispatch strategy at the 1-hour temporal resolution, also returning as output the fixed and variable costs associated with each technology and the LCOE of the system. It is based on Linear Programming, and it enables the choice of the installed capacities of batteries, generators, and renewable energy sources that result in the lowest Net Present Cost (NPC) or lowest Operation and Maintenance expenses (O&M) during the project’s lifespan while achieving the system limitations. 
