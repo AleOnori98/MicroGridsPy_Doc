@@ -17,5 +17,5 @@ The MicroGrids software itself.
 Recommended installation method
 ----------------
 
-The easiest way to get a working Calliope installation is to use the free conda package manager, which can install all of the four things described above in a single step. To get conda, download and install the Miniconda https://docs.conda.io/projects/miniconda/en/latest/ distribution for your operating system (using the version for Python 3). With Miniconda installed, you can create a new environment called "mgpy" with all the necessary modules by running the following command in a terminal or command-line window 
+The easiest way to get a working Calliope installation is to use the free conda package manager, which can install all of the four things described above in a single step. To get conda, download and install the `Miniconda <https://docs.conda.io/projects/miniconda/en/latest/>`_ distribution for your operating system (using the version for Python 3). With Miniconda installed, you can create a new environment called "mgpy" with all the necessary modules by running the following command in a terminal or command-line window 
 
