@@ -8,7 +8,13 @@ The main inputs required by the tool to initialize the variables and formulate l
    :width: 500
    :align: centre
 
-In this context, it must be said that in the latest version of MicroGridsPy already structured load demand archetypes referring to rural villages in Sub-Saharan Africa at different latitudes are integrated into the model, from which the code directly derives the time series of load profile.  Moreover, an endogenous calculation of RES production times series, solar and wind, relying on the NASA POWER platform is now possible. In the most recent version, there is also the possibility of simulating the connection of the mini-grid with an existing main grid by detailing electricity flows in both directions (electricity taken from the grid or fed into the grid), as well as the availability of the national grid in the event of blackouts. 
+In the latest version of MicroGridsPy the following advanced features have been implemented:
+
+* Modeling of the Generator Partial Load Effect;
+* Endogenous Load Curve Estimation based on structured archetypes referring to rural villages in Sub-Saharan Africa at different latitudes;
+* Endogenous calculation of RES production times series, solar and wind, relying on the NASA POWER platform
+* Possibility of simulating the connection of the mini-grid with an existing main grid by detailing electricity flows in both directions (electricity taken 
+  from the grid or fed into the grid), as well as the availability of the national grid in the event of blackouts. 
  
 Check out the :doc:`usage` section for further information, including
 how to :ref:`installation` the project.
