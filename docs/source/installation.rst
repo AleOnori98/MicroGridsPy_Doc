@@ -2,7 +2,7 @@ Download and installation
 =========================
 .. role:: raw-html(raw)
     :format: html
-.. _Requirements:
+
 
 Requirements
 ------------
