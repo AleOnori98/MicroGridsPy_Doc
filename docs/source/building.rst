@@ -154,23 +154,16 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
     that must coincide with the value set for 'Periods' in the model configuration.csv file! If not properly set and matching, it may arise a 'Key Error'.
 
 
+  .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Demand.png?raw=true
+     :width: 150
+     :align: center
+
 
 Renewable Energy Sources
 -------
 Text
 
 
-Running a model
-================
-When the inputs of the model are correctly parsed to the model, you can run the model with specifying a couple of parameters:
-
-.. code-block:: python
-
-  model.run(
-    solver = 'solver that you prefer'
-  )
-
-If model finds an optimum solution, you can have access to the results through :guilabel:`&results` attribute.
 
 
 
