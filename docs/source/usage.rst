@@ -32,9 +32,11 @@ At least one of the solvers supported by Pyomo is required. HiGHS (open-source) 
 Gurobi
 ----------------
 Gurobi is commercial but significantly faster than CBC and GLPK, which is relevant for larger problems. It needs a license to work, which can be obtained for free for academic use by creating an account on gurobi.com. While Gurobi can be installed via conda
+
 .. code-block:: python
 
    conda install -c gurobi gurobi
+
 we recommend downloading and installing the installer from the Gurobi website, as the conda package has repeatedly shown various issues. After installing, log on to the Gurobi website and obtain a (free academic or paid commercial) license, then activate it on your system via the instructions given online (using the grbgetkey command).
 
 HiGHS
