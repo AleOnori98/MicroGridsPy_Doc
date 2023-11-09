@@ -144,7 +144,15 @@ There are two key methods for operating load curve demand:
      :align: center
 
 *  Using the advanced features integrated into MicroGridsPy which allows to use built-in archetypes referring to rural villages in Sub-Saharan 
-   Africa at different latitudes.
+   Africa at different latitudes (refer to :doc:`advanced`)
+
+**Demand.csv**
+The input file, located in the "Time Series" folder within the "Inputs" folder, must have as many numbered columns (excluding the rows labels) as the total years of the project and as many rows (excluding the columns headers) as the periods in which one year is divided (e.g. 1-hour time resolution leads to 8760 rows). 
+
+.. warning::
+    The number of columns in the csv file must coincide with the value set for the 'Years' parameter. The same for the number of rows 
+    that must coincide with the value set for 'Periods' in the model configuration.csv file! If not properly set and matching, it may arise a 'Key Error'.
+
 
 
 Renewable Energy Sources
