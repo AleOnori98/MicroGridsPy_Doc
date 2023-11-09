@@ -140,7 +140,7 @@ There are two key methods for operating load curve demand:
    may range from remote villages to whole countries as well as informal settlements.
 
   .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/RAMP.png?raw=true
-     :width: 200
+     :width: 150
      :align: center
 
 *  Using the advanced features integrated into MicroGridsPy which allows to use built-in archetypes referring to rural villages in Sub-Saharan 
