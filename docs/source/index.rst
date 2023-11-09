@@ -6,7 +6,7 @@ The main inputs required by the tool to initialize the variables and formulate l
 
 .. image:: docs/source/Images/Mgpy_Scheme.png
    :width: 500
-   :align: centre
+   :align: center
 
 In the latest version of MicroGridsPy the following advanced features have been implemented:
 
