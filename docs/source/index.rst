@@ -15,15 +15,14 @@ In the latest version of MicroGridsPy the following advanced features have been 
 * **Endogenous calculation of RES production times series**, solar and wind, relying on the *NASA POWER platform* [2];
 * Possibility of simulating the connection of the mini-grid with an **existing main grid** by detailing electricity flows in both directions (electricity 
   taken from the grid or fed into the grid), as well as the **availability of the national grid** in the event of blackouts. 
- 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+
+MicroGridsPy is developed in the open on GitHub [1] and contributions are very welcome: check out the :doc:`development`
 
 .. note::
 
    This project is under active development.
 
-Contents
+User Guide
 --------
 
 .. toctree::
