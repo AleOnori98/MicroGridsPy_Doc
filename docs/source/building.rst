@@ -14,6 +14,30 @@ Building a model in MicroGridsPy is very simple and includes the following main 
 #. Delivering the structural inputs (sets) to the model through a number of Excel-based files
 #. Delivering the ....
 
+Terminology
+--------------
+The terminology generally used in constrained optimisation is:
+
+* Parameter: a fixed coefficient that enters into model equations
+* Variable: a variable coefficient (decision variable) that enters into model equations
+* Set: an index in the algebraic formulation of the equations
+* Constraint: an equality or inequality expression that constrains one or several variables
+* ........
+
+Inputs Files
+-------------------------------------------
+MicroGridsPy models are defined, mainly, through PY files, which are both human-readable and computer-readable, and CSV files (a simple tabular format) for time series data and inputs.
+
+All the input files are collected inside a single directory called 'Inputs'. The layout of that directory typically looks roughly like this (+ denotes directories, - files):
+
+#. + Code
+
+    * + Inputs
+
+       * - Parameters.csv
+       * - Demand.csv
+       * - Generation.csv
+
 
 Definition of the model structural inputs 
 -------------------------------------------
