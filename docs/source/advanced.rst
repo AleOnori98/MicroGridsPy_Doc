@@ -18,4 +18,5 @@ Load Demand Estimation
 Generator Partial Load Effect
 ----------------------
 
-
+Battery Model
+----------------------
