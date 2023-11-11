@@ -159,9 +159,38 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
      :align: center
 
 
-Renewable Energy Sources
+Renewable Energy Production (Generation)
 -------
-Text
+**Introduction**
+
+To cover the demand load, electricity can be produced from different sources. This section aims to explain what renewable energy production is, how it is used within MicroGridsPy, how it can be estimated with external available web tools like Renewables.ninja and PVGIS or within the model itself using the advanced feature of renewable energy production estimation integrated into MicroGridsPy.
+any source can be used as only the production data is provided by the user
+
+**What is the renewable energy production?**
+
+In MicroGridsPy, renewable energy sources (i.e., Solar and Wind) and back-up diesel generators can be considered as sources of electricity.
+Load Curve Demand represents the **time-dependent electricity consumption** of a given area or system. It is typically measured in *Watts* (or kilowatts, megawatts, etc.) and captures how electricity demand varies over years, usually in hourly or sub-hourly intervals. The Load Curve Demand curve illustrates the power required at each point in time, providing insights into when and how much electricity is needed. This curve serves as a foundational data source for MicroGridsPy since the model aims to size and operate mini-grid components, such as renewable energy sources (e.g., solar panels, wind turbines), energy storage systems (e.g., batteries), and backup generators, to meet the electricity demand of a specific area or community. The key role of Load Curve Demand in the model is **optimizing resource allocation**: MicroGridsPy uses the load curve demand to distribute available resources efficiently over the years, balancing the generation and storage resources to minimize costs while meeting the electricity demand throughout the day. In addition to optimizing resource allocation, the software can also predict, along the time horizon of the simulation run, when **investment steps** should be taken to expand the system's capacity to accommodate the projected increase in demand if such an increase is anticipated. 
+
+
+**Renewable Energy Production estimation**
+
+There are two key methods to estimate renewable production:
+
+*  Using web tools such as: 
+** Renewables.ninja which estimates solar and wind production for a specific year
+
+** PVGIS
+
+
+*  Using the advanced features integrated into MicroGridsPy which allows to use 
+
+for the TMY
+using the generation technology parameters. (for wind and solar)
+(refer to :doc:`advanced`)
+
+**Generation.csv**
+The input file, located in the "Time Series" folder within the "Inputs" folder, must have as many numbered columns (excluding the rows labels) as the total years of the project and as many rows (excluding the columns headers) as the periods in which one year is divided (e.g. 1-hour time resolution leads to 8760 rows). 
+
 
 
 
