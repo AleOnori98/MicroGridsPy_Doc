@@ -106,14 +106,29 @@ Technology Parameters
 
 **Battery Technology**
 
+The input parameters for the Battery Energy Storage System (BESS) include:
+
+*Economic parameters: These are factors related to the cost and financial aspects of the BESS, such as the specific investment cost, specific electronic investment cost, and operation and maintenance (O&M) cost.
+
+*Battery efficiency: This includes the efficiency of the battery during charging and discharging processes, which influences how effectively it stores and releases energy.
+
+*Battery Depth of Discharge (DOD): DOD refers to the extent to which the battery's energy is used and discharged, which can impact its performance and longevity.
+
+*Battery power: This encompasses the maximum time the battery can be charged and discharged, indicating its power capabilities.
+
+*Battery cycles: The number of charge-discharge cycles the battery is expected to undergo before it reaches the end of its useful life.
+
+*Battery initial State of Charge (SOC): SOC represents the initial amount of energy stored in the battery when it's put into operation.
+
+*BESS existing capacity: This parameter indicates the current capacity or size of the Battery Energy Storage System in use. (Brownfield)
+
+(refer to :doc:`advanced`)
 
 **Grid Technology**
 
 Plot settings
 --------------
 
-
-  
 .. note::
   Please refer to the example gallery for a better understanding of the structure of both the set and parameter files.
 
@@ -164,29 +179,23 @@ Renewable Energy Production (Generation)
 -------
 **Introduction**
 
-The electricity to cover the demand load can be produced from different sources. This section aims to explain what renewable energy production is, how it is used within MicroGridsPy, how it can be estimated with external available web tools like Renewables.ninja and PVGIS or within the model itself using the advanced feature of renewable energy production estimation integrated into MicroGridsPy.
+Electricity needed to meet the demand can be generated using various energy sources. MicroGridsPy considers renewable sources, such as solar and wind, and backup diesel generators as the choices for generating electricity. This section aims to explain what renewable energy production is, how it is used within MicroGridsPy, how it can be estimated with external available web tools like Renewables.ninja and PVGIS or within the model itself using the advanced feature of renewable energy production estimation integrated into MicroGridsPy.
 
 **What is the renewable energy production?**
 
-In MicroGridsPy, renewable energy sources (i.e., Solar and Wind) and back-up diesel generators can be considered as sources of electricity.
-
-Load Curve Demand represents the **time-dependent electricity consumption** of a given area or system. It is typically measured in *Watts* (or kilowatts, megawatts, etc.) and captures how electricity demand varies over years, usually in hourly or sub-hourly intervals. The Load Curve Demand curve illustrates the power required at each point in time, providing insights into when and how much electricity is needed. This curve serves as a foundational data source for MicroGridsPy since the model aims to size and operate mini-grid components, such as renewable energy sources (e.g., solar panels, wind turbines), energy storage systems (e.g., batteries), and backup generators, to meet the electricity demand of a specific area or community. The key role of Load Curve Demand in the model is **optimizing resource allocation**: MicroGridsPy uses the load curve demand to distribute available resources efficiently over the years, balancing the generation and storage resources to minimize costs while meeting the electricity demand throughout the day. In addition to optimizing resource allocation, the software can also predict, along the time horizon of the simulation run, when **investment steps** should be taken to expand the system's capacity to accommodate the projected increase in demand if such an increase is anticipated. 
-
-(any source can be used as only the production data is provided by the user)
+The renewable energy production represents the estimated electricity production for each unitary generation technology at a given time for a specific location. It is typically measured in *Watts* (or kilowatts, megawatts, etc.) and captures how electricity production varies over time and source, usually in hourly or sub-hourly intervals. The data can be computed into a generation curve which illustrates the produced power at each point in time. This data becomes a fundamental source for MicroGridsPy to size and operate mini-grid components, such as renewable energy sources (e.g., solar panels, wind turbines) based on the unitary production of each source and complement the system with energy storage systems (e.g., batteries), and backup generators, to ensure the necessary electricity of a specific area or community. 
 
 **Renewable Energy Production estimation**
 
 There are two key methods to estimate renewable production:
 
 *  Using web tools such as: 
-** Renewables.ninja which estimates solar and wind production for a specific year ...
+** Renewables.ninja which provides data and tools for assessing energy generation profiles with simulations and forecasting features. The electricity production is estimated for solar and wind sources and is computed for 1 year with 1-hour time resolution. To cover more years, more requests need to be performed for the same location.
 
-** PVGIS ... 
+** PVGIS
+PVGIS (Photovoltaic Geographical Information System) provides solar radiation data, PV system yield estimations, and solar maps for various regions. It provides data for the typical meteorological conditions over a single year with 1-hour time resolution for a specific location.  
 
-*  Using the advanced features integrated into MicroGridsPy which allows to use 
-
-for the TMY
-using the generation technology parameters. (for wind and solar)
+*  Using the advanced features integrated into MicroGridsPy which allows to estimating generation based on VRES parameters, project location, and the specific year in question. The necessary data for solar, wind, and temperature conditions is obtained from the NASA POWER platform through an Application Program Interface (API) integrated into the MGPy software. These data are used to create a Typical Meteorological Year (TMY) dataset, representing typical weather conditions for the project location, with hourly resolution, based on 20 years of historical data. This TMY dataset is then used to calculate energy generation, which is consistent across all project years.
 (refer to :doc:`advanced`)
 
 **Generation.csv**
