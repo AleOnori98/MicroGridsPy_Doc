@@ -45,7 +45,7 @@ Energy
 - lost load
 - grid
 
-others:
+others
 - emissions
 
 **constraint**
