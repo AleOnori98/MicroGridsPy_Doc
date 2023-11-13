@@ -8,25 +8,6 @@ Objective function
 ===================
 
 
-.. container:: scrolling-wrapper
-
-   .. math::
-      :nowrap:
-
-      \begin{eqnarray}
-         Reg\_{obj}(reg) =
-          \sum_{year} (1+Discount\_{rate}(year,reg))^{-year}
-          \times \sum_{tech} \bigg[InvCost(reg,year,tech)+FixCost(reg,tech,year)+
-          DecomCost(reg,tech,year)+VarCost(reg,tech,year)+FixTax(reg,tech,year)+InvTax(reg,tech,year)-
-          InvSub(reg,tech,year)-FixSub(reg,tech,year)+
-          CO2Cost(reg,tech,year)-InvSalvage(reg,tech,year)\bigg]
-         \;\;\; \forall reg \in regions , \forall year \in years , \forall tech \in technologies
-      \end{eqnarray}
-
-:raw-html:`<br />`
-
-
-
 The objective function equation of the planning mode is the sum of all the regional costs
 in addition to the inter-regional tranmission link costs discounted to the reference year.
 While, in the operational mode, the objective function is just the sum of the
@@ -66,15 +47,33 @@ Energy
       :nowrap:
         
        \begin{eqnarray}
-           Energy\_{Demand}[scenario,year,period] =
-           \sum_{res\_{source} Energy\_{RES}[scenario,res\_{source},year,period] + 
-           \sum_{gen\_{type} Energy\_{Generator}[scenario,gen\_{type},year,period] + 
-           Energy\_{Grid}_{from}[scenario,year,period] - Energy\_{Grid}_{to}[scenario,year,period] +
-           Energy\_{BESS}_{out}[scenario,year,period] - Energy\_{BESS}_{in}[scenario,year,period] +
-           \Lost\_{Load}[scenario,year,period] - Energy\_{Curtailment}[scenario,year,period]
+           Energy\_{Demand}(scenario,year,period) =
+           \sum_{res\_{source} Energy\_{RES}(scenario,res\_{source},year,period) + 
+           \sum_{gen\_{type} Energy\_{Generator}(scenario,gen\_{type},year,period) + 
+           Energy\_{Grid}_{from}(scenario,year,period) - Energy\_{Grid}_{to}(scenario,year,period) +
+           Energy\_{BESS}_{out}(scenario,year,period) - Energy\_{BESS}_{in}(scenario,year,period) +
+           \Lost\_{Load}(scenario,year,period) - Energy\_{Curtailment}(scenario,year,period)
         \end{eqnarray}
 
 :raw-html:`<br />`
+
+.. container:: scrolling-wrapper
+
+   .. math::
+      :nowrap:
+
+      \begin{eqnarray}
+         Energy\_{Demand}[scenario,year,period] =
+          \sum_{year} (1+Discount\_{rate}(year,reg))^{-year}
+          \times \sum_{tech} \bigg[InvCost(reg,year,tech)+FixCost(reg,tech,year)+
+          DecomCost(reg,tech,year)+VarCost(reg,tech,year)+FixTax(reg,tech,year)+InvTax(reg,tech,year)-
+          InvSub(reg,tech,year)-FixSub(reg,tech,year)+
+          CO2Cost(reg,tech,year)-InvSalvage(reg,tech,year)\bigg]
+         \;\;\; \forall reg \in regions , \forall year \in years , \forall tech \in technologies
+      \end{eqnarray}
+
+:raw-html:`<br />`
+
 
 
 
