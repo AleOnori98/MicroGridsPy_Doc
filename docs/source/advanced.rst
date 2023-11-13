@@ -2,7 +2,7 @@ Advanced Features
 =========================
 .. role:: raw-html(raw)
     :format: html
-    <script type=”text/javascript” src=”http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML”></script>
+    :type=”text/javascript” src=”http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML”:
 
 
 Multi-Objective Optimization
