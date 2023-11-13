@@ -6,7 +6,7 @@ Mathematical Formulation
 
 Objective function
 ===================
-
+ 
 
 The objective function equation of the planning mode is the sum of all the regional costs
 in addition to the inter-regional tranmission link costs discounted to the reference year.
