@@ -12,6 +12,10 @@ Multi-Step Investment
 RES Time Series Estimation
 ----------------
 
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
  * - Parameter name
      - Unit
      - Description
