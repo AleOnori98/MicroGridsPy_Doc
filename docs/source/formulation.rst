@@ -15,22 +15,26 @@ fixed and variable costs with their related taxes within the modeled year.
 Cost
 ====
 
+calculating the components of the objective function including the investment,
+fixed and variable operation and maintenance and decommissioning costs followed
+by the related taxes considered for each unit of investment or fixed cost
+of the technologies. Carbon taxes are also included to be applied for the
+carbon-intensive technologies. Alongside the related costs of technologies,
+some revenues are considered in the objective function with a negative sign.
+These revenues are including the salvage values on some of the investments where the operational 
+lifetime of the technology lasts longer than the end of the modelling time horizon
+and subsidies that are applied to some technologies based on the national policies.
+The Hypatia model considers the economic life time of the technologies in the
+investment cost calculation. Therefore, each required investment in a specific
+year “y” is divided into a stream of annuities during several years
+(from “y+1” to “y+ELIFE”) which is determined by the technology-specific
+economic lifetime, depreciation rate and time value of money.
+
+
+
 Energy
 ======
 
-.. container:: scrolling-wrapper
-
-   .. math::
-      :nowrap:
-
-    \begin{eqnarray}
-
-        \[E=mc^2\]
-
-    \end{eqnarray}
-
-:raw-html:`<br />`
-:raw-html:`<br />`
 
 .. container:: scrolling-wrapper
 
@@ -87,9 +91,6 @@ Total Objective Function
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Regional Objective Function
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 .. container:: scrolling-wrapper
 
    .. math::
@@ -106,9 +107,6 @@ Regional Objective Function
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Trades Objective Function
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 .. container:: scrolling-wrapper
 
    .. math::
@@ -124,26 +122,8 @@ Trades Objective Function
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Equations
-==========
 
-costs
-------
 
-calculating the components of the objective function including the investment,
-fixed and variable operation and maintenance and decommissioning costs followed
-by the related taxes considered for each unit of investment or fixed cost
-of the technologies. Carbon taxes are also included to be applied for the
-carbon-intensive technologies. Alongside the related costs of technologies,
-some revenues are considered in the objective function with a negative sign.
-These revenues are including the salvage values on some of the investments where the operational 
-lifetime of the technology lasts longer than the end of the modelling time horizon
-and subsidies that are applied to some technologies based on the national policies.
-The Hypatia model considers the economic life time of the technologies in the
-investment cost calculation. Therefore, each required investment in a specific
-year “y” is divided into a stream of annuities during several years
-(from “y+1” to “y+ELIFE”) which is determined by the technology-specific
-economic lifetime, depreciation rate and time value of money.
 
 
 :raw-html:`<br />`
@@ -213,16 +193,7 @@ economic lifetime, depreciation rate and time value of money.
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Investment Salvage Value
-^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The revenues calculated at the end of the time horizon for the unused period of the investments whose technical liftime exceeds 
-the modelling horizon.
-
-Fixed Cost
-^^^^^^^^^^^^
-
-The fixed annual operation and maintenance cost based on the total installed capacity of each technology.
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -240,10 +211,7 @@ The fixed annual operation and maintenance cost based on the total installed cap
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Taxes & Subsidies
-^^^^^^^^^^^^^^^^^^
 
-Taxes and incentives calculated based on the total investment and fixed cost of each technology.
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -295,10 +263,7 @@ Taxes and incentives calculated based on the total investment and fixed cost of 
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Decommissioning Cost
-^^^^^^^^^^^^^^^^^^^^^
 
-Cost of dismantling the new capacities installed in the vintage years of the modelling horizon.
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -317,9 +282,7 @@ Cost of dismantling the new capacities installed in the vintage years of the mod
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Variable Cost
-^^^^^^^^^^^^^^^^^^^^^
-Annual variable operation and maintenance costs including the cost of consumed fuels.
+
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -337,10 +300,7 @@ Annual variable operation and maintenance costs including the cost of consumed f
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Carbon Tax
-^^^^^^^^^^^^^^^^^^^^^
 
-The taxed dedicated to the amount of CO2 emitted by each technology.
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -360,11 +320,7 @@ The taxed dedicated to the amount of CO2 emitted by each technology.
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Capacity
-----------
 
-Accumulated New Installed Capacity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. container:: scrolling-wrapper
 
@@ -382,8 +338,7 @@ Accumulated New Installed Capacity
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Total Installed Capacity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 .. container:: scrolling-wrapper
 
@@ -400,11 +355,7 @@ Total Installed Capacity
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Decomissioned Capacity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Calculates the annual decommissioning capacities based on the previously installed
-new capacities in the vintage years of the horizon.
 
 .. container:: scrolling-wrapper
 
@@ -422,10 +373,7 @@ new capacities in the vintage years of the horizon.
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Emission
-----------
-Calculates the annual CO2 emission based on the annual production of each technology
-and the exogenous specific emission given by the user per unit of output activity.
+
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -444,13 +392,6 @@ and the exogenous specific emission given by the user per unit of output activit
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Constraints
-=============
-
-Energy balance
------------------
-
-Guarantees the balance between the supply and demand sides of the energy system.
 
 .. container:: scrolling-wrapper
 
