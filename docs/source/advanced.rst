@@ -30,10 +30,24 @@ RES parameters for production time series estimation
    * - time_zone
      - (-) (e.g. +2)
      - UTC time zone 
-   * - Parameter name
-     - Unit
-     - Description
-     
+   * - nom_power
+     - Power (e.g. W)
+     - Solar module nominal power 	
+   * - tilt
+     - °
+     - tilt angle 
+   * - azim
+     - °
+     - azimuth angle [0° south facing]
+   * - ro_ground
+     - (-)
+     - ground reflectivity  
+   * - k_T
+     - (e.g. %/°C)
+     - power variation coefficient with temperature 
+   * - NMOT
+     - (e.g. °C)
+     - Nominal Module Operating Temperature 
 
 
 
