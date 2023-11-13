@@ -12,6 +12,10 @@ Multi-Step Investment
 RES Time Series Estimation
 ----------------
 
+ * - Parameter name
+     - Unit
+     - Description
+
 
 Load Demand Estimation
 ----------------------
