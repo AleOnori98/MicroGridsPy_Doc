@@ -7,9 +7,15 @@
 Introduction
 #######################################
 
+
+
+
+
+
 Energy Optimization Models
 =========================================
-text
+
+In rural areas, the limited grid access and the high electrification cost per capita require a good deployment of the scarce resources. Some rural electrification constraints are described as system size and configuration, the dispatch strategy, the selection of technologies and the network design [9]. Therefore, accurate models to size and dispatch mini-grid systems are essential. Energy optimization methods are grouped into intuitive, numerical and analytical. The simplest process, the intuitive technique, computes the system size using daily electric demand values and resource data. The numerical method determines the system size considering hourly demand and energy generation profiles and system parameters. The analytical method uses a mathematical optimization (E.g., Linear Programming (LP), Mixed Integer Linear Programming (MILP), etc) [3]. Mathematical models are capable of accounting for cost, system security and sustainable technologies deployment while considering vary economic, social and environmental constraints [9].
 
 Why MicroGridsPy is developed?
 =========================================
