@@ -100,6 +100,48 @@ Technology Parameters
 
 **RES Technology**
 
+intro
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter name
+     - Unit
+     - Description
+   * - RES_Sources
+     - (-)
+     - Number of Renewable Energy Sources (RES) types
+   * - RES_Names
+     - (e.g. PV panels, Wind turbines)
+     - Renewable Energy Sources (RES) names
+   * - RES_Nominal_Capacity
+     - Power (e.g. W)
+     - Single unit capacity of each type of Renewable Energy Source (RES)
+   * - RES_Inverter_Efficiency
+     - % (0-1)
+     - Efficiency of the inverter connected to each Renewable Energy Source (RES) (put 1 in case of AC bus)
+   * - RES_Specific_Investment_Cost
+     - (e.g. USD/W)
+     - Specific investment cost for each type of Renewable Energy Source (RES) 
+   * - RES_Specific_OM_Cost
+     - % (0-1)
+     - O&M cost for each type of Renewable Energy Source (RES) as a fraction of specific investment cost 
+   * - RES_Lifetime
+     - years
+     - Lifetime of each Renewable Energy Source (RES)   
+   * - RES_units
+     - (-)
+     - Existing RES units of nominal capacity (if Brownfield investment ativated)
+   * - RES_years
+     - years
+     - How many years ago the component was installed 
+   * - RES_unit_CO2_emission
+     - [kgCO2/kW]
+     - ???
+
+
+
 
 **Generator Technology**
 
@@ -148,9 +190,9 @@ The input parameters for the Battery Energy Storage System (BESS) include:
    * - Battery_capacity
      - Energy (e.g. Wh)
      - Existing Battery capacity (if Brownfield investment ativated)
-   * - BESS_unit_CO2_emission ??
-     - Unit
-     - Description
+   * - BESS_unit_CO2_emission
+     - (e.g. kgCO2/kWh)
+     - ????
    * - Battery_Nominal_Capacity_Milp
      - Energy (e.g. Wh)
      - Nominal Capacity of each battery
