@@ -8,10 +8,6 @@ Introduction
 #######################################
 
 
-
-
-
-
 Energy Optimization Models
 =========================================
 
@@ -50,6 +46,12 @@ MicroGridsPy in academic literature
 Sergio Balderrama, Francesco Lombardi, Fabio Riva, Walter Canedo, Emanuela Colombo, Sylvain Quoilin, `A two-stage linear programming optimization framework for isolated hybrid microgrids in a rural context: The case study of the “El Espino” community`_, Energy **2019**, 188, 116073
 
 .. _A two-stage linear programming optimization framework for isolated hybrid microgrids in a rural context: The case study of the “El Espino” community: https://doi.org/10.1016/j.energy.2019.116073
+
+Nicolò Stevanato, Gianluca Pellecchia, Ivan Sangiorgio, Diana Shendrikova, Castro Antonio Soares, Riccardo Mereu, Emanuela Colombo, `Planning third generation minigrids: Multi-objective optimization and brownfield investment approaches in modelling village-scale on-grid and off-grid energy systems`_, Renewable and Sustainable Energy Transition 2023, 3, 100053
+
+.. _Planning third generation minigrids: Multi-objective optimization and brownfield investment approaches in modelling village-scale on-grid and off-grid energy systems: https://doi.org/10.1016/j.rset.2023.100053.
+
+
 
 
 References
