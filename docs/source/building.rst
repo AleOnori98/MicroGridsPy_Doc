@@ -76,6 +76,31 @@ Intro
    * - Years
      - years
      - Total duration of the project (or 'time horizon')
+   * - Step_Duration
+     - years
+     - Duration of each investment decision step in which the project lifetime will be split
+   * - Min_Last_Step_Duration
+     - years
+     - Minimum duration of the last investment decision step, in case of non-homogeneous divisions of the project lifetime 
+   * - StartDate
+     - 'DD/MM/YYYY hh:mm:ss'
+     - Start date of the project
+   * - Delta_Time
+     - hours
+     - Time step in hours [fixed input]
+   * - Scenarios
+     - (-)
+     - Number of scenarios to consider within the optimisation
+   * - Scenario_Weight
+     - (-)
+     - Occurrence probability of each scenario
+   * - Discount_Rate
+     - unit
+     - Real discount rate accounting also for inflation
+   * - Investment_Cost_Limit
+     - (e.g. USD)
+     - Upper limit to investment cost (considered only in case Optimization_Goal='Operation cost')
+
 
 **Model Switches**
 
