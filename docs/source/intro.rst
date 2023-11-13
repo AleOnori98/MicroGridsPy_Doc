@@ -43,13 +43,15 @@ This work is licensed under `Apache 2.0 <https://www.apache.org/licenses/>`_
 MicroGridsPy in academic literature
 =========================================
 
-Sergio Balderrama, Francesco Lombardi, Fabio Riva, Walter Canedo, Emanuela Colombo, Sylvain Quoilin, `A two-stage linear programming optimization framework for isolated hybrid microgrids in a rural context: The case study of the “El Espino” community <https://doi.org/10.1016/j.energy.2019.116073>`_, Energy **2019**, 188, 116073
+Sergio Balderrama, Francesco Lombardi, Fabio Riva, Walter Canedo, Emanuela Colombo, Sylvain Quoilin, A two-stage linear programming optimization framework for isolated hybrid microgrids in a rural context: The case study of the “El Espino” community, Energy **2019**, 188, 116073
 
+N. Stevanato, F. Lombardi, E. Colombo, S. Balderrama and S. Quoilin, Two-Stage Stochastic Sizing of a Rural Micro-Grid Based on Stochastic Load Generation, 2019 IEEE Milan PowerTech, pp. 1-6
 
-Nicolò Stevanato, Gianluca Pellecchia, Ivan Sangiorgio, Diana Shendrikova, Castro Antonio Soares, Riccardo Mereu, Emanuela Colombo, `Planning third generation minigrids: Multi-objective optimization and brownfield investment approaches in modelling village-scale on-grid and off-grid energy systems`_, Renewable and Sustainable Energy Transition **2023**, 3, 100053
+Nicolò Stevanato, Francesco Lombardi, Giulia Guidicini, Lorenzo Rinaldi, Sergio L. Balderrama, Matija Pavičević, Sylvain Quoilin, Emanuela Colombo, Long-term sizing of rural microgrids: Accounting for load evolution through multi-step investment plan and stochastic optimization, Energy for Sustainable Development **2020**, 58, pages 16-29
 
-.. _Planning third generation minigrids: Multi-objective optimization and brownfield investment approaches in modelling village-scale on-grid and off-grid energy systems: https://doi.org/10.1016/j.rset.2023.100053.
+Nicolò Stevanato, Gianluca Pellecchia, Ivan Sangiorgio, Diana Shendrikova, Castro Antonio Soares, Riccardo Mereu, Emanuela Colombo, Planning third generation minigrids: Multi-objective optimization and brownfield investment approaches in modelling village-scale on-grid and off-grid energy systems, Renewable and Sustainable Energy Transition **2023**, 3, 100053
 
+Crevani, Giacomo & Soares, Castro & Colombo, Emanuela. (2023). Modelling Financing Schemes for Energy System Planning: A Mini-Grid Case Study. 1958-1969. 10.52202/069564-0178. 
 
 
 
