@@ -38,7 +38,7 @@ RES parameters for production time series estimation in MicroGridsPy:
      - tilt angle 
    * - azim
      - °
-     - azimuth angle [0° south facing]
+     - azimuth angle [0° south facing, 180° north facing]
    * - ro_ground
      - (-)
      - ground reflectivity  
@@ -64,7 +64,10 @@ RES parameters for production time series estimation in MicroGridsPy:
      - % (0-1)
      - Average efficiency of turbine drivetrain (gearbox,generator,brake)
 
+
 Advanced (for developers)
+
+
 RES parameters (non-editable):
 
 .. list-table:: 
@@ -113,17 +116,67 @@ RES parameters (non-editable):
 
 
 
-
-
-
 Load Demand Estimation
 ----------------------
+
+
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter name
+     - Unit
+     - Description
+   * - demand_growth
+     - % (0-1)
+     - yearly expected average percentage variation of the demand [%]
+   * - cooling_period
+     - (e.g. 'NC' = No Cooling; 'AY' = All Year; 'OM' = Oct-Mar; 'AS' = Apr-Sept)
+     - Cooling period 
+   * - h_tier1
+     - (-)
+     - number of households in the wealth tier 1
+   * - h_tier2
+     - (-)
+     - number of households in the wealth tier 2
+   * - h_tier3
+     - (-)
+     - number of households in the wealth tier 3
+   * - h_tier4
+     - (-)
+     - number of households in the wealth tier 4
+   * - h_tier5
+     - (-)
+     - number of households in the wealth tier 5
+   * - schools
+     - (-)
+     - number of schools
+   * - hospital_1
+     - (-)
+     - number of hospitals of type 1
+   * - hospital_2
+     - (-)
+     - number of hospitals of type 2
+   * - hospital_3
+     - (-)
+     - number of hospitals of type 3
+   * - hospital_4
+     - (-)
+     - number of hospitals of type 4
+   * - hospital_5
+     - (-)
+     - number of hospitals of type 5
+
 
 Generator Partial Load Effect
 ----------------------
 
 Grid Availability
 ----------------------
+
+
+
 
 Brownfield
 ----------------------
