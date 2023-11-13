@@ -122,16 +122,16 @@ The input parameters for the Battery Energy Storage System (BESS) include:
      - (e.g. USD/Wh)
      - Specific investment cost of non-replaceable parts (electronics) of the battery bank
    * - Battery_Specific_OM_Cost
-     - -
+     - (-)
      - O&M cost of the battery bank as a fraction of specific investment cost
    * - Battery_Discharge_Battery_Efficiency
-     - % between 0 and 1
+     - % (0-1)
      - Discharge efficiency of the battery bank
    * - Battery_Charge_Battery_Efficiency
-     - % between 0 and 1
+     - % (0-1)
      - Charge efficiency of the battery bank 
    * - Battery_Depth_of_Discharge
-     - % between 0 and 1
+     - % (0-1)
      - Depth of discharge of the battery bank (maximum amount of discharge)
    * - Maximum_Battery_Discharge_Time
      - hours
@@ -140,10 +140,10 @@ The input parameters for the Battery Energy Storage System (BESS) include:
      - hours
      - Maximum time to charge the battery bank
    * - Battery_Cycles
-     - -
+     - (-)
      - Maximum number of cycles before degradation of the battery
    * - Battery_Initial_SOC
-     - % between 0 and 1
+     - % (0-1)
      - Battery initial state of charge
    * - Battery_capacity
      - Energy (e.g. Wh)
