@@ -30,10 +30,23 @@ year “y” is divided into a stream of annuities during several years
 (from “y+1” to “y+ELIFE”) which is determined by the technology-specific
 economic lifetime, depreciation rate and time value of money.
 
-
+- investment
+- fixed o&m cost
+- variable cost (battery replacement ...)
+- salvage value
 
 Energy
 ======
+
+- energy balance
+- RES
+- battery
+- Diesel generator
+- lost load
+- grid
+
+others:
+- emissions
 
 **constraint**
 
