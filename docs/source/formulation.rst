@@ -7,37 +7,28 @@ Mathematical Formulation
 Objective function
 ===================
 
+The objective function equation of the planning mode is the sum of all the regional costs
+in addition to the inter-regional tranmission link costs discounted to the reference year.
+While, in the operational mode, the objective function is just the sum of the
+fixed and variable costs with their related taxes within the modeled year.
+
 Cost
 ====
 
 Energy
 ======
 
-
-The objective function equation of the planning mode is the sum of all the regional costs
-in addition to the inter-regional tranmission link costs discounted to the reference year.
-While, in the operational mode, the objective function is just the sum of the
-fixed and variable costs with their related taxes within the modeled year.
-
-Planning mode
---------------
-Total Objective Function
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
 .. container:: scrolling-wrapper
 
    .. math::
       :nowrap:
 
-      \begin{eqnarray}
-         min: Eq\_{obj} = \sum_{reg} Reg\_{obj}(reg) + Exchange\_{links}\_{obj} \;\;\;	\forall reg \in regions
-      \end{eqnarray}
+    \begin{equation}
+    E=m
+    \end{equation}
 
 :raw-html:`<br />`
 :raw-html:`<br />`
-
-Regional Objective Function
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. container:: scrolling-wrapper
 
@@ -56,9 +47,6 @@ Regional Objective Function
 
 :raw-html:`<br />`
 :raw-html:`<br />`
-
-Trades Objective Function
-^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. container:: scrolling-wrapper
 
@@ -155,18 +143,6 @@ year “y” is divided into a stream of annuities during several years
 (from “y+1” to “y+ELIFE”) which is determined by the technology-specific
 economic lifetime, depreciation rate and time value of money.
 
-.. note::
-
-   In Hypatia, the inter-regional links are modeled as technologies. Therefore all the below
-   equations for calculating the objective function cost components and intermediate
-   variables except the taxes and subsidies have been correspondingly written in the source code
-   for the transmission links.
-
-
-Investment Cost
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The cost required for the new installed capacity of the technologies.
 
 :raw-html:`<br />`
 
@@ -885,10 +861,6 @@ Ensures the relationship between the production and consumption of each technolo
 CO\ :sub:`2` Equivalent Emissions
 ----------------------------------
 
-Regional Emission cap
-^^^^^^^^^^^^^^^^^^^^^^
-
-Ensures that the annual amount of CO2 emisstion emitted in each region does not exceed the given maximum allowed annual carbon emissions.
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -904,10 +876,7 @@ Ensures that the annual amount of CO2 emisstion emitted in each region does not 
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Overall Emission cap
-^^^^^^^^^^^^^^^^^^^^^^
 
-Ensures that the aggregated annual amount of CO2 emitted over all the regions does not exceed the maixmum allowed annual values by the user.
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
