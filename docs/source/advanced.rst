@@ -48,6 +48,21 @@ RES parameters for production time series estimation
    * - NMOT
      - (e.g. °C)
      - Nominal Module Operating Temperature 
+   * - T_NMOT
+     - (e.g. °C)
+     - Ambient temperature of NMOT conditions
+   * - G_NMOT
+     - (e.g. W/m^2)
+     - Irradiance in NMOT conditions 
+   * - turbine_type
+     - (e.g. 'HA' or 'VA')
+     - Horizontal Axis/Vertical Axis
+   * - turbine_model
+     - (e.g. 'NPS100c-21')
+     - model name of the turbine (turbine data and power curve selected in XXX.csv)
+   * - drivetrain_efficiency
+     - 
+     - Average efficiency of turbine drivetrain (gearbox,generator,brake)
 
 
 
