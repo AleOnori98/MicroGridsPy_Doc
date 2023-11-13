@@ -30,7 +30,6 @@ RES parameters for production time series estimation
    * - time_zone
      - (-) (e.g. +2)
      - UTC time zone 
-   * - Solar Parameter
    * - Parameter name
      - Unit
      - Description
