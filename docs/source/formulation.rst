@@ -35,6 +35,7 @@ economic lifetime, depreciation rate and time value of money.
 Energy
 ======
 
+**constraint**
 
 .. container:: scrolling-wrapper
 
@@ -461,11 +462,7 @@ Total Objective Function
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Trade balance
------------------
 
-Ensures that the amounts of imports and exports among any pair of
-regions are completely balanced.
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -485,11 +482,6 @@ regions are completely balanced.
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Resource & Technology Availability
------------------------------------
-
-Ensures that the production of each technology does not exceed its
-available activity based both the technology capacity factor and resource capacity factor.
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -528,13 +520,7 @@ available activity based both the technology capacity factor and resource capaci
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Capacity
-----------
 
-Maximum & Minimum Regional Total Capacity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Maximum and minimum allowed annual total installed capacity for each
-technology in each region based on the defined scenario.
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -575,10 +561,7 @@ technology in each region based on the defined scenario.
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Maximum & Minimum Regional New Capacity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Maximum and minimum allowed annual new installed capacity for each technology in each region
-based on the defined scenario.
+
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -615,10 +598,7 @@ based on the defined scenario.
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Maximum & Minimum Overall Total Capacity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Maximum and minimum allowed annual aggregated total installed capacity for each technology over all the regions
-based on the defined scenario.
+
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -656,10 +636,7 @@ based on the defined scenario.
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Maximum & Minimum Overall New Capacity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Maximum and minimum allowed annual aggregated new installed capacity for each technology over all the regions
-based on the defined scenario.
+
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -697,13 +674,7 @@ based on the defined scenario.
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Activity
----------
 
-Maximum & Minimum Regional Production
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Maximum and minimum allowed production of each technology in each region
-based on the defined scenario.
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -744,10 +715,7 @@ based on the defined scenario.
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Maximum & Minimum Overall Production
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Maximum and minimum aggregated production of each technology over all the regions
-based on the defined scenario.
+
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
@@ -784,9 +752,7 @@ based on the defined scenario.
 :raw-html:`<br />`
 :raw-html:`<br />`
 
-Output to Input Activity Ratio
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Ensures the relationship between the production and consumption of each technology based on the given efficiency (output/input activity ratio)
+
 :raw-html:`<br />`
 
 .. container:: scrolling-wrapper
