@@ -24,7 +24,9 @@ Energy
       :nowrap:
 
     \begin{eqnarray}
+
         \[E=mc^2\]
+
     \end{eqnarray}
 
 :raw-html:`<br />`
