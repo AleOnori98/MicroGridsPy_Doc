@@ -174,9 +174,9 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
      :align: center
 
 
-draft
 Renewable Energy Production (Generation)
 -------
+
 **Introduction**
 
 Electricity needed to meet the demand can be generated using various energy sources. MicroGridsPy considers renewable sources, such as solar and wind, and backup diesel generators as the choices for generating electricity. This section aims to explain what renewable energy production is, how it is used within MicroGridsPy, how it can be estimated with external available web tools like Renewables.ninja and PVGIS or within the model itself using the advanced feature of renewable energy production estimation integrated into MicroGridsPy.
