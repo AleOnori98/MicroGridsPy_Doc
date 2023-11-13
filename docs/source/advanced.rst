@@ -6,6 +6,8 @@ Advanced Features
 Multi-Objective Optimization
 ------------
 
+Multi-Step Investment
+--------------
 
 RES Time Series Estimation
 ----------------
