@@ -44,8 +44,13 @@ License
 
 This work is licensed under `Apache 2.0 <https://www.apache.org/licenses/>`_
 
-Citing MicroGridsPy in academic literature
+MicroGridsPy in academic literature
 =========================================
+
+Sergio Balderrama, Francesco Lombardi, Fabio Riva, Walter Canedo, Emanuela Colombo, Sylvain Quoilin, `A two-stage linear programming optimization framework for isolated hybrid microgrids in a rural context: The case study of the “El Espino” community`_, Energy **2019**, 188, 116073
+
+.. _A two-stage linear programming optimization framework for isolated hybrid microgrids in a rural context: The case study of the “El Espino” community: https://doi.org/10.1016/j.energy.2019.116073
+
 
 References
 =========================================
