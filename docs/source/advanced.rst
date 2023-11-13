@@ -16,7 +16,7 @@ RES Time Series Estimation
    :widths: 25 25 50
    :header-rows: 1
 
- * - Parameter name
+   * - Parameter name
      - Unit
      - Description
 
