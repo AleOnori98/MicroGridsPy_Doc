@@ -2,7 +2,7 @@ Advanced Features
 =========================
 .. role:: raw-html(raw)
     :format: html
-sphinx.ext.mathbase
+    :sphinx.ext.mathbase
 
 Multi-Objective Optimization
 ------------
