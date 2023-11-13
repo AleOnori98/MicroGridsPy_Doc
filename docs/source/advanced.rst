@@ -12,7 +12,7 @@ Multi-Step Investment
 RES Time Series Estimation
 ----------------
 
-RES parameters for production time series estimation
+RES parameters for production time series estimation in MicroGridsPy:
 
 .. list-table:: 
    :widths: 25 25 50
@@ -63,6 +63,56 @@ RES parameters for production time series estimation
    * - drivetrain_efficiency
      - % (0-1)
      - Average efficiency of turbine drivetrain (gearbox,generator,brake)
+
+Advanced (for developers)
+RES parameters (non-editable):
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter name
+     - Unit
+     - Description
+   * - base_URL
+     - 'https://power.larc.nasa.gov/api/temporal/'
+     - URL base for API 
+   * - loc_id
+     - 'point'
+     - Spatial resolution
+   * - parameters_1
+     - 'ALLSKY_SFC_SW_DWN'
+     - Parameters of daily data with resolution of 1° x 1°
+   * - parameters_2
+     - 'T2MWET, T2M, WS50M'
+     - Parameters of daily data with resolution of 0.5° x 0.625°
+   * - parameters_3
+     - 'WS50M, WS2M,WD50M, T2M'
+     - parameters of hourly data
+   * - date_start
+     - '20150101'
+     - Starting date for dataset (from 2001)
+   * - date_end
+     - '20201231'
+     - Ending date for dataset (until 2020)
+   * - community
+     - 'RE'
+     - Community of data archive
+   * - temp_res_1
+     - 'daily'
+     - Temporal resolution for daily data
+   * - temp_res_2
+     - 'hourly'
+     - Temporal resolution for hourly data
+   * - output_format
+     - 'JSON'
+     - Output format
+   * - user
+     - 'anonymous'
+     - User key
+
+
+
 
 
 
