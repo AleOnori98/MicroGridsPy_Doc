@@ -61,7 +61,7 @@ RES parameters for production time series estimation
      - (e.g. 'NPS100c-21')
      - model name of the turbine (turbine data and power curve selected in XXX.csv)
    * - drivetrain_efficiency
-     - 
+     - % (0-1)
      - Average efficiency of turbine drivetrain (gearbox,generator,brake)
 
 
