@@ -73,12 +73,12 @@ Energy
       :nowrap:
         
        \begin{eqnarray}
-           Energy\_{Demand}(scenario,year,period) =
-           \sum_{res\_{source}} Energy\_{RES}(scenario,res\_{source},year,period) + 
-           \sum_{gen\_{type}} Energy\_{Generator}(scenario,gen\_{type},year,period) + 
-           Energy\_{Grid}_{from}(scenario,year,period) - Energy\_{Grid}_{to}(scenario,year,period) +
-           Energy\_{BESS}_{out}(scenario,year,period) - Energy\_{BESS}_{in}(scenario,year,period) +
-           \Lost\_{Load}(scenario,year,period) - Energy\_{Curtailment}(scenario,year,period)
+           E_{Demand}(s,yt,t) =
+           \sum_{r} E_{RES}(s,r,yt,t) + 
+           \sum_{g} E_{Generator}(s,g,yt,t) + 
+           E_{from Grid}(s,yt,t) - E_{to Grid}(s,yt,t) +
+           E_{out BESS}(s,yt,t) - E_{in BESS}_{in}(s,yt,t) +
+           \Lost\_{Load}(s,yt,t) - E_{Curtailment}(s,yt,t)
         \end{eqnarray}
 
 :raw-html:`<br />`
