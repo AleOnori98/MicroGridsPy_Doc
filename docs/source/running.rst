@@ -18,7 +18,6 @@ Results
 - cash flows
 - energy parameters
 
-:raw-html:`<br />`
 
 .. container:: scrolling-wrapper
 
