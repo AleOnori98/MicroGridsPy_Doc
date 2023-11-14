@@ -6,8 +6,9 @@ Mathematical Formulation
 
 **Summary of Nomenclature**
 
+
 .. list-table:: 
-   :widths: 25 25 50
+   :widths: 25 25
    :header-rows: 1
 
    * - Parameter name
@@ -24,6 +25,7 @@ Mathematical Formulation
      - r
    * - Generator_Types
      - g
+
 
 
 
