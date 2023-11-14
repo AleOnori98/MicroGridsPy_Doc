@@ -11,11 +11,11 @@ Scenarios
 Results
 -----------
 
-- summary file
-* components size
-* cost
-* cash flows
-* energy parameters
+**summary file**
+- components size
+- cost
+- cash flows
+- energy parameters
 
 :raw-html:`<br />`
 
@@ -36,7 +36,7 @@ Results
 :raw-html:`<br />`
 
 
-- dispatch time series file
-* demand
-* components
+**dispatch time series file**
+- demand
+- components
 
