@@ -70,8 +70,7 @@ Energy
 .. math::
     :nowrap:
    
-        \begin{eqnarray}
-        \small 
+        \begin{eqnarray} \small 
 
         E_{Demand}(s,yt,t) =
         \sum_{r} E_{RES}(s,r,yt,t) + 
