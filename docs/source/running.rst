@@ -11,6 +11,13 @@ Scenarios
 Results
 -----------
 
-- summary
-- dispatch time series
+- summary file
+components size
+cost
+cash flows
+energy parameters
+
+- dispatch time series file
+demand
+components
 
