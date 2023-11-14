@@ -4,6 +4,29 @@ Mathematical Formulation
 .. role:: raw-html(raw)
     :format: html
 
+**Summary of Nomenclature**
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter name
+     - Symbol
+   * - Scenarios
+     - s
+   * - Periods
+     - t  
+   * - Years
+     - yt
+   * - Steps
+     - ut
+   * - RES_Sources
+     - r
+   * - Generator_Types
+     - g
+
+
+
 Objective function
 ===================
  
