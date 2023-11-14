@@ -49,8 +49,8 @@ Energy
         
        \begin{eqnarray}
            Energy\_{Demand}(scenario,year,period) =
-           \sum_{res\_{source} Energy\_{RES}(scenario,res\_{source},year,period) + 
-           \sum_{gen\_{type} Energy\_{Generator}(scenario,gen\_{type},year,period) + 
+           \sum_{res\_{source}} Energy\_{RES}(scenario,res\_{source},year,period) + 
+           \sum_{gen\_{type}} Energy\_{Generator}(scenario,gen\_{type},year,period) + 
            Energy\_{Grid}_{from}(scenario,year,period) - Energy\_{Grid}_{to}(scenario,year,period) +
            Energy\_{BESS}_{out}(scenario,year,period) - Energy\_{BESS}_{in}(scenario,year,period) +
            \Lost\_{Load}(scenario,year,period) - Energy\_{Curtailment}(scenario,year,period)
@@ -84,7 +84,7 @@ others
       :nowrap:
 
       \begin{eqnarray}
-         Exchange\_{links}\_{obj} =
+         Energy\_{Demand}\_(scenario,year,period) =
          \sum_{year} (1+Discount_{rate}(year))^{-year}
          \times \sum_{link} \bigg[InvCost\_{link}(year,link)+
          FixCost\_{link}(year,link)+DecomCost\_{link}(year,link)+
