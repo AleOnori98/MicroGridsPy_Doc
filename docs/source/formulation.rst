@@ -57,22 +57,7 @@ Energy
 
 :raw-html:`<br />`
 
-.. container:: scrolling-wrapper
 
-   .. math::
-      :nowrap:
-
-      \begin{eqnarray}
-         Energy\_{Demand}[scenario,year,period] =
-          \sum_{year} (1+Discount\_{rate}(year,reg))^{-year}
-          \times \sum_{tech} \bigg[InvCost(reg,year,tech)+FixCost(reg,tech,year)+
-          DecomCost(reg,tech,year)+VarCost(reg,tech,year)+FixTax(reg,tech,year)+InvTax(reg,tech,year)-
-          InvSub(reg,tech,year)-FixSub(reg,tech,year)+
-          CO2Cost(reg,tech,year)-InvSalvage(reg,tech,year)\bigg]
-         \;\;\; \forall reg \in regions , \forall year \in years , \forall tech \in technologies
-      \end{eqnarray}
-
-:raw-html:`<br />`
 
 
 
