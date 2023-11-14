@@ -7,7 +7,6 @@ Mathematical Formulation
 Objective function
 ===================
  
-
 The objective function equation of the planning mode is the sum of all the regional costs
 in addition to the inter-regional tranmission link costs discounted to the reference year.
 While, in the operational mode, the objective function is just the sum of the
@@ -41,6 +40,8 @@ Energy
 
 - energy balance
 
+:raw-html:`<br />`
+
 .. container:: scrolling-wrapper
 
    .. math::
@@ -56,10 +57,6 @@ Energy
         \end{eqnarray}
 
 :raw-html:`<br />`
-
-
-
-
 
 
 - RES
@@ -98,7 +95,8 @@ others
       \end{eqnarray}
 
 :raw-html:`<br />`
-:raw-html:`<br />`
+
+
 
 Operation mode
 --------------
