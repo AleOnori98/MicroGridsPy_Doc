@@ -12,6 +12,7 @@ Results
 -----------
 
 **summary file**
+
 - components size
 - cost
 - cash flows
@@ -37,6 +38,7 @@ Results
 
 
 **dispatch time series file**
+
 - demand
 - components
 
