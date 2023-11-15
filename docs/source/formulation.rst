@@ -27,14 +27,12 @@ Mathematical Formulation
      - g
 
 
-.equation-container {
+equation-container {
     overflow-x: auto;
-    width: 100%;
-}
+    width: 100%;}
 
-.scrollable {
-    white-space: nowrap;
-}
+scrollable {
+    white-space: nowrap;}
 
 
 
