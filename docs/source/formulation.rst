@@ -27,6 +27,32 @@ Mathematical Formulation
      - g
 
 
+.equation-container {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.scrollable {
+    white-space: nowrap;
+}
+
+
+
+.. raw:: html
+
+    <div class="equation-container">
+
+.. math:: :class: scrollable
+
+    \frac{a}{b}
+
+.. raw:: html
+
+    </div>
+
+
+
+
 Objective function
 ===================
  
