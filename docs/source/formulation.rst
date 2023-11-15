@@ -34,7 +34,7 @@ Mathematical Formulation
         \begin{eqnarray} 
         {\small Olaaaaaaa}
         Olaaaaaa
-        {\footnotesize	x_{2}(x,1,2)}
+        {\footnotesize	{x_{2}(x,1,2)}}
         \end{eqnarray} 
  
 :raw-html:`<br />`
