@@ -37,6 +37,18 @@ Mathematical Formulation
  
 :raw-html:`<br />`
 
+:raw-html:`<br />`
+
+.. math::
+    :nowrap:
+   
+        \begin{eqnarray} 
+        Olaaaaaaa
+        \end{eqnarray} 
+ 
+:raw-html:`<br />`
+
+
 - here
 
 Objective function
