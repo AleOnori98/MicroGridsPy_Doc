@@ -32,10 +32,7 @@ Mathematical Formulation
     :nowrap:
    
         \begin{eqnarray} 
-        {\small small} \\
-        \small {small but dif}
-        Olaaaaaa \\
-        {\footnotesize	{x_{2}(x,1,2)}}
+        \footnotesize {x_{2}(x,1,2)}
         \end{eqnarray} 
  
 :raw-html:`<br />`
