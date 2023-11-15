@@ -224,21 +224,6 @@ The input parameters for the Battery Energy Storage System (BESS) include:
 
 
 
-
-*Economic parameters: These are factors related to the cost and financial aspects of the BESS, such as the specific investment cost, specific electronic investment cost, and operation and maintenance (O&M) cost.
-
-*Battery efficiency: This includes the efficiency of the battery during charging and discharging processes, which influences how effectively it stores and releases energy.
-
-*Battery Depth of Discharge (DOD): DOD refers to the extent to which the battery's energy is used and discharged, which can impact its performance and longevity.
-
-*Battery power: This encompasses the maximum time the battery can be charged and discharged, indicating its power capabilities.
-
-*Battery cycles: The number of charge-discharge cycles the battery is expected to undergo before it reaches the end of its useful life.
-
-*Battery initial State of Charge (SOC): SOC represents the initial amount of energy stored in the battery when it's put into operation.
-
-*BESS existing capacity: This parameter indicates the current capacity or size of the Battery Energy Storage System in use. (Brownfield)
-
 (refer to :doc:`advanced`)
 
 **Grid Technology**
