@@ -95,7 +95,7 @@ others
 
 :raw-html:`<br />`
 
-.. container:: scrolling-wrapper
+.. math-container:: scrolling-wrapper
 
    .. math::
       :nowrap:
