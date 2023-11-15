@@ -97,9 +97,14 @@ others
 **How to write functions**
 
 
-:raw-html:`<br />`
+
 .. container:: scrolling-wrapper
-   .. math::
+
+:raw-html:`<br />`
+.small-font {
+    font-size: 0.8em; /* You can adjust the value as needed */
+}
+   .. math:: :class: small-font
       :nowrap:
 
       \begin{eqnarray}
