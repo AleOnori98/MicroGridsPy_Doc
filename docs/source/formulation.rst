@@ -81,8 +81,8 @@ Energy
     :nowrap:
    
         \begin{eqnarray} 
-        {\small E_{Demand}(s,yt,t) = sum_{r} E_{RES}(s,r,yt,t) + sum_{g} E_{Generator}(s,g,yt,t) + E_{from Grid}(s,yt,t) - E_{to Grid}(s,yt,t) + 
-        \E_{out BESS}(s,yt,t) - E_{in BESS}_{in}(s,yt,t) + Lost\_{Load}(s,yt,t) - E_{Curtailment}(s,yt,t)}
+        {\small (E_{Demand}(s,yt,t) = sum_{r} E_{RES}(s,r,yt,t) + sum_{g} E_{Generator}(s,g,yt,t) + E_{from Grid}(s,yt,t) - E_{to Grid}(s,yt,t) + 
+        E_{out BESS}(s,yt,t) - E_{in BESS}_{in}(s,yt,t) + Lost\_{Load}(s,yt,t) - E_{Curtailment}(s,yt,t))}
         \end{eqnarray} 
  
 :raw-html:`<br />`
