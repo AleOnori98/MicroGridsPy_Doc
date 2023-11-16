@@ -22,15 +22,29 @@ In rural regions where access to the main power grid is limited and the cost of 
 
 * The **analytical method** is the most sophisticated and relies on mathematical optimization techniques such as Linear Programming (LP) or Mixed Integer 
   Linear Programming (MILP). These mathematical models can incorporate a wide range of considerations, including cost, system reliability, and the 
-  integration of sustainable technologies. They also have the capacity to take into account various economic, social, and environmental constraints, 
+  integration of sustainable technologies. They also can take into account various economic, social, and environmental constraints, 
   ensuring that the deployment of the mini-grid system is as effective and sustainable as possible.
 
+Challenges in isolated Microgrids Modeling
+=========================================
+
+Parametric uncertainty
+----------------------
+The uncertainty associated with long-term demand and renewables projections is typically referred to as **parametric uncertainty**, as models are typically fed with these data in the form of exogenous parameters. Riva et al. [4] underscore the importance of system dynamics for accurate forecasting, as underestimations can lead to overdrawn systems where actual energy usage far exceeded initial calculations or the necessity to retrofit photovoltaic microgrids with additional generators due to higher-than-expected nighttime use and expanding user bases. Fluctuations in renewable energy outputs also necessitate redesigns, as seen with wind systems affected by geographic features. These instances emphasize the critical need for precise demand and supply modeling to ensure the sustainability of off-grid power systems.
+
+Structural uncertainty
+---------------------
+The mathematical modeling of microgrids faces **structural uncertainty** due to simplifications made for computational efficiency. Often, models use constant efficiencies or overlook technological constraints, leading to inaccurate predictions of system performance. To address non-linear behaviours within a practical timeframe, heuristic optimization methods like those used by Mandelli et al. [5] and the HOMER® software https://www.homerenergy.com/ are common but may only provide local optima. Meta-heuristic techniques have also been successful [6], offering a balance between complexity and computation time. While linear programming (LP) is popular for its ability to deterministically find global optima, it falls short in handling non-linearities. Mixed-integer linear programming (MILP) bridges this gap somewhat, though at a cost to computational speed and requiring high-quality data for precision.
+
+Techniques for optimization under uncertainty
+-----------------------------------------------
 
 
-MicroGridsPy belongs to this last category being a sophisticated and comprehensive analytical model that addresses energy scaling and dispatch in mini-grids for remote areas.
+
 
 Why MicroGridsPy is developed?
 =========================================
+MicroGridsPy is a sophisticated and comprehensive analytical model that addresses energy scaling and dispatch in mini-grids for remote areas.
 MicroGridsPy is inspired by the other existing energy system optimization models 
 particularly ..... [1]
 It is designed to .... by addressing the main 
@@ -72,8 +86,18 @@ Giacomo Crevani, Castro Soares, Emanuela Colombo, Modelling Financing Schemes fo
 
 References
 =========================================
-.. [1] S. Mandelli, J. Barbieri, R. Mereu, and E. Colombo, “Off-grid systems for rural electrification in developing countries: Definitions,  classification and a comprehensive literature review,” Renew. Sustain. Energy Rev., vol. 58, pp. 1621–1646, 2016 
-.. [2] G. C. Lazaroiu, V. Dumbrava, G. Balaban, M. Longo, and D. Zaninelli, “Stochastic optimization of microgrids with renewable and storage energy systems,” EEEIC 2016 - Int. Conf. Environ. Electr. Eng., pp. 1–5, 2016. 
-.. [3] D. E. Majewski, M. Lampe, P. Voll, and A. Bardow, “TRusT: A Two-stage Robustness Trade-off approach for the design of decentralized energy supply systems,” Energy, vol. 118, pp. 590–599, 2017. 
+.. [1] S. Mandelli, J. Barbieri, R. Mereu, and E. Colombo, “Off-grid systems for rural electrification in developing countries: Definitions,  
+       classification and a comprehensive literature review,” Renew. Sustain. Energy Rev., vol. 58, pp. 1621–1646, 2016 
+.. [2] G. C. Lazaroiu, V. Dumbrava, G. Balaban, M. Longo, and D. Zaninelli, “Stochastic optimization of microgrids with renewable and storage energy 
+       systems,” EEEIC 2016 - Int. Conf. Environ. Electr. Eng., pp. 1–5, 2016
+.. [3] D. E. Majewski, M. Lampe, P. Voll, and A. Bardow, “TRusT: A Two-stage Robustness Trade-off approach for the design of decentralized energy supply 
+       systems,” Energy, vol. 118, pp. 590–599, 2017
+.. [4] F. Riva, A. Tognollo, F. Gardumi, E. Colombo, "Long-term energy planning and demand forecast in remote areas of developing countries: classification 
+       of case studies and insights from a modelling perspective", Energy strategy rev., 20 (2018), pp. 71-89
+.. [5] S. Mandelli, C. Brivio, E. Colombo, M. Merlo, "A sizing methodology based on levelized cost of supplied and lost energy for off-grid rural 
+       electrification systems", Renew Energy, 89 (2016), pp. 475-488
+.. [6] Q. Altes Buch, M. Orosz, S. Quoilin, V. Lemort, "Rule-based control and optimization of a hybrid solar microgrid for rural electrification and heat 
+       supply in sub-saharan Africa", Proceedings of the 30th international conference on efficiency, cost, optimization, simulation and environmental 
+       impact of energy systems, vol. 1 (2017), pp. 1263-1273
 
 
