@@ -11,14 +11,13 @@ MicroGridsPy is a comprehensive energy optimization model designed for the strat
    profiles. For sub-Sahara Africa it is also possible to estimate endogenously these time series data based on editable parameters and build-in load 
    demand archetypes
 
-#. **Configuration**: Set the model's general parameters, such as the number of periods (e.g., 8760 for hourly analysis) and the total duration of the 
-   project as well as specific features and modes such as MILP formulation, Multi-Objective optimization, Grid connection etc.
+#. **Configuration and Optimization setup**: Set the model's general parameters, such as the number of periods (e.g., 8760 for hourly analysis) and the 
+   the total duration of the project, specific features and modes such as MILP formulation, Multi-Objective optimization, Grid connection etc. as well as 
+   specific model's optimization goals and constraints, such as aiming for a minimum renewable penetration or a certain level of battery independence.
 
 #. **Component Selection**: Choose the technologies to include, like PV panels or wind turbines of a specific model, and define their capacities and 
    operational characteristics.
 
-#. **Optimization Setup**: Decide on the model's optimization goals and constraints, such as aiming for a minimum renewable penetration or a certain level 
-   of battery independence.
 
 #. **Execution**: Run the model to perform the optimization. MicroGridsPy processes the inputs through its algorithms to find the most cost-effective and 
    efficient system setup.
@@ -58,7 +57,7 @@ As more generally in constrained optimisation, the following terms are also used
 
 Inputs File
 ======================
-MicroGridsPy models are defined, mainly, through PY files, which are both human-readable and computer-readable, and CSV files (a simple tabular format) for time series data and inputs.
+MicroGridsPy models are defined, mainly, through .py files, which are both human-readable and computer-readable, .csv files (simple tabular format) for time series and .dat files for data inputs.
 
 All the input files are collected inside a single directory called 'Inputs'. The layout of that directory typically looks roughly like this (> denotes directories, - files):
 
