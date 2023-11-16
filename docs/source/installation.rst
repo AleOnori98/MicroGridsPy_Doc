@@ -29,9 +29,12 @@ The easiest way to get a working MicroGridsPy installation is to use the free co
   Windows users may have trouble with the recommended installation method, due to conda not solving the environment successfully. If this occurs, we 
   recommend using the more efficient reimplementation of conda: Mamba. First, install mamba in your base conda environment (conda install -c conda-forge -n 
   base mamba), then proceed with the installation as before, simply using mamba in place of conda:
-  .. code-block:: python
+
+.. code-block:: python
 
      mamba create -c conda-forge -n calliope calliope)
+
+
 
 
 
