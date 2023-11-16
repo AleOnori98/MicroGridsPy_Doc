@@ -1,5 +1,6 @@
-Download and installation
-=========================
+#######################################
+Download and Installation
+#######################################
 .. role:: raw-html(raw)
     :format: html
 
@@ -12,8 +13,7 @@ MicroGridsPy has been tested on Linux, macOS, and Windows. Running MicroGridsPy 
 * The Python programming language, version ....
 * A number of Python add-on modules (see below for the complete list).
 * A solver: MicroGridsPy has been tested with GLPK, Gurobi, and HiGHS. Any other solver that is compatible with Pyomo should also work.
-
-The MicroGrids software itself.
+* The MicroGrids software folder freely accessible from the environment.
 
 Recommended installation method
 ----------------
@@ -27,7 +27,7 @@ The easiest way to get a working MicroGridsPy installation is to use the free co
 
 Solvers
 =========================
-At least one of the solvers supported by Pyomo is required. HiGHS (open-source) or Gurobi (commercial) are recommended for large problems, and have been confirmed to work with MicroGridsPy. Refer to the documentation of your solver on how to install it.
+At least one of the solvers supported by Pyomo is required. HiGHS (open-source) or Gurobi (commercial) are recommended for large problems and have been confirmed to work with MicroGridsPy. Refer to the documentation of your solver on how to install it.
 
 Gurobi
 ----------------
