@@ -33,10 +33,12 @@ Mathematical Formulation
     .equation-container {
         overflow-x: auto;
         width: 100%;
+        display: block;
     }
     .scrollable-equation {
         white-space: nowrap;
-        display: inline-block;
+        overflow-x: scroll;
+        display: block;
     }
     </style>
     <div class="equation-container">
@@ -44,16 +46,16 @@ Mathematical Formulation
 
 .. math::
 
-        \begin{eqnarray} 
-            E_{\text{Demand}}(s,yt,t) &=& 
-            \sum_{r} E_{\text{RES}}(s,r,yt,t) + 
-            \sum_{g} E_{\text{Generator}}(s,g,yt,t) + E_{\text{from Grid}}(s,yt,t) \\
-            && -E_{\text{to Grid}}(s,yt,t) + E_{\text{out BESS}}(s,yt,t) - E_{\text{in BESS}}(s,yt,t) \\
-            && + \text{Lost\_Load}(s,yt,t) - E_{\text{Curtailment}}(s,yt,t)
-        \end{eqnarray} 
- 
+    E_{\text{Demand}}(s,yt,t) = 
+    \sum_{r} E_{\text{RES}}(s,r,yt,t) + 
+    \sum_{g} E_{\text{Generator}}(s,g,yt,t) + E_{\text{from Grid}}(s,yt,t) -
+    E_{\text{to Grid}}(s,yt,t) + E_{\text{out BESS}}(s,yt,t) - E_{\text{in BESS}}(s,yt,t) +
+    \text{Lost\_Load}(s,yt,t) - E_{\text{Curtailment}}(s,yt,t)
 
 .. raw:: html
+
+    </div>
+    </div>
 
     </div>
     </div>
