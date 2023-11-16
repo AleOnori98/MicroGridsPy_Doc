@@ -17,7 +17,6 @@ Building a model in MicroGridsPy is very simple and includes the following main 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Mgpy_Simple_Scheme.png?raw=true
    :width: 400
    :align: center
-   :target: #some-target-1
 
 
 
@@ -272,7 +271,7 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Demand.png?raw=true
      :width: 700
      :align: center
-     :target: #some-target-2
+
 
 
 Renewable Energy Production (Generation)
