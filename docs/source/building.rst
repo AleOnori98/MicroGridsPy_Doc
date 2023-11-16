@@ -132,6 +132,10 @@ These settings determine the overall configuration of the optimization model, in
 
 This set of parameters allows users to toggle different aspects and features of the model, such as the optimization goal (NPC or operation cost), whether to use a MILP formulation and various operational considerations like partial load effects on generators and multi-objective optimization criteria.
 
+.. raw:: html
+
+    <div style="overflow-y: auto; height: 300px;"> 
+
 .. list-table:: 
    :widths: 25 25 50
    :header-rows: 1
@@ -175,6 +179,10 @@ This set of parameters allows users to toggle different aspects and features of 
    * - Model_Components
      - 0 = batteries and generators /1 = batteries only / 2 = generators only
      - It allows to switch between different configuration of technologies (RES are always included)
+
+.. raw:: html
+
+    </div>
 
 Technology Parameters
 ----------------------
