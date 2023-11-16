@@ -7,6 +7,7 @@
 Introduction
 #######################################
 
+Within the context of rural electrification, hybrid microgrids stand out as e one of the most cost-effective solutions to meet both the need for access to reliable and safe electricity in areas where national grid connectivity is unfeasible, both financially and technically. They also serve to lessen reliance on high-carbon as well as imported energy through the exploitation of locally available renewables (RES) [1]. Nonetheless, the uncertainties associated with the natural variability of RES and the unpredictable evolution of the electricity demand among other factors [2]. Yet, the inherent unpredictability of renewable energy sources and the volatile nature of electricity demand, among other variables, pose challenges to the technical and economic optimization and robust sizing of these systems [3].
 
 Energy Optimization Models
 =========================================
@@ -23,6 +24,10 @@ In rural regions where access to the main power grid is limited and the cost of 
   Linear Programming (MILP). These mathematical models can incorporate a wide range of considerations, including cost, system reliability, and the 
   integration of sustainable technologies. They also have the capacity to take into account various economic, social, and environmental constraints, 
   ensuring that the deployment of the mini-grid system is as effective and sustainable as possible.
+
+
+
+MicroGridsPy belongs to this last category being a sophisticated and comprehensive analytical model that addresses energy scaling and dispatch in mini-grids for remote areas.
 
 Why MicroGridsPy is developed?
 =========================================
@@ -67,6 +72,8 @@ Giacomo Crevani, Castro Soares, Emanuela Colombo, Modelling Financing Schemes fo
 
 References
 =========================================
-.. [1] .... 
+.. [1] S. Mandelli, J. Barbieri, R. Mereu, and E. Colombo, “Off-grid systems for rural electrification in developing countries: Definitions,  classification and a comprehensive literature review,” Renew. Sustain. Energy Rev., vol. 58, pp. 1621–1646, 2016 
+.. [2] G. C. Lazaroiu, V. Dumbrava, G. Balaban, M. Longo, and D. Zaninelli, “Stochastic optimization of microgrids with renewable and storage energy systems,” EEEIC 2016 - Int. Conf. Environ. Electr. Eng., pp. 1–5, 2016. 
+.. [3] D. E. Majewski, M. Lampe, P. Voll, and A. Bardow, “TRusT: A Two-stage Robustness Trade-off approach for the design of decentralized energy supply systems,” Energy, vol. 118, pp. 590–599, 2017. 
 
 
