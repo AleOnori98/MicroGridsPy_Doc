@@ -473,7 +473,10 @@ Electricity needed to meet the demand can be generated using various energy sour
     </div>
     </details>
 
+.. |nbsp| unicode:: 0xA0 
+   :trim:
 
+|nbsp|
 
 **Generation.csv**
 
