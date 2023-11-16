@@ -5,7 +5,7 @@ Building and Running a Model
 .. role:: raw-html(raw)
     :format: HTML
 
-MicroGridsPy is a comprehensive energy optimization model designed for the strategic planning and operational management of mini-grid systems. Here below a general introduction to the different steps in building and running a model:
+MicroGridsPy is a comprehensive energy optimization model designed for the strategic planning and operational management of mini-grid systems. Here below is a general introduction to the different steps in building and running a model:
 
 #. **Time Series Data Input**: Begin by providing specific data, over the lifetime of the project, about the available renewable resources and demand 
    profiles. For sub-Sahara Africa it is also possible to estimate endogenously these time series data based on editable parameters and build-in load 
@@ -27,7 +27,7 @@ MicroGridsPy is a comprehensive energy optimization model designed for the strat
 
 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Mgpy_Simple_Scheme.png?raw=true
-   :width: 400
+   :width: 500
    :align: center
 
 
@@ -40,10 +40,10 @@ Terminology
 ===========
 The terminology defined here is used throughout the documentation and the model code and configuration files:
 
-* Periods: units of time for which the model performs calculations, defining the temporal resolution of the model. For example, if 'Periods' is set to 
-  8760, which corresponds to the number of hours in a year, implies that the model calculates energy generation, consumption, and other factors on an 
-  hourly basis. Having a high temporal resolution (many periods) allows for a more detailed and accurate simulation of the mini-grid's performance, which 
-  is critical for designing an efficient and reliable system. However, more periods also mean more data to process and potentially longer computation 
+* **Periods**: *units of time* for which the model performs calculations, defining the **temporal resolution** of the model. For example, if 'Periods' is 
+  set to 8760, which corresponds to the number of hours in a year, implies that the model calculates energy generation, consumption, and other factors on 
+  an hourly basis. Having a high temporal resolution (many periods) allows for a more detailed and accurate simulation of the mini-grid's performance, 
+  which is critical for designing an efficient and reliable system. However, more periods also mean more data to process and potentially longer computation 
   times, so there's a trade-off between model detail and computational efficiency.
 
 As more generally in constrained optimisation, the following terms are also used:
