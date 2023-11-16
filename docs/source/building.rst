@@ -3,7 +3,27 @@ Building and Running a Model
 ########################################
 
 .. role:: raw-html(raw)
-    :format: html
+    :format: HTML
+
+MicroGridsPy is a comprehensive energy optimization model designed for the strategic planning and operational management of mini-grid systems. Here below a general introduction to the different steps in building and running a model:
+
+#. **Time Series Data Input**: Begin by providing specific data, over the lifetime of the project, about the available renewable resources and demand 
+   profiles. For sub-Sahara Africa it is also possible to estimate endogenously these time series data based on editable parameters and build-in load 
+   demand archetypes
+
+#. **Configuration**: Set the model's general parameters, such as the number of periods (e.g., 8760 for hourly analysis) and the total duration of the 
+   project as well as specific features and modes such as MILP formulation, Multi-Objective optimization, Grid connection etc.
+
+#. **Component Selection**: Choose the technologies to include, like PV panels or wind turbines of a specific model, and define their capacities and 
+   operational characteristics.
+
+#. **Optimization Setup**: Decide on the model's optimization goals and constraints, such as aiming for a minimum renewable penetration or a certain level 
+   of battery independence.
+
+#. **Execution**: Run the model to perform the optimization. MicroGridsPy processes the inputs through its algorithms to find the most cost-effective and 
+   efficient system setup.
+
+#. **Output Analysis**: Review the outputs, which include the sizing of system components, financial analyses like NPC and LCOE, and dispatch plots. 
 
 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Mgpy_Simple_Scheme.png?raw=true
