@@ -19,7 +19,7 @@ In the latest version of MicroGridsPy the following advanced features (:doc:`adv
 * Possibility of simulating the connection of the mini-grid with an **existing main grid** by detailing electricity flows in both directions (electricity 
   taken from the grid or fed into the grid), as well as the **availability of the national grid** in the event of blackouts. 
 
-MicroGridsPy is developed in the open on GitHub and contributions are very welcome: check out the :doc:`formulation`
+MicroGridsPy is developed in the open on `GitHub <https://github.com/SESAM-Polimi/MicroGridsPy-SESAM>`_ and contributions are very welcome: check out the :doc:`formulation`
 
 .. note::
 
