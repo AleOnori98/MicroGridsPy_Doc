@@ -58,15 +58,7 @@ Acknowledgement
   We are fully grateful for having the chance to work under her supervision and would like to express our gratitude for her unwavering support.
 
 * We would also like to acknowledge .... for his kind support and guide that allows us to better understand and use .....
-    
-License
-========
 
-.. image:: https://img.shields.io/badge/License-Apache_2.0-blue.svg
-    :target: https://www.apache.org/licenses/
-
-
-This work is licensed under `Apache 2.0 <https://www.apache.org/licenses/>`_
 
 MicroGridsPy in academic literature
 =========================================
@@ -87,6 +79,15 @@ MicroGridsPy in academic literature
 
 * Giacomo Crevani, Castro Soares, Emanuela Colombo, Modelling Financing Schemes for Energy System Planning: A Mini-Grid Case Study, ECOS **2023**, pp. 
   1958-1969 
+
+License
+========
+
+.. image:: https://img.shields.io/badge/License-Apache_2.0-blue.svg
+    :target: https://www.apache.org/licenses/
+
+
+This work is licensed under `Apache 2.0 <https://www.apache.org/licenses/>`_
 
 
 References
