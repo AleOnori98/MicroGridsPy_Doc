@@ -3,7 +3,7 @@ Advanced Features
 .. role:: raw-html(raw)
     :format: html
 
-Weighted Average Cost of Capital Parameters
+Weighted Average Cost of Capital
 ------------
 
 These financial parameters are used to calculate the Weighted Average Cost of Capital (WACC), including the costs of equity and debt, the corporate tax rate, and the proportions of equity and debt in the total investment.
