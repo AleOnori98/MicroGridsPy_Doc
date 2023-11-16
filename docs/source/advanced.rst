@@ -3,6 +3,11 @@ Advanced Features
 .. role:: raw-html(raw)
     :format: html
 
+Weighted Average Cost of Capital Parameters
+------------
+
+These financial parameters are used to calculate the Weighted Average Cost of Capital (WACC), including the costs of equity and debt, the corporate tax rate, and the proportions of equity and debt in the total investment.
+
 Multi-Objective Optimization
 ------------
 A multi-objective two-stage stochastic approach is presented by Gou et al. [1]. The goals are to minimize the net present cost (NPC) and the pollutants emission using chance-constrained programming and a genetic algorithm as optimization techniques.
