@@ -8,7 +8,7 @@ Building and Running a Model
 
 Building a model in MicroGridsPy is very simple and includes the following main steps:
 
-#. Defining the....
+#. Defining the energy system 
 #. Delivering the structural inputs (sets) to the model through a number of Excel-based files
 #. Delivering the ....
 
@@ -28,7 +28,11 @@ Terminology
 ===========
 The terminology defined here is used throughout the documentation and the model code and configuration files:
 
-* Periods: 
+* Periods: units of time for which the model performs calculations, defining the temporal resolution of the model. For example, if 'Periods' is set to 
+  8760, which corresponds to the number of hours in a year, implies that the model calculates energy generation, consumption, and other factors on an 
+  hourly basis. Having a high temporal resolution (many periods) allows for a more detailed and accurate simulation of the mini-grid's performance, which 
+  is critical for designing an efficient and reliable system. However, more periods also mean more data to process and potentially longer computation 
+  times, so there's a trade-off between model detail and computational efficiency.
 
 As more generally in constrained optimisation, the following terms are also used:
 
