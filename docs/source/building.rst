@@ -114,6 +114,18 @@ These settings determine the overall configuration of the optimization model, in
    * - Investment_Cost_Limit
      - (e.g. USD)
      - Upper limit to investment cost (considered only in case Optimization_Goal='Operation cost')
+   * - Renewable_Penetration
+     - [%]
+     - Minimum renewable penetration (fraction of electricity produced by renewable sources) in the final technology mix
+   * - Battery_Independence
+     - days
+     - Number of days of battery independence (working without backup choices)
+   * - Lost_Load_Fraction
+     - [%]
+     - Maximum admittable loss of load
+   * - Lost_Load_Specific_Cost
+     - [USD/Wh]
+     - Value of the unmet load 
 
 
 **Model Switches**
@@ -130,9 +142,39 @@ This set of parameters allows users to toggle different aspects and features of 
    * - Optimization_Goal
      - 1 = NPC / 0 = Operation cost
      - It allows to switch between an NPC-oriented optimization and a NON-ACTUALIZED Operation
+   * - Multiobjective_Optimization
+     - 1 = optimization of NPC/operation cost and CO2 emissions / 0 = optimization of NPC/operation cost
+     - It allows to switch between a costs-oriented optimization and a cost and emissions optimization
+   * - Plot_Max_Cost
+     - 1 = Pareto curve has to include the point at maxNPC/maxOperationCost / 0 = otherwise
+     - It allows to shows a specific point on the Pareto curve for multi-objective optimization
    * - MILP_Formulation
      - 1 = MILP / 0 = LP
      - It allows to switch between a MILP (for monodirectional energy flows) and LP formulation
+   * - Generator_Partial_Load
+     - 1 = Partial load effect / 0 = Constant efficiency
+     - It allows to activate the partial load effect on the operation costs of the generator (valid only if MILP Formulation is activated)
+   * - RE_Supply_Calculation
+     - 1 = Endogenous estimation / 0 = exogenous time series required
+     - It allows to select solar PV and wind production time series calculation (using NASA POWER data)
+   * - Demand_Profile_Generation
+     - 1 = Endogenous estimation / 0 = exogenous time series required
+     - It allows to select load demand profile generation (using demand archetypes)
+   * - Grid_Connection
+     - 1 = Grid connection / 0 = No grid connection
+     - It allows to select grid connection during project lifetime
+   * - Grid_Availability_Simulation
+     - 1 = Endogenous simulation / 0 = exogenous time series required
+     - It allows to simulate the grid availability matrix
+   * - Grid_Connection_Type
+     - 2 = sell/purchase / 0 = purchase only
+     - It allows to switch between two different types of grid connections
+   * - WACC_Calculation
+     - 1 = WACC calculation / 0 = Standard discount rate
+     - It allows to calculate and use the Weighted Average Cost of Capital rather than the real discount rate
+   * - Model_Components
+     - 0 = batteries and generators /1 = batteries only / 2 = generators only
+     - It allows to switch between different configuration of technologies (RES are always included)
 
 Technology Parameters
 ----------------------
