@@ -36,8 +36,6 @@ The easiest way to get a working MicroGridsPy installation is to use the free co
 
 
 
-
-
 Solvers
 =========================
 At least one of the solvers supported by Pyomo is required. HiGHS (open-source) or Gurobi (commercial) are recommended for large problems and have been confirmed to work with MicroGridsPy. Refer to the documentation of your solver on how to install it.
