@@ -5,6 +5,7 @@ Advanced Features
 
 Multi-Objective Optimization
 ------------
+A multi-objective two-stage stochastic approach is presented by Gou et al. [1]. The goals are to minimize the net present cost (NPC) and the pollutants emission using chance-constrained programming and a genetic algorithm as optimization techniques.
 
 Multi-Step Investment
 --------------------------
@@ -194,5 +195,10 @@ Grid Availability
 
 Brownfield
 ----------------------
+
+References
+----------------------
+.. [1] L. Guo, W. Liu, B. Jiao, B. Hong, C. Wang, "Multi-objective stochastic optimal planning method for stand-alone microgrid system", IET Generation
+   Transm Distrib, 8 (7) (2014), pp. 1263-1273
 
 
