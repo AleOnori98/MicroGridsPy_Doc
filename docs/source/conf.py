@@ -33,3 +33,15 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+def setup(app):
+    app.add_css_file(None, body="""
+    <style type="text/css">
+        img {
+            margin-bottom: 10px; /* Adds space below the image */
+            display: block; /* Ensures the image is treated as a block-level element */
+            margin-left: auto; /* Horizontally centers the image */
+            margin-right: auto;
+        }
+    </style>
+    """)
