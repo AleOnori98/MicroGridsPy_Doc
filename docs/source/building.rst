@@ -44,17 +44,17 @@ MicroGridsPy models are defined, mainly, through PY files, which are both human-
 
 All the input files are collected inside a single directory called 'Inputs'. The layout of that directory typically looks roughly like this (+ denotes directories, - files):
 
-* + Parameters
+* +Parameters
 
-       * - Parameters.dat
+       * -Parameters.dat
 
-* + Time Series
+* +Time Series
 
-       * - Demand.csv
-       * - RES Time Series.csv
-       * - Grid Availability.csv
-       * - Direct Emissions.csv
-       * - WT Power Curve.csv
+       * -Demand.csv
+       * -RES Time Series.csv
+       * -Grid Availability.csv
+       * -Direct Emissions.csv
+       * -WT Power Curve.csv
 
 Model Configuration
 -------------------------
@@ -264,6 +264,7 @@ There are two key methods for operating load curve demand:
    Africa at different latitudes (refer to :doc:`advanced`)
 
 **Demand.csv**
+
 The input file, located in the "Time Series" folder within the "Inputs" folder, must have as many numbered columns (excluding the rows labels) as the total years of the project and as many rows (excluding the columns headers) as the periods in which one year is divided (e.g. 1-hour time resolution leads to 8760 rows). 
 
 
@@ -298,16 +299,26 @@ The renewable energy production represents the estimated electricity production 
 
 There are two key methods to estimate renewable production:
 
-*  Using web tools such as: 
-** Renewables.ninja which provides data and tools for assessing energy generation profiles with simulations and forecasting features. The electricity production is estimated for solar and wind sources and is computed for 1 year with 1-hour time resolution. To cover more years, more requests need to be performed for the same location.
+#. Using web tools such as:
 
-** PVGIS
-PVGIS (Photovoltaic Geographical Information System) provides solar radiation data, PV system yield estimations, and solar maps for various regions. It provides data for the typical meteorological conditions over a single year with 1-hour time resolution for a specific location.  
+    * Renewables.ninja which provides data and tools for assessing energy generation profiles with simulations and forecasting features. The electricity 
+      production is estimated for solar and wind sources and is computed for 1 year with 1-hour time resolution. To cover more years, more requests need to 
+      be performed for the same location.
 
-*  Using the advanced features integrated into MicroGridsPy which allows to estimating generation based on VRES parameters, project location, and the specific year in question. The necessary data for solar, wind, and temperature conditions is obtained from the NASA POWER platform through an Application Program Interface (API) integrated into the MGPy software. These data are used to create a Typical Meteorological Year (TMY) dataset, representing typical weather conditions for the project location, with hourly resolution, based on 20 years of historical data. This TMY dataset is then used to calculate energy generation, which is consistent across all project years.
+    * PVGIS (Photovoltaic Geographical Information System) provides solar radiation data, PV system yield estimations, and solar maps for various regions. 
+      It provides data for the typical meteorological conditions over a single year with 1-hour time resolution for a specific location. 
+
+#. Using the advanced features integrated into MicroGridsPy which allows to estimating generation based on VRES parameters, project location, and the 
+   specific year in question. The necessary data for solar, wind, and temperature conditions is obtained from the NASA POWER platform through an 
+   Application Program Interface (API) integrated into the MGPy software. These data are used to create a Typical Meteorological Year (TMY) dataset, 
+   representing typical weather conditions for the project location, with hourly resolution, based on 20 years of historical data. This TMY dataset is then 
+   used to calculate energy generation, which is consistent across all project years.
+
+
 (refer to :doc:`advanced`)
 
 **Generation.csv**
+
 The input file, located in the "Time Series" folder within the "Inputs" folder, must have as many numbered columns (excluding the rows labels) as the total years of the project and as many rows (excluding the columns headers) as the periods in which one year is divided (e.g. 1-hour time resolution leads to 8760 rows). 
 
 
