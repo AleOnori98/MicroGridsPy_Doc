@@ -404,13 +404,11 @@ At the core of the optimization energy modelling process lies the load curve dem
 
 .. raw:: html
 
+    <div style="margin-bottom: 20px;"> <!-- Adds space below the expand button -->
     <details>
     <summary>Expand for more information</summary>
     <div>
-.. |nbsp| unicode:: 0xA0 
-   :trim:
 
-|nbsp|
     <strong>What is the load curve demand?</strong><br><br>
     Load Curve Demand represents the <strong>time-dependent electricity consumption</strong> of a given area or system. It is typically measured in <em>Watts</em> (or kilowatts, megawatts, etc.) and captures how electricity demand varies over different periods, usually in hourly or sub-hourly intervals. The Load Curve Demand curve illustrates the power required at each point in time, providing insights into when and how much electricity is needed. This curve serves as a foundational data source for MicroGridsPy since the model aims to size and operate mini-grid components, such as renewable energy sources (e.g., solar panels, wind turbines), energy storage systems (e.g., batteries), and backup generators, to meet the electricity demand of a specific area or community. The key role of Load Curve Demand in the model is <strong>optimizing resource allocation</strong>: MicroGridsPy uses the load curve demand to distribute available resources efficiently over the years, balancing the generation and storage resources to minimize costs while meeting the electricity demand throughout the day. In addition to optimizing resource allocation, the software can also predict, along the time horizon of the simulation run, when <strong>investment steps</strong> should be taken to expand the system's capacity to accommodate the projected increase in demand if such an increase is anticipated.<br><br>
     <strong>Load curve demand estimation</strong><br><br>
@@ -423,10 +421,6 @@ At the core of the optimization energy modelling process lies the load curve dem
     </div>
     </details>
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
-|nbsp|
 
 
 **Demand.csv**
@@ -459,13 +453,11 @@ Electricity needed to meet the demand can be generated using various energy sour
 
 .. raw:: html
 
+    <div style="margin-bottom: 20px;"> <!-- Adds space below the expand button -->
     <details>
     <summary>Expand for more information</summary>
     <div>
-.. |nbsp| unicode:: 0xA0 
-   :trim:
 
-|nbsp|
 
     <strong>What is the renewable energy production?</strong><br><br>
     The renewable energy production represents the estimated electricity production for each unitary generation technology at a given time for a specific location. It is typically measured in Watts (or kilowatts, megawatts, etc.) and captures how electricity production varies over time and source, usually in hourly or sub-hourly intervals. The data can be computed into a generation curve which illustrates the produced power at each point in time. This data becomes a fundamental source for MicroGridsPy to size and operate mini-grid components, such as renewable energy sources (e.g., solar panels, wind turbines) based on the unitary production of each source and complement the system with energy storage systems (e.g., batteries), and backup generators, to ensure the necessary electricity of a specific area or community. <br><br>
@@ -478,12 +470,7 @@ Electricity needed to meet the demand can be generated using various energy sour
     </div>
     </details>
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
 
-|nbsp|
-
- 
 
 **Generation.csv**
 
