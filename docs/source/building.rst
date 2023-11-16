@@ -15,8 +15,7 @@ Building a model in MicroGridsPy is very simple and includes the following main 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Mgpy_Simple_Scheme.png?raw=true
    :width: 400
    :align: center
-
-
+   :target: #some-target
 
 Terminology
 ===========
