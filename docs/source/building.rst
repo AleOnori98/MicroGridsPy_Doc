@@ -57,9 +57,7 @@ As more generally in constrained optimisation, the following terms are also used
 
 Inputs File
 ======================
-MicroGridsPy models are defined, mainly, through .py files, which are both human-readable and computer-readable, .csv files (simple tabular format) for time series and .dat files for data inputs.
-
-All the input files are collected inside a single directory called 'Inputs'. The layout of that directory typically looks roughly like this (> denotes directories, - files):
+MicroGridsPy models are defined, mainly, through .py files, which are both human-readable and computer-readable, .csv files (simple tabular format) for time series and .dat files for data inputs. All the input files are collected inside a single directory called 'Inputs'. The layout of that directory typically looks roughly like this (> denotes directories, - files):
 
 * >Parameters
 
@@ -72,6 +70,7 @@ All the input files are collected inside a single directory called 'Inputs'. The
        * -Grid Availability.csv
        * -Direct Emissions.csv
        * -WT Power Curve.csv
+
 
 Model Configuration
 -------------------------
@@ -135,6 +134,11 @@ These settings determine the overall configuration of the optimization model, in
 
     </div>
 
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
+|nbsp|
+
 **Model Switches**
 
 This set of parameters allows users to toggle different aspects and features of the model, such as the optimization goal (NPC or operation cost), whether to use a MILP formulation and various operational considerations like partial load effects on generators and multi-objective optimization criteria.
@@ -191,6 +195,11 @@ This set of parameters allows users to toggle different aspects and features of 
 
     </div>
 
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
+|nbsp|
+
 (refer to :doc:`advanced`)
 
 Technology Parameters
@@ -246,9 +255,66 @@ Defines the types and characteristics of renewable energy sources, like solar PV
 
     </div>
 
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
+|nbsp|
+
 **Generator Technology**
 
 Details the types of generators that can be included in the microgrid, their efficiencies, costs, and lifetime, as well as the fuel they require and associated CO2 emissions.
+
+.. raw:: html
+
+    <div style="overflow-y: auto; height: 350px;">
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter name
+     - Unit
+     - Description
+   * - RES_Sources
+     - (-)
+     - Number of Renewable Energy Sources (RES) types
+   * - RES_Names
+     - (e.g. PV panels, Wind turbines)
+     - Renewable Energy Sources (RES) names
+   * - RES_Nominal_Capacity
+     - Power (e.g. W)
+     - Single unit capacity of each type of Renewable Energy Source (RES)
+   * - RES_Inverter_Efficiency
+     - [%]
+     - Efficiency of the inverter connected to each Renewable Energy Source (RES) (put 1 in case of AC bus)
+   * - RES_Specific_Investment_Cost
+     - (e.g. USD/W)
+     - Specific investment cost for each type of Renewable Energy Source (RES) 
+   * - RES_Specific_OM_Cost
+     - [%]
+     - O&M cost for each type of Renewable Energy Source (RES) as a fraction of the specific investment cost 
+   * - RES_Lifetime
+     - years
+     - Lifetime of each Renewable Energy Source (RES)   
+   * - RES_units
+     - (-)
+     - Existing RES units of nominal capacity (if Brownfield investment activated)
+   * - RES_years
+     - years
+     - How many years ago the component was installed 
+   * - RES_unit_CO2_emission
+     - [kgCO2/kW]
+     - ???
+
+.. raw:: html
+
+    </div>
+
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
+|nbsp|
+
 
 **Battery Technology**
 
@@ -309,6 +375,10 @@ Specifies the investment and operational costs, efficiencies, and other technica
 
     </div>
 
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
+|nbsp|
 
 **Grid Technology**
 
@@ -325,7 +395,6 @@ These parameters are used for the aesthetic aspects of model outputs, assigning 
 
 Time Series Data
 ===============
-General description of the concept
 
 Demand 
 -------
@@ -333,24 +402,25 @@ Demand
 
 At the core of the optimization energy modelling process lies the load curve demand. This section aims to explain what load curve demand is, how it is used within MicroGridsPy, and how it can be operated or estimated with external software tools like RAMP or within the model itself using the advanced feature of demand estimation integrated into MicroGridsPy.
 
-**What is the load curve demand?**
+.. raw:: html
 
-Load Curve Demand represents the **time-dependent electricity consumption** of a given area or system. It is typically measured in *Watts* (or kilowatts, megawatts, etc.) and captures how electricity demand varies over years, usually in hourly or sub-hourly intervals. The Load Curve Demand curve illustrates the power required at each point in time, providing insights into when and how much electricity is needed. This curve serves as a foundational data source for MicroGridsPy since the model aims to size and operate mini-grid components, such as renewable energy sources (e.g., solar panels, wind turbines), energy storage systems (e.g., batteries), and backup generators, to meet the electricity demand of a specific area or community. The key role of Load Curve Demand in the model is **optimizing resource allocation**: MicroGridsPy uses the load curve demand to distribute available resources efficiently over the years, balancing the generation and storage resources to minimize costs while meeting the electricity demand throughout the day. In addition to optimizing resource allocation, the software can also predict, along the time horizon of the simulation run, when **investment steps** should be taken to expand the system's capacity to accommodate the projected increase in demand if such an increase is anticipated. 
+    <details>
+    <summary>Click for more information</summary>
+    <div>
+    <strong>What is the load curve demand?</strong><br><br>
+    Load Curve Demand represents the <strong>time-dependent electricity consumption</strong> of a given area or system. It is typically measured in <em>Watts</em> (or kilowatts, megawatts, etc.) and captures how electricity demand varies over different periods, usually in hourly or sub-hourly intervals. The Load Curve Demand curve illustrates the power required at each point in time, providing insights into when and how much electricity is needed. This curve serves as a foundational data source for MicroGridsPy since the model aims to size and operate mini-grid components, such as renewable energy sources (e.g., solar panels, wind turbines), energy storage systems (e.g., batteries), and backup generators, to meet the electricity demand of a specific area or community. The key role of Load Curve Demand in the model is <strong>optimizing resource allocation</strong>: MicroGridsPy uses the load curve demand to distribute available resources efficiently over the years, balancing the generation and storage resources to minimize costs while meeting the electricity demand throughout the day. In addition to optimizing resource allocation, the software can also predict, along the time horizon of the simulation run, when <strong>investment steps</strong> should be taken to expand the system's capacity to accommodate the projected increase in demand if such an increase is anticipated.<br><br>
+    <strong>Load curve demand estimation</strong><br><br>
+    There are two key methods for operating load curve demand:<br>
+    <ul>
+      <li>Using software tools such as <a href="https://rampdemand.readthedocs.io/en/stable/intro.html">RAMP</a> which is a bottom-up stochastic model for the generation of high-resolution multi-energy profiles, conceived for application in contexts where only rough information about users' behaviour is obtainable. Those may range from remote villages to whole countries as well as informal settlements.</li>
+      <li>Using the advanced features integrated into MicroGridsPy which allows to use built-in archetypes referring to rural villages in Sub-Saharan Africa at different latitudes (refer to <a href="#">the advanced documentation</a>).</li>
+    </ul>
+    <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/RAMP.png?raw=true" style="width: 150px; display: block; margin: auto;">
+    </div>
+    </details>
 
-**Load curve demand estimation**
 
-There are two key methods for operating load curve demand:
 
-*  Using software tools such as `RAMP <https://rampdemand.readthedocs.io/en/stable/intro.html>`_ which is a bottom-up stochastic model for the generation 
-   of high-resolution multi-energy profiles, conceived for application in contexts where only rough information about users' behaviour is obtainable. Those 
-   may range from remote villages to whole countries as well as informal settlements.
-
-  .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/RAMP.png?raw=true
-     :width: 150
-     :align: center
-
-*  Using the advanced features integrated into MicroGridsPy which allows to use built-in archetypes referring to rural villages in Sub-Saharan 
-   Africa at different latitudes (refer to :doc:`advanced`)
 
 **Demand.csv**
 
