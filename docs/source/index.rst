@@ -8,7 +8,7 @@ Welcome to MicroGridsPy's documentation!
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Mgpy_Scheme.png?raw=true
    :width: 500
    :align: center
-   :target: #some-target
+
 
 
 Within the code it is also possible to consider a **Multi-objective Optimization** such as costs and emissions to model different scenarios with different drivers like environmental impact and a **Mixed-Integer Linear Programming (MILP) formulation** with an integrated *unit commitment approach* to determine the optimal operating schedule of power generation units over a given time horizon to meet the electricity demand while minimizing operational costs. The MILP formulation offers the chance to keep the main advantages of LP whilst offering a satisfying approximation of *non-linear behaviour*, at the expense of a *lower computational efficiency*. Nonetheless, an accurate MILP characterization of components such as diesel generators requires high-quality data regarding their real-life and site-specific operation, preferably based on real measurements. 
