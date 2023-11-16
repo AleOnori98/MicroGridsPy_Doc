@@ -46,19 +46,17 @@ Mathematical Formulation
 
 .. math::
 
-    E_{\text{Demand}}(s,yt,t) = 
+    E_{\text{demand}}(s,yt,t) = 
     \sum_{r} E_{\text{RES}}(s,r,yt,t) + 
-    \sum_{g} E_{\text{Generator}}(s,g,yt,t) + E_{\text{from Grid}}(s,yt,t) -
-    E_{\text{to Grid}}(s,yt,t) + E_{\text{out BESS}}(s,yt,t) - E_{\text{in BESS}}(s,yt,t) +
-    \text{Lost\_Load}(s,yt,t) - E_{\text{Curtailment}}(s,yt,t)
+    \sum_{g} E_{\text{generator}}(s,g,yt,t) + E_{\text{from grid}}(s,yt,t) -
+    E_{\text{to grid}}(s,yt,t) + E_{\text{out BESS}}(s,yt,t) - E_{\text{in BESS}}(s,yt,t) +
+    \text{lost load}(s,yt,t) - E_{\text{curtailment}}(s,yt,t)
 
 .. raw:: html
 
     </div>
     </div>
 
-    </div>
-    </div>
 
 Two-stage optimization mixed integer linear programming sizing model
 -------------------------------------------------------------------
