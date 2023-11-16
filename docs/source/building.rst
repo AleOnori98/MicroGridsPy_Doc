@@ -42,13 +42,13 @@ Inputs File
 ======================
 MicroGridsPy models are defined, mainly, through PY files, which are both human-readable and computer-readable, and CSV files (a simple tabular format) for time series data and inputs.
 
-All the input files are collected inside a single directory called 'Inputs'. The layout of that directory typically looks roughly like this (+ denotes directories, - files):
+All the input files are collected inside a single directory called 'Inputs'. The layout of that directory typically looks roughly like this (> denotes directories, - files):
 
-* +Parameters
+* >Parameters
 
        * -Parameters.dat
 
-* +Time Series
+* >Time Series
 
        * -Demand.csv
        * -RES Time Series.csv
@@ -58,11 +58,7 @@ All the input files are collected inside a single directory called 'Inputs'. The
 
 Model Configuration
 -------------------------
-Intro
-
-**Model Configuration**
-
-Intro
+These settings determine the overall configuration of the optimization model, including the number of periods within a year, the project's total duration, and the time step for the optimization process. It also encompasses financial parameters like the discount rate and investment cost limits.
 
 .. list-table:: 
    :widths: 25 25 50
@@ -105,7 +101,7 @@ Intro
 
 **Model Switches**
 
-Intro
+This set of parameters allows users to toggle different aspects and features of the model, such as the optimization goal (NPC or operation cost), whether to use a MILP formulation and various operational considerations like partial load effects on generators and multi-objective optimization criteria.
 
 .. list-table:: 
    :widths: 25 25 50
@@ -126,7 +122,7 @@ Technology Parameters
 
 **RES Technology**
 
-intro
+Defines the types and characteristics of renewable energy sources, like solar PV panels and wind turbines, including their nominal capacities, efficiencies, specific costs, and associated CO2 emissions.
 
 .. list-table:: 
    :widths: 25 25 50
@@ -167,13 +163,13 @@ intro
      - ???
 
 
-
 **Generator Technology**
 
+Details the types of generators that can be included in the microgrid, their efficiencies, costs, and lifetime, as well as the fuel they require and associated CO2 emissions.
 
 **Battery Technology**
 
-The input parameters for the Battery Energy Storage System (BESS) include:
+Specifies the investment and operational costs, efficiencies, and other technical parameters related to battery storage solutions, critical for managing intermittent renewable energy supply.
 
 .. list-table:: 
    :widths: 25 25 50
@@ -223,13 +219,17 @@ The input parameters for the Battery Energy Storage System (BESS) include:
      - Nominal Capacity of each battery
 
 
-
 (refer to :doc:`advanced`)
 
 **Grid Technology**
 
+Parameters here govern the potential connection to the national grid, including costs, distances, pricing for energy sold to or purchased from the grid, and reliability metrics.
+
+
 Plot settings
 --------------
+
+These parameters are used for the aesthetic aspects of model outputs, assigning colors to different energy sources, storage options, and other model components for visual representation in plots and charts.
 
 .. note::
   Please refer to the example gallery for a better understanding of the structure of both the set and parameter files.
