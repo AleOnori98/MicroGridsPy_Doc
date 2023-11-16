@@ -79,7 +79,7 @@ These settings determine the overall configuration of the optimization model, in
 
 .. raw:: html
 
-    <div style="overflow-y: auto; height: 350px;"
+    <div style="overflow-y: auto; height: 350px;">
 
 .. list-table:: 
    :widths: 25 25 50
@@ -191,12 +191,18 @@ This set of parameters allows users to toggle different aspects and features of 
 
     </div>
 
+(refer to :doc:`advanced`)
+
 Technology Parameters
 ----------------------
 
 **RES Technology**
 
 Defines the types and characteristics of renewable energy sources, like solar PV panels and wind turbines, including their nominal capacities, efficiencies, specific costs, and associated CO2 emissions.
+
+.. raw:: html
+
+    <div style="overflow-y: auto; height: 350px;">
 
 .. list-table:: 
    :widths: 25 25 50
@@ -215,13 +221,13 @@ Defines the types and characteristics of renewable energy sources, like solar PV
      - Power (e.g. W)
      - Single unit capacity of each type of Renewable Energy Source (RES)
    * - RES_Inverter_Efficiency
-     - % (0-1)
+     - [%]
      - Efficiency of the inverter connected to each Renewable Energy Source (RES) (put 1 in case of AC bus)
    * - RES_Specific_Investment_Cost
      - (e.g. USD/W)
      - Specific investment cost for each type of Renewable Energy Source (RES) 
    * - RES_Specific_OM_Cost
-     - % (0-1)
+     - [%]
      - O&M cost for each type of Renewable Energy Source (RES) as a fraction of the specific investment cost 
    * - RES_Lifetime
      - years
@@ -236,6 +242,9 @@ Defines the types and characteristics of renewable energy sources, like solar PV
      - [kgCO2/kW]
      - ???
 
+.. raw:: html
+
+    </div>
 
 **Generator Technology**
 
@@ -244,6 +253,10 @@ Details the types of generators that can be included in the microgrid, their eff
 **Battery Technology**
 
 Specifies the investment and operational costs, efficiencies, and other technical parameters related to battery storage solutions, critical for managing intermittent renewable energy supply.
+
+.. raw:: html
+
+    <div style="overflow-y: auto; height: 350px;">
 
 .. list-table:: 
    :widths: 25 25 50
@@ -292,8 +305,10 @@ Specifies the investment and operational costs, efficiencies, and other technica
      - Energy (e.g. Wh)
      - Nominal Capacity of each battery
 
+.. raw:: html
 
-(refer to :doc:`advanced`)
+    </div>
+
 
 **Grid Technology**
 
