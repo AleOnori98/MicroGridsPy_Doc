@@ -1,4 +1,4 @@
-Running the Model
+Analysing the Results
 =========================
 .. role:: raw-html(raw)
     :format: html
