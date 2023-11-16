@@ -56,6 +56,11 @@ The considered system comprises an electrical load supplied by renewable sources
    :width: 500
    :align: center
 
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
+|nbsp|
+
 Objective function
 ===================
  
