@@ -16,6 +16,8 @@ In the latest version of MicroGridsPy the following advanced features (:doc:`adv
 * Modeling of the **Generator Partial Load Effect**;
 * **Endogenous Load Curve Estimation** based on structured *archetypes* referring to **rural villages in Sub-Saharan Africa** at different latitudes;
 * **Endogenous calculation of RES production times series**, solar and wind, relying on the `NASA POWER platform <https://power.larc.nasa.gov/api/temporal/>`_;
+* **Brownfield** feature which allows to perform the optimization of the microgrid taking into consideration the availability of technologies previously 
+  installed in the field;
 * Possibility of simulating the connection of the mini-grid with an **existing main grid** by detailing electricity flows in both directions (electricity 
   taken from the grid or fed into the grid), as well as the **availability of the national grid** in the event of blackouts. 
 
