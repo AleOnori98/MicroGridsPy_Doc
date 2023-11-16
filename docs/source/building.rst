@@ -6,14 +6,6 @@ Building and Running a Model
     :format: html
 
 
-Building a model in MicroGridsPy is very simple and includes the following main steps:
-
-#. Defining the energy system 
-#. Delivering the structural inputs (sets) to the model through a number of Excel-based files
-#. Delivering the ....
-
-
-
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Mgpy_Simple_Scheme.png?raw=true
    :width: 400
    :align: center
