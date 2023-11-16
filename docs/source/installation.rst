@@ -25,6 +25,16 @@ The easiest way to get a working MicroGridsPy installation is to use the free co
    conda env create -f mgp_win.yml
    conda activate mgp
 
+.. note::
+  Windows users may have trouble with the recommended installation method, due to conda not solving the environment successfully. If this occurs, we 
+  recommend using the more efficient reimplementation of conda: Mamba. First, install mamba in your base conda environment (conda install -c conda-forge -n 
+  base mamba), then proceed with the installation as before, simply using mamba in place of conda:
+  .. code-block:: python
+
+     mamba create -c conda-forge -n calliope calliope)
+
+
+
 Solvers
 =========================
 At least one of the solvers supported by Pyomo is required. HiGHS (open-source) or Gurobi (commercial) are recommended for large problems and have been confirmed to work with MicroGridsPy. Refer to the documentation of your solver on how to install it.
