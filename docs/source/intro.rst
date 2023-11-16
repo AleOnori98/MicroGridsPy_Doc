@@ -2,6 +2,8 @@
 .. image:: https://raw.githubusercontent.com/SESAM-Polimi/MARIO/767d2c0e9e42ae0b6acf7c3a1cc379d7bcd367fa/doc/source/_static/images/polimi.svg
    :width: 200
    :align: right
+
+
    
 #######################################
 Introduction
@@ -44,13 +46,8 @@ Two-stage stochastic optimization is a sophisticated technique that addresses un
 
 Why MicroGridsPy is developed?
 =========================================
-MicroGridsPy is a sophisticated and comprehensive analytical model that addresses energy scaling and dispatch in mini-grids for remote areas.
-MicroGridsPy is inspired by the other existing energy system optimization models 
-particularly ..... [1]
-It is designed to .... by addressing the main 
-challenges of ....
-
-* **Electricity Access in rural areas** With the aim of ....
+MicroGridsPy is a sophisticated and comprehensive analytical model which provides a solution to the problem of sizing and dispatch of energy in microgrids in isolated places at a village scale with a time resolution of 1 hour and time-evolving load demand. The model is based on two-stage stochastic optimization, where the main optimization variables are divided into first-stage variables (rated capacities of each energy source) and second-stage variables (energy flows from the different components), to deal with the high level of uncertainty associated with renewable energy potential forecasts and the complex dynamics that govern the current and future evolution of electricity consumption in rural settings (parametric uncertainty), while LP or MILP formulation can be used to tackle the imperfect mathematical representation of component operation (structural uncertainty), mainly related to the modelling of non-linear behaviour. 
+MicroGridsPy has been developed in a collaborative effort aiming at providing a free and easy-to-access tool for practitioners in the field of microgrids. Therefore it is released as open-source (https://github.com/SESAM-Polimi/MicroGridsPy-SESAM)and it can also be adapted to user needs, projects characteristics and/or technical and/or economic context of each project. This open-science approach is also selected to increase the transparency and reproducibility of the proposed methods [8].
 
 Acknowledgement
 =========================================
@@ -101,5 +98,7 @@ References
        impact of energy systems, vol. 1 (2017), pp. 1263-1273
 .. [7] Z. Zhou, J. Zhang, P. Liu, Z. Li, M.C. Georgiadis, E.N. Pistikopoulos, "A two-stage stochastic programming model for the optimal design of 
        distributed energy systems", Appl Energy, 103 (2013), pp. 135-144
+.. [8] S. Pfenninger, J. DeCarolis, L. Hirth, S. Quoilin, I. Staffell, "The importance of open data and software: is energy research lagging behind?", 
+       Energy Policy, 101 (2017), pp. 211-215
 
 
