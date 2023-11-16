@@ -50,5 +50,19 @@ HiGHS is freely available under the MIT licence and is downloaded from Github. I
 
 More info at `HiGHS documentation <https://ergo-code.github.io/HiGHS/dev/>`_
 
+Setting the environment
+=========================
+Refer to ..../base.yml in the MicroGridsPy repository for a full and up-to-date listing of required third-party packages.
+
+Some of the key packages MicroGridsPy relies on are:
+
+* Pyomo (at least version 6.4.3 to use HiGHS as a solver)
+* Pandas
+* Numpy
+* Matplotlib
+
+
+
+
 
 
