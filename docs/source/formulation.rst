@@ -48,14 +48,16 @@ scrollable {
 
     </div>
 
-
+Two-stage optimization mixed integer linear programming sizing model
+-------------------------------------------------------------------
+The considered system comprises an electrical load supplied by renewable sources, an inverter, a battery bank and backup generators (Fig. 1). The main optimization variables are divided into first-stage variables (rated capacities of each energy source) and second-stage variables (energy flows from the different components). The optimization is implemented in Python using Pyomo Library. 
 
 
 Objective function
 ===================
  
 The objective function equation of the planning mode is the sum of all the regional costs
-in addition to the inter-regional tranmission link costs discounted to the reference year.
+in addition to the inter-regional transmission link costs discounted to the reference year.
 While, in the operational mode, the objective function is just the sum of the
 fixed and variable costs with their related taxes within the modeled year.
 
