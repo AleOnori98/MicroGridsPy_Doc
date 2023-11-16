@@ -268,7 +268,7 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
 
 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Demand.png?raw=true
-     :width: 150
+     :width: 500
      :align: center
 
 
