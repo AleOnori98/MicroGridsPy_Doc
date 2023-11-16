@@ -77,6 +77,10 @@ Model Configuration
 -------------------------
 These settings determine the overall configuration of the optimization model, including the number of periods within a year, the project's total duration, and the time step for the optimization process. It also encompasses financial parameters like the discount rate and investment cost limits.
 
+.. raw:: html
+
+    <div style="overflow-y: auto; height: 350px;"
+
 .. list-table:: 
    :widths: 25 25 50
    :header-rows: 1
@@ -127,6 +131,9 @@ These settings determine the overall configuration of the optimization model, in
      - [USD/Wh]
      - Value of the unmet load 
 
+.. raw:: html
+
+    </div>
 
 **Model Switches**
 
@@ -134,7 +141,7 @@ This set of parameters allows users to toggle different aspects and features of 
 
 .. raw:: html
 
-    <div style="overflow-y: auto; height: 300px;"> 
+    <div style="overflow-y: auto; height: 350px;"> 
 
 .. list-table:: 
    :widths: 25 25 50
