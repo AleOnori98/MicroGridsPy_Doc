@@ -12,10 +12,12 @@ Building a model in MicroGridsPy is very simple and includes the following main 
 #. Delivering the structural inputs (sets) to the model through a number of Excel-based files
 #. Delivering the ....
 
+
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Mgpy_Simple_Scheme.png?raw=true
    :width: 400
    :align: center
    :target: #some-target
+
 
 Terminology
 ===========
@@ -37,22 +39,17 @@ MicroGridsPy models are defined, mainly, through PY files, which are both human-
 
 All the input files are collected inside a single directory called 'Inputs'. The layout of that directory typically looks roughly like this (+ denotes directories, - files):
 
-* +Parameters
+* + Parameters
 
-       * -Model Configuration.csv
-       * -Model Switches.csv
-       * -RES Estimation Parameters.csv
-       * -Demand Estimation Parameters.csv
-       * -RES Technology.csv
-       * -Generator Technology.csv
-       * -Battery Technology.csv
-       * -Grid Technology.csv
-       * -Plot settings.csv
+       * - Parameters.dat
 
-* +Time Series
+* + Time Series
 
-       * -Demand.csv
-       * -Generation.csv
+       * - Demand.csv
+       * - RES Time Series.csv
+       * - Grid Availability.csv
+       * - Direct Emissions.csv
+       * - WT Power Curve.csv
 
 Model Configuration
 -------------------------
@@ -114,10 +111,10 @@ Intro
      - Description
    * - Optimization_Goal
      - 1 = NPC / 0 = Operation cost
-     - It allows to switch between a NPC-oriented optimization and a NON-ACTUALIZED Operation
+     - It allows to switch between an NPC-oriented optimization and a NON-ACTUALIZED Operation
    * - MILP_Formulation
      - 1 = MILP / 0 = LP
-     - It allows to swtich between a MILP (for monodirectional energy flows) and LP formulation
+     - It allows to switch between a MILP (for monodirectional energy flows) and LP formulation
 
 Technology Parameters
 ----------------------
@@ -150,20 +147,19 @@ intro
      - Specific investment cost for each type of Renewable Energy Source (RES) 
    * - RES_Specific_OM_Cost
      - % (0-1)
-     - O&M cost for each type of Renewable Energy Source (RES) as a fraction of specific investment cost 
+     - O&M cost for each type of Renewable Energy Source (RES) as a fraction of the specific investment cost 
    * - RES_Lifetime
      - years
      - Lifetime of each Renewable Energy Source (RES)   
    * - RES_units
      - (-)
-     - Existing RES units of nominal capacity (if Brownfield investment ativated)
+     - Existing RES units of nominal capacity (if Brownfield investment activated)
    * - RES_years
      - years
      - How many years ago the component was installed 
    * - RES_unit_CO2_emission
      - [kgCO2/kW]
      - ???
-
 
 
 
@@ -189,7 +185,7 @@ The input parameters for the Battery Energy Storage System (BESS) include:
      - Specific investment cost of non-replaceable parts (electronics) of the battery bank
    * - Battery_Specific_OM_Cost
      - (-)
-     - O&M cost of the battery bank as a fraction of specific investment cost
+     - O&M cost of the battery bank as a fraction of the specific investment cost
    * - Battery_Discharge_Battery_Efficiency
      - % (0-1)
      - Discharge efficiency of the battery bank
@@ -213,7 +209,7 @@ The input parameters for the Battery Energy Storage System (BESS) include:
      - Battery initial state of charge
    * - Battery_capacity
      - Energy (e.g. Wh)
-     - Existing Battery capacity (if Brownfield investment ativated)
+     - Existing Battery capacity (if Brownfield investment activated)
    * - BESS_unit_CO2_emission
      - (e.g. kgCO2/kWh)
      - ????
@@ -241,7 +237,7 @@ Demand
 -------
 **Introduction**
 
-At the core of the optimization energy modelling process lies the load curve demand. This section aims to explain what load curve demand is, how it is used within MicroGridsPy, how it can be operated or estimated with external software tools like RAMP or within the model itself using the advanced feature of demand estimation integrated into MicroGridsPy.
+At the core of the optimization energy modelling process lies the load curve demand. This section aims to explain what load curve demand is, how it is used within MicroGridsPy, and how it can be operated or estimated with external software tools like RAMP or within the model itself using the advanced feature of demand estimation integrated into MicroGridsPy.
 
 **What is the load curve demand?**
 
@@ -267,10 +263,11 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
 
 .. warning::
     The number of columns in the csv file must coincide with the value set for the 'Years' parameter. The same for the number of rows 
-    that must coincide with the value set for 'Periods' in the model configuration.csv file! If not properly set and matching, it may arise a 'Key Error'.
+    that must coincide with the value set for 'Periods' in the model configuration.csv file! If not properly set and matched, it may arise a 'Key Error'.
 
 
-  .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Demand.png?raw=true
+
+.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Demand.png?raw=true
      :width: 150
      :align: center
 
