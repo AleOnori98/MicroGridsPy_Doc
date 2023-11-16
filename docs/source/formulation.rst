@@ -27,25 +27,35 @@ Mathematical Formulation
      - g
 
 
-equation-container {
-    overflow-x: auto;
-    width: 100%;}
-
-scrollable {
-    white-space: nowrap;}
-
-
-
 .. raw:: html
 
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        display: inline-block;
+    }
+    </style>
     <div class="equation-container">
+    <div class="scrollable-equation">
 
-.. math:: :class: scrollable
+.. math::
 
-    \frac{a}{b}
+        \begin{eqnarray} 
+             E_{Demand}(s,yt,t) = 
+             \sum_{r} E_{RES}(s,r,yt,t) + 
+             \sum_{g} E_{Generator}(s,g,yt,t)+E_{from Grid}(s,yt,t)-
+             E_{to Grid}(s,yt,t)+E_{out BESS}(s,yt,t)-E_{in BESS}_{in}(s,yt,t)+Lost\_{Load}(s,yt,t)-
+             E_{Curtailment}(s,yt,t)
+        \end{eqnarray} 
+ 
 
 .. raw:: html
 
+    </div>
     </div>
 
 Two-stage optimization mixed integer linear programming sizing model
