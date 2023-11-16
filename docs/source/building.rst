@@ -19,6 +19,10 @@ Building a model in MicroGridsPy is very simple and includes the following main 
    :align: center
 
 
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
+|nbsp|
 
 Terminology
 ===========
@@ -267,7 +271,10 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
      :width: 700
      :align: center
 
+.. |nbsp| unicode:: 0xA0 
+   :trim:
 
+|nbsp|
 
 .. warning::
     The number of columns in the csv file must coincide with the value set for the 'Years' parameter. The same for the number of rows 
