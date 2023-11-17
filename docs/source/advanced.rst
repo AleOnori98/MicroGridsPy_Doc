@@ -193,18 +193,224 @@ In the present section, the focus is set on the generator models which often neg
 
 |nbsp|
 
-In the LP formulation, the generator can freely vary its output between 0 and 100% without any penalization for partial load. The only limitation is therefore the maximum capacity of the unit. The slope of the cost curve for the generator system (a_LP), representing the marginal cost, is calculated as shown in equation (3.3) from the price of the fuel (p_fuel), the low heating value of the fuel (〖LHV〗_(fuel )) and the efficiency of the genset (η_gen). To not exceed the generator nominal capacity C, equation (3.4) is necessary, where E(s,t) is the energy output of the genset and Δt_p the hourly timestep. Finally, the total operation cost of the generator in the period t of scenario s (Cost(s,t))is calculated with equation (3.5).
+In the LP formulation, the generator can freely vary its output between 0 and 100% without any penalization for partial load. The only limitation is therefore the maximum capacity of the unit. The slope of the cost curve for the generator system (a_LP), representing the marginal cost, is calculated as shown in equation (1.1) from the price of the fuel (p_fuel), the low heating value of the fuel (〖LHV〗_(fuel ) and the efficiency of the genset (η_gen). To not exceed the generator nominal capacity C, equation (1.2) is necessary, where E(s,t) is the energy output of the genset and Δt_p the hourly timestep. Finally, the total operation cost of the generator in the period t of scenario s (Cost(s,t))is calculated with equation (1.3).
 
-...... Equations
+The slope of the cost curve for the generator system, representing the marginal cost, is given by:
 
-In an isolated system, typically a predetermined number of diesel generators are coordinated to fulfil the fluctuating energy demands. To accurately represent this scenario, as well as account for the part load effect in each generator, the optimization approach is modified to a MILP (Mixed-Integer Linear Programming) formulation. The cost, denoted as Cost and calculated using equation (3.6), considers various factors including the number of generators operating at full load (N_full), the energy output of generators operating at part load (E_part), the slope of the cost curve for part load generators (α_MILP) as defined in equation (3.7), and the origin of the cost curve for part load generators (Cost_part). In this study, the value of Cost_part is determined as a percentage (p_gen) of the total operational cost of the generator system at full load, as elaborated in equation (3.8). Lastly, the binary variable B determines whether a generator operates in part load at a given time t.
+.. raw:: html
 
-......Equations
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
 
-The minimum and maximum energy output of the generator in partial load is limited as shown in (3.9), where 𝑀𝑖𝑛𝑝𝑎𝑟𝑡 is the minimum percentage of energy output for the generator in part load. In addition, 𝑁 is the number of generators and is determined with the last equation. It is important to note that during the MILP optimization, 𝐶 is defined as a parameter and 𝑁 is the variable to optimize.
+.. math::
 
-......Equations
+    a_{LP} = \frac{p_{fuel}}{LHV_{fuel} \cdot \eta_{gen}} \quad (1.1)
 
+.. raw:: html
+
+    </div>
+    </div>
+
+To ensure the generator does not exceed its nominal capacity \( C \), the following constraint is used:
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    C \cdot \Delta t_p \geq E[s, t] \quad \forall s, t \quad (1.2)
+
+The total operation cost of the generator for period \( t \) of scenario \( s \) is:
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    Cost[s, t] = E[s, t] \cdot a_{LP} \quad \forall s, t \quad (1.3)
+
+In an isolated system, typically a predetermined number of diesel generators are coordinated to fulfil the fluctuating energy demands. To accurately represent this scenario, as well as account for the part load effect in each generator, the optimization approach is modified to a MILP (Mixed-Integer Linear Programming) formulation. The cost, denoted as Cost and calculated using equation (1.4), considers various factors including the number of generators operating at full load (N_full), the energy output of generators operating at part load (E_part), the slope of the cost curve for part load generators (α_MILP) as defined in equation (1.5), and the origin of the cost curve for part load generators (Cost_part). In this study, the value of Cost_part is determined as a percentage (p_gen) of the total operational cost of the generator system at full load, as elaborated in equation (1.6). Lastly, the binary variable B determines whether a generator operates in part load at a given time t.
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    Cost = N_{full} \cdot C \cdot a_{LP} \cdot \Delta t_p + E_{part} \cdot a_{MILP} + Cost_{part} \cdot B \quad \forall s, t \quad (1.4)
+
+The slope of the cost curve for part load generators is defined by:
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    a_{MILP} = \frac{C \cdot a_{LP} \cdot \Delta t_p - Cost_{part}}{C_{gen} \cdot \Delta t_p} \quad (1.5)
+
+The origin of the cost curve for part load generators is set as a percentage of the full load operational cost:
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    Cost_{part} = C \cdot a_{LP} \cdot p_{gen} \cdot \Delta t_p \quad (1.6)
+
+The minimum and maximum energy output of the generator in partial load is limited as shown in (1.7), where 𝑀𝑖𝑛𝑝𝑎𝑟𝑡 is the minimum percentage of energy output for the generator in part load. In addition, 𝑁 is the number of gensets and is determined with the last equation. It is important to note that during the MILP optimization 𝐶 is defined as a parameter and 𝑁 is the variable to optimize.
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    C \cdot Min_{part} \cdot B[s, t] \cdot \Delta t_p \leq E_{part}[s, t] \leq C \cdot B[s, t] \cdot \Delta t_p \quad \forall s, t \quad (1.7)
+
+The energy output of the genset is the sum of full load and part load outputs:
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    E[s, t] = N_{full} \cdot C \cdot \Delta t_p + E_{part} 
+
+Finally, the total energy output is constrained by the number of gensets:
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    E[s, t] \leq C \cdot N \cdot \Delta t_p \quad \forall s, t 
+
+.. raw:: html
+
+    </div>
+    </div>
 
 Grid Availability
 ----------------------
