@@ -12,18 +12,11 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 
     <style>
     .equation-container {
-        overflow-x: auto;
         width: 100%;
-        display: block;
-    }
-    .scrollable-equation {
-        white-space: nowrap;
-        overflow-x: scroll;
         display: block;
     }
     </style>
     <div class="equation-container">
-    <div class="scrollable-equation">
 
 .. math::
 
@@ -47,7 +40,6 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
     </div>
 
     <div class="equation-container">
-    <div class="scrollable-equation">
 
 .. math::
 
@@ -253,18 +245,11 @@ The slope of the cost curve for the generator system, representing the marginal 
 
     <style>
     .equation-container {
-        overflow-x: auto;
         width: 100%;
-        display: block;
-    }
-    .scrollable-equation {
-        white-space: nowrap;
-        overflow-x: scroll;
         display: block;
     }
     </style>
     <div class="equation-container">
-    <div class="scrollable-equation">
 
 .. math::
 
@@ -281,18 +266,11 @@ To ensure the generator does not exceed its nominal capacity \( C \), the follow
 
     <style>
     .equation-container {
-        overflow-x: auto;
         width: 100%;
-        display: block;
-    }
-    .scrollable-equation {
-        white-space: nowrap;
-        overflow-x: scroll;
         display: block;
     }
     </style>
     <div class="equation-container">
-    <div class="scrollable-equation">
 
 .. math::
 
@@ -309,18 +287,11 @@ The total operation cost of the generator for period \( t \) of scenario \( s \)
 
     <style>
     .equation-container {
-        overflow-x: auto;
         width: 100%;
-        display: block;
-    }
-    .scrollable-equation {
-        white-space: nowrap;
-        overflow-x: scroll;
         display: block;
     }
     </style>
     <div class="equation-container">
-    <div class="scrollable-equation">
 
 .. math::
 
@@ -337,18 +308,11 @@ In an isolated system, typically a predetermined number of diesel generators are
 
     <style>
     .equation-container {
-        overflow-x: auto;
         width: 100%;
-        display: block;
-    }
-    .scrollable-equation {
-        white-space: nowrap;
-        overflow-x: scroll;
         display: block;
     }
     </style>
     <div class="equation-container">
-    <div class="scrollable-equation">
 
 .. math::
 
@@ -365,18 +329,11 @@ The slope of the cost curve for part load generators is defined by:
 
     <style>
     .equation-container {
-        overflow-x: auto;
         width: 100%;
-        display: block;
-    }
-    .scrollable-equation {
-        white-space: nowrap;
-        overflow-x: scroll;
         display: block;
     }
     </style>
     <div class="equation-container">
-    <div class="scrollable-equation">
 
 .. math::
 
@@ -393,18 +350,11 @@ The origin of the cost curve for part load generators is set as a percentage of 
 
     <style>
     .equation-container {
-        overflow-x: auto;
         width: 100%;
-        display: block;
-    }
-    .scrollable-equation {
-        white-space: nowrap;
-        overflow-x: scroll;
         display: block;
     }
     </style>
     <div class="equation-container">
-    <div class="scrollable-equation">
 
 .. math::
 
@@ -421,18 +371,11 @@ The minimum and maximum energy output of the generator in partial load is limite
 
     <style>
     .equation-container {
-        overflow-x: auto;
         width: 100%;
-        display: block;
-    }
-    .scrollable-equation {
-        white-space: nowrap;
-        overflow-x: scroll;
         display: block;
     }
     </style>
     <div class="equation-container">
-    <div class="scrollable-equation">
 
 .. math::
 
@@ -449,18 +392,11 @@ The energy output of the genset is the sum of full load and part load outputs:
 
     <style>
     .equation-container {
-        overflow-x: auto;
         width: 100%;
-        display: block;
-    }
-    .scrollable-equation {
-        white-space: nowrap;
-        overflow-x: scroll;
         display: block;
     }
     </style>
     <div class="equation-container">
-    <div class="scrollable-equation">
 
 .. math::
 
@@ -477,18 +413,11 @@ Finally, the total energy output is constrained by the number of gensets:
 
     <style>
     .equation-container {
-        overflow-x: auto;
         width: 100%;
-        display: block;
-    }
-    .scrollable-equation {
-        white-space: nowrap;
-        overflow-x: scroll;
         display: block;
     }
     </style>
     <div class="equation-container">
-    <div class="scrollable-equation">
 
 .. math::
 
