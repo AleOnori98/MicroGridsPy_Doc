@@ -5,16 +5,18 @@ Advanced Features
 
 Weighted Average Cost of Capital
 ------------
-
+The financial modeling approach introduced in [1] aims to go beyond traditional energy modeling by incorporating the Weighted Average Cost of Capital (WACC) in place of the standard discount rate. The WACC represents the average cost of capital based on the project's financing structure and is defined as the minimum return that would make the investment profitable.
 These financial parameters are used to calculate the Weighted Average Cost of Capital (WACC), including the costs of equity and debt, the corporate tax rate, and the proportions of equity and debt in the total investment.
+
+
 
 Multi-Objective Optimization
 ------------
 The design of a reliable and appropriate off-grid energy system is usually critical. The energy needs of people who are susceptible to the uncertainty of possible energy consumption evolution through time must be considered, taking into consideration the site-specific characteristics of each target community.
 
-In this field, energy system models can play a pivotal role in guiding informed policy decisions trying to capture the complexities related to the time-evolving boundary conditions, comparing alternative energy system configurations and energy mix combinations to find the optimal solution. One of the challenges identified in the current state-of-the-art microgrid optimal sizing tools is that the Net Present Cost alone is not a sufficient decision parameter in energy system sizing [1]
+In this field, energy system models can play a pivotal role in guiding informed policy decisions trying to capture the complexities related to the time-evolving boundary conditions, comparing alternative energy system configurations and energy mix combinations to find the optimal solution. One of the challenges identified in the current state-of-the-art microgrid optimal sizing tools is that the Net Present Cost alone is not a sufficient decision parameter in energy system sizing [2]
 
-Most optimization tools are focused on single-objective optimization that does not allow to capture the complexity of an intervention of rural electrification. A multi-objective two-stage stochastic approach is presented by Gou et al. [2]. The goals are to minimize the net present cost (NPC) and the pollutants emission using chance-constrained programming and a genetic algorithm as optimization techniques. Multi-objective optimization could be a solution to address economic, social and environmental objective evaluating different trade-off between these criteria, especially in the rural electrification sector where different stakeholders (companies, public institutions, NGOs) with different priorities are involved. This is crucial in this type of projects given the multiplicity of impacts on the community involved and the interconnection between them. The result of multi-objective optimization would be a Pareto frontier providing the decision maker with a more comprehensive view of the possible alternatives and allowing him to take more informed decisions. Exceptions to this are represented by Dufo-Lopez [3] that included a multi objective optimization on NPC, HDI and Job Creation and Petrelli [4] that optimizes on NPC, LCA emissions, Land Use and Job Creation.
+Most optimization tools are focused on single-objective optimization that does not allow to capture the complexity of an intervention of rural electrification. A multi-objective two-stage stochastic approach is presented by Gou et al. [3]. The goals are to minimize the net present cost (NPC) and the pollutants emission using chance-constrained programming and a genetic algorithm as optimization techniques. Multi-objective optimization could be a solution to address economic, social and environmental objectives by evaluating different trade-off between these criteria, especially in the rural electrification sector where different stakeholders (companies, public institutions, NGOs) with different priorities are involved. This is crucial in this type of projects given the multiplicity of impacts on the community involved and the interconnection between them. The result of multi-objective optimization would be a Pareto frontier providing the decision maker with a more comprehensive view of the possible alternatives and allowing him to take more informed decisions. Exceptions to this are represented by Dufo-Lopez [4] that included a multi objective optimization on NPC, HDI and Job Creation and Petrelli [5] that optimizes on NPC, LCA emissions, Land Use and Job Creation.
 
 
 RES Time Series Estimation
@@ -179,7 +181,7 @@ Load Demand Estimation
 
 Generator Partial Load Effect
 ----------------------
-In the present section, the focus is set on the generator models which often neglect decreased part-load efficiencies or minimum load constraints which can lead to significantly overestimated performance and therefore biased system planning. The model is therefore modified to consider more complex operating characteristics of a genset operating in partial load. A diesel genset optimally optimises efficiency in a fixed optimal power output. A reduction in power output results in a reduction in the efficiency. This effect has a non-linear behaviour, although diesel generators are often modelled with constant efficiency due to the limitations of the LP formulation. The MILP approach allows many ways to model these effects: a specific set of equations affecting the total operation costs of the energy produced by the generator has been implemented following the example of Balderrama et al. [5]. This formulation is relatively simple to implement, as it does not disrupt the structure of the entire model in terms of equations, it requires few parameters with an advantage in terms of computational effort, but it is closely linked to costs and not directly to the efficiency value leading to some limitations in case of null operation cost. For comparison, the partial load effect formulation is compared to the original LP model. This is further explained in the following figures.
+In the present section, the focus is set on the generator models which often neglect decreased part-load efficiencies or minimum load constraints which can lead to significantly overestimated performance and therefore biased system planning. The model is therefore modified to consider more complex operating characteristics of a genset operating in partial load. A diesel genset optimally optimises efficiency in a fixed optimal power output. A reduction in power output results in a reduction in the efficiency. This effect has a non-linear behaviour, although diesel generators are often modelled with constant efficiency due to the limitations of the LP formulation. The MILP approach allows many ways to model these effects: a specific set of equations affecting the total operation costs of the energy produced by the generator has been implemented following the example of Balderrama et al. [6]. This formulation is relatively simple to implement, as it does not disrupt the structure of the entire model in terms of equations, it requires few parameters with an advantage in terms of computational effort, but it is closely linked to costs and not directly to the efficiency value leading to some limitations in case of null operation cost. For comparison, the partial load effect formulation is compared to the original LP model. This is further explained in the following figures.
 
 .. raw:: html
 
@@ -459,15 +461,16 @@ Brownfield
 
 References
 ----------------------
-.. [1] B. Akbas, A.S. Kocaman, D. Nock, P.A. Trotter, Rural electrification: an overview of optimization methods, Renew. Sustain. Energy Rev., 156 (2022)
-
-.. [2] L. Guo, W. Liu, B. Jiao, B. Hong, C. Wang, "Multi-objective stochastic optimal planning method for stand-alone microgrid system", IET Generation
+.. [1] Giacomo Crevani, Castro Soares, Emanuela Colombo, “Modelling Financing Schemes for Energy System Planning: A Mini-Grid Case Study”, ECOS 2023, pp. 
+       1958-1969
+.. [2] B. Akbas, A.S. Kocaman, D. Nock, P.A. Trotter, Rural electrification: an overview of optimization methods, Renew. Sustain. Energy Rev., 156 (2022)
+.. [3] L. Guo, W. Liu, B. Jiao, B. Hong, C. Wang, "Multi-objective stochastic optimal planning method for stand-alone microgrid system", IET Generation
        Transm Distrib, 8 (7) (2014), pp. 1263-1273
-.. [3] R. Dufo-López, I.R. Cristóbal-Monreal, J.M. Yusta, Optimisation of PV-wind-diesel-battery stand-alone systems to minimise cost and maximise human 
+.. [4] R. Dufo-López, I.R. Cristóbal-Monreal, J.M. Yusta, Optimisation of PV-wind-diesel-battery stand-alone systems to minimise cost and maximise human 
        development index and job creation, Renew. Energy, 94 (2016), pp. 280-293
-.. [4] M. Petrelli, D. Fioriti, A. Berizzi, C. Bovo, D. Poli, A novel multi-objective method with online Pareto pruning for multi-year optimization of 
+.. [5] M. Petrelli, D. Fioriti, A. Berizzi, C. Bovo, D. Poli, A novel multi-objective method with online Pareto pruning for multi-year optimization of 
        rural microgrids, Appl. Energy, 299 (2021)
-.. [5] S. L. Balderrama Subieta, W. Canedo, V. Lemort, and S. Quoilin, Impact of Diesel generator limitations in the robust sizing of isolated hybrid 
+.. [6] S. L. Balderrama Subieta, W. Canedo, V. Lemort, and S. Quoilin, Impact of Diesel generator limitations in the robust sizing of isolated hybrid 
        Microgrids including PV and batteries, in 30th International Conference on Efficiency, Cost, Optimization, Simulation and Environmental Impact of 
        Energy Systems, 2017
 
