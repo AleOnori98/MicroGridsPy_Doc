@@ -6,10 +6,16 @@ Contributors
 The research activity of SESAM focuses on the use of mathematical models for the study of systems, components and processes in the energy field and 
 industrial ecology.
 
-
-* `Negar Namazifard  <https://www.linkedin.com/in/negarnamazifard/>`_ : Code development, Coda maintenance & Functional design
-* `Mohammad Amin Tahavori <https://www.linkedin.com/in/mohammadamintahavori/>`_ : Code maintenance & Functional design
+Authors:
+* Alessandro Onori - Department of Energy, Politecnico di Milano 
+* Giulia Guidicini - Department of Energy, Politecnico di Milano 
+* Lorenzo Rinaldi - Department of Energy, Politecnico di Milano
+* Nicolò Stevanato - Department of Energy, Politecnico di Milano / Fondazione Eni Enrico Mattei
+* Francesco Lombardi - Department of Energy, Politecnico di Milano
 * `Emanuela Colombo <https://www4.ceda.polimi.it/manifesti/manifesti/controller/ricerche/RicercaPerDocentiPublic.do?EVN_DIDATTICA=evento&k_doc=44891&lang=EN&aa=2014&tab_ricerca=1>`_ : Scientific coordination
+Based on the original model by:
+* Sergio Balderrama  - Department of Mechanical and Aerospace Engineering, University of Liège / San Simon University, Centro Universitario de Investigacion en Energia
+* Sylvain Quoilin    - Department of Mechanical Engineering Technology, KU Leuven
 
 
 Communication, issues, bugs and contributions
