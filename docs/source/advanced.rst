@@ -188,7 +188,7 @@ In the present section, the focus is set on the generator models which often neg
 
     <div style="display: flex; justify-content: center; align-items: center;">
         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Partial%20load%201.png?raw=true" width="500" style="margin-right: 10px;"/>
-        <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Partial%20load%201.png?raw=true" width="500" />
+        <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Partial%20Load%202.jpg?raw=true" width="500" />
     </div>
 
 
