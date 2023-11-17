@@ -17,9 +17,6 @@ In this field, energy system models can play a pivotal role in guiding informed 
 Most optimization tools are focused on single-objective optimization that does not allow to capture the complexity of an intervention of rural electrification. A multi-objective two-stage stochastic approach is presented by Gou et al. [2]. The goals are to minimize the net present cost (NPC) and the pollutants emission using chance-constrained programming and a genetic algorithm as optimization techniques. Multi-objective optimization could be a solution to address economic, social and environmental objective evaluating different trade-off between these criteria, especially in the rural electrification sector where different stakeholders (companies, public institutions, NGOs) with different priorities are involved. This is crucial in this type of projects given the multiplicity of impacts on the community involved and the interconnection between them. The result of multi-objective optimization would be a Pareto frontier providing the decision maker with a more comprehensive view of the possible alternatives and allowing him to take more informed decisions. Exceptions to this are represented by Dufo-Lopez [3] that included a multi objective optimization on NPC, HDI and Job Creation and Petrelli [4] that optimizes on NPC, LCA emissions, Land Use and Job Creation.
 
 
-Multi-Step Investment
---------------------------
-
 RES Time Series Estimation
 ----------------
 
@@ -248,7 +245,12 @@ To ensure the generator does not exceed its nominal capacity \( C \), the follow
 
 .. math::
 
-    C \cdot \Delta t_p \geq E[s, t] \quad \forall s, t \quad (1.2)
+    C \cdot \Delta t_p \geq E(s, t) \quad \forall s, t \quad (1.2)
+
+.. raw:: html
+
+    </div>
+    </div>
 
 The total operation cost of the generator for period \( t \) of scenario \( s \) is:
 
@@ -271,7 +273,12 @@ The total operation cost of the generator for period \( t \) of scenario \( s \)
 
 .. math::
 
-    Cost[s, t] = E[s, t] \cdot a_{LP} \quad \forall s, t \quad (1.3)
+    Cost(s, t) = E(s, t) \cdot a_{LP} \quad \forall s, t \quad (1.3)
+
+.. raw:: html
+
+    </div>
+    </div>
 
 In an isolated system, typically a predetermined number of diesel generators are coordinated to fulfil the fluctuating energy demands. To accurately represent this scenario, as well as account for the part load effect in each generator, the optimization approach is modified to a MILP (Mixed-Integer Linear Programming) formulation. The cost, denoted as Cost and calculated using equation (1.4), considers various factors including the number of generators operating at full load (N_full), the energy output of generators operating at part load (E_part), the slope of the cost curve for part load generators (α_MILP) as defined in equation (1.5), and the origin of the cost curve for part load generators (Cost_part). In this study, the value of Cost_part is determined as a percentage (p_gen) of the total operational cost of the generator system at full load, as elaborated in equation (1.6). Lastly, the binary variable B determines whether a generator operates in part load at a given time t.
 
@@ -296,6 +303,11 @@ In an isolated system, typically a predetermined number of diesel generators are
 
     Cost = N_{full} \cdot C \cdot a_{LP} \cdot \Delta t_p + E_{part} \cdot a_{MILP} + Cost_{part} \cdot B \quad \forall s, t \quad (1.4)
 
+.. raw:: html
+
+    </div>
+    </div>
+
 The slope of the cost curve for part load generators is defined by:
 
 .. raw:: html
@@ -318,6 +330,11 @@ The slope of the cost curve for part load generators is defined by:
 .. math::
 
     a_{MILP} = \frac{C \cdot a_{LP} \cdot \Delta t_p - Cost_{part}}{C_{gen} \cdot \Delta t_p} \quad (1.5)
+
+.. raw:: html
+
+    </div>
+    </div>
 
 The origin of the cost curve for part load generators is set as a percentage of the full load operational cost:
 
@@ -342,6 +359,11 @@ The origin of the cost curve for part load generators is set as a percentage of 
 
     Cost_{part} = C \cdot a_{LP} \cdot p_{gen} \cdot \Delta t_p \quad (1.6)
 
+.. raw:: html
+
+    </div>
+    </div>
+
 The minimum and maximum energy output of the generator in partial load is limited as shown in (1.7), where 𝑀𝑖𝑛𝑝𝑎𝑟𝑡 is the minimum percentage of energy output for the generator in part load. In addition, 𝑁 is the number of gensets and is determined with the last equation. It is important to note that during the MILP optimization 𝐶 is defined as a parameter and 𝑁 is the variable to optimize.
 
 .. raw:: html
@@ -363,7 +385,12 @@ The minimum and maximum energy output of the generator in partial load is limite
 
 .. math::
 
-    C \cdot Min_{part} \cdot B[s, t] \cdot \Delta t_p \leq E_{part}[s, t] \leq C \cdot B[s, t] \cdot \Delta t_p \quad \forall s, t \quad (1.7)
+    C \cdot Min_{part} \cdot B[s, t] \cdot \Delta t_p \leq E_{part}(s, t) \leq C \cdot B[s, t] \cdot \Delta t_p \quad \forall s, t \quad (1.7)
+
+.. raw:: html
+
+    </div>
+    </div>
 
 The energy output of the genset is the sum of full load and part load outputs:
 
@@ -387,6 +414,11 @@ The energy output of the genset is the sum of full load and part load outputs:
 .. math::
 
     E[s, t] = N_{full} \cdot C \cdot \Delta t_p + E_{part} 
+
+.. raw:: html
+
+    </div>
+    </div>
 
 Finally, the total energy output is constrained by the number of gensets:
 
@@ -428,6 +460,7 @@ Brownfield
 References
 ----------------------
 .. [1] B. Akbas, A.S. Kocaman, D. Nock, P.A. Trotter, Rural electrification: an overview of optimization methods, Renew. Sustain. Energy Rev., 156 (2022)
+
 .. [2] L. Guo, W. Liu, B. Jiao, B. Hong, C. Wang, "Multi-objective stochastic optimal planning method for stand-alone microgrid system", IET Generation
        Transm Distrib, 8 (7) (2014), pp. 1263-1273
 .. [3] R. Dufo-López, I.R. Cristóbal-Monreal, J.M. Yusta, Optimisation of PV-wind-diesel-battery stand-alone systems to minimise cost and maximise human 
