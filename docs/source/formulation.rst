@@ -158,7 +158,7 @@ The total CO2 emissions are calculated as the sum of the weighted scenario-speci
 
     \text{CO2 emissions}(s) = 
     \begin{cases}
-    \text{RES emission} + \text{GEN emission} + \text{BESS emission} + \text{FUEL emission}[s] + \text{GRID emission}[s], & \text{if Model_Components} = 0 \\
+    \text{RES emission} + \text{GEN emission} + \text{BESS emission} + \text{FUEL emission}(s) + \text{GRID emission}(s), & \text{if Model_Components} = 0 \\
     \text{RES emission} + \text{BESS emission} + \text{GRID emission}(s), & \text{if Model_Components} = 1 \\
     \text{RES emission} + \text{GEN emission} + \text{FUEL emission}(s) + \text{GRID emission}(s), & \text{if Model_Components} = 2 \\
     \end{cases}
