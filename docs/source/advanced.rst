@@ -16,6 +16,9 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
         display: block;
     }
     </style>
+
+.. raw:: html
+
     <div class="equation-container">
 
 .. math::
@@ -25,16 +28,9 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 .. raw:: html
 
     </div>
-    </div>
 
 .. raw:: html
 
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
     <div class="equation-container">
 
 .. math::
@@ -44,16 +40,9 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 .. raw:: html
 
     </div>
-    </div>
 
 .. raw:: html
 
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
     <div class="equation-container">
 
 .. math::
@@ -62,7 +51,6 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 
 .. raw:: html
 
-    </div>
     </div>
 
 
