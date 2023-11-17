@@ -367,48 +367,37 @@ The minimum and maximum energy output of the generator in partial load is limite
         display: block;
     }
     </style>
+
+.. raw:: html
+
     <div class="equation-container">
 
 .. math::
 
-    C \cdot Min_{part} \cdot B[s, t] \cdot \Delta t_p \leq E_{part}(s, t) \leq C \cdot B[s, t] \cdot \Delta t_p \quad \forall s, t \quad (1.7)
+    C \cdot \text{Min}_{\text{part}} \cdot B[s, t] \cdot \Delta t_p \leq E_{\text{part}}(s, t) \leq C \cdot B[s, t] \cdot \Delta t_p \quad \forall s, t \quad (1.7)
 
 .. raw:: html
 
     </div>
-    </div>
 
-The energy output of the genset is the sum of full load and part load outputs:
+The energy output of the genset, comprising full load and part load outputs, is expressed as:
 
 .. raw:: html
 
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
     <div class="equation-container">
 
 .. math::
 
-    E[s, t] = N_{full} \cdot C \cdot \Delta t_p + E_{part} 
+    E[s, t] = N_{\text{full}} \cdot C \cdot \Delta t_p + E_{\text{part}} 
 
 .. raw:: html
 
     </div>
-    </div>
 
-Finally, the total energy output is constrained by the number of gensets:
+The total energy output is limited by the number of gensets available:
 
 .. raw:: html
 
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
     <div class="equation-container">
 
 .. math::
@@ -418,7 +407,7 @@ Finally, the total energy output is constrained by the number of gensets:
 .. raw:: html
 
     </div>
-    </div>
+
 
 Grid Availability
 ----------------------
