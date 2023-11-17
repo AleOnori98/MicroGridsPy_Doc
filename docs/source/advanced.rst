@@ -22,12 +22,38 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 
     V = D + E \quad (2)
 
+.. raw:: html
+
+    </div>
+    </div>
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
     <div class="equation-container">
 
 .. math::
 
     L = \frac{D}{E} \quad (3)
 
+.. raw:: html
+
+    </div>
+    </div>
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
     <div class="equation-container">
 
 .. math::
