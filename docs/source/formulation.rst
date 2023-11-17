@@ -135,9 +135,6 @@ The operation of the BESS is modelled with simple and straightforward model with
     </div>
     </div>
 
-    </div>
-    </div>
-
 Other constraints are enforced in order to model a more realistic BESS operation.
 
 mention DOD and what means when used here. Maximum discharge of the battery.
@@ -161,16 +158,12 @@ mention DOD and what means when used here. Maximum discharge of the battery.
 
 .. math::
 
-   Units_{\text{BESS}}(ut) \times C_{\text{BESS}} \times (1 - DOD) \leq SOC(s,yt,t) \leq Units_{\text{BESS}}(ut) \times C_{\text{BESS}}
+    Units_{\text{BESS}}(ut) \times C_{\text{BESS}} \times (1 - DOD) \leq SOC(s,yt,t) \leq Units_{\text{BESS}}(ut) \times C_{\text{BESS}}
 
 .. raw:: html
 
     </div>
     </div>
-
-    </div>
-    </div>
-
 
 
 
