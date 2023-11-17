@@ -7,6 +7,7 @@ The research activity of SESAM focuses on the use of mathematical models for the
 industrial ecology.
 
 Authors:
+
 * Alessandro Onori - Department of Energy, Politecnico di Milano
 
 * Giulia Guidicini - Department of Energy, Politecnico di Milano
