@@ -6,6 +6,16 @@ Advanced Features
 Weighted Average Cost of Capital
 ------------
 The financial modeling approach introduced in [1] aims to go beyond traditional energy modeling by incorporating the Weighted Average Cost of Capital (WACC) in place of the standard discount rate. The WACC represents the average cost of capital based on the project's financing structure and is defined as the minimum return that would make the investment profitable.
+
+**Financing Mini-Grids in Africa**
+
+The mini-grid sector in sub-Saharan Africa, although a cost-effective solution for high-tier energy services, faces challenges such as market fragmentation and perceived investment risks, leading to high capital costs. Traditional financing relies heavily on government funding with minimal private sector involvement. The immaturity of the mini-grid market in Africa is reflected by the typical structure of financing these systems. Traditional financing of power projects, including plans for off-grid electrification, usually sees the participation of the national government, through its national energy ministry or agency, as the major funder. The main source of the investment usually comes from the governmental development budget or from aided borrowing by multilateral and bilateral development agencies. In the current situation, the participation of the private sector is therefore very limited: it is involved in the stages of construction and first running of the power plant, but the property (and the associated risk of investment) is still owned by a national public utility, in most of the cases. In general, two types of financing can be employed in the mini-grid market for structuring a new investment:
+
+* **Debt Financing**: Involves borrowing capital with the obligation of repayment at a high-interest rate, often unattractive due to high perceived risks 
+  in the mini-grid market.
+* **Equity Financing**: Involves investment from the developer's own capital or project promoters and is characterized by high returns on investment due to 
+  the high-risk nature of mini-grid projects.
+
 These financial parameters are used to calculate the Weighted Average Cost of Capital (WACC), including the costs of equity and debt, the corporate tax rate, and the proportions of equity and debt in the total investment.
 
 .. raw:: html
