@@ -252,6 +252,9 @@ The slope of the cost curve for the generator system, representing the marginal 
         display: block;
     }
     </style>
+
+.. raw:: html
+
     <div class="equation-container">
 
 .. math::
@@ -261,18 +264,11 @@ The slope of the cost curve for the generator system, representing the marginal 
 .. raw:: html
 
     </div>
-    </div>
 
-To ensure the generator does not exceed its nominal capacity \( C \), the following constraint is used:
+The constraint to prevent the generator from exceeding its nominal capacity \( C \) is given by:
 
 .. raw:: html
 
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
     <div class="equation-container">
 
 .. math::
@@ -282,18 +278,11 @@ To ensure the generator does not exceed its nominal capacity \( C \), the follow
 .. raw:: html
 
     </div>
-    </div>
 
-The total operation cost of the generator for period \( t \) of scenario \( s \) is:
+The total operation cost of the generator for a period \( t \) and scenario \( s \) is represented as:
 
 .. raw:: html
 
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
     <div class="equation-container">
 
 .. math::
@@ -303,7 +292,7 @@ The total operation cost of the generator for period \( t \) of scenario \( s \)
 .. raw:: html
 
     </div>
-    </div>
+
 
 In an isolated system, typically a predetermined number of diesel generators are coordinated to fulfil the fluctuating energy demands. To accurately represent this scenario, as well as account for the part load effect in each generator, the optimization approach is modified to a MILP (Mixed-Integer Linear Programming) formulation. The cost, denoted as Cost and calculated using equation (1.4), considers various factors including the number of generators operating at full load (N_full), the energy output of generators operating at part load (E_part), the slope of the cost curve for part load generators (α_MILP) as defined in equation (1.5), and the origin of the cost curve for part load generators (Cost_part). In this study, the value of Cost_part is determined as a percentage (p_gen) of the total operational cost of the generator system at full load, as elaborated in equation (1.6). Lastly, the binary variable B determines whether a generator operates in part load at a given time t.
 
