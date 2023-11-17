@@ -89,7 +89,7 @@ The objective function for minimizing the Net Present Cost (NPC) is defined as t
 
 .. math::
 
-    \text{NPC}[s] = \text{Investment\_Cost} + \text{Total\_Scenario\_Variable\_Cost\_Act}[s] - \text{Salvage\_Value}
+    \text{NPC}[s] = \text{Investment Cost} + \text{(Total Variable Cost)_{Act}}[s] - \text{Salvage Value}
 
 
 .. raw:: html
@@ -121,7 +121,7 @@ The Total Variable Cost (TVC) is a sum of the weighted scenario-specific variabl
 
 .. math::
 
-    \text{TVC} = \sum_{s \in \text{Scenarios}} (\text{Total\_Scenario\_Variable\_Cost\_NonAct}[s] \times \text{Scenario\_Weight}[s])
+    \text{TVC} = \sum_{s \in \text{Scenarios}} (\text{(Total Variable Cost)_{NonAct}}[s] \times \text{Scenario Weight}[s])
 
 .. raw:: html
 
@@ -152,13 +152,13 @@ The total CO2 emissions are calculated as the sum of the weighted scenario-speci
 
 .. math::
 
-    \text{CO2\_emissions} = \sum_{s \in \text{Scenarios}} (\text{Scenario\_CO2\_emission}[s] \times \text{Scenario\_Weight}[s])
+    \text{CO2 emissions} = \sum_{s \in \text{Scenarios}} (\text{CO2\_emission}[s] \times \text{Scenario Weight}[s])
 
     \text{CO2\_emissions}[s] = 
     \begin{cases}
-    \text{RES\_emission} + \text{GEN\_emission} + \text{BESS\_emission} + \text{Scenario\_FUEL\_emission}[s] + \text{Scenario\_GRID\_emission}[s], & \text{if Model\_Components} = 0 \\
-    \text{RES\_emission} + \text{BESS\_emission} + \text{Scenario\_GRID\_emission}[s], & \text{if Model\_Components} = 1 \\
-    \text{RES\_emission} + \text{GEN\_emission} + \text{Scenario\_FUEL\_emission}[s] + \text{Scenario\_GRID\_emission}[s], & \text{if Model\_Components} = 2 \\
+    \text{RES emission} + \text{GEN emission} + \text{BESS emission} + \text{FUEL emission}[s] + \text{GRID emission}[s], & \text{if Model_Components} = 0 \\
+    \text{RES emission} + \text{BESS emission} + \text{GRID emission}[s], & \text{if Model_Components} = 1 \\
+    \text{RES emission} + \text{GEN emission} + \text{FUEL emission}[s] + \text{GRID emission}[s], & \text{if Model_Components} = 2 \\
     \end{cases}
 
 .. raw:: html
