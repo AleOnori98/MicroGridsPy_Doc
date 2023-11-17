@@ -48,6 +48,100 @@ in addition to the inter-regional transmission link costs discounted to the refe
 While, in the operational mode, the objective function is just the sum of the
 fixed and variable costs with their related taxes within the modeled year.
 
+Net Present Cost (NPC)
+----------------------
+
+The objective function for minimizing the Net Present Cost (NPC) is defined as the weighted sum of the scenario-specific NPC. This function aims to minimize the total cost of the microgrid over its lifecycle, accounting for the time value of money.
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    \text{Minimize NPC} = \sum_{s \in \text{Scenarios}} (\text{Scenario\_Net\_Present\_Cost}_s \times \text{Scenario\_Weight}_s)
+
+.. raw:: html
+
+    </div>
+    </div>
+
+CO2 Emissions
+-------------
+
+The objective function for minimizing CO2 emissions calculates the total expected emissions by taking a weighted sum of emissions across all scenarios. This reflects the environmental impact of the microgrid.
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    \text{Minimize CO2 Emissions} = \sum_{s \in \text{Scenarios}} (\text{Scenario\_CO2\_emission}_s \times \text{Scenario\_Weight}_s)
+
+.. raw:: html
+
+    </div>
+    </div>
+
+Total Variable cost
+--------------------
+
+This function targets the reduction of the total variable costs of the microgrid, considering all scenarios and their respective probabilities. Variable costs are those costs that vary with the output of the microgrid.
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    \text{Minimize Total Variable Costs} = \sum_{s \in \text{Scenarios}} (\text{Total\_Scenario\_Variable\_Cost\_NonAct}_s \times \text{Scenario\_Weight}_s)
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
 Cost
 ====
 
