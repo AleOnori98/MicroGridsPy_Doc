@@ -7,14 +7,22 @@ The research activity of SESAM focuses on the use of mathematical models for the
 industrial ecology.
 
 Authors:
-* Alessandro Onori - Department of Energy, Politecnico di Milano 
-* Giulia Guidicini - Department of Energy, Politecnico di Milano 
+* Alessandro Onori - Department of Energy, Politecnico di Milano
+
+* Giulia Guidicini - Department of Energy, Politecnico di Milano
+
 * Lorenzo Rinaldi - Department of Energy, Politecnico di Milano
+
 * Nicolò Stevanato - Department of Energy, Politecnico di Milano / Fondazione Eni Enrico Mattei
+
 * Francesco Lombardi - Department of Energy, Politecnico di Milano
-* `Emanuela Colombo <https://www4.ceda.polimi.it/manifesti/manifesti/controller/ricerche/RicercaPerDocentiPublic.do?EVN_DIDATTICA=evento&k_doc=44891&lang=EN&aa=2014&tab_ricerca=1>`_ : Scientific coordination
+
+* `Emanuela Colombo <https://www4.ceda.polimi.it/manifesti/manifesti/controller/ricerche/RicercaPerDocentiPublic.do? 
+  EVN_DIDATTICA=evento&k_doc=44891&lang=EN&aa=2014&tab_ricerca=1>`_ : Scientific coordination
+
 Based on the original model by:
-* Sergio Balderrama  - Department of Mechanical and Aerospace Engineering, University of Liège / San Simon University, Centro Universitario de Investigacion en Energia
+* Sergio Balderrama  - Department of Mechanical and Aerospace Engineering, University of Liège / San Simon University, Centro Universitario de Investigacion 
+  en Energia
 * Sylvain Quoilin    - Department of Mechanical Engineering Technology, KU Leuven
 
 
