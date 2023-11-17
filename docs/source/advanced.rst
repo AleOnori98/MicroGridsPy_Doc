@@ -304,58 +304,47 @@ In an isolated system, typically a predetermined number of diesel generators are
         display: block;
     }
     </style>
+
+.. raw:: html
+
     <div class="equation-container">
 
 .. math::
 
-    Cost = N_{full} \cdot C \cdot a_{LP} \cdot \Delta t_p + E_{part} \cdot a_{MILP} + Cost_{part} \cdot B \quad \forall s, t \quad (1.4)
+    Cost = N_{\text{full}} \cdot C \cdot a_{LP} \cdot \Delta t_p + E_{\text{part}} \cdot a_{MILP} + Cost_{\text{part}} \cdot B \quad \forall s, t \quad (1.4)
 
 .. raw:: html
 
     </div>
-    </div>
 
-The slope of the cost curve for part load generators is defined by:
+The slope of the cost curve for part load generators is described as follows:
 
 .. raw:: html
 
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
     <div class="equation-container">
 
 .. math::
 
-    a_{MILP} = \frac{C \cdot a_{LP} \cdot \Delta t_p - Cost_{part}}{C_{gen} \cdot \Delta t_p} \quad (1.5)
+    a_{MILP} = \frac{C \cdot a_{LP} \cdot \Delta t_p - Cost_{\text{part}}}{C_{\text{gen}} \cdot \Delta t_p} \quad (1.5)
 
 .. raw:: html
 
     </div>
-    </div>
 
-The origin of the cost curve for part load generators is set as a percentage of the full load operational cost:
+The origin of the cost curve for part load generators, represented as a percentage of full load operational costs, is given by:
 
 .. raw:: html
 
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
     <div class="equation-container">
 
 .. math::
 
-    Cost_{part} = C \cdot a_{LP} \cdot p_{gen} \cdot \Delta t_p \quad (1.6)
+    Cost_{\text{part}} = C \cdot a_{LP} \cdot p_{\text{gen}} \cdot \Delta t_p \quad (1.6)
 
 .. raw:: html
 
     </div>
-    </div>
+
 
 The minimum and maximum energy output of the generator in partial load is limited as shown in (1.7), where 𝑀𝑖𝑛𝑝𝑎𝑟𝑡 is the minimum percentage of energy output for the generator in part load. In addition, 𝑁 is the number of gensets and is determined with the last equation. It is important to note that during the MILP optimization 𝐶 is defined as a parameter and 𝑁 is the variable to optimize.
 
