@@ -28,7 +28,8 @@ Mathematical Formulation
 
 
 Two-stage optimization mixed integer linear programming sizing model
--------------------------------------------------------------------
+======================================================================
+
 The considered system comprises an electrical load supplied by renewable sources, an inverter, a battery bank and backup generators (Fig. 1). The main optimization variables are divided into first-stage variables (rated capacities of each energy source) and second-stage variables (energy flows from the different components). The optimization is implemented in Python using Pyomo Library. 
 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Minigrid%20components.jpg?raw=true
@@ -43,15 +44,31 @@ The considered system comprises an electrical load supplied by renewable sources
 Objective function
 ===================
  
-The objective function equation of the planning mode is the sum of all the regional costs
-in addition to the inter-regional transmission link costs discounted to the reference year.
-While, in the operational mode, the objective function is just the sum of the
-fixed and variable costs with their related taxes within the modeled year.
+The choice of the objective function is guided by the **"Optimization_Goal"** parameter, which allows users to specify the primary focus of the optimization process as well as the **Multiobjective** parameter that introduces a multi-objective optimization option to the model adding CO2 emissions of generation technologies to the already existing NPC objective function.
+
+* **Net Present Cost (NPC) Minimization** ("Optimization_Goal" = 1): When the "Optimization_Goal" parameter is set to 1, the optimization model prioritizes 
+  the minimization of the Net Present Cost. The NPC is a comprehensive measure that represents the total cost of the microgrid over its entire lifespan, 
+  discounted to the present value. This includes initial capital investments, operation and maintenance costs, fuel costs, and any other expenses, minus 
+  the salvage value at the end of the microgrid's life. By minimizing the NPC, the model ensures that the microgrid is not only economically viable but 
+  also cost-effective in the long term, making it an essential consideration for investors and policymakers focusing on financial sustainability.
+
+* **Total Variable Cost (TVC) Minimization** ("Optimization_Goal" = 2): If the "Optimization_Goal" is set to 2, the model's objective shifts to minimizing 
+  the Total Variable Cost. TVC encompasses all costs that vary directly with the level of energy production or consumption. This typically includes the 
+  costs of operating and maintaining energy production facilities, the cost of fuel for generators, and any other costs that are not fixed. Minimizing TVC 
+  is particularly important for the operational budgeting and planning of a microgrid, as it directly impacts the cost-effectiveness of its day-to-day 
+  operations.
+
+* **CO2 Emissions Minimization** (Multi-objective Optimization): In scenarios where environmental sustainability is as important as economic viability, the 
+  MicroGridspy model can be set to perform multi-objective optimization. This approach includes minimizing CO2 emissions as one of the objectives, 
+  reflecting the need to reduce the environmental impact of energy production. Minimizing CO2 emissions is aligned with global efforts to combat climate 
+  change and is particularly relevant for projects that aim to meet certain environmental standards or qualifications for green funding.
+
+The flexibility in choosing the objective function allows MicroGridspy to be adapted to a wide range of scenarios and policy goals, ensuring that the microgrid design is optimized not just for cost or environmental impact, but for the specific priorities of the project at hand.
 
 Net Present Cost (NPC)
 ----------------------
 
-The objective function for minimizing the Net Present Cost (NPC) is defined as the weighted sum of the scenario-specific NPC. This function aims to minimize the total cost of the microgrid over its lifecycle, accounting for the time value of money.
+The objective function for minimizing the Net Present Cost (NPC) is defined as the weighted sum of the scenario-specific NPC. This function aims to minimize the total cost of the microgrid over its lifecycle, accounting for the time value of money. It captures the comprehensive cost of the microgrid for a given scenario, including investment, operational costs, and salvage value.
 
 .. raw:: html
 
@@ -72,17 +89,18 @@ The objective function for minimizing the Net Present Cost (NPC) is defined as t
 
 .. math::
 
-    \text{Minimize NPC} = \sum_{s \in \text{Scenarios}} (\text{Scenario\_Net\_Present\_Cost}_s \times \text{Scenario\_Weight}_s)
+    \text{NPC}_s = \text{Investment\_Cost} + \text{Total\_Scenario\_Variable\_Cost\_Act}_s - \text{Salvage\_Value}
+
 
 .. raw:: html
 
     </div>
     </div>
 
-CO2 Emissions
--------------
+Total Variable Cost
+----------------------
 
-The objective function for minimizing CO2 emissions calculates the total expected emissions by taking a weighted sum of emissions across all scenarios. This reflects the environmental impact of the microgrid.
+The Total Variable Cost (TVC) is a sum of the weighted scenario-specific variable costs. It reflects the operational expenses that fluctuate with the energy output.
 
 .. raw:: html
 
@@ -103,17 +121,17 @@ The objective function for minimizing CO2 emissions calculates the total expecte
 
 .. math::
 
-    \text{Minimize CO2 Emissions} = \sum_{s \in \text{Scenarios}} (\text{Scenario\_CO2\_emission}_s \times \text{Scenario\_Weight}_s)
+    \text{TVC} = \sum_{s \in \text{Scenarios}} (\text{Total\_Scenario\_Variable\_Cost\_NonAct}_s \times \text{Scenario\_Weight}_s)
 
 .. raw:: html
 
     </div>
     </div>
 
-Total Variable cost
+Total CO2 emissions
 --------------------
 
-This function targets the reduction of the total variable costs of the microgrid, considering all scenarios and their respective probabilities. Variable costs are those costs that vary with the output of the microgrid.
+The total CO2 emissions are calculated as the sum of the weighted scenario-specific emissions. This equation is relevant for environmental impact assessments.
 
 .. raw:: html
 
@@ -134,13 +152,18 @@ This function targets the reduction of the total variable costs of the microgrid
 
 .. math::
 
-    \text{Minimize Total Variable Costs} = \sum_{s \in \text{Scenarios}} (\text{Total\_Scenario\_Variable\_Cost\_NonAct}_s \times \text{Scenario\_Weight}_s)
+    \text{CO2\_emissions} = \sum_{s \in \text{Scenarios}} (\text{Scenario\_CO2\_emission}_s \times \text{Scenario\_Weight}_s)
+    \text{CO2\_emissions}_s = 
+    \begin{cases}
+    \text{RES\_emission} + \text{GEN\_emission} + \text{BESS\_emission} + \text{Scenario\_FUEL\_emission}_s + \text{Scenario\_GRID\_emission}_s, & \text{if Model\_Components} = 0 \\
+    \text{RES\_emission} + \text{BESS\_emission} + \text{Scenario\_GRID\_emission}_s, & \text{if Model\_Components} = 1 \\
+    \text{RES\_emission} + \text{GEN\_emission} + \text{Scenario\_FUEL\_emission}_s + \text{Scenario\_GRID\_emission}_s, & \text{if Model\_Components} = 2 \\
+    \end{cases}
 
 .. raw:: html
 
     </div>
     </div>
-
 
 Cost
 ====
