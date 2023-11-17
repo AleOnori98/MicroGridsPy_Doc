@@ -161,7 +161,7 @@ mention DOD and what means when used here. Maximum discharge of the battery.
 
 .. math::
 
-   Units_{\text{BESS}}(ut) \times C_{\text{BESS}} \times (1 - DOD) \leq SOC(s,yt,t) \geq Units_{\text{BESS}}(ut) \times C_{\text{BESS}}
+   Units_{\text{BESS}}(ut) \times C_{\text{BESS}} \times (1 - DOD) \leq SOC(s,yt,t) \leq Units_{\text{BESS}}(ut) \times C_{\text{BESS}}
 
 .. raw:: html
 
