@@ -240,7 +240,7 @@ The total energy delivered by the RES generation system is estimated based on th
     </div>
 
 
-Renewable penetration refers to the extent to which renewable energy sources contribute to the overall energy mix. The related constrainted allows to impose a minimum percentage of energy to be produced by non-dispatchable energy sources
+Renewable penetration ({I\_RES}) refers to the extent to which renewable energy sources contribute to the overall energy mix. The related constrainted allows to impose a minimum percentage of energy to be produced by non-dispatchable energy sources. 
 
 .. raw:: html
 
@@ -310,6 +310,18 @@ The maximum BESS power when charging or discharging is also constrainted into th
 .. math::
 
     E_{\text{BESS}}(s,yt,t) \leq P_{\text{BESS}}(ut) \times \Delta t
+
+.. raw:: html
+
+
+battery min capacity (add)
+
+
+.. raw:: html
+
+.. math::
+
+    Units_{\text{BESS}}(ut) \times C_{\text{BESS}} \geq min_cap
 
 .. raw:: html
 
