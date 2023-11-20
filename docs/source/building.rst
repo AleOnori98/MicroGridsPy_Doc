@@ -249,7 +249,7 @@ Defines the types and characteristics of renewable energy sources, like solar PV
      - (-)
      - Number of Renewable Energy Sources (RES) types
    * - RES_Names
-     - (e.g. PV panels, Wind turbines)
+     - (e.g. 'PV panels', 'Wind turbines')
      - Renewable Energy Sources (RES) names
    * - RES_Nominal_Capacity
      - Power (e.g. W)
@@ -273,7 +273,7 @@ Defines the types and characteristics of renewable energy sources, like solar PV
      - years
      - How many years ago the component was installed 
    * - RES_unit_CO2_emission
-     - [kgCO2/kW]
+     - (e.g. kgCO2/kW)
      - ???
 
 .. raw:: html
@@ -300,36 +300,57 @@ Details the types of generators that can be included in the microgrid, their eff
    * - Parameter name
      - Unit
      - Description
-   * - RES_Sources
+   * - Generator_Types 
      - (-)
-     - Number of Renewable Energy Sources (RES) types
-   * - RES_Names
-     - (e.g. PV panels, Wind turbines)
-     - Renewable Energy Sources (RES) names
-   * - RES_Nominal_Capacity
-     - Power (e.g. W)
-     - Single unit capacity of each type of Renewable Energy Source (RES)
-   * - RES_Inverter_Efficiency
+     - Number of different types of gensets 
+   * - Generator_Names 
+     - (e.g. 'Diesel Genset 1')
+     - Generator names
+   * - Generator_Efficiency 
      - [%]
-     - Efficiency of the inverter connected to each Renewable Energy Source (RES) (put 1 in case of AC bus)
-   * - RES_Specific_Investment_Cost
+     - Average generator efficiency of each generator type
+   * - Generator_Specific_Investment_Cost 
      - (e.g. USD/W)
-     - Specific investment cost for each type of Renewable Energy Source (RES) 
-   * - RES_Specific_OM_Cost
+     - Specific investment cost for each generator type 
+   * - Generator_Specific_OM_Cost 
      - [%]
-     - O&M cost for each type of Renewable Energy Source (RES) as a fraction of the specific investment cost 
-   * - RES_Lifetime
+     - O&M cost for each generator type as a fraction of specific investment cost [%]
+   * - Generator_Lifetime 
      - years
-     - Lifetime of each Renewable Energy Source (RES)   
-   * - RES_units
-     - (-)
-     - Existing RES units of nominal capacity (if Brownfield investment activated)
-   * - RES_years
+     - Lifetime of each generator type  
+   * - Fuel_Names 
+     - (e.g. 'Diesel')
+     - Fuel names (to be specified for each generator, even if they use the same fuel)
+   * - Fuel_Specific_Cost 
+     - (e.g. USD/lt)
+     - Specific fuel cost for each generator type 
+   * - Fuel_LHV 
+     - (e.g. Wh/lt)
+     - Fuel lower heating value (LHV) for each generator type 
+   * - Generator_capacity 
+     - Power (e.g. W)
+     - Existing Generator capacity (if Brownfield investment activated)
+   * - GEN_years 
      - years
      - How many years ago the component was installed 
-   * - RES_unit_CO2_emission
-     - [kgCO2/kW]
-     - ???
+   * - GEN_unit_CO2_emission 
+     - (e.g. kgCO2/kW)
+     - ????????
+   * - FUEL_unit_CO2_emission 
+     - (e.g. kgCO2/lt)
+     - ????????
+   * - Generator_Min_output 
+     - [%]
+     - Minimum percentage of energy output for the generator in part load 
+   * - Generator_Nominal_Capacity_milp 
+     - Power (e.g. W)
+     - Nominal capacity of each generator       
+   * - Generator_pgen 
+     - [%]
+     - Percentage of the total operation cost of the generator system at full load 
+
+
+
 
 .. raw:: html
 
@@ -366,13 +387,13 @@ Specifies the investment and operational costs, efficiencies, and other technica
      - (-)
      - O&M cost of the battery bank as a fraction of the specific investment cost
    * - Battery_Discharge_Battery_Efficiency
-     - % (0-1)
+     - [%]
      - Discharge efficiency of the battery bank
    * - Battery_Charge_Battery_Efficiency
-     - % (0-1)
+     - [%]
      - Charge efficiency of the battery bank 
    * - Battery_Depth_of_Discharge
-     - % (0-1)
+     - [%]
      - Depth of discharge of the battery bank (maximum amount of discharge)
    * - Maximum_Battery_Discharge_Time
      - hours
@@ -384,7 +405,7 @@ Specifies the investment and operational costs, efficiencies, and other technica
      - (-)
      - Maximum number of cycles before degradation of the battery
    * - Battery_Initial_SOC
-     - % (0-1)
+     - [%]
      - Battery initial state of charge
    * - Battery_capacity
      - Energy (e.g. Wh)
