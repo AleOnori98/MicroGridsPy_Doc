@@ -44,11 +44,11 @@ The general terminology defined here is used throughout the documentation and th
   an hourly basis. Having a high temporal resolution (many periods) allows for a more detailed and accurate simulation of the mini-grid's performance, 
   which is critical for designing an efficient and reliable system. However, more periods also mean more data to process and potentially longer computation 
   times, so there's a trade-off between model detail and computational efficiency.
-* **Investment Steps**: based on the setp duration of each investment decision (Duration of each investment decision step in which the project lifetime will be split). Overall numberb of investment steps during the project lifetime. 
-* **Scenarios**: Number of scenarios to consider within the optimisation
+* **Investment Steps**: Total number of investment steps during project duration. Based on the setp duration of each investment decision in which the project lifetime will be split. 
+* **Scenarios**: Number of scenarios to consider within the optimisation due to the uncertainty associated with the energy generation from renewable sources and the fluctuating energy demand in rural villages. To address this issue, various scenarios are explored aimed at minimizing the overall energy cost for consumers. This involves the creation of diverse and realistic scenarios for both solar power output and energy consumption.
 * **Years**: Total duration of the project in years. 
-* **RES_Sources**: Number of Renewable Energy Sources (RES) types
-* **Generator_Types**: Number of different types of gensets 
+* **RES_Sources**: Number of Renewable Energy Sources (RES) types to consider in the simulation.
+* **Generator_Types**: Number of different types of gensets that can be installed in the mini-grid.
 
 
 .. list-table:: 
