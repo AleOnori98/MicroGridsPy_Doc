@@ -256,7 +256,7 @@ The maximum BESS power when charging or discharging is also constrainted into th
 
 .. math::
 
-    E_{\text{BESS}}(s,yt,t) \leq = P_{\text{BESS}}(ut) \times \delta t
+    E_{\text{BESS}}(s,yt,t) \leq P_{\text{BESS}}(ut) \times \Delta t
 
 .. raw:: html
 
