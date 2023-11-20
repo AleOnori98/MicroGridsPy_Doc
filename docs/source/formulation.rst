@@ -246,8 +246,9 @@ The operation of the BESS is modelled with simple and straightforward model with
 
 
 
-Other constraints are enforced in order to model a more realistic BESS operation. The SOC must operate between the defined range of the battery parameters. As the maximum is achieved at full battery capacity while the lower threshold is reached when discharging the percentage of the battery defined in the beginning as DOD. 
+Other constraints are enforced in order to model a more realistic BESS operation. The SOC must be in the operational range of the battery, having a maximum when the battery is fully charged and a minimum when the battery discharges its share of usable capacity (DOD). Therefore, the SOC can vary between 100% and (1-DOD)%.
 
+share of the battery capacity that can be used
 .. raw:: html
 
     <style>
