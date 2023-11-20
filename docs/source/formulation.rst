@@ -213,6 +213,7 @@ RES
 
 Storage system - BESS 
 --------------------
+
 The operation of the BESS is modelled with simple and straightforward model with low complexity. This model relies on both analytical and empirical approaches to estimate the State of Charge (SOC) of the battery based on how energy flows in and out. Importantly, this battery model doesn't account for the battery's degradation over time.
 
 .. raw:: html
@@ -245,10 +246,9 @@ The operation of the BESS is modelled with simple and straightforward model with
     </div>
 
 
-
 Other constraints are enforced in order to model a more realistic BESS operation. The SOC must be in the operational range of the battery, having a maximum when the battery is fully charged and a minimum when the battery discharges its share of usable capacity (DOD). Therefore, the SOC can vary between 100% and (1-DOD)%.
 
-share of the battery capacity that can be used
+
 .. raw:: html
 
     <style>
@@ -276,7 +276,8 @@ share of the battery capacity that can be used
     </div>
 
 
-The maximum possible power when charging or discharging is also constrainted into the model assuming a maximum time for charging or discharging the BESS constinuously. While the maximum energy for the battery inflow or outflow are directly related to the maximum power value for the {\delta t} of the model (time step of 1-hour).
+The maximum BESS power when charging or discharging is also constrainted into the model assuming a maximum time for charging or discharging the BESS constinuously. While the maximum energy for the battery inflow or outflow are directly related to the maximum power value for the model's time step.
+
 
 .. raw:: html
 
@@ -307,8 +308,6 @@ The maximum possible power when charging or discharging is also constrainted int
 
     </div>
     </div>
-
-
 
 
 
