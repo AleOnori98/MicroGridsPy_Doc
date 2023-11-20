@@ -232,7 +232,7 @@ The total energy delivered by the RES generation system is estimated based on th
 
 .. math::
 
-    E_{\text{RES}}(s,yt,r,t) = E_{\text{unit\_{RES}}}(s,r,t) \times \eta_{\text{inverter}}(r) \times Units_{\text{RES}}(ut,r)
+    E_{\text{RES}}(s,yt,r,t) = E_{\text{unit_RES}}(s,r,t) \times \eta_{\text{inverter}}(r) \times Units_{\text{RES}}(ut,r)
 
 .. raw:: html
 
@@ -261,8 +261,8 @@ Renewable penetration refers to the extent to which renewable energy sources con
 
 .. math::
 
-    E_{\text{RES}}(s,yt,r,t) = E_{\text{unit\_{RES}}}(s,r,t) \times \eta_{\text{inverter}}(r) \times Units_{\text{RES}}(ut,r)
-
+   \sum{s}(\sum{r}\sum{yt}\sum{t}  E_{\text{RES}}(s,yt,r,t) \times Scenario_Weight(s)) \times (1-I{\text{RES}}) \geq 
+   \sum{s}(\sum{g}\sum{yt}\sum{t}  E_{\text{generator}}(s,yt,g,t) \times Scenario_Weight(s)) \times I{\text{RES}}
 .. raw:: html
 
     </div>
