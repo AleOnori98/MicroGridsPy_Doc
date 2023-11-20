@@ -207,9 +207,6 @@ The energy balance of the system is ensured by the following equation. This cons
     </div>
     </div>
 
-    </div>
-    </div>
-
 
 RES
 --------------------
@@ -246,8 +243,6 @@ The operational SOC range is constrainted in the model for a better and more rea
     Units_{\text{BESS}}(ut) \times C_{\text{BESS}} \times (1 - DOD) \leq SOC(s,yt,t) \leq Units_{\text{BESS}}(ut) \times C_{\text{BESS}}
 
 .. raw:: html
-
-
 
 
 The maximum BESS power when charging or discharging is also constrainted into the model assuming a maximum time for charging or discharging the BESS constinuously. While the maximum energy exchange is directly related to the maximum power value.
