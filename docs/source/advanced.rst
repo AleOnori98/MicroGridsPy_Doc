@@ -408,8 +408,24 @@ The total energy output is limited by the number of gensets available:
     </div>
 
 
-Grid Availability
+National Grid
 ----------------------
+
+
+- **Grid constraints**
+
+constraint on the maximum energy exchange from and to the grid.
+
+.. raw:: html
+
+.. math::
+
+    E_{\text{grid}}(s,yt,t) \leq P_{\text{max grid}} * 1000
+
+
+.. raw:: html
+
+- **Grid Availability**
 
 Capacity Expansion
 ----------------------
