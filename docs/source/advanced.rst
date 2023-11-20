@@ -411,8 +411,8 @@ The total energy output is limited by the number of gensets available:
 Grid Availability
 ----------------------
 
-
-
+Capacity Expansion
+----------------------
 
 Brownfield
 ----------------------
