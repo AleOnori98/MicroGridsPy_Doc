@@ -221,26 +221,11 @@ RES
 
 
 Storage system - BESS 
---------------------
+-----------------------
 
 The operation of the BESS is modelled with simple and straightforward model with low complexity. This model relies on both analytical and empirical approaches to estimate the State of Charge (SOC) of the battery based on how energy flows in and out. Importantly, this battery model doesn't account for the battery's degradation over time.
 
 .. raw:: html
-
-    <style>
-    .equation-container {
-        overflow-x: auto;
-        width: 100%;
-        display: block;
-    }
-    .scrollable-equation {
-        white-space: nowrap;
-        overflow-x: scroll;
-        display: block;
-    }
-    </style>
-    <div class="equation-container">
-    <div class="scrollable-equation">
 
 .. math::
 
@@ -251,29 +236,10 @@ The operation of the BESS is modelled with simple and straightforward model with
 
 .. raw:: html
 
-    </div>
-    </div>
-
-
 The operational SOC range is constrainted in the model for a better and more realistic BESS operation. The SOC can vary between a maximum value when the battery is fully charged and a minimum value when the battery discharges its share of usable capacity (DOD). Therefore, the SOC can vary between 100% and (1-DOD)%.
 
 
 .. raw:: html
-
-    <style>
-    .equation-container {
-        overflow-x: auto;
-        width: 100%;
-        display: block;
-    }
-    .scrollable-equation {
-        white-space: nowrap;
-        overflow-x: scroll;
-        display: block;
-    }
-    </style>
-    <div class="equation-container">
-    <div class="scrollable-equation">
 
 .. math::
 
@@ -281,29 +247,13 @@ The operational SOC range is constrainted in the model for a better and more rea
 
 .. raw:: html
 
-    </div>
-    </div>
+
 
 
 The maximum BESS power when charging or discharging is also constrainted into the model assuming a maximum time for charging or discharging the BESS constinuously. While the maximum energy exchange is directly related to the maximum power value.
 
 
 .. raw:: html
-
-    <style>
-    .equation-container {
-        overflow-x: auto;
-        width: 100%;
-        display: block;
-    }
-    .scrollable-equation {
-        white-space: nowrap;
-        overflow-x: scroll;
-        display: block;
-    }
-    </style>
-    <div class="equation-container">
-    <div class="scrollable-equation">
 
 .. math::
 
@@ -315,8 +265,6 @@ The maximum BESS power when charging or discharging is also constrainted into th
 
 .. raw:: html
 
-    </div>
-    </div>
 
 
 
