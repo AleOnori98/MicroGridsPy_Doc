@@ -220,7 +220,7 @@ RES
 
 
 
-Storage system - BESS 
+Battery Bank
 -----------------------
 
 The operation of the BESS is modelled with simple and straightforward model with low complexity. This model relies on both analytical and empirical approaches to estimate the State of Charge (SOC) of the battery based on how energy flows in and out. Importantly, this battery model doesn't account for the battery's degradation over time.
