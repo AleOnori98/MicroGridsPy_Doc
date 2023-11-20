@@ -45,7 +45,32 @@ The general terminology defined here is used throughout the documentation and th
   which is critical for designing an efficient and reliable system. However, more periods also mean more data to process and potentially longer computation 
   times, so there's a trade-off between model detail and computational efficiency.
 * **Investment Step**:......
-* **Scenario**: 
+* **Scenarios**: 
+* **Years**: 
+* **RES_Sources**: 
+* **Generator_Types**: 
+
+
+.. list-table:: 
+   :widths: 25 25
+   :header-rows: 1
+
+   * - Parameter name
+     - Symbol
+   * - Periods
+     - t  
+   * - Steps
+     - ut
+   * - Scenarios
+     - s
+   * - Years
+     - yt
+   * - RES_Sources
+     - r
+   * - Generator_Types
+     - g
+
+
 
 As more generally in constrained optimisation, the following terms are also used:
 
