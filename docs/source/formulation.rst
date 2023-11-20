@@ -332,6 +332,19 @@ Diesel generator
 --------------------
 Lost Load
 --------------------
+
+The fraction of lost load should be equal or less than the input value parameter in the model.
+
+.. raw:: html
+
+.. math::
+
+    \text{Lost_Load_Fraction} \geq \frac{\sum{t} Lost Load (s,yt,t)}{\sum{t} E_{\text{demand}}(s,yt,t)}
+
+.. raw:: html
+
+
+
 National Grid
 --------------------
 
