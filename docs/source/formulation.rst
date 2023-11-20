@@ -211,7 +211,31 @@ The energy balance of the system is ensured by the following equation. This cons
 RES
 --------------------
 
+.. raw:: html
 
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    E_{\text{RES}}(s,yt,r,t) = E_{\text{unit\_{RES}}}(s,r,t) \times \eta_{\text{inverter}}(r) \times Units_{\text{RES}}(ut,r)
+
+.. raw:: html
+
+    </div>
+    </div>
 
 
 
