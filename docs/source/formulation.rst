@@ -211,6 +211,8 @@ The energy balance of the system is ensured by the following equation. This cons
 RES
 --------------------
 
+The total energy delivered by the RES generation system is estimated based on the inverter efficiency, the unitary energy production and the total installed units for each RES technology.
+
 .. raw:: html
 
     <style>
@@ -238,6 +240,33 @@ RES
     </div>
 
 
+Renewable penetration refers to the extent to which renewable energy sources contribute to the overall energy mix. The related constrainted allows to impose a minimum percentage of energy to be produced by non-dispatchable energy sources
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    E_{\text{RES}}(s,yt,r,t) = E_{\text{unit\_{RES}}}(s,r,t) \times \eta_{\text{inverter}}(r) \times Units_{\text{RES}}(ut,r)
+
+.. raw:: html
+
+    </div>
+    </div>
 
 
 
