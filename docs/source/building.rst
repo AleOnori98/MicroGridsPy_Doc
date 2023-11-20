@@ -430,11 +430,96 @@ Specifies the investment and operational costs, efficiencies, and other technica
 
 Parameters here govern the potential connection to the national grid, including costs, distances, pricing for energy sold to or purchased from the grid, and reliability metrics.
 
+.. raw:: html
+
+    <div style="overflow-y: auto; height: 350px;">
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter name
+     - Unit
+     - Description
+   * - Year_Grid_Connection 
+     - (-)
+     - Year at which the mini-grid is connected to the national grid (starting from 1)     
+   * - Grid_Sold_El_Price 
+     - (e.g. USD/kWh)
+     - Price at which electricity is sold to the grid
+   * - Grid_Purchased_El_Price 
+     - (e.g. USD/kWh)
+     - Price at which electricity is purchased from the grid 
+   * - Grid_Distance 
+     - (e.g. km)
+     - Distance from grid connection point 
+   * - Grid_Connection_Cost 
+     - (e.g. USD/km)
+     - Investment cost of grid connection, i.e. extension of power line + transformer costs 
+   * - Grid_Maintenance_Cost 
+     - (-)
+     - O&M cost for maintenance of the power line and transformer as a fraction of investment cost
+   * - Maximum_Grid_Power 
+     - (e.g. kW)
+     - Maximum active power that can be injected/withdrawn to/from the grid 
+   * - Grid_Average_Number_Outages 
+     - (-)
+     - Average number of outages in the national grid in a year (0 to simulate ideal power grid)
+   * - Grid_Average_Outage_Duration 
+     - minutes
+     - Average duration of an outage (0 to simulate ideal power grid)
+   * - National_Grid_Specific_CO2_emissions 
+     - (e.g. kgCO2/kWh)
+     - Specific CO2 emissions by the considered national grid
+
+.. raw:: html
+
+    </div>
+
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
+|nbsp|
+
+**Lost Load**
+
+Specific parameters for Lost Load regarding maximum value and related costs.
+
+.. raw:: html
+
+    <div style="overflow-y: auto; height: 350px;">
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter name
+     - Unit
+     - Description
+   * - Lost_Load_Fraction 
+     - (-)
+     - Maximum admittable loss of load          
+   * - Lost_Load_Specific_Cost 
+     - (e.g. USD/Wh)
+     - Value of the unmet load
+
+.. raw:: html
+
+    </div>
+
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
+|nbsp|
+
+
+
 
 Plot settings
 --------------
 
 These parameters are used for the aesthetic aspects of model outputs, assigning colors to different energy sources, storage options, and other model components for visual representation in plots and charts.
+
 
 .. note::
   Please refer to the example gallery for a better understanding of the structure of both the set and parameter files.
