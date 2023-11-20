@@ -173,6 +173,9 @@ Energy
 Energy Balance
 --------------------
 
+The energy balance of the system is ensured by the following equation. This considers that the energy demand must be meet by energy provided by the RES, generators and BESS while accouting for Lost Load and curtailment, which is the excess energy that can't be stored or consumed.
+
+
 .. raw:: html
 
     <style>
@@ -211,6 +214,12 @@ Energy Balance
 RES
 --------------------
 
+
+
+
+
+
+
 Storage system - BESS 
 --------------------
 
@@ -246,7 +255,7 @@ The operation of the BESS is modelled with simple and straightforward model with
     </div>
 
 
-Other constraints are enforced in order to model a more realistic BESS operation. The SOC must be in the operational range of the battery, having a maximum when the battery is fully charged and a minimum when the battery discharges its share of usable capacity (DOD). Therefore, the SOC can vary between 100% and (1-DOD)%.
+The operational SOC range is constrainted in the model for a better and more realistic BESS operation. The SOC can vary between a maximum value when the battery is fully charged and a minimum value when the battery discharges its share of usable capacity (DOD). Therefore, the SOC can vary between 100% and (1-DOD)%.
 
 
 .. raw:: html
@@ -276,7 +285,7 @@ Other constraints are enforced in order to model a more realistic BESS operation
     </div>
 
 
-The maximum BESS power when charging or discharging is also constrainted into the model assuming a maximum time for charging or discharging the BESS constinuously. While the maximum energy for the battery inflow or outflow are directly related to the maximum power value for the model's time step.
+The maximum BESS power when charging or discharging is also constrainted into the model assuming a maximum time for charging or discharging the BESS constinuously. While the maximum energy exchange is directly related to the maximum power value.
 
 
 .. raw:: html
