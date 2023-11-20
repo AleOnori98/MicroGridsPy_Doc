@@ -146,19 +146,28 @@ The total CO2 emissions are calculated as the sum of the weighted scenario-speci
     </div>
     </div>
 
+- **Emissions**
+
+
+
+
 Cost
 ====
 
-- investment
-- fixed o&m cost
-- variable cost (battery replacement ...)
-- salvage value
+Investment
+--------------------
+Fixed Costs
+--------------------
+Variable Costs 
+--------------------
+Salvage value
+--------------------
 
 Energy
 ======
 
-- Energy Balance
-
+Energy Balance
+--------------------
 
 .. raw:: html
 
@@ -195,13 +204,11 @@ Energy
     </div>
 
 
+RES
+--------------------
 
-
-
-
-- RES
-
-- Storage system (BESS - Battery Energy Storage System)
+Storage system - BESS 
+--------------------
 The operation of the BESS is modelled with simple and straightforward model with low complexity. This model relies on both analytical and empirical approaches to estimate the State of Charge (SOC) of the battery based on how energy flows in and out. Importantly, this battery model doesn't account for the battery's degradation over time.
 
 .. raw:: html
@@ -233,9 +240,11 @@ The operation of the BESS is modelled with simple and straightforward model with
     </div>
     </div>
 
+
+
 Other constraints are enforced in order to model a more realistic BESS operation.
 
-mention DOD and what means when used here. Maximum discharge of the battery.
+(mention DOD and what means when used here. Maximum discharge of the battery.)
 
 .. raw:: html
 
@@ -264,15 +273,22 @@ mention DOD and what means when used here. Maximum discharge of the battery.
     </div>
 
 
+
+
+
+
+
+
+
+
 When it comes to replacing the Battery Energy Storage System (BESS), the calculation is based on data provided by the battery manufacturer regarding the number of charge-discharge cycles the battery can handle before reaching the end of its useful life. This cycle life data, in combination with the investment cost, is used to determine when the battery should be replaced. The battery's capacity is assumed to remain constant, as the model doesn't consider capacity degradation. Therefore, the replacement is solely based on the number of completed cycles. With each cycle, a portion of the initial investment cost is added to the overall project cost, ensuring that the cost of replacing the battery is covered by the time it reaches its End of Life (EOL).
 
 
-- Diesel generator
-- lost load
-- grid
-
-
-others
-- emissions
+Diesel generator
+--------------------
+Lost Load
+--------------------
+National Grid
+--------------------
 
 
