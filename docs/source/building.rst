@@ -578,7 +578,7 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
 
 
 
-Renewable Energy Production (Generation)
+RES Production
 -------
 
 **Introduction**
