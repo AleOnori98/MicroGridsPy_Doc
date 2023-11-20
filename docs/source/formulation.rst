@@ -345,7 +345,3 @@ The fraction of lost load should be equal or less than the input value parameter
 
 
 
-National Grid
---------------------
-
-
