@@ -242,9 +242,7 @@ The operation of the BESS is modelled with simple and straightforward model with
 
 
 
-Other constraints are enforced in order to model a more realistic BESS operation.
-
-(mention DOD and what means when used here. Maximum discharge of the battery.)
+Other constraints are enforced in order to model a more realistic BESS operation. The SOC must operate between the defined range of the battery parameters. As the maximum is achieved at full battery capacity while the lower threshold is reached when discharging the percentage of the battery defined in the beginning as DOD. 
 
 .. raw:: html
 
@@ -273,9 +271,37 @@ Other constraints are enforced in order to model a more realistic BESS operation
     </div>
 
 
+The maximum possible power when charging or discharging is also constrainted into the model assuming a maximum time for charging or discharging the BESS constinuously. While the maximum energy for the battery inflow or outflow are directly related to the maximum power value for the {\delta t} of the model (time step of 1-hour).
 
+.. raw:: html
 
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
 
+.. math::
+
+    P_{\text{BESS}}(ut) = \frac{Units_{\text{BESS}}(ut) \times C_{\text{BESS}}}{time_{\text{max}}}
+
+.. math::
+
+    E_{\text{BESS}}(s,yt,t) \leq = P_{\text{BESS}}(ut) \times \delta t
+
+.. raw:: html
+
+    </div>
+    </div>
 
 
 
