@@ -146,9 +146,6 @@ The total CO2 emissions are calculated as the sum of the weighted scenario-speci
     </div>
     </div>
 
-- **Emissions**
-
-
 
 
 Cost
@@ -158,20 +155,36 @@ The cost constraints are associated with the financial aspects of planning, impl
 
 Investment
 --------------------
+
+
 Fixed Costs
 --------------------
+
+
 Variable Costs 
 --------------------
+
 - **Battery replacement**
-When it comes to replacing the Battery Energy Storage System (BESS), the calculation is based on data provided by the battery manufacturer regarding the number of charge-discharge cycles the battery can handle before reaching the end of its useful life. This cycle life data, in combination with the investment cost, is used to determine when the battery should be replaced. The battery's capacity is assumed to remain constant, as the model doesn't consider capacity degradation. Therefore, the replacement is solely based on the number of completed cycles. With each cycle, a portion of the initial investment cost is added to the overall project cost, ensuring that the cost of replacing the battery is covered by the time it reaches its End of Life (EOL).
+When it comes to replacing the Battery Energy Storage System (BESS), the calculation is based on data provided by the battery manufacturer regarding the number of charge-discharge cycles the battery can handle before reaching the end of its useful life. This cycle life data, in combination with the investment cost, is used to determine when the battery should be replaced. The battery's capacity is assumed to remain constant, as the model doesn't consider capacity degradation. Therefore, the replacement is solely based on the number of completed cycles. With each cycle, a portion of the initial investment cost is added to the overall project cost, ensuring that the cost of replacing the battery is covered by the time it reaches its End of Life (EOL). The investment cost mentioned above doens't account for the cost of the electronics.
 
+.. raw:: html
 
+.. math::
 
+    \text{Replacement}_{\text{BESS}}(s) = \sum_{yt} \sum_{t} [(E_{\text{BESS charge}}(s,yt,t) \times \text{U}_{\text{Replacement}}) +
+    (E_{\text{BESS discharge}}(s,yt,t) \times \text{U}_{\text{Replacement}})]
 
+.. math::
+
+     \text{U}_{\text{Replacement}} = \frac{\text{Specific Investment Cost}_{\text{BESS}} - \text{Specific Investment Cost}_{\text{BESS electronics}}}
+        {2*Cycles*DOD} 
+
+.. raw:: html
 
 
 Salvage value
 --------------------
+
 
 Energy
 ======
@@ -469,10 +482,8 @@ Emissions associated to consumption of electricity from the national grid at eac
 
 .. math::
 
-   \text{GRID emission}(s,yt,t) = \text{E}_{\text{from GRID}(s,yt,t) \times \text{CO2 emission}_{\text{GRID}}
+   \text{GRID emission}(s,yt,t) = \text{E}_{\text{from GRID}}(s,yt,t) \times \text{CO2 emission}_{\text{GRID}}
 
 
 .. raw:: html
-
-
 
