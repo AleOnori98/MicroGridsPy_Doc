@@ -430,13 +430,13 @@ constraint on the maximum energy exchange from and to the grid.
 Model formulation for Load Evolution
 ----------------------
 
-The approach introduced in [7] focused on addressing the issue of load evolution in the long term. This model is designed to make informed decisions about expanding capacity throughout the specified time horizon. To simulate realistic load profiles, the model is integrated with a tool for generating stochastic load profiles. This formulation demonstrates advantages in making robust investment decisions under different load evolution scenarios.
+The approach introduced in [7] focuses on addressing the issue of load evolution in the long term. This model is designed to make informed decisions about expanding capacity throughout the specified time horizon. To simulate realistic load profiles, the model is integrated with a tool for generating stochastic load profiles. This formulation demonstrates advantages in making robust investment decisions under different load evolution scenarios.
 
 - **Multi-Year formulation**
 
 The system has the capability to take into account changes in energy demand over time, especially in rural areas. Each year in the planning period corresponds to a unique load curve, allowing for the analysis of various patterns. This includes factors like population growth, more connections to the network, which affect overall demand but not necessarily daily load profiles. Additionally, variations in consumption habits and the use of new appliances can cause shifts in the daily load curve. In essence, the model is flexible enough to adapt to different dynamics, considering both global demand changes and shifts in daily energy usage patterns.
 
-The introduction of this approach allows to drop the old consideration that the demand in every year of project lifetime was the same and equal to a typical year of consumption for the study area. For this new concept, all the model constraints are estimated at each time step (t) of every year (yt) along the mini-grid lifetime. Thus, all equations involving time-dependent variables must be thus verified at all time steps (yt,t) of the optimisation horizon.
+* **In the model**: This introduction drops the old consideration about the yearly demand for project lifetime which was the same and equal to a typical year of consumption for the study area. For this new concept, all the model constraints are estimated at each time step (t) of every year (yt) along the mini-grid lifetime. Thus, all equations involving time-dependent variables must be thus verified at all time steps (yt,t) of the optimization horizon.
 
 - **Capacity Expansion**
 
@@ -444,10 +444,18 @@ In the context of a capacity expansion formulation, the model considers the opti
 
 The multi-year formulation is a crucial prerequisite for implementing a capacity expansion concept. This approach enables the postponement of installing certain components' capacity, such as PV modules or battery banks, to later years based on the evolution of electricity demand. This flexibility helps avoid incurring large initial capital costs. Consequently, O&M costs become proportional to the actual capacity installed and utilized each year.
 
-In the capacity expansion formulation, the variables associated with component capacity are determined by decision steps (ut) within the time horizon. The user defines the number of decision steps, essentially dividing the time horizon. This user-defined parameter governs how finely the model considers the progression of time, allowing for a strategic and step-by-step approach to capacity expansion based on the evolving electricity demand.
+* **In the model**: In the capacity expansion formulation, the variables associated with component capacity are determined by decision steps (ut) within the time horizon. The user defines the number of decision steps, essentially dividing the time horizon. This user-defined parameter governs how finely the model considers the progression of time, allowing for a strategic and step-by-step approach to capacity expansion based on the evolving electricity demand.
 
 Brownfield
 ----------------------
+
+[8]
+The model now includes a new feature for brownfield investment, enabling optimization of the microgrid by considering technologies that were previously installed by others in the field. In simpler terms, this means the model can now factor in existing infrastructure or equipment from previous installations when determining the most efficient and effective way to optimize the microgrid.
+The new feature requires modification of some existing constraints and to add others. 
+
+In the context of mini-grids, the concept of "brownfield" refers to the development or expansion of a mini-grid system within an existing and often underutilized or outdated energy infrastructure. Brownfield development contrasts with "greenfield," which involves building entirely new projects on undeveloped or unused land.
+
+
 
 References
 ----------------------
@@ -466,6 +474,6 @@ References
 .. [7] Nicolò Stevanato, Francesco Lombardi, Giulia Guidicini, Lorenzo Rinaldi, Sergio L. Balderrama, Matija Pavičević, Sylvain Quoilin, Emanuela Colombo, 
   "Long- term sizing of rural microgrids: Accounting for load evolution through multi-step investment plan and stochastic optimization", Energy for 
   Sustainable Development 2020, 58, pp. 16-29
-
+.. [8] 
 
 
