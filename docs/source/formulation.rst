@@ -314,7 +314,13 @@ battery min capacity (add)
 Diesel generator
 --------------------
 
+.. raw:: html
 
+.. math::
+
+    E_{\text{generator}}(s,yt,g,t) \leq C_{\text{generator}}(g) \times Units_{\text{generator}}(ut,g) \times \Delta t
+
+.. raw:: html
 
 
 
