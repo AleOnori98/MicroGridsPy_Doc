@@ -170,6 +170,10 @@ Salvage value
 Energy
 ======
 
+The term "energy constraints" in the context of a mini-grid system refers to 
+Limitations or challenges associated with the availability, generation, storage, and distribution of energy within the mini-grid power system can impact the reliability, efficiency, and overall performance of the system. Thus, energy constraints are introduced to represent a more realistic system operation accounting for these factors in the energy model. 
+
+
 Energy Balance
 --------------------
 
