@@ -345,10 +345,12 @@ The fraction of lost load should be equal or less than the input value parameter
 Emissions
 ===================
 
-CO2 emissions related to each component.
+Calculation of CO2 emissions related to each component of the system.
 
 RES
 --------------------
+
+Related to the installed capacity for RES generation system.
 
 .. raw:: html
 
@@ -445,6 +447,9 @@ Diesel Generator
 
 - **Fuel**
 
+Emissions associated to consumption of fuel for the back-up generator at each model time step.
+
+
 .. raw:: html
 
 .. math::
@@ -457,6 +462,8 @@ Diesel Generator
 
 National Grid
 --------------------
+
+Emissions associated to consumption of electricity from the national grid at each model time step.
 
 .. raw:: html
 
