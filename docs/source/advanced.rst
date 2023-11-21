@@ -430,6 +430,25 @@ constraint on the maximum energy exchange from and to the grid.
 Capacity Expansion
 ----------------------
 
+
+- **Multi-Year formulation
+
+
+
+
+
+
+
+In the context of a capacity expansion formulation, the model considers the option of adding more capacity to a system in a step-by-step manner over a defined time horizon. This approach is driven by the idea of strategically expanding the installed capacity of various components, such as power generation units or infrastructure, to manage costs effectively, especially during the initial years when lower energy demand is anticipated.
+The model doesn't decide to install all the required capacity at once. Instead, it breaks down the decision-making process into steps over a specific time period. Each step represents a point in time where the model can decide to add more capacity to the system.
+The decision to increase capacity is strategic and is based on forecasts of energy demand. Instead of committing to a fixed capacity from the beginning, the model assesses the anticipated energy demand over time and decides when and how much additional capacity is needed.
+
+The strategy aims to limit costs, especially in the initial years of the project when the expected energy demand is lower. By not installing all the required capacity upfront, the model seeks to avoid unnecessary costs that may arise from overbuilding the system for demand that hasn't materialized yet.
+
+The amount of capacity installed becomes a function of the decision steps in the time horizon. The model calculates how much capacity to add at each step based on the evolving energy demand projections and the cost considerations.
+The model optimizes the installation of capacity over time, distributing the capacity additions strategically across the steps. This optimization process seeks to find the most cost-effective way to meet the evolving energy demand while ensuring that the system's capacity aligns with the forecasted needs.
+
+
 Brownfield
 ----------------------
 
