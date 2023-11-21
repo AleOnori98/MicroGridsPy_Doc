@@ -454,7 +454,25 @@ Brownfield
 
 The feature for brownfield investment introduced in [8], enables the optimization of mini-grids by considering technologies that were previously installed by others in the field. The model can now factor in existing components from previous installations when determining the most efficient and effective way to optimize the microgrid.
 
-* **In the model**: 
+* **In the model**: Regarding the constrainst related to **energy production** of each component at the first investment decision step (ut = 1) the energy yield has to be equal or higher than the energy produced by the capacity already installed on the field. 
+
+.. raw:: html
+
+.. math::
+
+    C_{\text{x}}(ut = 1) \geq C_{\text{x}}(inst)
+
+.. raw:: html
+
+Some of the related system **cost** such as the investment for RES, battery bank and back-up generators and salvage value for RES and back-up generators, also suffer a slight modification so the already existing units aren't accounted in these calculation. Thus, at the cost of each technology at the first investment decision step is equal to the investment cost due to the total capacity installed in the first step minus the investment cost of the capacity already connected to the microgrid. In the equation shown previously the units section is changed into:
+
+.. raw:: html
+
+.. math::
+
+    Units_{\text{x}}(ut = 1) - Units_{\text{x}}(inst)
+
+.. raw:: html
 
 
 
