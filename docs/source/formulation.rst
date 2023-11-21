@@ -154,6 +154,8 @@ The total CO2 emissions are calculated as the sum of the weighted scenario-speci
 Cost
 ====
 
+The cost constraints are associated with the financial aspects of planning, implementing, and operating a mini-grid. These involve various factors that can impact the overall cost-effectiveness of the mini-grid, potentially affecting its feasibility, sustainability, and affordability. 
+
 Investment
 --------------------
 Fixed Costs
@@ -253,8 +255,6 @@ Renewable penetration ({I\_{RES}}) refers to the extent to which renewable energ
     </div>
     </div>
 
-
-
 Battery Bank
 -----------------------
 
@@ -311,10 +311,14 @@ battery min capacity (add)
 .. raw:: html
 
 
-
-
 Diesel generator
 --------------------
+
+
+
+
+
+
 Lost Load
 --------------------
 
@@ -327,6 +331,4 @@ The fraction of lost load should be equal or less than the input value parameter
     \text{Lost_Load_Fraction} \geq \frac{\sum_{t} Lost Load (s,yt,t)}{\sum_{t} E_{\text{demand}}(s,yt,t)}
 
 .. raw:: html
-
-
 
