@@ -430,6 +430,16 @@ constraint on the maximum energy exchange from and to the grid.
 
 - **Grid Availability**
 
+
+
+
+
+
+
+
+
+
+
 Model formulation for Load Evolution
 ----------------------
 
@@ -473,7 +483,6 @@ Some of the related system **cost** such as the investment for RES, battery bank
     Units_{\text{x}}(ut = 1) - Units_{\text{x}}(inst)
 
 .. raw:: html
-
 
 
 References
