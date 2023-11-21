@@ -449,11 +449,9 @@ The multi-year formulation is a crucial prerequisite for implementing a capacity
 Brownfield
 ----------------------
 
-[8]
-The model now includes a new feature for brownfield investment, enabling optimization of the microgrid by considering technologies that were previously installed by others in the field. In simpler terms, this means the model can now factor in existing infrastructure or equipment from previous installations when determining the most efficient and effective way to optimize the microgrid.
-The new feature requires modification of some existing constraints and to add others. 
+The feature for brownfield investment introduced in [8], enables the optimization of mini-grids by considering technologies that were previously installed by others in the field. The model can now factor in existing components from previous installations when determining the most efficient and effective way to optimize the microgrid.
 
-In the context of mini-grids, the concept of "brownfield" refers to the development or expansion of a mini-grid system within an existing and often underutilized or outdated energy infrastructure. Brownfield development contrasts with "greenfield," which involves building entirely new projects on undeveloped or unused land.
+* **In the model**: 
 
 
 
