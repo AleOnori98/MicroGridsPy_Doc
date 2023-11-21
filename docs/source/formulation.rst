@@ -166,6 +166,10 @@ Variable Costs
 When it comes to replacing the Battery Energy Storage System (BESS), the calculation is based on data provided by the battery manufacturer regarding the number of charge-discharge cycles the battery can handle before reaching the end of its useful life. This cycle life data, in combination with the investment cost, is used to determine when the battery should be replaced. The battery's capacity is assumed to remain constant, as the model doesn't consider capacity degradation. Therefore, the replacement is solely based on the number of completed cycles. With each cycle, a portion of the initial investment cost is added to the overall project cost, ensuring that the cost of replacing the battery is covered by the time it reaches its End of Life (EOL).
 
 
+
+
+
+
 Salvage value
 --------------------
 
@@ -202,7 +206,7 @@ The energy balance of the system is ensured by the following equation. This cons
 
     E_{\text{demand}}(s,yt,t) = 
     \sum_{r} E_{\text{RES}}(s,r,yt,t) + 
-    \sum_{g} E_{\text{generator}}(s,g,yt,t) + E_{\text{from grid}}(s,yt,t) -
+    \sum_{g} E_{\text{GEN}}(s,g,yt,t) + E_{\text{from grid}}(s,yt,t) -
     E_{\text{to grid}}(s,yt,t) + E_{\text{BESS charge}}(s,yt,t) - 
     E_{\text{BESS discharge}}(s,yt,t) +
     \text{Lost Load}(s,yt,t) - E_{\text{curtailment}}(s,yt,t)
@@ -311,7 +315,7 @@ battery min capacity (add)
 .. raw:: html
 
 
-Diesel generator
+Diesel Generator
 --------------------
 
 The simple model for diesel generator operation allows it to freely vary its output within a range of 0 to 100%, without imposing any penalty for operating at partial load. The only limitation imposed is that the generator cannot exceed its maximum capacity.
@@ -320,7 +324,7 @@ The simple model for diesel generator operation allows it to freely vary its out
 
 .. math::
 
-    E_{\text{generator}}(s,yt,g,t) \leq C_{\text{generator}}(g) \times Units_{\text{generator}}(ut,g) \times \Delta t
+    E_{\text{GEN}}(s,yt,g,t) \leq C_{\text{GEN}}(g) \times Units_{\text{GEN}}(ut,g) \times \Delta t
 
 .. raw:: html
 
@@ -337,4 +341,114 @@ The fraction of lost load should be equal or less than the input value parameter
     \text{Lost_Load_Fraction} \geq \frac{\sum_{t} Lost Load (s,yt,t)}{\sum_{t} E_{\text{demand}}(s,yt,t)}
 
 .. raw:: html
+
+Emissions
+===================
+
+CO2 emissions related to each component.
+
+RES
+--------------------
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+   \text{RES emission} = \sum_{r}(\text{CO2 emission}_{\text{RES}}(r) \times \text{Units}_{\text{RES}}(1,r) \times \text{C}_{\text{RES}}(r)) +
+    \sum_{r}\sum_{ut}(\text{CO2 emission}_{\text{RES}}(r) \times (\text{Units}_{\text{RES}}(ut,r) - \text{Units}_{\text{RES}}(ut-1,r)) 
+    \times \text{C}_{\text{RES}}(r)) 
+
+.. raw:: html
+
+    </div>
+    </div>
+
+Battery Bank
+--------------------
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+   \text{BESS emission} = (\text{CO2 emission}_{\text{BESS}} \times \text{Units}_{\text{BESS}}(1) \times \text{C}_{\text{BESS}}) +
+    \sum_{ut}(\text{CO2 emission}_{\text{BESS}} \times (\text{Units}_{\text{BESS}}(ut) - \text{Units}_{\text{BESS}}(ut-1)) 
+    \times \text{C}_{\text{BESS}}) 
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+Diesel Generator
+--------------------
+
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+   \text{GEN emission} = \sum_{g}(\text{CO2 emission}_{\text{GEN}}(g) \times \text{Units}_{\text{GEN}}(1,g) \times \text{C}_{\text{GEN}}(g)) +
+    \sum_{g}\sum_{ut}(\text{CO2 emission}_{\text{GEN}}(g) \times (\text{Units}_{\text{GEN}}(ut,g) - \text{Units}_{\text{GEN}}(ut-1,g)) 
+    \times \text{C}_{\text{GEN}}(g)) 
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+
+- **Fuel**
+
+
+
+
+National Grid
+--------------------
 
