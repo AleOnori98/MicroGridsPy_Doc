@@ -428,15 +428,85 @@ Regarding the **energy constraint** on this component, the maximum possible ener
 
 .. raw:: html
 
+The energy balance now assumes the energy exchanges with the grid by introducing the total energy injected or withdrawn at each time step.
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    E_{\text{demand}}(s,yt,t) = 
+    \sum_{r} E_{\text{RES}}(s,r,yt,t) + 
+    \sum_{g} E_{\text{GEN}}(s,g,yt,t) + **E_{\text{from GRID}}(s,yt,t) -
+    E_{\text{to GRID}}(s,yt,t)** + E_{\text{BESS charge}}(s,yt,t) - 
+    E_{\text{BESS discharge}}(s,yt,t) +
+    \text{Lost Load}(s,yt,t) - E_{\text{curtailment}}(s,yt,t)
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+**costs**
+investment 
+
+.. raw:: html
+
+.. math::
+
+   \text{Investment Cost}_{\text{GRID}} = \fraq {\text{Specific Investment Cost}_{\text{GRID}} \times \text{Distance}_{\text{GRID}}}
+    {(1+d)^{\text{yt}_{\text{GRID connection}}-1}}
+
+.. raw:: html
+
+
+O&M fixed - Fixed costs for power line and transformer maintenance
+
+.. raw:: html
+
+.. math::
+
+   \text{O\&M fixed}_{\text{GRID}} = \sum_{yt = {\text{yt}_{\text{GRID connection}}}} \fraq {\text{Specific Investment                 Cost}_{\text{GRID}} \times \text{Distance}_{\text{GRID}} \times x_{\text{O\&M}}}{(1+d)^{\text{yt}}}
+
+.. raw:: html
+
+
+O&M variable - related to the energy purchased from the grid
+
+.. raw:: html
+
+.. math::
+
+   \text{O\&M variable}_{\text{GRID}} = \sum_{yt}\sum{t} \fraq {E_{\text{from GRID}}(s,yt,t) \times Price_{\text{purchased}}}{(1+d)^{\text{yt}}}
+
+.. raw:: html
 
 
 
+Revenue - related to the energy sold to the grid
 
+.. raw:: html
 
+.. math::
 
+   \text{Revenue}_{\text{GRID}} = \sum_{yt}\sum{t} \fraq {E_{\text{to GRID}}(s,yt,t) \times Price_{\text{sold}}}{(1+d)^{\text{yt}}}
 
-
-
+.. raw:: html
 
 
 **Emissions** associated to consumption of electricity from the national grid at each model time step.
