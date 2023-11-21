@@ -414,9 +414,11 @@ The total energy output is limited by the number of gensets available:
 National Grid
 ----------------------
 
+Mini-grid system have been evolving through the years and newest generations present the possibility for connecting to the main electricity grid. The option to connect the system to the national grid is a feature embedded into the model where this can buy or sell electricity to the grid. For a realistic operation, the grid availability is also estimated based on grid power outages modelling.
+
 - **Grid constraints**
 
-constraint on the maximum energy exchange from and to the grid.
+Regarding the **energy constraint** on this component, the maximum possible energy exchange is directly related to the maximum active power that can be injected or withdrawn to or from the grid.
 
 .. raw:: html
 
@@ -424,8 +426,11 @@ constraint on the maximum energy exchange from and to the grid.
 
     E_{\text{grid}}(s,yt,t) \leq P_{\text{max grid}} * 1000
 
-
 .. raw:: html
+
+
+
+
 
 - **Grid Availability**
 
