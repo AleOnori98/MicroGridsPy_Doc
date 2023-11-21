@@ -237,8 +237,8 @@ The energy balance of the system is ensured by the following equation. This cons
 
     E_{\text{demand}}(s,yt,t) = 
     \sum_{r} E_{\text{RES}}(s,r,yt,t) + 
-    \sum_{g} E_{\text{GEN}}(s,g,yt,t) + E_{\text{from GRID}}(s,yt,t) -
-    E_{\text{to GRID}}(s,yt,t) + E_{\text{BESS charge}}(s,yt,t) - 
+    \sum_{g} E_{\text{GEN}}(s,g,yt,t) + 
+    E_{\text{BESS charge}}(s,yt,t) - 
     E_{\text{BESS discharge}}(s,yt,t) +
     \text{Lost Load}(s,yt,t) - E_{\text{curtailment}}(s,yt,t)
 
