@@ -433,7 +433,9 @@ constraint on the maximum energy exchange from and to the grid.
 
 
 
-
+.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Demand.png?raw=true
+     :width: 700
+     :align: center
 
 
 
