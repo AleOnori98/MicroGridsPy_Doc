@@ -243,8 +243,8 @@ Renewable penetration ({I\_{RES}}) refers to the extent to which renewable energ
 
 .. math::
 
-   \sum_{s}(\sum_{r}\sum_{yt}\sum_{t}  E_{\text{RES}}(s,yt,r,t) \times Scenario_Weight(s)) \times (1-I{\text{RES}}) \geq 
-   \sum_{s}(\sum_{g}\sum_{yt}\sum_{t}  E_{\text{generator}}(s,yt,g,t) \times Scenario_Weight(s)) \times I{\text{RES}}
+   \sum_{s}(\sum_{r}\sum_{yt}\sum_{t}  E_{\text{RES}}(s,yt,r,t) \times Scenario_Weight(s)) \times (1-I_{\text{RES}}) \geq 
+   \sum_{s}(\sum_{g}\sum_{yt}\sum_{t}  E_{\text{generator}}(s,yt,g,t) \times Scenario_Weight(s)) \times I_{\text{RES}}
 .. raw:: html
 
     </div>
