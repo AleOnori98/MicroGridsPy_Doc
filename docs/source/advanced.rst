@@ -427,28 +427,24 @@ constraint on the maximum energy exchange from and to the grid.
 
 - **Grid Availability**
 
-Capacity Expansion
+Model formulation for Load Evolution
 ----------------------
 
-introduced in [7]
+The approach introduced in [7] focused on addressing the issue of load evolution in the long term. This model is designed to make informed decisions about expanding capacity throughout the specified time horizon. To simulate realistic load profiles, the model is integrated with a tool for generating stochastic load profiles. This formulation demonstrates advantages in making robust investment decisions under different load evolution scenarios.
 
-- **Multi-Year formulation
+- **Multi-Year formulation**
 
+The system has the capability to take into account changes in energy demand over time, especially in rural areas. Each year in the planning period corresponds to a unique load curve, allowing for the analysis of various patterns. This includes factors like population growth, more connections to the network, which affect overall demand but not necessarily daily load profiles. Additionally, variations in consumption habits and the use of new appliances can cause shifts in the daily load curve. In essence, the model is flexible enough to adapt to different dynamics, considering both global demand changes and shifts in daily energy usage patterns.
 
+The introduction of this approach allows to drop the old consideration that the demand in every year of project lifetime was the same and equal to a typical year of consumption for the study area. For this new concept, all the model constraints are estimated at each time step (t) of every year (yt) along the mini-grid lifetime. Thus, all equations involving time-dependent variables must be thus verified at all time steps (yt,t) of the optimisation horizon.
 
+- **Capacity Expansion**
 
+In the context of a capacity expansion formulation, the model considers the option of adding more capacity to a system in a step-by-step manner over a defined time horizon. This approach is driven by the idea of strategically expanding the installed capacity of various components, such as power generation units or storage, to manage costs effectively, especially during the initial years when lower energy demand is anticipated.
 
+The multi-year formulation is a crucial prerequisite for implementing a capacity-expansion concept. This approach enables the postponement of installing certain components' capacity, such as PV modules or battery banks, to later years based on the evolution of electricity demand. This flexibility helps avoid incurring large initial capital costs. Consequently, O&M costs become proportional to the actual capacity installed and utilized each year.
 
-
-In the context of a capacity expansion formulation, the model considers the option of adding more capacity to a system in a step-by-step manner over a defined time horizon. This approach is driven by the idea of strategically expanding the installed capacity of various components, such as power generation units or infrastructure, to manage costs effectively, especially during the initial years when lower energy demand is anticipated.
-The model doesn't decide to install all the required capacity at once. Instead, it breaks down the decision-making process into steps over a specific time period. Each step represents a point in time where the model can decide to add more capacity to the system.
-The decision to increase capacity is strategic and is based on forecasts of energy demand. Instead of committing to a fixed capacity from the beginning, the model assesses the anticipated energy demand over time and decides when and how much additional capacity is needed.
-
-The strategy aims to limit costs, especially in the initial years of the project when the expected energy demand is lower. By not installing all the required capacity upfront, the model seeks to avoid unnecessary costs that may arise from overbuilding the system for demand that hasn't materialized yet.
-
-The amount of capacity installed becomes a function of the decision steps in the time horizon. The model calculates how much capacity to add at each step based on the evolving energy demand projections and the cost considerations.
-The model optimizes the installation of capacity over time, distributing the capacity additions strategically across the steps. This optimization process seeks to find the most cost-effective way to meet the evolving energy demand while ensuring that the system's capacity aligns with the forecasted needs.
-
+In the capacity-expansion formulation, the variables associated with component capacity are determined by decision steps (ut) within the time horizon. The user defines the number of decision steps, essentially dividing the time horizon. This user-defined parameter governs how finely the model considers the progression of time, allowing for a strategic and step-by-step approach to capacity expansion based on the evolving electricity demand.
 
 Brownfield
 ----------------------
