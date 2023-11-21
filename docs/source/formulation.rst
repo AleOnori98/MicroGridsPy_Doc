@@ -215,32 +215,14 @@ The total energy delivered by the RES generation system is estimated based on th
 
 .. raw:: html
 
-    <style>
-    .equation-container {
-        overflow-x: auto;
-        width: 100%;
-        display: block;
-    }
-    .scrollable-equation {
-        white-space: nowrap;
-        overflow-x: scroll;
-        display: block;
-    }
-    </style>
-    <div class="equation-container">
-    <div class="scrollable-equation">
-
 .. math::
 
     E_{\text{RES}}(s,yt,r,t) = E_{\text{unit_RES}}(s,r,t) \times \eta_{\text{inverter}}(r) \times Units_{\text{RES}}(ut,r)
 
 .. raw:: html
 
-    </div>
-    </div>
 
-
-Renewable penetration ({I\_RES}) refers to the extent to which renewable energy sources contribute to the overall energy mix. The related constrainted allows to impose a minimum percentage of energy to be produced by non-dispatchable energy sources. 
+Renewable penetration ({I\_{RES}}) refers to the extent to which renewable energy sources contribute to the overall energy mix. The related constrainted allows to impose a minimum percentage of energy to be produced by non-dispatchable energy sources. 
 
 .. raw:: html
 
@@ -261,8 +243,8 @@ Renewable penetration ({I\_RES}) refers to the extent to which renewable energy 
 
 .. math::
 
-   \sum{s}(\sum{r}\sum{yt}\sum{t}  E_{\text{RES}}(s,yt,r,t) \times Scenario_Weight(s)) \times (1-I{\text{RES}}) \geq 
-   \sum{s}(\sum{g}\sum{yt}\sum{t}  E_{\text{generator}}(s,yt,g,t) \times Scenario_Weight(s)) \times I{\text{RES}}
+   \sum_{s}(\sum_{r}\sum_{yt}\sum_{t}  E_{\text{RES}}(s,yt,r,t) \times Scenario_Weight(s)) \times (1-I{\text{RES}}) \geq 
+   \sum_{s}(\sum_{g}\sum_{yt}\sum_{t}  E_{\text{generator}}(s,yt,g,t) \times Scenario_Weight(s)) \times I{\text{RES}}
 .. raw:: html
 
     </div>
@@ -339,7 +321,7 @@ The fraction of lost load should be equal or less than the input value parameter
 
 .. math::
 
-    \text{Lost_Load_Fraction} \geq \frac{\sum{t} Lost Load (s,yt,t)}{\sum{t} E_{\text{demand}}(s,yt,t)}
+    \text{Lost_Load_Fraction} \geq \frac{\sum_{t} Lost Load (s,yt,t)}{\sum_{t} E_{\text{demand}}(s,yt,t)}
 
 .. raw:: html
 
