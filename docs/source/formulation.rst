@@ -206,8 +206,8 @@ The energy balance of the system is ensured by the following equation. This cons
 
     E_{\text{demand}}(s,yt,t) = 
     \sum_{r} E_{\text{RES}}(s,r,yt,t) + 
-    \sum_{g} E_{\text{GEN}}(s,g,yt,t) + E_{\text{from grid}}(s,yt,t) -
-    E_{\text{to grid}}(s,yt,t) + E_{\text{BESS charge}}(s,yt,t) - 
+    \sum_{g} E_{\text{GEN}}(s,g,yt,t) + E_{\text{from GRID}}(s,yt,t) -
+    E_{\text{to GRID}}(s,yt,t) + E_{\text{BESS charge}}(s,yt,t) - 
     E_{\text{BESS discharge}}(s,yt,t) +
     \text{Lost Load}(s,yt,t) - E_{\text{curtailment}}(s,yt,t)
 
@@ -447,11 +447,10 @@ Diesel Generator
 
 .. raw:: html
 
-
 .. math::
 
-   \text{FUEL emission}(s,yt,g,t) = \frac{\text{E}_{\text{GEN}}(s,yt,g,t)}{\text{LHV}_{\text{FUEL}}(g) \times \eta_{\text{GEN}(g)}
-    \times (\text{CO2 emission}_{\text{FUEL}}(g)
+   \text{FUEL emission}(s,yt,g,t) = \frac{\text{E}_{\text{GEN}}(s,yt,g,t)}{\text{LHV}_{\text{FUEL}}(g) \times \eta_{\text{GEN}(g)}}
+    \times \text{CO2 emission}_{\text{FUEL}}(g)
 
 .. raw:: html
 
@@ -459,9 +458,14 @@ Diesel Generator
 National Grid
 --------------------
 
+.. raw:: html
+
+.. math::
+
+   \text{GRID emission}(s,yt,t) = \text{E}_{\text{from GRID}(s,yt,t) \times \text{CO2 emission}_{\text{GRID}}
 
 
-
+.. raw:: html
 
 
 
