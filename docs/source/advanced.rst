@@ -430,6 +430,7 @@ constraint on the maximum energy exchange from and to the grid.
 Capacity Expansion
 ----------------------
 
+introduced in [7]
 
 - **Multi-Year formulation
 
@@ -466,6 +467,7 @@ References
 .. [6] S. L. Balderrama Subieta, W. Canedo, V. Lemort, and S. Quoilin, Impact of Diesel generator limitations in the robust sizing of isolated hybrid 
        Microgrids including PV and batteries, in 30th International Conference on Efficiency, Cost, Optimization, Simulation and Environmental Impact of 
        Energy Systems, 2017
+.. [7] 
 
 
 
