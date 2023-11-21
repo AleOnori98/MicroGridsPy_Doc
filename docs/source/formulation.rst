@@ -443,12 +443,25 @@ Diesel Generator
     </div>
 
 
-
 - **Fuel**
 
+.. raw:: html
 
+
+.. math::
+
+   \text{FUEL emission}(s,yt,g,t) = \frac{\text{E}_{\text{GEN}}(s,yt,g,t)}{\text{LHV}_{\text{FUEL}}(g) \times \eta_{\text{GEN}(g)}
+    \times (\text{CO2 emission}_{\text{FUEL}}(g)
+
+.. raw:: html
 
 
 National Grid
 --------------------
+
+
+
+
+
+
 
