@@ -314,6 +314,8 @@ battery min capacity (add)
 Diesel generator
 --------------------
 
+The simple model for diesel generator operation allows it to freely vary its output within a range of 0 to 100%, without imposing any penalty for operating at partial load. The only limitation imposed is that the generator cannot exceed its maximum capacity.
+
 .. raw:: html
 
 .. math::
@@ -321,8 +323,6 @@ Diesel generator
     E_{\text{generator}}(s,yt,g,t) \leq C_{\text{generator}}(g) \times Units_{\text{generator}}(ut,g) \times \Delta t
 
 .. raw:: html
-
-
 
 
 Lost Load
