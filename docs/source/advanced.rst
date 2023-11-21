@@ -1,5 +1,8 @@
 Advanced Features
 =========================
+
+MicroGridsPy allows the user to choose different advanced features embedded into the model. These are designed to elevate the energy modelling by addressing evolving challenges of mini-grid system components and optimization.
+
 .. role:: raw-html(raw)
     :format: html
 
