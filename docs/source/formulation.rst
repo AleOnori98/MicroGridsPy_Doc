@@ -169,6 +169,21 @@ When it comes to replacing the Battery Energy Storage System (BESS), the calcula
 
 .. raw:: html
 
+  <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
 .. math::
 
     \text{Replacement}_{\text{BESS}}(s) = \sum_{yt} \sum_{t} [(E_{\text{BESS charge}}(s,yt,t) \times \text{U}_{\text{Replacement}}) +
@@ -180,6 +195,9 @@ When it comes to replacing the Battery Energy Storage System (BESS), the calcula
         {2*Cycles*DOD} 
 
 .. raw:: html
+
+    </div>
+    </div>
 
 
 Salvage value
