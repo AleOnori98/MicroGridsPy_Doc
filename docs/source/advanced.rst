@@ -467,7 +467,9 @@ References
 .. [6] S. L. Balderrama Subieta, W. Canedo, V. Lemort, and S. Quoilin, Impact of Diesel generator limitations in the robust sizing of isolated hybrid 
        Microgrids including PV and batteries, in 30th International Conference on Efficiency, Cost, Optimization, Simulation and Environmental Impact of 
        Energy Systems, 2017
-.. [7] 
+.. [7] Nicolò Stevanato, Francesco Lombardi, Giulia Guidicini, Lorenzo Rinaldi, Sergio L. Balderrama, Matija Pavičević, Sylvain Quoilin, Emanuela Colombo, 
+  "Long- term sizing of rural microgrids: Accounting for load evolution through multi-step investment plan and stochastic optimization", Energy for 
+  Sustainable Development 2020, 58, pp. 16-29
 
 
 
