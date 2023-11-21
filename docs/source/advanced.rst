@@ -414,7 +414,6 @@ The total energy output is limited by the number of gensets available:
 National Grid
 ----------------------
 
-
 - **Grid constraints**
 
 constraint on the maximum energy exchange from and to the grid.
@@ -430,20 +429,12 @@ constraint on the maximum energy exchange from and to the grid.
 
 - **Grid Availability**
 
-
-
-
-
 The input file, located in the "Time Series" folder within the "Inputs" folder, must have as many numbered columns (excluding the rows labels) as the total years of the project and as many rows (excluding the columns headers) as the periods in which one year is divided (e.g. 1-hour time resolution leads to 8760 rows). 
 
 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/GRID%20availability.png?raw=true
      :width: 700
      :align: center
-
-
-
-
 
 
 Model formulation for Load Evolution
