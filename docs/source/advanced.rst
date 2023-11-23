@@ -469,7 +469,7 @@ investment
 
 .. math::
 
-   \text{Investment Cost}_{\text{GRID}} = \fraq {\text{Specific Investment Cost}_{\text{GRID}} \times \text{Distance}_{\text{GRID}}}
+   \text{Investment Cost}_{\text{GRID}} = \frac {\text{Specific Investment Cost}_{\text{GRID}} \times \text{Distance}_{\text{GRID}}}
     {(1+d)^{\text{yt}_{\text{GRID connection}}-1}}
 
 .. raw:: html
