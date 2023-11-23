@@ -414,7 +414,7 @@ The total energy output is limited by the number of gensets available:
 National Grid
 ----------------------
 
-Mini-grid system have been evolving through the years and newest generations present the possibility for connecting to the main electricity grid. The option to connect the system to the national grid is a feature embedded into the model where this can buy or sell electricity to the grid. For a realistic operation, the grid availability is also estimated based on grid power outages modelling.
+Mini-grid systems have been evolving through the years and newest generations present the possibility for connecting to the main electricity grid. The option to connect the system to the national grid is a feature embedded into the model where this can buy or sell electricity to the grid. For a realistic operation, the grid availability is also estimated based on grid power outages modelling.
 
 - **Grid constraints**
 
@@ -451,8 +451,8 @@ The energy balance now assumes the energy exchanges with the grid by introducing
 
     E_{\text{demand}}(s,yt,t) = 
     \sum_{r} E_{\text{RES}}(s,r,yt,t) + 
-    \sum_{g} E_{\text{GEN}}(s,g,yt,t) + **E_{\text{from GRID}}(s,yt,t) -
-    E_{\text{to GRID}}(s,yt,t)** + E_{\text{BESS charge}}(s,yt,t) - 
+    \sum_{g} E_{\text{GEN}}(s,g,yt,t) + E_{\text{from GRID}}(s,yt,t) -
+    E_{\text{to GRID}}(s,yt,t) + E_{\text{BESS charge}}(s,yt,t) - 
     E_{\text{BESS discharge}}(s,yt,t) +
     \text{Lost Load}(s,yt,t) - E_{\text{curtailment}}(s,yt,t)
 
