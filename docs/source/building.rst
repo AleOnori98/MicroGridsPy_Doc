@@ -485,10 +485,6 @@ Parameters here govern the potential connection to the national grid, including 
 
 Specific parameters for Lost Load regarding maximum value and related costs.
 
-.. raw:: html
-
-    <div style="overflow-y: auto; height: 350px;">
-
 .. list-table:: 
    :widths: 25 25 50
    :header-rows: 1
@@ -502,16 +498,6 @@ Specific parameters for Lost Load regarding maximum value and related costs.
    * - Lost_Load_Specific_Cost 
      - (e.g. USD/Wh)
      - Value of the unmet load
-
-.. raw:: html
-
-    </div>
-
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
-|nbsp|
-
 
 
 
