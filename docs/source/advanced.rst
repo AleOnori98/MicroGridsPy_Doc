@@ -481,7 +481,7 @@ O&M fixed - Fixed costs for power line and transformer maintenance
 
 .. math::
 
-   \text{O\&M fixed}_{\text{GRID}} = \sum_{yt = {\text{yt}_{\text{GRID connection}}}} \frac {\text{Specific Investment Cost}_{\text{GRID}} \times 
+   \text{O&M fixed}_{\text{GRID}} = \sum_{yt = {\text{yt}_{\text{GRID connection}}}} \frac {\text{Specific Investment Cost}_{\text{GRID}} \times 
    \text{Distance}_{\text{GRID}} \times x_{\text{O\&M}}}{(1+d)^{\text{yt}}}
 
 .. raw:: html
@@ -493,7 +493,7 @@ O&M variable - related to the energy purchased from the grid
 
 .. math::
 
-   \text{O\&M variable}_{\text{GRID}} = \sum_{yt}\sum{t} \frac {E_{\text{from GRID}}(s,yt,t) \times Price_{\text{purchased}}}{(1+d)^{\text{yt}}}
+   \text{O&M variable}_{\text{GRID}} = \sum_{yt}\sum{t} \frac {E_{\text{from GRID}}(s,yt,t) \times Price_{\text{purchased}}}{(1+d)^{\text{yt}}}
 
 .. raw:: html
 
