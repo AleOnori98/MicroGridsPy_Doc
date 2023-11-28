@@ -489,6 +489,9 @@ Emissions associated to consumption of fuel for the back-up generator at each mo
 
 .. raw:: html
 
+National Grid
+--------------------
+
 Emissions associated to consumption of electricity from the national grid at each model time step.
 
 .. raw:: html
