@@ -477,17 +477,6 @@ Revenue - related to the energy sold to the grid
 .. raw:: html
 
 
-**Emissions** associated to consumption of electricity from the national grid at each model time step.
-
-.. raw:: html
-
-.. math::
-
-   \text{GRID emission}(s,yt,t) = \text{E}_{\text{from GRID}}(s,yt,t) \times \text{CO2 emission}_{\text{GRID}}
-
-.. raw:: html
-
-
 - **Grid Availability**
 
 explain how this is estimated as introduced in [8]
