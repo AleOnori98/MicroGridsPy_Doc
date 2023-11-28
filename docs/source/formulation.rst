@@ -489,5 +489,13 @@ Emissions associated to consumption of fuel for the back-up generator at each mo
 
 .. raw:: html
 
+Emissions associated to consumption of electricity from the national grid at each model time step.
 
+.. raw:: html
+
+.. math::
+
+   \text{GRID emission}(s,yt,t) = \text{E}_{\text{from GRID}}(s,yt,t) \times \text{CO2 emission}_{\text{GRID}}
+
+.. raw:: html
 
