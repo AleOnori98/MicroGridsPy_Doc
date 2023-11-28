@@ -156,13 +156,60 @@ The cost constraints are associated with the financial aspects of planning, impl
 Investment
 --------------------
 
+- **National Grid**
+
+.. raw:: html
+
+.. math::
+
+   \text{Investment Cost}_{\text{GRID}} = \frac {\text{Specific Investment Cost}_{\text{GRID}} \times \text{Distance}_{\text{GRID}}}
+    {(1+d)^{\text{yt}_{\text{GRID connection}}-1}}
+
+.. raw:: html
+
+
 
 Fixed Costs
 --------------------
 
+- **National Grid**
+O&M fixed - Fixed costs for power line and transformer maintenance
+
+.. raw:: html
+
+.. math::
+
+   \text{O&M fixed}_{\text{GRID}} = \sum_{yt = {\text{yt}_{\text{GRID connection}}}} \frac {\text{Specific Investment Cost}_{\text{GRID}} \times 
+   \text{Distance}_{\text{GRID}} \times x_{\text{O&M}}}{(1+d)^{\text{yt}}}
+
+.. raw:: html
+
 
 Variable Costs 
 --------------------
+
+- **National Grid**
+O&M variable - related to the energy purchased from the grid
+
+.. raw:: html
+
+.. math::
+
+   \text{O&M variable}_{\text{GRID}} = \sum_{yt}\sum_{t} \frac {E_{\text{from GRID}}(s,yt,t) \times Price_{\text{purchased}}}{(1+d)^{\text{yt}}}
+
+.. raw:: html
+
+Revenue - related to the energy sold to the grid
+
+.. raw:: html
+
+.. math::
+
+   \text{Revenue}_{\text{GRID}} = \sum_{yt}\sum_{t} \frac {E_{\text{to GRID}}(s,yt,t) \times Price_{\text{sold}}}{(1+d)^{\text{yt}}}
+
+.. raw:: html
+
+
 
 - **Battery replacement**
 When it comes to replacing the Battery Energy Storage System (BESS), the calculation is based on data provided by the battery manufacturer regarding the number of charge-discharge cycles the battery can handle before reaching the end of its useful life. This cycle life data, in combination with the investment cost, is used to determine when the battery should be replaced. The battery's capacity is assumed to remain constant, as the model doesn't consider capacity degradation. Therefore, the replacement is solely based on the number of completed cycles. With each cycle, a portion of the initial investment cost is added to the overall project cost, ensuring that the cost of replacing the battery is covered by the time it reaches its End of Life (EOL). The investment cost mentioned above doens't account for the cost of the electronics.
