@@ -492,7 +492,35 @@ Minute Resolution
 
 Battery Bank Degradation 
 ----------------------
+
+The battery performance isn’t constant over time due to capacity and power fade as the battery is exposed to degradation processes while in both operation and storage mode. Calendar aging results from the degradation while the battery is in storage mode. Whereas cycle aging corresponds to the degradation caused by charge and discharge cycles. The capacity fade refers to the reduction of available capacity. The battery status is provided by the State of Health (SOH) indicator. When the SOH reaches a certain threshold, the battery reached its End of Life (EOL). Temperature, State of Charge (SOC) and Depth of Discharge (DOD), are just some of the stress factors leading to degradation.
+
+Understanding and estimating the battery behaviour and related parameters during operation is key to improving capacity usage and cycling techniques, and, hence, inform battery modelling accordingly. A complete battery modelling is based on the estimation of operating conditions (i.e., SOC) and the estimation of battery lifetime expectancy (i.e., SOH) at any given moment of battery operation and lifetime. Battery models can be divided into four major groups: analytical, stochastic, electrical and electrochemical models. The most basic models just portray the energy balance which simplifies the behaviour of the battery. Other models reproduce the electrical characteristics during its operation or the chemical reactions, adding more accuracy but also complexity to the methodology. To achieve a complete battery model capable of determining battery related parameters through operation and even lifetime, the aging components must be accounted for in the methodology. However, predicting lifespan is still an obstacle due to the limited available prediction methods. 
+
+A degradation model was developed and introduced into the model to improve the overall battery modelling.
+
+simplified battery model to account for degradation over time and use.
+
+**equations**
+coefficients calculation in initialize
+the influence on SOC
+
+
 - **Replacement**
+
+Regarding the battery replacement, a new approach is introduced when the model accounts for degradation. The replacement principle shifts from cycle life to a SOH base. The concept is based on the replacement of the battery bank capacity, switching to a system with 100% SOH, and related substitution costs. The iterative replacement is based on the procedure conducted in [9]. This method consists of 4 steps described in the following Algorithm:
+
+
+ - **1.**	The optimization model is run for the desired scenario. 
+
+ - **2.**	The model outputs are analysed. The battery bank replacement year is chosen based on the BESS SOH time-series results. It’s preferential to replace the battery at the EOL.
+
+ - **3.**	The iterative replacement switch is chosen in MGPy. The replacement year is the single necessary input for this procedure. The replacement occurs in the first time step of the referred year. The simulation is repeated for the same scenario (as in step 1). 
+
+- **4.**	The model results are analysed. The outputs for the current BESS capacity time series and cost results confirm the correct replacement calculation. 
+
+The **Cost** ...
+The **Energy** ...
 
 References
 ----------------------
@@ -514,5 +542,4 @@ References
 .. [8] Nicolò Stevanato, Gianluca Pellecchia, Ivan Sangiorgio, Diana Shendrikova, Castro Antonio Soares, Riccardo Mereu, Emanuela Colombo, "Planning third 
        generation minigrids: Multi-objective optimization and brownfield investment approaches in modelling village-scale on-grid and off-grid energy systems", 
        Renewable and Sustainable Energy Transition 2023, 3, 100053
-
-
+.. [9] Petrelli, M.; Fioriti, D.; Berizzi, A.; Poli, D. “Multi-Year Planning of a Rural Microgrid Considering Storage Degradation.” IEEE Transactions on Power             Systems 2021, 36, 1459–1469
