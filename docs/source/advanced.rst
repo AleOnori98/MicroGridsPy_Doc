@@ -492,7 +492,7 @@ Minute Resolution
 
 Battery Bank Degradation 
 ----------------------
--*Replacement
+- **Replacement**
 
 References
 ----------------------
