@@ -489,9 +489,10 @@ Some of the related system **cost** such as the investment for RES, battery bank
 Minute Resolution
 ----------------------
 
-BESS Degradation 
-----------------------
 
+Battery Bank Degradation 
+----------------------
+-*Replacement
 
 References
 ----------------------
