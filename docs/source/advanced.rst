@@ -517,7 +517,7 @@ Regarding the battery replacement, a new approach is introduced when the model a
 
  - **3.**	The iterative replacement switch is chosen in MGPy. The replacement year is the single necessary input for this procedure. The replacement occurs in the first time step of the referred year. The simulation is repeated for the same scenario (as in step 1). 
 
-- **4.**	The model results are analysed. The outputs for the current BESS capacity time series and cost results confirm the correct replacement calculation. 
+ - **4.**	The model results are analysed. The outputs for the current BESS capacity time series and cost results confirm the correct replacement calculation. 
 
 The **Cost** ...
 The **Energy** ...
