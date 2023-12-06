@@ -486,6 +486,13 @@ Some of the related system **cost** such as the investment for RES, battery bank
 .. raw:: html
 
 
+Minute Resolution
+----------------------
+
+BESS Degradation 
+----------------------
+
+
 References
 ----------------------
 .. [1] Giacomo Crevani, Castro Soares, Emanuela Colombo, “Modelling Financing Schemes for Energy System Planning: A Mini-Grid Case Study”, ECOS 2023, pp. 
