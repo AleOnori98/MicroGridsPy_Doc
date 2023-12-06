@@ -488,7 +488,12 @@ Some of the related system **cost** such as the investment for RES, battery bank
 
 Minute Resolution
 ----------------------
+RES calculation
+Solar introduced in [9]
 
+Wind
+
+others 
 
 Battery Bank Degradation 
 ----------------------
@@ -508,7 +513,7 @@ the influence on SOC
 
 - **Replacement**
 
-Regarding the battery replacement, a new approach is introduced when the model accounts for degradation. The replacement principle shifts from cycle life to a SOH base. The concept is based on the replacement of the battery bank capacity, switching to a system with 100% SOH, and related substitution costs. The iterative replacement is based on the procedure conducted in [9]. This method consists of 4 steps described in the following Algorithm:
+Regarding the battery replacement, a new approach is introduced when the model accounts for degradation. The replacement principle shifts from cycle life to a SOH base. The concept is based on the replacement of the battery bank capacity, switching to a system with 100% SOH, and related substitution costs. The iterative replacement is based on the procedure conducted in [10]. This method consists of 4 steps described in the following Algorithm:
 
 
  - **1.**	The optimization model is run for the desired scenario. 
@@ -542,4 +547,5 @@ References
 .. [8] Nicolò Stevanato, Gianluca Pellecchia, Ivan Sangiorgio, Diana Shendrikova, Castro Antonio Soares, Riccardo Mereu, Emanuela Colombo, "Planning third 
        generation minigrids: Multi-objective optimization and brownfield investment approaches in modelling village-scale on-grid and off-grid energy systems", 
        Renewable and Sustainable Energy Transition 2023, 3, 100053
-.. [9] Petrelli, M.; Fioriti, D.; Berizzi, A.; Poli, D. “Multi-Year Planning of a Rural Microgrid Considering Storage Degradation.” IEEE Transactions on Power             Systems 2021, 36, 1459–1469
+.. [9] J.M. Bright, C.J. Smith, P.G. Taylor, R. Crook, Stochastic generation of synthetic minutely irradiance time series derived from mean hourly weather                 observation data, Solar Energy, Volume 115, 2015, pp. 229-242,
+.. [10] Petrelli, M.; Fioriti, D.; Berizzi, A.; Poli, D. “Multi-Year Planning of a Rural Microgrid Considering Storage Degradation.” IEEE Transactions on Power             Systems 2021, 36, 1459–1469
