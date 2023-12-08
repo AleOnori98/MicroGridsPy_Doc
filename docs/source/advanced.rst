@@ -507,9 +507,7 @@ A degradation model was developed and introduced into the model to account for t
 
 
  - **1.**	For the selected battery technology, the α and β coefficients are calculated using the environment temperature, in the time step (t), and the DOD which is a fixed value for the simulation. 
-
  - **2.**	The previous outputs are used in the proposed degradation model. Here, the current battery energy capacity is calculated. 
-
  - **3.**	The previous parameters are used in the next time step (t+1), so they’re updated.
 
 
