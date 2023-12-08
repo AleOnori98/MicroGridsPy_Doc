@@ -505,7 +505,6 @@ Understanding and estimating the battery behaviour and related parameters during
 
 A degradation model was developed and introduced into the model to account for the battery bank capacity fade. This methodology can be applied for battery of the following chemistries: Lithium LFP and NMC, and Lead Acid. The model has the following algorithm:
 
-
  - **1.**	For the selected battery technology, the α and β coefficients are calculated using the environment temperature, in the time step (t), and the DOD which is a fixed value for the simulation. 
  - **2.**	The previous outputs are used in the proposed degradation model. Here, the current battery energy capacity is calculated. 
  - **3.**	The previous parameters are used in the next time step (t+1), so they’re updated.
@@ -643,8 +642,8 @@ In order to understand the impact of the battery degradation model in the overal
 Main considerations: 
 
  - **1.** The SOC is now constrained by the SOH of the bank thus overtime the SOC no longer can reach 100%
-- **2.** This has a direct impact on the energy balance of the model, and more battery need to be installed to overcome this fade.
-- **3.** At the moment, this feature does not work with capacity expansion. When considering a battery bank, all batteries should be the same in terms of type, model, capacity and age. When adding new batteries at different investement steps can impact the performance of the bank and overall degradation of the batteries. Now the model installs all nedded units at the beginning of the project. A option for battery bank replacement in integrated in the model when the degradation feature is activated. 
+ - **2.** This has a direct impact on the energy balance of the model, and more battery need to be installed to overcome this fade.
+ - **3.** At the moment, this feature does not work with capacity expansion. When considering a battery bank, all batteries should be the same in terms of type, model, capacity and age. When adding new batteries at different investement steps can impact the performance of the bank and overall degradation of the batteries. Now the model installs all nedded units at the beginning of the project. A option for battery bank replacement in integrated in the model when the degradation feature is activated. 
 
 
 * **Replacement**
