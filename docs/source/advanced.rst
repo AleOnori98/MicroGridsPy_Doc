@@ -490,9 +490,7 @@ Minute Resolution
 ----------------------
 In order to capture the dynamism of energy systems, a minute resolution is applied to the model by using the periods parameters equal to 525600 minutes/year. This allows to capture the changes in demand within each hour and corresponding RES potential. By modelling the energy system every minute, rapid changes and nuances can be captured more accurately contributing to a better optimization and  maintain system stability.
 
-* **RES calculation**
-
-- **Solar potential**
+* **RES calculation** - **Solar potential**
 
 Solar irradiance exhibits minute-to-minute variations influenced by cloud dynamics, atmospheric losses, and the transport of pollutants. These fluctuations, occurring concurrently with changes in electricity demand, impact the effectiveness of storage and self-consumption in solar power systems. Simulations integrating electricity demand, PV supply, and storage require minute-level irradiance data to capture these effects. While calibrated minute-level irradiance datasets are limited and often result from isolated research projects, hourly weather data is more readily available but fails to capture the intermittent nature of solar irradiance. Following the modelling approach introduced in [9], where minutely irradiance is estimated from hourly weather data, such as cloud amount, wind speed and surface pressure.
 
