@@ -500,18 +500,156 @@ Battery Bank Degradation
 
 The battery performance isn’t constant over time due to capacity and power fade as the battery is exposed to degradation processes while in both operation and storage mode. Calendar aging results from the degradation while the battery is in storage mode. Whereas cycle aging corresponds to the degradation caused by charge and discharge cycles. The capacity fade refers to the reduction of available capacity. The battery status is provided by the State of Health (SOH) indicator. When the SOH reaches a certain threshold, the battery reached its End of Life (EOL). Temperature, State of Charge (SOC) and Depth of Discharge (DOD), are just some of the stress factors leading to degradation.
 
-Understanding and estimating the battery behaviour and related parameters during operation is key to improving capacity usage and cycling techniques, and, hence, inform battery modelling accordingly. A complete battery modelling is based on the estimation of operating conditions (i.e., SOC) and the estimation of battery lifetime expectancy (i.e., SOH) at any given moment of battery operation and lifetime. Battery models can be divided into four major groups: analytical, stochastic, electrical and electrochemical models. The most basic models just portray the energy balance which simplifies the behaviour of the battery. Other models reproduce the electrical characteristics during its operation or the chemical reactions, adding more accuracy but also complexity to the methodology. To achieve a complete battery model capable of determining battery related parameters through operation and even lifetime, the aging components must be accounted for in the methodology. However, predicting lifespan is still an obstacle due to the limited available prediction methods. 
-
-A degradation model was developed and introduced into the model to improve the overall battery modelling.
-
-simplified battery model to account for degradation over time and use.
-
-**equations**
-coefficients calculation in initialize
-the influence on SOC
+Understanding and estimating the battery behaviour and related parameters during operation is key to improving capacity usage and cycling techniques, and, hence, inform battery modelling accordingly. A complete battery modelling is based on the estimation of operating conditions (i.e., SOC) and the estimation of battery lifetime expectancy (i.e., SOH) at any given moment of battery operation and lifetime. Battery models can be divided into four major groups: analytical, stochastic, electrical and electrochemical models. The most basic models just portray the energy balance which simplifies the behaviour of the battery. Other models reproduce the electrical characteristics during its operation or the chemical reactions, adding more accuracy but also complexity to the methodology. To achieve a complete battery model capable of determining battery related parameters through operation and even lifetime, the aging components must be accounted for in the methodology. 
 
 
-- **Replacement**
+A degradation model was developed and introduced into the model to account for the battery bank capacity fade. This methodology can be applied for battery of the following chemistries: Lithium LFP and NMC, and Lead Acid. The model has the following algorithm:
+
+
+ - **1.**	For the selected battery technology, the α and β coefficients are calculated using the environment temperature, in the time step (t), and the DOD which is a fixed value for the simulation. 
+
+ - **2.**	The previous outputs are used in the proposed degradation model. Here, the current battery energy capacity is calculated. 
+
+ - **3.**	The previous parameters are used in the next time step (t+1), so they’re updated.
+
+
+* **α and β coefficients**
+
+In initialize, the coefficients alpha and beta are firstly estimated by the following equation, where c and d are specific parameters for each chemistry:
+
+- **Alpha**: 
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+.. raw:: html
+
+    <div class="equation-container">
+
+.. math::
+
+   \alpha_{hour} = c_{1} \times y^{3} + c_{2} \times y^{2} + c_{3} \times y + c_{4} 
+
+.. raw:: html
+
+    </div>
+
+.. raw:: html
+
+.. math::
+
+    y = \frac{T_{amb}}{10}
+
+.. raw:: html
+
+
+- **Beta**: 
+- **For Lithium chemistry**
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+.. raw:: html
+
+    <div class="equation-container">
+
+.. math::
+
+   \beta_{hour} = d_{1} \times y^{3} + d_{2} \times y^{2} + d_{3} \times y + d_{4} 
+
+.. raw:: html
+
+    </div>
+
+.. raw:: html
+
+.. math::
+
+    y = \frac{T_{amb}}{10}
+
+.. raw:: html
+
+- **For Lead Acid chemistry**
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+.. raw:: html
+
+    <div class="equation-container">
+
+.. math::
+
+   \beta_{hour} = d_{1} \times z^{3} + d_{2} \times z^{2} + d_{3} \times z + d_{4} 
+
+.. raw:: html
+
+    </div>
+
+.. raw:: html
+
+.. math::
+
+    z = \frac{DOD-20}{10}
+
+.. raw:: html
+
+
+
+* **Current capacity**
+The following function estimates the current battery bank capacity (energy constraint in the model)
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+.. raw:: html
+
+    <div class="equation-container">
+
+.. math::
+
+   E^{DB}_t = E^{DB}_(t-1) - \alpha \times E^{B} - \beta \times P^{BE}_t
+
+.. raw:: html
+
+    </div>
+
+
+* **Results**
+In order to understand the impact of the battery degradation model in the overall model, the **current battery bank capacity** is exported in the **time-series** for each time step.
+
+Main considerations: 
+
+ - **1.** The SOC is now constrained by the SOH of the bank thus overtime the SOC no longer can reach 100%
+- **2.** This has a direct impact on the energy balance of the model, and more battery need to be installed to overcome this fade.
+- **3.** At the moment, this feature does not work with capacity expansion. When considering a battery bank, all batteries should be the same in terms of type, model, capacity and age. When adding new batteries at different investement steps can impact the performance of the bank and overall degradation of the batteries. Now the model installs all nedded units at the beginning of the project. A option for battery bank replacement in integrated in the model when the degradation feature is activated. 
+
+
+* **Replacement**
 
 Regarding the battery replacement, a new approach is introduced when the model accounts for degradation. The replacement principle shifts from cycle life to a SOH base. The concept is based on the replacement of the battery bank capacity, switching to a system with 100% SOH, and related substitution costs. The iterative replacement is based on the procedure conducted in [10]. This method consists of 4 steps described in the following Algorithm:
 
@@ -524,8 +662,7 @@ Regarding the battery replacement, a new approach is introduced when the model a
 
  - **4.**	The model results are analysed. The outputs for the current BESS capacity time series and cost results confirm the correct replacement calculation. 
 
-The **Cost** ...
-The **Energy** ...
+
 
 References
 ----------------------
