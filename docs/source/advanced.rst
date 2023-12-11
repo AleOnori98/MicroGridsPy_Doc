@@ -575,7 +575,7 @@ In initialize, the coefficients alpha and beta are firstly estimated by the foll
 .. raw:: html
 
 
-    * - **For Li-ion chemistry**
+- **For Li-ion chemistry**
 
 .. raw:: html
 
@@ -608,7 +608,7 @@ In initialize, the coefficients alpha and beta are firstly estimated by the foll
 
 
 
-    * - **For Lead Acid chemistry**
+- **For Lead Acid chemistry**
 
 .. raw:: html
 
