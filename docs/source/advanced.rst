@@ -79,6 +79,10 @@ Most optimization tools are focused on single-objective optimization that does n
 RES Time Series Estimation
 ----------------
 
+
+
+
+
 RES parameters for production time series estimation in MicroGridsPy:
 
 .. list-table:: 
@@ -132,10 +136,7 @@ RES parameters for production time series estimation in MicroGridsPy:
      - Average efficiency of turbine drivetrain (gearbox,generator,brake)
 
 
-Advanced (for developers)
-
-
-RES parameters (non-editable):
+RES parameters which are non-editable. Advanced parameters used for developers:
 
 .. list-table:: 
    :widths: 25 25 50
