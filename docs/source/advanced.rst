@@ -186,9 +186,7 @@ RES parameters (non-editable):
 Load Demand Estimation
 ----------------------
 
-
-
-
+Using the advanced features integrated into MicroGridsPy which allows to use built-in archetypes referring to rural villages in Sub-Saharan Africa at different latitudes. These are composed of different types of end-users like households according to the wealth tier (i.e., from 1 to 5), hospitals with the same wealth scale and schools. The possibility for demand growth and specific cooling period are also integrated within this feature. The following parameters present in **Parameters.dat** define all the possible demand archetypes within the current model.
 
 .. list-table:: 
    :widths: 25 25 50
