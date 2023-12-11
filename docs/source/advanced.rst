@@ -636,13 +636,6 @@ The following function estimates the current battery bank capacity (energy const
 * **Results**
 The **current battery bank capacity** is exported in the **time-series** for each time step.
 
-Main considerations: 
-
- - **1.** The SOC is now constrained by the SOH of the bank thus overtime the SOC no longer can reach 100%
- - **2.** This has a direct impact on the energy balance of the model, and more batteries need to be installed to overcome this fade.
- - **3.** At the moment, this feature does not work with capacity expansion. When considering a battery bank, all batteries should be the same in terms of type, model, capacity and age. When adding new batteries at different investment steps can impact the performance of the bank and overall degradation of the batteries. Now the model installs all needed units at the beginning of the project. A option for battery bank replacement is integrated in the model when the degradation feature is activated. 
-
-
 * **Replacement**
 
 Regarding the battery replacement, a new approach is introduced when the model accounts for degradation. The replacement principle shifts from cycle life to a SOH base. The concept is based on the replacement of the battery bank capacity, switching to a system with 100% SOH, and related substitution costs. The iterative replacement is based on the procedure conducted in [10]. This method consists of 4 steps described in the following Algorithm:
@@ -653,6 +646,13 @@ Regarding the battery replacement, a new approach is introduced when the model a
  - **2.**	The model outputs are analysed. The battery bank replacement year is chosen based on the BESS SOH time-series results. It’s preferential to replace the battery at the EOL.
 
  - **3.**	The iterative replacement switch is chosen in MGPy. The replacement year is the single necessary input for this procedure. The replacement occurs in the first time step of the referred year. The simulation is repeated for the same scenario (as in step 1). 
+
+
+Main considerations: 
+
+ - **1.** The SOC is now constrained by the SOH of the bank thus overtime the SOC no longer can reach 100%
+ - **2.** This has a direct impact on the energy balance of the model, and more batteries need to be installed to overcome this fade.
+ - **3.** At the moment, this feature does not work with capacity expansion. When considering a battery bank, all batteries should be the same in terms of type, model, capacity and age. When adding new batteries at different investment steps can impact the performance of the bank and overall degradation of the batteries. Now the model installs all needed units at the beginning of the project. A option for battery bank replacement is integrated in the model when the degradation feature is activated. 
 
 
 References
