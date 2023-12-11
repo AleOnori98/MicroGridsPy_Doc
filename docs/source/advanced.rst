@@ -98,7 +98,7 @@ temperature on the PV cell
 
 .. math::
 
-   E^{PV} = T^{amb} + \frac{NOCT-20}{800} \times E^{T,\beta}
+   T^{PV} = T^{amb} + \frac{NOCT-20}{800} \times I^{T,\beta}
 
 .. raw:: html
 
