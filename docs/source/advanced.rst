@@ -437,7 +437,7 @@ The reliability of a national grid's electricity supply refers to the consistent
 
 * **In the model**: This estimation results in a **Grid Availability.csv** which has as many numbered columns (excluding the rows labels) as the total years of the project and as many rows (excluding the columns headers) as the periods in which one year is divided (e.g. 1-hour time resolution leads to 8760 rows). These are composed of binary numbers (i.e., '0' or '1') meaning:
 
-    * - When the mini-grid isn't yet grid-connected:
+- When the mini-grid isn't yet grid-connected:
 
 .. raw:: html
 
@@ -448,7 +448,7 @@ The reliability of a national grid's electricity supply refers to the consistent
 .. raw:: html
 
 
-    * - After grid-connection:
+- After grid-connection:
 
 
 .. raw:: html
