@@ -514,8 +514,6 @@ A degradation model was developed and introduced into the model to account for t
 
 In initialize, the coefficients alpha and beta are firstly estimated by the following equation, where c and d are specific parameters for each chemistry:
 
-- **Alpha**: 
-
 .. raw:: html
 
     <style>
@@ -546,9 +544,7 @@ In initialize, the coefficients alpha and beta are firstly estimated by the foll
 .. raw:: html
 
 
-- **Beta**:
-
-- **For Lithium chemistry**
+- **For Li-ion chemistry**
 
 .. raw:: html
 
