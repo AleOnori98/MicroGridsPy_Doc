@@ -543,8 +543,7 @@ In initialize, the coefficients alpha and beta are firstly estimated by the foll
 
 .. raw:: html
 
-
-- **For Li-ion chemistry**
+    * - **For Li-ion chemistry**
 
 .. raw:: html
 
@@ -575,7 +574,7 @@ In initialize, the coefficients alpha and beta are firstly estimated by the foll
 
 .. raw:: html
 
-- **For Lead Acid chemistry**
+    * - **For Lead Acid chemistry**
 
 .. raw:: html
 
@@ -648,7 +647,7 @@ Regarding the battery replacement, a new approach is introduced when the model a
  - **3.**	The iterative replacement switch is chosen in MGPy. The replacement year is the single necessary input for this procedure. The replacement occurs in the first time step of the referred year. The simulation is repeated for the same scenario (as in step 1). 
 
 
-Main considerations: 
+**Main considerations:**
 
  - **1.** The SOC is now constrained by the SOH of the bank thus overtime the SOC no longer can reach 100%
  - **2.** This has a direct impact on the energy balance of the model, and more batteries need to be installed to overcome this fade.
