@@ -498,15 +498,15 @@ Solar irradiance exhibits minute-to-minute variations influenced by cloud dynami
 Battery Bank Degradation 
 ----------------------
 
-The battery performance isn’t constant over time due to capacity and power fade as the battery is exposed to degradation processes while in both operation and storage mode. Calendar aging results from the degradation while the battery is in storage mode. Whereas cycle aging corresponds to the degradation caused by charge and discharge cycles. The capacity fade refers to the reduction of available capacity. The battery status is provided by the State of Health (SOH) indicator. When the SOH reaches a certain threshold, the battery reached its End of Life (EOL). Temperature, State of Charge (SOC) and Depth of Discharge (DOD), are just some of the stress factors leading to degradation.
+The battery performance isn’t constant over time due to capacity and power fade as the battery is exposed to degradation processes while in both operation and storage mode. Calendar aging results from the degradation while the battery is in storage mode. Whereas cycle aging corresponds to the degradation caused by cyclic operation. The capacity fade refers to the reduction of available capacity. The battery status is provided by the State of Health (SOH) indicator. When the SOH reaches a certain threshold, the battery reached its End of Life (EOL). Temperature, State of Charge (SOC) and Depth of Discharge (DOD), are just some of the stress factors leading to degradation.
 
 Understanding and estimating the battery behaviour and related parameters during operation is key to improving capacity usage and cycling techniques, and, hence, inform battery modelling accordingly. A complete battery modelling is based on the estimation of operating conditions (i.e., SOC) and the estimation of battery lifetime expectancy (i.e., SOH) at any given moment of battery operation and lifetime. Battery models can be divided into four major groups: analytical, stochastic, electrical and electrochemical models. The most basic models just portray the energy balance which simplifies the behaviour of the battery. Other models reproduce the electrical characteristics during its operation or the chemical reactions, adding more accuracy but also complexity to the methodology. To achieve a complete battery model capable of determining battery related parameters through operation and even lifetime, the aging components must be accounted for in the methodology. 
 
 
-A degradation model was developed and introduced into the model to account for the battery bank capacity fade. This methodology can be applied for battery of the following chemistries: Lithium LFP and NMC, and Lead Acid. The model has the following algorithm:
+A degradation model was developed and introduced into the model to account for the battery bank capacity fade. This methodology can be applied for batteries of the following chemistries: Lithium LFP and NMC, and Lead Acid. The model has the following algorithm:
 
  - **1.**	For the selected battery technology, the α and β coefficients are calculated using the environment temperature, in the time step (t), and the DOD which is a fixed value for the simulation. 
- - **2.**	The previous outputs are used in the proposed degradation model. Here, the current battery energy capacity is calculated. 
+ - **2.**	The previous outputs are used in the proposed degradation model. Here, the current battery capacity is calculated. 
  - **3.**	The previous parameters are used in the next time step (t+1), so they’re updated.
 
 
@@ -638,13 +638,13 @@ The following function estimates the current battery bank capacity (energy const
 
 
 * **Results**
-In order to understand the impact of the battery degradation model in the overall model, the **current battery bank capacity** is exported in the **time-series** for each time step.
+The **current battery bank capacity** is exported in the **time-series** for each time step.
 
 Main considerations: 
 
  - **1.** The SOC is now constrained by the SOH of the bank thus overtime the SOC no longer can reach 100%
- - **2.** This has a direct impact on the energy balance of the model, and more battery need to be installed to overcome this fade.
- - **3.** At the moment, this feature does not work with capacity expansion. When considering a battery bank, all batteries should be the same in terms of type, model, capacity and age. When adding new batteries at different investement steps can impact the performance of the bank and overall degradation of the batteries. Now the model installs all nedded units at the beginning of the project. A option for battery bank replacement in integrated in the model when the degradation feature is activated. 
+ - **2.** This has a direct impact on the energy balance of the model, and more batteries need to be installed to overcome this fade.
+ - **3.** At the moment, this feature does not work with capacity expansion. When considering a battery bank, all batteries should be the same in terms of type, model, capacity and age. When adding new batteries at different investment steps can impact the performance of the bank and overall degradation of the batteries. Now the model installs all needed units at the beginning of the project. A option for battery bank replacement is integrated in the model when the degradation feature is activated. 
 
 
 * **Replacement**
@@ -657,9 +657,6 @@ Regarding the battery replacement, a new approach is introduced when the model a
  - **2.**	The model outputs are analysed. The battery bank replacement year is chosen based on the BESS SOH time-series results. It’s preferential to replace the battery at the EOL.
 
  - **3.**	The iterative replacement switch is chosen in MGPy. The replacement year is the single necessary input for this procedure. The replacement occurs in the first time step of the referred year. The simulation is repeated for the same scenario (as in step 1). 
-
- - **4.**	The model results are analysed. The outputs for the current BESS capacity time series and cost results confirm the correct replacement calculation. 
-
 
 
 References
