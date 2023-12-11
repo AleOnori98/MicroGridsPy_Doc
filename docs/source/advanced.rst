@@ -188,6 +188,8 @@ Load Demand Estimation
 
 
 
+
+
 .. list-table:: 
    :widths: 25 25 50
    :header-rows: 1
@@ -447,6 +449,7 @@ The reliability of a national grid's electricity supply refers to the consistent
 
 
     * - After grid-connection:
+
 
 .. raw:: html
 
