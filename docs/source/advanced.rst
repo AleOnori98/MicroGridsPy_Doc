@@ -78,6 +78,33 @@ Most optimization tools are focused on single-objective optimization that does n
 
 RES Time Series Estimation
 ----------------
+- **Solar PV generation**
+
+
+temperature on the PV cell
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+.. raw:: html
+
+    <div class="equation-container">
+
+.. math::
+
+   E^{PV} = T^{amb} + \frac{NOCT-20}{800} \times E^{T,\beta}
+
+.. raw:: html
+
+    </div>
+
+- **Wind turbine generation**
 
 
 
