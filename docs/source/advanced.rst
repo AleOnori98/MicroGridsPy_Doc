@@ -414,7 +414,7 @@ The total energy output is limited by the number of gensets available:
 National Grid
 ----------------------
 
-Mini-grid systems have been evolving through the years and newest generations present the possibility for connecting to the main electricity grid. The option to connect the system to the national grid is a feature embedded into the model where this can buy or sell electricity to the grid. For a realistic operation, the grid availability is also estimated based on grid power outages modelling.
+Mini-grid systems have been evolving through the years and newest generations (i.e., 3rd and 4th generation) present the possibility for connecting to the main electricity grid. The option to connect the system to the national grid is a feature embedded into the model where this can buy or sell electricity to the grid. For a realistic operation, the grid availability is also estimated based on grid power outages modelling.
 
 - **Grid constraints**
 
@@ -431,9 +431,39 @@ Regarding the **energy constraint** on this component, the maximum possible ener
 
 - **Grid Availability**
 
-explain how this is estimated as introduced in [8]
+The reliability of a national grid's electricity supply refers to the consistent and uninterrupted availability of electrical power to consumers. It is influenced by factors such as effective maintenance, weather resilience, robust infrastructure, adequate capacity planning, and preparedness for natural disasters. The grid availability estimation introduced in [8] is implemented in the model. This feature allows for a better characterization of the national grid "potential". 
 
-The input file, located in the "Time Series" folder within the "Inputs" folder, must have as many numbered columns (excluding the rows labels) as the total years of the project and as many rows (excluding the columns headers) as the periods in which one year is divided (e.g. 1-hour time resolution leads to 8760 rows). 
+* **In the model**: This estimation results in a **Grid Availability.csv** which has as many numbered columns (excluding the rows labels) as the total years of the project and as many rows (excluding the columns headers) as the periods in which one year is divided (e.g. 1-hour time resolution leads to 8760 rows). These are composed of binary numbers (i.e., '0' or '1') meaning:
+
+    * - When the mini-grid isn't yet grid-connected:
+
+.. raw:: html
+
+.. math::
+
+    G_{\text{yt,t}} = 0
+
+.. raw:: html
+
+
+    * - After grid-connection:
+
+.. raw:: html
+
+.. math::
+
+    G_{\text{yt,t}} = 0 ; \text{if grid outage}
+
+.. raw:: html
+
+.. raw:: html
+
+.. math::
+
+    G_{\text{yt,t}} = 1 ; \text{if grid availability}
+
+.. raw:: html
+
 
 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/GRID%20availability.png?raw=true
