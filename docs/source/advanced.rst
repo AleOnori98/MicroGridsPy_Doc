@@ -561,7 +561,7 @@ The battery performance isn’t constant over time due to capacity and power fad
 .. raw:: html
 
     <div style="display: flex; justify-content: center; align-items: center;">
-        <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Partial%20load%201.png?raw=true" width="350" style="margin-right: 10px;"/>
+        <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/SOH_temperature.png?raw=true" width="350" style="margin-right: 10px;"/>
         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Partial%20Load%202.jpg?raw=true" width="350" />
     </div>
 
@@ -570,6 +570,7 @@ The battery performance isn’t constant over time due to capacity and power fad
    :trim:
 
 |nbsp|
+
 
 
 Understanding and estimating the battery behaviour and related parameters during operation is key to improving capacity usage and cycling techniques, and, hence, inform battery modelling accordingly. A complete battery modelling is based on the estimation of operating conditions (i.e., SOC) and the estimation of battery lifetime expectancy (i.e., SOH) at any given moment of battery operation and lifetime. Battery models can be divided into four major groups: analytical, stochastic, electrical and electrochemical models. The most basic models just portray the energy balance which simplifies the behaviour of the battery. Other models reproduce the electrical characteristics during its operation or the chemical reactions, adding more accuracy but also complexity to the methodology. To achieve a complete battery model capable of determining battery related parameters through operation and even lifetime, the aging components must be accounted for in the methodology. 
