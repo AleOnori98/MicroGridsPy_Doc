@@ -578,7 +578,7 @@ Understanding and estimating the battery behaviour and related parameters during
 A degradation model was developed and introduced into the model to account for the battery bank capacity fade. This methodology can be applied for batteries of the following chemistries: Lithium LFP and NMC, and Lead Acid. 
 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/SOH_battery_chemistry.png?raw=true
-     :width: 500
+     :width: 400
      :align: center
 
 
