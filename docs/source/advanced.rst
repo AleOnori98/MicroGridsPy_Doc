@@ -562,7 +562,7 @@ The battery performance isn’t constant over time due to capacity and power fad
 
     <div style="display: flex; justify-content: center; align-items: center;">
         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/SOH_temperature.png?raw=true" width="350" style="margin-right: 10px;"/>
-        <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Partial%20Load%202.jpg?raw=true" width="350" />
+        <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/SOH_DOD.png?raw=true" width="350" />
     </div>
 
 
