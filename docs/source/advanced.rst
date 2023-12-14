@@ -733,7 +733,9 @@ Regarding the battery replacement, a new approach is introduced when the model a
 
  - **1.** The SOC is now constrained by the SOH of the bank thus overtime the SOC no longer can reach 100%
  - **2.** This has a direct impact on the energy balance of the model, and more batteries need to be installed to overcome this fade.
- - **3.** At the moment, this feature does not work with capacity expansion. When considering a battery bank, all batteries should be the same in terms of type, model, capacity and age. When adding new batteries at different investment steps can impact the performance of the bank and overall degradation of the batteries. Now the model installs all needed units at the beginning of the project. A option for battery bank replacement is integrated in the model when the degradation feature is activated. 
+ - **3.** At the moment, this feature does not work with capacity expansion. When considering a battery bank, all batteries should be the same in terms of type, model, capacity and age. When adding new batteries at different investment steps can impact the performance of the bank and overall degradation of the batteries. Now the model installs all needed units at the beginning of the project. 
+ - **4.** The same approach is used for brownfield approach with previous battery units. No previous units should be considered due to the same methodology as the capacity expansion.
+ - **5.** A option for battery bank replacement is integrated in the model when the degradation feature is activated. 
 
 
 References
