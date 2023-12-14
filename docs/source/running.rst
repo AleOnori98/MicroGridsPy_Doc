@@ -25,3 +25,10 @@ Results
 - demand
 - components
 
+
+**Plots**
+
+- dispatch
+- size
+- cost
+
