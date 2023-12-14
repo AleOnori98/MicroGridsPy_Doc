@@ -8,10 +8,6 @@ Testo
 Scenarios
 -----------
 
-.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/GRID%20availability.png?raw=true
-     :width: 500
-     :align: center
-
 Results
 -----------
 
@@ -19,6 +15,13 @@ LP/MILP
 
 The **Results_Summary** is a spreadsheet containing:
 - The grid components **Size**: Installed capacity of each component. In case of capacity expansion, it shows the size of each component after every investment step.
+
+    * LP
+.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Size_LP.png?raw=true
+     :width: 500
+     :align: center
+
+
 
 
 - The project **Cost**: Economic breakdown of the system. All the costs are actualized to the year at which they occur.
