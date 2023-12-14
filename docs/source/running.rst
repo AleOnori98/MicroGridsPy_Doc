@@ -20,7 +20,6 @@ The **Results_Summary** is a spreadsheet containing:
      :align: center
 
 
-    * MILP
 
 
 
