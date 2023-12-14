@@ -12,18 +12,19 @@ Example Gallery
      </ol>
      <div class="carousel-inner">
        <div class="carousel-item active">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/DispatchPlot.png?raw=true" class="d-block w-100" alt="Image 1">
+         <img src="images/Examples/DispatchPlot.png" class="d-block w-100" alt="Image 1">
        </div>
        <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/CashFlowPlot.png?raw=true" class="d-block w-100" alt="Image 2">
+         <img src="images/Examples/CashFlowPlot.png" class="d-block w-100" alt="Image 2">
        </div>
      </div>
-     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="color: #333;">
+       <span class="carousel-control-prev-icon" aria-hidden="true" style="background-image: none;"></span>
        <span class="sr-only">Previous</span>
      </a>
-     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="color: #333;">
+       <span class="carousel-control-next-icon" aria-hidden="true" style="background-image: none;"></span>
        <span class="sr-only">Next</span>
      </a>
    </div>
+
