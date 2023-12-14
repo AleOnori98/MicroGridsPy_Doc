@@ -46,6 +46,7 @@ Table of Contents
    installation
    building
    running
+   example
    advanced
    formulation
    troubleshooting
