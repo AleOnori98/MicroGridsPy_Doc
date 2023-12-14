@@ -4,28 +4,6 @@ Mathematical Formulation
 .. role:: raw-html(raw)
     :format: html
 
-**Summary of Nomenclature**
-
-
-.. list-table:: 
-   :widths: 25 25
-   :header-rows: 1
-
-   * - Parameter name
-     - Symbol
-   * - Scenarios
-     - s
-   * - Periods
-     - t  
-   * - Years
-     - yt
-   * - Steps
-     - ut
-   * - RES_Sources
-     - r
-   * - Generator_Types
-     - g
-
 
 Two-stage optimization mixed integer linear programming sizing model
 ======================================================================
@@ -168,19 +146,121 @@ The total CO2 emissions are calculated as the sum of the weighted scenario-speci
     </div>
     </div>
 
+
+
 Cost
 ====
 
-- investment
-- fixed o&m cost
-- variable cost (battery replacement ...)
-- salvage value
+The cost constraints are associated with the financial aspects of planning, implementing, and operating a mini-grid. These involve various factors that can impact the overall cost-effectiveness of the mini-grid, potentially affecting its feasibility, sustainability, and affordability. 
+
+Investment
+--------------------
+
+- **National Grid**
+
+.. raw:: html
+
+.. math::
+
+   \text{Investment Cost}_{\text{GRID}} = \frac {\text{Specific Investment Cost}_{\text{GRID}} \times \text{Distance}_{\text{GRID}}}
+    {(1+d)^{\text{yt}_{\text{GRID connection}}-1}}
+
+.. raw:: html
+
+
+
+Fixed Costs
+--------------------
+
+- **National Grid**
+O&M fixed - Fixed costs for power line and transformer maintenance
+
+.. raw:: html
+
+.. math::
+
+   \text{O&M fixed}_{\text{GRID}} = \sum_{yt = {\text{yt}_{\text{GRID connection}}}} \frac {\text{Specific Investment Cost}_{\text{GRID}} \times 
+   \text{Distance}_{\text{GRID}} \times x_{\text{O&M}}}{(1+d)^{\text{yt}}}
+
+.. raw:: html
+
+
+Variable Costs 
+--------------------
+
+- **National Grid**
+O&M variable - related to the energy purchased from the grid
+
+.. raw:: html
+
+.. math::
+
+   \text{O&M variable}_{\text{GRID}} = \sum_{yt}\sum_{t} \frac {E_{\text{from GRID}}(s,yt,t) \times Price_{\text{purchased}}}{(1+d)^{\text{yt}}}
+
+.. raw:: html
+
+Revenue - related to the energy sold to the grid
+
+.. raw:: html
+
+.. math::
+
+   \text{Revenue}_{\text{GRID}} = \sum_{yt}\sum_{t} \frac {E_{\text{to GRID}}(s,yt,t) \times Price_{\text{sold}}}{(1+d)^{\text{yt}}}
+
+.. raw:: html
+
+
+
+- **Battery replacement**
+When it comes to replacing the Battery Energy Storage System (BESS), the calculation is based on data provided by the battery manufacturer regarding the number of charge-discharge cycles the battery can handle before reaching the end of its useful life. This cycle life data, in combination with the investment cost, is used to determine when the battery should be replaced. The battery's capacity is assumed to remain constant, as the model doesn't consider capacity degradation. Therefore, the replacement is solely based on the number of completed cycles. With each cycle, a portion of the initial investment cost is added to the overall project cost, ensuring that the cost of replacing the battery is covered by the time it reaches its End of Life (EOL). The investment cost mentioned above doens't account for the cost of the electronics.
+
+.. raw:: html
+
+  <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+    \text{Replacement}_{\text{BESS}}(s) = \sum_{yt} \sum_{t} [(E_{\text{BESS charge}}(s,yt,t) \times \text{U}_{\text{Replacement}}) +
+    (E_{\text{BESS discharge}}(s,yt,t) \times \text{U}_{\text{Replacement}})]
+
+.. math::
+
+     \text{U}_{\text{Replacement}} = \frac{\text{Specific Investment Cost}_{\text{BESS}} - \text{Specific Investment Cost}_{\text{BESS electronics}}}
+        {2*Cycles*DOD} 
+
+.. raw:: html
+
+    </div>
+    </div>
+
+
+Salvage value
+--------------------
+
 
 Energy
 ======
 
-- Energy Balance
+Limitations or challenges associated with the availability, generation, storage, and distribution of energy within the mini-grid power system can impact the reliability, efficiency, and overall performance of the system. Thus, energy constraints are introduced to represent a more realistic system operation accounting for these factors in the energy model. 
 
+
+Energy Balance
+--------------------
+
+The energy balance of the system is ensured by the following equation. This considers that the energy demand must be meet by energy provided by the RES, generators and BESS while accouting for Lost Load and curtailment, which is the excess energy that can't be stored or consumed.
 
 .. raw:: html
 
@@ -203,8 +283,8 @@ Energy
 
     E_{\text{demand}}(s,yt,t) = 
     \sum_{r} E_{\text{RES}}(s,r,yt,t) + 
-    \sum_{g} E_{\text{generator}}(s,g,yt,t) + E_{\text{from grid}}(s,yt,t) -
-    E_{\text{to grid}}(s,yt,t) + E_{\text{BESS charge}}(s,yt,t) - 
+    \sum_{g} E_{\text{GEN}}(s,g,yt,t) + E_{\text{from GRID}}(s,yt,t) -
+    E_{\text{to GRID}}(s,yt,t) + E_{\text{BESS charge}}(s,yt,t) - 
     E_{\text{BESS discharge}}(s,yt,t) +
     \text{Lost Load}(s,yt,t) - E_{\text{curtailment}}(s,yt,t)
 
@@ -213,18 +293,22 @@ Energy
     </div>
     </div>
 
-    </div>
-    </div>
+
+RES
+--------------------
+
+The total energy delivered by the RES generation system is estimated based on the inverter efficiency, the unitary energy production and the total installed units for each RES technology.
+
+.. raw:: html
+
+.. math::
+
+    E_{\text{RES}}(s,yt,r,t) = E_{\text{unit_RES}}(s,r,t) \times \eta_{\text{inverter}}(r) \times Units_{\text{RES}}(ut,r)
+
+.. raw:: html
 
 
-
-
-
-
-- RES
-
-- Storage system (BESS - Battery Energy Storage System)
-The operation of the BESS is modelled with simple and straightforward model with low complexity. This model relies on both analytical and empirical approaches to estimate the State of Charge (SOC) of the battery based on how energy flows in and out. Importantly, this battery model doesn't account for the battery's degradation over time.
+Renewable penetration ({I\_{RES}}) refers to the extent to which renewable energy sources contribute to the overall energy mix. The related constrainted allows to impose a minimum percentage of energy to be produced by non-dispatchable energy sources. 
 
 .. raw:: html
 
@@ -242,6 +326,22 @@ The operation of the BESS is modelled with simple and straightforward model with
     </style>
     <div class="equation-container">
     <div class="scrollable-equation">
+
+.. math::
+
+   \sum_{s}(\sum_{r}\sum_{yt}\sum_{t}  E_{\text{RES}}(s,yt,r,t) \times Scenario_Weight(s)) \times (1-I_{\text{RES}}) \geq 
+   \sum_{s}(\sum_{g}\sum_{yt}\sum_{t}  E_{\text{generator}}(s,yt,g,t) \times Scenario_Weight(s)) \times I_{\text{RES}}
+.. raw:: html
+
+    </div>
+    </div>
+
+Battery Bank
+-----------------------
+
+The operation of the BESS is modelled with simple and straightforward model with low complexity. This model relies on both analytical and empirical approaches to estimate the State of Charge (SOC) of the battery based on how energy flows in and out. Importantly, this battery model doesn't account for the battery's degradation over time.
+
+.. raw:: html
 
 .. math::
 
@@ -252,12 +352,82 @@ The operation of the BESS is modelled with simple and straightforward model with
 
 .. raw:: html
 
-    </div>
-    </div>
+The operational SOC range is constrainted in the model for a better and more realistic BESS operation. The SOC can vary between a maximum value when the battery is fully charged and a minimum value when the battery discharges its share of usable capacity (DOD). Therefore, the SOC can vary between 100% and (1-DOD)%.
 
-Other constraints are enforced in order to model a more realistic BESS operation.
 
-mention DOD and what means when used here. Maximum discharge of the battery.
+.. raw:: html
+
+.. math::
+
+    Units_{\text{BESS}}(ut) \times C_{\text{BESS}} \times (1 - DOD) \leq SOC(s,yt,t) \leq Units_{\text{BESS}}(ut) \times C_{\text{BESS}}
+
+.. raw:: html
+
+
+The maximum BESS power when charging or discharging is also constrainted into the model assuming a maximum time for charging or discharging the BESS constinuously. While the maximum energy exchange is directly related to the maximum power value.
+
+
+.. raw:: html
+
+.. math::
+
+    P_{\text{BESS}}(ut) = \frac{Units_{\text{BESS}}(ut) \times C_{\text{BESS}}}{time_{\text{max}}}
+
+.. math::
+
+    E_{\text{BESS}}(s,yt,t) \leq P_{\text{BESS}}(ut) \times \Delta t
+
+.. raw:: html
+
+
+battery min capacity (add)
+
+
+.. raw:: html
+
+.. math::
+
+    Units_{\text{BESS}}(ut) \times C_{\text{BESS}} \geq min_cap
+
+.. raw:: html
+
+
+Diesel Generator
+--------------------
+
+The simple model for diesel generator operation allows it to freely vary its output within a range of 0 to 100%, without imposing any penalty for operating at partial load. The only limitation imposed is that the generator cannot exceed its maximum capacity.
+
+.. raw:: html
+
+.. math::
+
+    E_{\text{GEN}}(s,yt,g,t) \leq C_{\text{GEN}}(g) \times Units_{\text{GEN}}(ut,g) \times \Delta t
+
+.. raw:: html
+
+
+Lost Load
+--------------------
+
+The fraction of lost load should be equal or less than the input value parameter in the model.
+
+.. raw:: html
+
+.. math::
+
+    \text{Lost_Load_Fraction} \geq \frac{\sum_{t} Lost Load (s,yt,t)}{\sum_{t} E_{\text{demand}}(s,yt,t)}
+
+.. raw:: html
+
+Emissions
+===================
+
+Calculation of CO2 emissions related to each component of the system.
+
+RES
+--------------------
+
+Related to the installed capacity for RES generation system.
 
 .. raw:: html
 
@@ -278,7 +448,40 @@ mention DOD and what means when used here. Maximum discharge of the battery.
 
 .. math::
 
-    Units_{\text{BESS}}(ut) \times C_{\text{BESS}} \times (1 - DOD) \leq SOC(s,yt,t) \leq Units_{\text{BESS}}(ut) \times C_{\text{BESS}}
+   \text{RES emission} = \sum_{r}(\text{CO2 emission}_{\text{RES}}(r) \times \text{Units}_{\text{RES}}(1,r) \times \text{C}_{\text{RES}}(r)) +
+    \sum_{r}\sum_{ut}(\text{CO2 emission}_{\text{RES}}(r) \times (\text{Units}_{\text{RES}}(ut,r) - \text{Units}_{\text{RES}}(ut-1,r)) 
+    \times \text{C}_{\text{RES}}(r)) 
+
+.. raw:: html
+
+    </div>
+    </div>
+
+Battery Bank
+--------------------
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+   \text{BESS emission} = (\text{CO2 emission}_{\text{BESS}} \times \text{Units}_{\text{BESS}}(1) \times \text{C}_{\text{BESS}}) +
+    \sum_{ut}(\text{CO2 emission}_{\text{BESS}} \times (\text{Units}_{\text{BESS}}(ut) - \text{Units}_{\text{BESS}}(ut-1)) 
+    \times \text{C}_{\text{BESS}}) 
 
 .. raw:: html
 
@@ -286,15 +489,63 @@ mention DOD and what means when used here. Maximum discharge of the battery.
     </div>
 
 
-When it comes to replacing the Battery Energy Storage System (BESS), the calculation is based on data provided by the battery manufacturer regarding the number of charge-discharge cycles the battery can handle before reaching the end of its useful life. This cycle life data, in combination with the investment cost, is used to determine when the battery should be replaced. The battery's capacity is assumed to remain constant, as the model doesn't consider capacity degradation. Therefore, the replacement is solely based on the number of completed cycles. With each cycle, a portion of the initial investment cost is added to the overall project cost, ensuring that the cost of replacing the battery is covered by the time it reaches its End of Life (EOL).
+Diesel Generator
+--------------------
 
 
-- Diesel generator
-- lost load
-- grid
+.. raw:: html
+
+    <style>
+    .equation-container {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+    .scrollable-equation {
+        white-space: nowrap;
+        overflow-x: scroll;
+        display: block;
+    }
+    </style>
+    <div class="equation-container">
+    <div class="scrollable-equation">
+
+.. math::
+
+   \text{GEN emission} = \sum_{g}(\text{CO2 emission}_{\text{GEN}}(g) \times \text{Units}_{\text{GEN}}(1,g) \times \text{C}_{\text{GEN}}(g)) +
+    \sum_{g}\sum_{ut}(\text{CO2 emission}_{\text{GEN}}(g) \times (\text{Units}_{\text{GEN}}(ut,g) - \text{Units}_{\text{GEN}}(ut-1,g)) 
+    \times \text{C}_{\text{GEN}}(g)) 
+
+.. raw:: html
+
+    </div>
+    </div>
 
 
-others
-- emissions
+- **Fuel**
 
+Emissions associated to consumption of fuel for the back-up generator at each model time step.
+
+
+.. raw:: html
+
+.. math::
+
+   \text{FUEL emission}(s,yt,g,t) = \frac{\text{E}_{\text{GEN}}(s,yt,g,t)}{\text{LHV}_{\text{FUEL}}(g) \times \eta_{\text{GEN}(g)}}
+    \times \text{CO2 emission}_{\text{FUEL}}(g)
+
+.. raw:: html
+
+National Grid
+--------------------
+
+Emissions associated to consumption of electricity from the national grid at each model time step.
+
+.. raw:: html
+
+.. math::
+
+   \text{GRID emission}(s,yt,t) = \text{E}_{\text{from GRID}}(s,yt,t) \times \text{CO2 emission}_{\text{GRID}}
+
+.. raw:: html
 

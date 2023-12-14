@@ -11,8 +11,8 @@ MicroGridsPy is a comprehensive energy optimization model designed for the strat
    profiles. For sub-Sahara Africa it is also possible to estimate endogenously these time series data based on editable parameters and build-in load 
    demand archetypes
 
-#. **Configuration and Optimization setup**: Set the model's general parameters, such as the number of periods (e.g., 8760 for hourly analysis) and the 
-   the total duration of the project, specific features and modes such as MILP formulation, Multi-Objective optimization, Grid connection etc. as well as 
+#. **Configuration and Optimization setup**: Set the model's general parameters, such as the number of periods (e.g., 8760 for hourly analysis) and the
+   total duration of the project, specific features and modes such as MILP formulation, Multi-Objective optimization, Grid connection etc. as well as 
    specific model's optimization goals and constraints, such as aiming for a minimum renewable penetration or a certain level of battery independence.
 
 #. **Component Selection**: Choose the technologies to include, like PV panels or wind turbines of a specific model, and define their capacities and 
@@ -44,8 +44,33 @@ The general terminology defined here is used throughout the documentation and th
   an hourly basis. Having a high temporal resolution (many periods) allows for a more detailed and accurate simulation of the mini-grid's performance, 
   which is critical for designing an efficient and reliable system. However, more periods also mean more data to process and potentially longer computation 
   times, so there's a trade-off between model detail and computational efficiency.
-* **Investment Step**:......
-* **Scenario**: 
+* **Investment Steps**: Total number of investment steps during project duration. Based on the setp duration of each investment decision in which the project lifetime will be split. (refer to :doc:`advanced`)
+* **Scenarios**: Number of scenarios to consider within the optimisation due to the uncertainty associated with the energy generation from renewable sources and the fluctuating energy demand in rural villages. To address this issue, various scenarios are explored aimed at minimizing the overall energy cost for consumers. This involves the creation of diverse and realistic scenarios for both solar power output and energy consumption.
+* **Years**: Total duration of the project in years. 
+* **RES_Sources**: Number of Renewable Energy Sources (RES) types to consider in the simulation.
+* **Generator_Types**: Number of different types of gensets that can be installed in the mini-grid.
+
+
+.. list-table:: 
+   :widths: 25 25
+   :header-rows: 1
+
+   * - Parameter name
+     - Symbol
+   * - Periods
+     - t  
+   * - Steps
+     - ut
+   * - Scenarios
+     - s
+   * - Years
+     - yt
+   * - RES_Sources
+     - r
+   * - Generator_Types
+     - g
+
+
 
 As more generally in constrained optimisation, the following terms are also used:
 
@@ -224,7 +249,7 @@ Defines the types and characteristics of renewable energy sources, like solar PV
      - (-)
      - Number of Renewable Energy Sources (RES) types
    * - RES_Names
-     - (e.g. PV panels, Wind turbines)
+     - (e.g. 'PV panels', 'Wind turbines')
      - Renewable Energy Sources (RES) names
    * - RES_Nominal_Capacity
      - Power (e.g. W)
@@ -248,7 +273,7 @@ Defines the types and characteristics of renewable energy sources, like solar PV
      - years
      - How many years ago the component was installed 
    * - RES_unit_CO2_emission
-     - [kgCO2/kW]
+     - (e.g. kgCO2/kW)
      - ???
 
 .. raw:: html
@@ -275,36 +300,57 @@ Details the types of generators that can be included in the microgrid, their eff
    * - Parameter name
      - Unit
      - Description
-   * - RES_Sources
+   * - Generator_Types 
      - (-)
-     - Number of Renewable Energy Sources (RES) types
-   * - RES_Names
-     - (e.g. PV panels, Wind turbines)
-     - Renewable Energy Sources (RES) names
-   * - RES_Nominal_Capacity
-     - Power (e.g. W)
-     - Single unit capacity of each type of Renewable Energy Source (RES)
-   * - RES_Inverter_Efficiency
+     - Number of different types of gensets 
+   * - Generator_Names 
+     - (e.g. 'Diesel Genset 1')
+     - Generator names
+   * - Generator_Efficiency 
      - [%]
-     - Efficiency of the inverter connected to each Renewable Energy Source (RES) (put 1 in case of AC bus)
-   * - RES_Specific_Investment_Cost
+     - Average generator efficiency of each generator type
+   * - Generator_Specific_Investment_Cost 
      - (e.g. USD/W)
-     - Specific investment cost for each type of Renewable Energy Source (RES) 
-   * - RES_Specific_OM_Cost
+     - Specific investment cost for each generator type 
+   * - Generator_Specific_OM_Cost 
      - [%]
-     - O&M cost for each type of Renewable Energy Source (RES) as a fraction of the specific investment cost 
-   * - RES_Lifetime
+     - O&M cost for each generator type as a fraction of specific investment cost [%]
+   * - Generator_Lifetime 
      - years
-     - Lifetime of each Renewable Energy Source (RES)   
-   * - RES_units
-     - (-)
-     - Existing RES units of nominal capacity (if Brownfield investment activated)
-   * - RES_years
+     - Lifetime of each generator type  
+   * - Fuel_Names 
+     - (e.g. 'Diesel')
+     - Fuel names (to be specified for each generator, even if they use the same fuel)
+   * - Fuel_Specific_Cost 
+     - (e.g. USD/lt)
+     - Specific fuel cost for each generator type 
+   * - Fuel_LHV 
+     - (e.g. Wh/lt)
+     - Fuel lower heating value (LHV) for each generator type 
+   * - Generator_capacity 
+     - Power (e.g. W)
+     - Existing Generator capacity (if Brownfield investment activated)
+   * - GEN_years 
      - years
      - How many years ago the component was installed 
-   * - RES_unit_CO2_emission
-     - [kgCO2/kW]
-     - ???
+   * - GEN_unit_CO2_emission 
+     - (e.g. kgCO2/kW)
+     - ????????
+   * - FUEL_unit_CO2_emission 
+     - (e.g. kgCO2/lt)
+     - ????????
+   * - Generator_Min_output 
+     - [%]
+     - Minimum percentage of energy output for the generator in part load 
+   * - Generator_Nominal_Capacity_milp 
+     - Power (e.g. W)
+     - Nominal capacity of each generator       
+   * - Generator_pgen 
+     - [%]
+     - Percentage of the total operation cost of the generator system at full load 
+
+
+
 
 .. raw:: html
 
@@ -341,13 +387,13 @@ Specifies the investment and operational costs, efficiencies, and other technica
      - (-)
      - O&M cost of the battery bank as a fraction of the specific investment cost
    * - Battery_Discharge_Battery_Efficiency
-     - % (0-1)
+     - [%]
      - Discharge efficiency of the battery bank
    * - Battery_Charge_Battery_Efficiency
-     - % (0-1)
+     - [%]
      - Charge efficiency of the battery bank 
    * - Battery_Depth_of_Discharge
-     - % (0-1)
+     - [%]
      - Depth of discharge of the battery bank (maximum amount of discharge)
    * - Maximum_Battery_Discharge_Time
      - hours
@@ -359,7 +405,7 @@ Specifies the investment and operational costs, efficiencies, and other technica
      - (-)
      - Maximum number of cycles before degradation of the battery
    * - Battery_Initial_SOC
-     - % (0-1)
+     - [%]
      - Battery initial state of charge
    * - Battery_capacity
      - Energy (e.g. Wh)
@@ -384,11 +430,82 @@ Specifies the investment and operational costs, efficiencies, and other technica
 
 Parameters here govern the potential connection to the national grid, including costs, distances, pricing for energy sold to or purchased from the grid, and reliability metrics.
 
+.. raw:: html
+
+    <div style="overflow-y: auto; height: 350px;">
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter name
+     - Unit
+     - Description
+   * - Year_Grid_Connection 
+     - (-)
+     - Year at which the mini-grid is connected to the national grid (starting from 1)     
+   * - Grid_Sold_El_Price 
+     - (e.g. USD/kWh)
+     - Price at which electricity is sold to the grid
+   * - Grid_Purchased_El_Price 
+     - (e.g. USD/kWh)
+     - Price at which electricity is purchased from the grid 
+   * - Grid_Distance 
+     - (e.g. km)
+     - Distance from grid connection point 
+   * - Grid_Connection_Cost 
+     - (e.g. USD/km)
+     - Investment cost of grid connection, i.e. extension of power line + transformer costs 
+   * - Grid_Maintenance_Cost 
+     - (-)
+     - O&M cost for maintenance of the power line and transformer as a fraction of investment cost
+   * - Maximum_Grid_Power 
+     - (e.g. kW)
+     - Maximum active power that can be injected/withdrawn to/from the grid 
+   * - Grid_Average_Number_Outages 
+     - (-)
+     - Average number of outages in the national grid in a year (0 to simulate ideal power grid)
+   * - Grid_Average_Outage_Duration 
+     - minutes
+     - Average duration of an outage (0 to simulate ideal power grid)
+   * - National_Grid_Specific_CO2_emissions 
+     - (e.g. kgCO2/kWh)
+     - Specific CO2 emissions by the considered national grid
+
+.. raw:: html
+
+    </div>
+
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
+|nbsp|
+
+**Lost Load**
+
+Specific parameters for Lost Load regarding maximum value and related costs.
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter name
+     - Unit
+     - Description
+   * - Lost_Load_Fraction 
+     - (-)
+     - Maximum admittable loss of load          
+   * - Lost_Load_Specific_Cost 
+     - (e.g. USD/Wh)
+     - Value of the unmet load
+
+
 
 Plot settings
 --------------
 
 These parameters are used for the aesthetic aspects of model outputs, assigning colors to different energy sources, storage options, and other model components for visual representation in plots and charts.
+
 
 .. note::
   Please refer to the example gallery for a better understanding of the structure of both the set and parameter files.
@@ -447,7 +564,7 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
 
 
 
-Renewable Energy Production (Generation)
+RES Production
 -------
 
 **Introduction**
@@ -483,7 +600,13 @@ Electricity needed to meet the demand can be generated using various energy sour
 The input file, located in the "Time Series" folder within the "Inputs" folder, must have as many numbered columns (excluding the rows labels) as the total years of the project and as many rows (excluding the columns headers) as the periods in which one year is divided (e.g. 1-hour time resolution leads to 8760 rows). 
 
 
+.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/RES.png?raw=true
+     :width: 200
+     :height: 500
+     :align: center
 
+.. |nbsp| unicode:: 0xA0 
+   :trim:
 
-
+|nbsp|
 

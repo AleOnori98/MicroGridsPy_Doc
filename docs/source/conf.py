@@ -17,6 +17,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
+    'sphinxcontrib.images',
+    'sphinx_gallery.gen_gallery',
 ]
 
 intersphinx_mapping = {
