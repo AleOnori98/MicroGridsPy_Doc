@@ -27,11 +27,10 @@ The **Results_Summary** is a spreadsheet containing:
 
 - The project **Cost**: Economic breakdown of the system. All the costs are actualized to the year at which they occur.
 
-
 - The **Yearly cash flows**: Breakdown of yearly non-actualised costs (fixed O&M, fuel cost, battery replacement, lost load), grouped by component type (battery, generators, renewable technologies)
 
-
 - The **Yearly energy parameters**: 
+
             * Generators share: total energy provided by generators divided by total electric demand
             * Renewables penetration: total energy provided by renewables divided by the sum of total energy provided by both renewables and generators
             * Curtailment share: total energy curtailed divided by the sum of total energy provided by both renewables and generators  
@@ -39,6 +38,7 @@ The **Results_Summary** is a spreadsheet containing:
             * Grid usage: total energy withdrawn from the national grid divided by total electric demand
 
 - The **Yearly energy parameters SC**: 
+
             * Generators share: total energy provided by generators divided by total electric demand for each scenario.
             * Renewables penetration: total energy provided by renewables divided by the sum of total energy provided by both renewables and generators for each scenario.
             * Curtailment share: total energy curtailed divided by the sum of total energy provided by both renewables and generators for each scenario.
