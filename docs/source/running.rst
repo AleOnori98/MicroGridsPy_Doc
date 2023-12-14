@@ -11,8 +11,9 @@ Scenarios
 Results
 -----------
 
+LP/MILP
 
-Results_Summary.xlsx : spreadsheet containing
+**Results_Summary**.xlsx : spreadsheet containing
 - sheet 'Size': Installed capacity of each component. In case of capacity expansion, it shows the size of each component after every investment step.
 - sheet 'Cost': Economic breakdown of the system. All the costs are ACTUALIZED to the year at which they occur.
 - sheet 'Yearly cash flows': Breakdown of yearly NON-ACTUALISED costs (fixed O&M, fuel cost, battery replacement, lost load), grouped by component type (battery, generators, renewable technologies)
@@ -30,33 +31,14 @@ Results_Summary.xlsx : spreadsheet containing
             * Grid usage: total energy withdrawn from the national grid divided by total electric demand for each scenario.
 
 
-Time_Series.xlsx : spreadsheet containing
+**Time_Series**.xlsx : spreadsheet containing
 - hourly energy balance of the system (technologies energy production, battery energy flows, demand, lost load, curtailment) + state of charge of the batteries and fuel consumed by the generators
 - each year of the time horizon is reported on a different sheet
 
-
-Plots/: 
+**Plots**/: 
 DispatchPlot: image print-out of system energy dispatch and load demand for the selected date(s)
 
 
-**summary file**
-
-- components size (lp vs milp)
-- cost
-- cash flows
-- energy parameters
-
-
-
-**dispatch time series file**
-
-- demand
-- components
-
-
-**Plots**
-
-- dispatch
 - size
 - cost
 
