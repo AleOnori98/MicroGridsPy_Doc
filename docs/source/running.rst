@@ -3,15 +3,12 @@ Analysing the Results
 .. role:: raw-html(raw)
     :format: html
 
-Testo
 
 Scenarios
 -----------
 
 Results
 -----------
-
-LP/MILP
 
 The **Results_Summary** is a spreadsheet containing:
 
