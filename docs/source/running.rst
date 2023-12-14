@@ -13,7 +13,7 @@ Results
 
 **summary file**
 
-- components size
+- components size (lp vs milp)
 - cost
 - cash flows
 - energy parameters
