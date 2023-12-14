@@ -12,22 +12,12 @@ version = '0.1.0'
 # -- General configuration
 
 extensions = [
-<<<<<<< Updated upstream
-    "sphinx.ext.autodoc",
-    "sphinx.ext.autosummary",
-    "sphinx.ext.intersphinx",
-    "sphinx.ext.todo",
-    "sphinx.ext.mathjax",
-    "sphinx.ext.napoleon",
-    "sphinx.ext.imgconverter",  # for SVG conversion
-=======
     'sphinx.ext.duration',
     'sphinx.ext.doctest',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
-    'sphinxcontrib.images',
->>>>>>> Stashed changes
+    'sphinxcontrib.images'
 ]
 
 intersphinx_mapping = {
