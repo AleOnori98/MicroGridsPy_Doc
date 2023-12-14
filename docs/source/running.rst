@@ -14,6 +14,7 @@ Results
 LP/MILP
 
 The **Results_Summary** is a spreadsheet containing:
+
 - The grid components **Size**: Installed capacity of each component. In case of capacity expansion, it shows the size of each component after every investment step.
 
     * LP
