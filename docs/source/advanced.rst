@@ -736,7 +736,7 @@ Regarding the battery replacement, a new approach is introduced when the model a
  - **3.** At the moment, this feature does not work with capacity expansion. When considering a battery bank, all batteries should be the same in terms of type, model, capacity and age. When adding new batteries at different investment steps can impact the performance of the bank and overall degradation of the batteries. Now the model installs all needed units at the beginning of the project. 
  - **4.** In the case of brownfield: 
         * If we consider existing battery units, the model won't install new units. With this input, the current SOH for these batteries is also considered and the degradation model will start from that specific capacity.
-        * If no previous batteries are present, the model will proceed with the same methodology as greenfield approach.
+        * If no previous batteries are present, the model will proceed with the same methodology as the greenfield approach.
  - **5.** A option for battery bank replacement is integrated in the model when the degradation feature is activated. 
 
 
