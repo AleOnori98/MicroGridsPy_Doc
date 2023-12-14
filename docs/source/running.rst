@@ -20,6 +20,9 @@ The **Results_Summary** is a spreadsheet containing:
      :align: center
 
 
+    * MILP
+
+
 
 
 - The project **Cost**: Economic breakdown of the system. All the costs are actualized to the year at which they occur.
