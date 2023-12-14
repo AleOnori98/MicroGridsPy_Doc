@@ -48,19 +48,17 @@ The **Results_Summary** is a spreadsheet containing:
 
 
 The **Time_Series** is a spreadsheet containing:
-- hourly energy balance of the system (technologies energy production, battery energy flows, demand, lost load, curtailment) + state of charge of the batteries and fuel consumed by the generators
+
+- Hourly **energy balance** of the system (technologies energy production, battery energy flows, demand, lost load, curtailment) + **state of charge** of the batteries and **fuel consumed** by the generators
 - each year of the time horizon is reported on a different sheet
 
 
 
+The **Plots** are the graphic representation of the previous results:
 
+- **DispatchPlot**: 
 
+- **Size**:
 
-
-**Plots**/: 
-DispatchPlot: image print-out of system energy dispatch and load demand for the selected date(s)
-
-
-- size
-- cost
+- **Cost**:
 
