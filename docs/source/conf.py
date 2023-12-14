@@ -21,6 +21,11 @@ extensions = [
     'sphinx_gallery.gen_gallery',
 ]
 
+sphinx_gallery_conf = {
+    'examples_dirs': 'docs/source/example.rst',
+    'gallery_dirs': 'docs/source/images/Examples',  
+}
+
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
