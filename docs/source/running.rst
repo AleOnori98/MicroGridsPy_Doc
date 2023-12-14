@@ -8,6 +8,10 @@ Testo
 Scenarios
 -----------
 
+.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/GRID%20availability.png?raw=true
+     :width: 500
+     :align: center
+
 Results
 -----------
 
