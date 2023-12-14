@@ -30,9 +30,7 @@ The **Results_Summary** is a spreadsheet containing:
             * Battery usage: total energy discharged by the batteries divided by total electric demand
             * Grid usage: total energy withdrawn from the national grid divided by total electric demand
 
-
-
-- sheet 'Yearly energy parameters SC': 
+- The **Yearly energy parameters SC**: 
             * Generators share: total energy provided by generators divided by total electric demand for each scenario.
             * Renewables penetration: total energy provided by renewables divided by the sum of total energy provided by both renewables and generators for each scenario.
             * Curtailment share: total energy curtailed divided by the sum of total energy provided by both renewables and generators for each scenario.
