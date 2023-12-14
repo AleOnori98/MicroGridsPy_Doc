@@ -38,6 +38,7 @@ epub_show_urls = 'footnote'
 # Add custom CSS
 html_css_files = [
     'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
+    'custom.css',
 ]
 
 # Add custom JavaScript
