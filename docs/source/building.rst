@@ -30,13 +30,10 @@ MicroGridsPy is a comprehensive energy optimization model designed for the strat
    :align: center
 
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
 |nbsp|
 
 Terminology
-===========
+==============
 The general terminology defined here is used throughout the documentation and the model code and configuration files:
 
 * **Periods**: *units of time* for which the model performs calculations, defining the *temporal resolution* of the model. For example, if 'Periods' is 
@@ -159,9 +156,6 @@ These settings determine the overall configuration of the optimization model, in
 
     </div>
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
 |nbsp|
 
 **Model Switches**
@@ -220,9 +214,6 @@ This set of parameters allows users to toggle different aspects and features of 
 
     </div>
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
 |nbsp|
 
 (refer to :doc:`advanced`)
@@ -279,9 +270,6 @@ Defines the types and characteristics of renewable energy sources, like solar PV
 .. raw:: html
 
     </div>
-
-.. |nbsp| unicode:: 0xA0 
-   :trim:
 
 |nbsp|
 
@@ -356,9 +344,6 @@ Details the types of generators that can be included in the microgrid, their eff
 
     </div>
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
 |nbsp|
 
 
@@ -421,9 +406,6 @@ Specifies the investment and operational costs, efficiencies, and other technica
 
     </div>
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
 |nbsp|
 
 **Grid Technology**
@@ -475,9 +457,6 @@ Parameters here govern the potential connection to the national grid, including 
 .. raw:: html
 
     </div>
-
-.. |nbsp| unicode:: 0xA0 
-   :trim:
 
 |nbsp|
 
@@ -538,9 +517,6 @@ At the core of the optimization energy modelling process lies the load curve dem
     </div>
     </details>
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
 |nbsp|
 
 **Demand.csv**
@@ -551,9 +527,6 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Demand.png?raw=true
      :width: 700
      :align: center
-
-.. |nbsp| unicode:: 0xA0 
-   :trim:
 
 |nbsp|
 
@@ -590,9 +563,6 @@ Electricity needed to meet the demand can be generated using various energy sour
     </div>
     </details>
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
 |nbsp|
 
 **Generation.csv**
@@ -604,9 +574,6 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
      :width: 200
      :height: 500
      :align: center
-
-.. |nbsp| unicode:: 0xA0 
-   :trim:
 
 |nbsp|
 
