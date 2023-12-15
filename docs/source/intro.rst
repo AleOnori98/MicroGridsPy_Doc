@@ -3,7 +3,8 @@
    :width: 100
    :align: right
 
-
+.. |nbsp| unicode:: 0xA0 
+   :trim:
    
 #######################################
 Introduction
