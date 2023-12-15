@@ -1,5 +1,4 @@
 
-
 ########################################
 Building and Running a Model
 ########################################
@@ -28,10 +27,7 @@ MicroGridsPy is a comprehensive energy optimization model designed for the strat
    :width: 500
    :align: center
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
-|nbsp|
+----------------------------
 
 Terminology
 ==============
@@ -76,7 +72,11 @@ As more generally in constrained optimisation, the following terms are also used
 * Variable: a variable coefficient (decision variable) that enters into model equations
 * Set: an index in the algebraic formulation of the equations
 * Constraint: an equality or inequality expression that constrains one or several variables
-* ........
+* Text
+
+
+--------------------------------------------------------------------------------------------------------------------
+
 
 Inputs File
 ======================
@@ -149,7 +149,8 @@ These settings determine the overall configuration of the optimization model, in
      - [USD/Wh]
      - Value of the unmet load 
 
-|nbsp|
+
+---------------------------------------------------------------------------------------------------------------
 
 **Model Switches**
 
@@ -199,9 +200,12 @@ This set of parameters allows users to toggle different aspects and features of 
      - 0 = batteries and generators /1 = batteries only / 2 = generators only
      - It allows to switch between different configuration of technologies (RES are always included)
 
-|nbsp|
 
 (refer to :doc:`advanced`)
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
 
 Technology Parameters
 ----------------------
@@ -249,7 +253,9 @@ Defines the types and characteristics of renewable energy sources, like solar PV
      - (e.g. kgCO2/kW)
      - ???
 
-|nbsp|
+
+----------------------------------------------------------------------------------------------------------
+
 
 **Generator Technology**
 
@@ -311,7 +317,7 @@ Details the types of generators that can be included in the microgrid, their eff
      - [%]
      - Percentage of the total operation cost of the generator system at full load 
 
-|nbsp|
+
 
 
 **Battery Technology**
@@ -367,7 +373,6 @@ Specifies the investment and operational costs, efficiencies, and other technica
      - Nominal Capacity of each battery
 
 
-|nbsp|
 
 **Grid Technology**
 
@@ -412,7 +417,7 @@ Parameters here govern the potential connection to the national grid, including 
      - (e.g. kgCO2/kWh)
      - Specific CO2 emissions by the considered national grid
 
-|nbsp|
+
 
 **Lost Load**
 
@@ -443,6 +448,12 @@ These parameters are used for the aesthetic aspects of model outputs, assigning 
 .. note::
   Please refer to the example gallery for a better understanding of the structure of both the set and parameter files.
 
+
+
+----------------------------------------------------------------------------------------------------------
+
+
+
 Time Series Data
 ===================
 
@@ -469,7 +480,7 @@ At the core of the optimization energy modelling process lies the load curve dem
    :width: 150px
    :align: center
 
-|nbsp|
+
 
 **Demand.csv**
 
@@ -480,7 +491,7 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
      :width: 700
      :align: center
 
-|nbsp|
+
 
 .. warning::
     The number of columns in the csv file must coincide with the value set for the 'Years' parameter. The same for the number of rows 
@@ -508,7 +519,7 @@ Electricity needed to meet the demand can be generated using various energy sour
    - Using web tools such as `Renewables.ninja <https://www.renewables.ninja/>`_, which provides data and tools for assessing energy generation profiles, including solar and wind energy production estimated for 1 year with 1-hour time resolution.
    - Using the advanced features integrated into MicroGridsPy for estimating generation based on VRES parameters, project location, and the specific year. Data for solar, wind, and temperature conditions are obtained from the NASA POWER platform through an API integrated into the MGPy software, creating a Typical Meteorological Year (TMY) dataset for energy generation calculations.
 
-|nbsp|
+
 
 **Generation.csv**
 
@@ -520,5 +531,5 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
      :height: 500
      :align: center
 
-|nbsp|
+
 
