@@ -29,7 +29,7 @@ In rural regions where access to the main power grid is limited and the cost of 
   deployment of the mini-grid system is as effective and sustainable as possible.
 
 Challenges in isolated Microgrids Modeling
-=========================================
+============================================
 
 Parametric uncertainty
 -------------------------
