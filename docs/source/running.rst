@@ -1,7 +1,5 @@
 Analysing the Results
 =========================
-.. role:: raw-html(raw)
-    :format: html
 
 
 Scenarios
@@ -18,10 +16,6 @@ The **Results_Summary** is a spreadsheet containing:
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Size_LP.png?raw=true
      :width: 500
      :align: center
-
-
-
-
 
 
 - The project **Cost**: Economic breakdown of the system. All the costs are actualized to the year at which they occur.
@@ -44,14 +38,10 @@ The **Results_Summary** is a spreadsheet containing:
             * Battery usage: total energy discharged by the batteries divided by total electric demand for each scenario.
             * Grid usage: total energy withdrawn from the national grid divided by total electric demand for each scenario.
 
-
-
 The **Time_Series** is a spreadsheet containing:
 
 - Hourly **energy balance** of the system (technologies energy production, battery energy flows, demand, lost load, curtailment) + **state of charge** of the batteries and **fuel consumed** by the generators
 - each year of the time horizon is reported on a different sheet
-
-
 
 The **Plots** are the graphic representation of the previous results:
 
