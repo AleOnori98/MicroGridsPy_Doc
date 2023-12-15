@@ -31,11 +31,11 @@ Challenges in isolated Microgrids Modeling
 =========================================
 
 Parametric uncertainty
-----------------------
+-------------------------
 The uncertainty associated with long-term demand and renewables projections is typically referred to as **parametric uncertainty**, as models are typically fed with these data in the form of *exogenous parameters*. Riva et al. [4] underscore the importance of system dynamics for *accurate forecasting*, as **underestimations** can lead to overdrawn systems where actual energy usage far exceeded initial calculations or the necessity to retrofit photovoltaic microgrids with additional generators due to higher-than-expected night-time use and expanding user bases. Fluctuations in renewable energy outputs also necessitate redesigns, as seen with wind systems affected by geographic features. These instances emphasize the critical need for precise demand and supply modeling to ensure the sustainability of off-grid power systems.
 
 Structural uncertainty
----------------------
+------------------------
 The mathematical modeling of microgrids faces **structural uncertainty** due to *simplifications made for computational efficiency*. Often, models use constant efficiencies or overlook technological constraints, leading to inaccurate predictions of system performance. To address non-linear behaviours within a practical timeframe, **heuristic optimization methods** like those used by Mandelli et al. [5] and the `HOMER® software <https://www.homerenergy.com/>`_   are common but may only provide local optima. **Meta-heuristic techniques** have also been successful [6], offering a balance between complexity and computation time. While **Linear programming (LP)** is popular for its ability to deterministically find global optima, it falls short in handling non-linearities. **Mixed-integer linear programming (MILP)** bridges this gap somewhat, though at a cost to computational speed and requiring high-quality data for precision.
 
 Techniques for optimization under uncertainty
