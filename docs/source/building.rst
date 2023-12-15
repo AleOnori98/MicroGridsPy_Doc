@@ -1,5 +1,4 @@
-.. |nbsp| unicode:: 0xA0 
-   :trim:
+
 
 ########################################
 Building and Running a Model
@@ -29,6 +28,8 @@ MicroGridsPy is a comprehensive energy optimization model designed for the strat
    :width: 500
    :align: center
 
+.. |nbsp| unicode:: 0xA0 
+   :trim:
 
 |nbsp|
 
