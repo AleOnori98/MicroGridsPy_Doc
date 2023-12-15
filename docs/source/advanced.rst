@@ -7,7 +7,7 @@ MicroGridsPy allows the user to choose different advanced features embedded into
     :format: html
 
 Weighted Average Cost of Capital
-------------
+---------------------------------
 The financial modeling approach introduced in [1] aims to go beyond traditional energy modeling by incorporating the Weighted Average Cost of Capital (WACC) in place of the standard discount rate. The WACC represents the average cost of capital based on the project's financing structure and is defined as the minimum return that would make the investment profitable.
 
 **Financing Mini-Grids in Africa**
@@ -68,7 +68,7 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 
 
 Multi-Objective Optimization
-------------
+--------------------------------
 The design of a reliable and appropriate off-grid energy system is usually critical. The energy needs of people who are susceptible to the uncertainty of possible energy consumption evolution through time must be considered, taking into consideration the site-specific characteristics of each target community.
 
 In this field, energy system models can play a pivotal role in guiding informed policy decisions trying to capture the complexities related to the time-evolving boundary conditions, comparing alternative energy system configurations and energy mix combinations to find the optimal solution. One of the challenges identified in the current state-of-the-art microgrid optimal sizing tools is that the Net Present Cost alone is not a sufficient decision parameter in energy system sizing [2]
@@ -77,7 +77,7 @@ Most optimization tools are focused on single-objective optimization that does n
 
 
 RES Time Series Estimation
-----------------
+-----------------------------
 - **Solar PV generation**
 
 
@@ -105,9 +105,6 @@ temperature on the PV cell
     </div>
 
 - **Wind turbine generation**
-
-
-
 
 
 RES parameters for production time series estimation in MicroGridsPy:
@@ -212,7 +209,7 @@ RES parameters which are non-editable. Advanced parameters used for developers:
 
 
 Load Demand Estimation
-----------------------
+------------------------
 
 Using the advanced features integrated into MicroGridsPy which allows to use built-in archetypes referring to rural villages in Sub-Saharan Africa at different latitudes. These are composed of different types of end-users like households according to the wealth tier (i.e., from 1 to 5), hospitals with the same wealth scale and schools. The possibility for demand growth and specific cooling period are also integrated within this feature. The following parameters present in **Parameters.dat** define all the possible demand archetypes within the current model.
 
@@ -265,7 +262,7 @@ Using the advanced features integrated into MicroGridsPy which allows to use bui
 
 
 Generator Partial Load Effect
-----------------------
+-------------------------------
 In the present section, the focus is set on the generator models which often neglect decreased part-load efficiencies or minimum load constraints which can lead to significantly overestimated performance and therefore biased system planning. The model is therefore modified to consider more complex operating characteristics of a genset operating in partial load. A diesel genset optimally optimises efficiency in a fixed optimal power output. A reduction in power output results in a reduction in the efficiency. This effect has a non-linear behaviour, although diesel generators are often modelled with constant efficiency due to the limitations of the LP formulation. The MILP approach allows many ways to model these effects: a specific set of equations affecting the total operation costs of the energy produced by the generator has been implemented following the example of Balderrama et al. [6]. This formulation is relatively simple to implement, as it does not disrupt the structure of the entire model in terms of equations, it requires few parameters with an advantage in terms of computational effort, but it is closely linked to costs and not directly to the efficiency value leading to some limitations in case of null operation cost. For comparison, the partial load effect formulation is compared to the original LP model. This is further explained in the following figures.
 
 .. raw:: html
@@ -274,10 +271,6 @@ In the present section, the focus is set on the generator models which often neg
         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Partial%20load%201.png?raw=true" width="350" style="margin-right: 10px;"/>
         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Partial%20Load%202.jpg?raw=true" width="350" />
     </div>
-
-
-.. |nbsp| unicode:: 0xA0 
-   :trim:
 
 |nbsp|
 
@@ -500,7 +493,7 @@ The reliability of a national grid's electricity supply refers to the consistent
 
 
 Model formulation for Load Evolution
-----------------------
+---------------------------------------
 
 The approach introduced in [7] focuses on addressing the issue of load evolution in the long term. This model is designed to make informed decisions about expanding capacity throughout the specified time horizon. To simulate realistic load profiles, the model is integrated with a tool for generating stochastic load profiles. This formulation demonstrates advantages in making robust investment decisions under different load evolution scenarios.
 
@@ -554,7 +547,7 @@ Solar irradiance exhibits minute-to-minute variations influenced by cloud dynami
 
 
 Battery Bank Degradation 
-----------------------
+----------------------------
 
 The battery performance isn’t constant over time due to capacity and power fade as the battery is exposed to degradation processes while in both operation and storage mode. Calendar aging results from the degradation while the battery is in storage mode. Whereas cycle aging corresponds to the degradation caused by cyclic operation. The capacity fade refers to the reduction of available capacity. The battery status is provided by the State of Health (SOH) indicator. When the SOH reaches a certain threshold, the battery reached its End of Life (EOL). Temperature, State of Charge (SOC) and Depth of Discharge (DOD), are just some of the stress factors leading to degradation.
 
@@ -566,11 +559,7 @@ The battery performance isn’t constant over time due to capacity and power fad
     </div>
 
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
 |nbsp|
-
 
 
 Understanding and estimating the battery behaviour and related parameters during operation is key to improving capacity usage and cycling techniques, and, hence, inform battery modelling accordingly. A complete battery modelling is based on the estimation of operating conditions (i.e., SOC) and the estimation of battery lifetime expectancy (i.e., SOH) at any given moment of battery operation and lifetime. Battery models can be divided into four major groups: analytical, stochastic, electrical and electrochemical models. The most basic models just portray the energy balance which simplifies the behaviour of the battery. Other models reproduce the electrical characteristics during its operation or the chemical reactions, adding more accuracy but also complexity to the methodology. To achieve a complete battery model capable of determining battery related parameters through operation and even lifetime, the aging components must be accounted for in the methodology. 
