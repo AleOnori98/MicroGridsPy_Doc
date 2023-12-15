@@ -18,7 +18,6 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.mathjax",
     "sphinx.ext.napoleon",
-    "nbsphinx",
     "nbsphinx_link",
     "sphinx.ext.imgconverter",
     "sphinxcontrib.images"
