@@ -38,7 +38,7 @@ MicroGridsPy is developed in the open on `GitHub <https://github.com/SESAM-Polim
    This project is under active development.
 
 Table of Contents
---------
+-------------------
 
 .. toctree::
 
