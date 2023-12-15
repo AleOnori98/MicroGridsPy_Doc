@@ -8,5 +8,5 @@
 
 /* Adjust width as needed */
 .wy-nav-content-wrap {
-    max-width: 80%; /* You can adjust this value to control the width of the content */
+    max-width: 100%; /* You can adjust this value to control the width of the content */
 }
