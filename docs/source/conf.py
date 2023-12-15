@@ -40,14 +40,14 @@ html_theme_options = {
     "show_navbar_depth": 1,
 }
 
-# -- Options for EPUB output
-epub_show_urls = 'footnote'
-
-# Add custom CSS
+html_static_path = ['_static']
 html_css_files = [
     'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
-    'custom.css',
+    'css/custom.css',
 ]
+
+# -- Options for EPUB output
+epub_show_urls = 'footnote'
 
 # Add custom JavaScript
 html_js_files = [
