@@ -14,9 +14,6 @@ The considered system comprises an electrical load supplied by renewable sources
    :width: 500
    :align: center
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
 |nbsp|
 
 Objective function
@@ -147,9 +144,8 @@ The total CO2 emissions are calculated as the sum of the weighted scenario-speci
     </div>
 
 
-
 Cost
-====
+======
 
 The cost constraints are associated with the financial aspects of planning, implementing, and operating a mini-grid. These involve various factors that can impact the overall cost-effectiveness of the mini-grid, potentially affecting its feasibility, sustainability, and affordability. 
 
@@ -252,7 +248,7 @@ Salvage value
 
 
 Energy
-======
+========
 
 Limitations or challenges associated with the availability, generation, storage, and distribution of energy within the mini-grid power system can impact the reliability, efficiency, and overall performance of the system. Thus, energy constraints are introduced to represent a more realistic system operation accounting for these factors in the energy model. 
 
