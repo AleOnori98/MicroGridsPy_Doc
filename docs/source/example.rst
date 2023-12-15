@@ -2,7 +2,7 @@
 Example Gallery
 #################################
 
-In this basic example run of MicroGridsPy, we demonstrate the foundational capabilities of the tool for microgrid simulation and optimization. The configuration for this run is as follows:
+In this basic example run of MicroGridsPy, we demonstrate the foundational capabilities of the tool for microgrids simulation and optimization. The basic configuration for this run is as follows:
 
 - **Time Horizon**: 20 years
 - **Time Steps**: 4 (5 years each)
@@ -12,10 +12,10 @@ In this basic example run of MicroGridsPy, we demonstrate the foundational capab
 - **Backup Systems**: Both battery storage and diesel generators included.
 - **Extra Features**: No extra features or advanced models activated.
 
-Carousel Gallery
+Default Scenario
 ----------------
 
-The carousel gallery below visualizes the simulation outcomes, displaying the dispatch strategy, cash flow analysis, and other critical metrics.
+The images gallery below visualizes the interface windows, simulation outcomes, displaying the dispatch strategy, and other critical metrics.
 
 .. raw:: html
 
@@ -72,9 +72,8 @@ The carousel gallery below visualizes the simulation outcomes, displaying the di
      </a>
    </div>
 
-To navigate through the gallery, click the previous and next buttons or select the corresponding indicator for the image you wish to view. The images should be observed sequentially from 1.1 to 1.11 to understand the comprehensive visual story of the default run scenario.
+To navigate through the gallery, click the previous and next buttons or select the corresponding indicator for the image you wish to view. 
 
-Results Interpretation
-----------------------
+**Results Interpretation**
 
-The simulation's parameters in this example favor the diesel generator as the backup technology over the battery system. This preference stems from the higher investment and replacement costs associated with battery storage. The generator primarily ensures reliability and backup power during periods when PV generation is not sufficient.
+In the default simulation, diesel generators are favored over batteries as backup due to their lower investment and replacement costs. Yet, this will change with different settings. Activating the generator's partial load effect, using a more realistic MILP formulation, and considering variable fuel costs could alter the results significantly. Moreover, MicroGridsPy allows setting minimum renewable penetration thresholds, which could tip the scales towards battery storage, especially under fluctuating fuel prices or supportive renewable energy policies. These features demonstrate the model's adaptability to various scenarios and constraints, underscoring the potential for different technologies to emerge as optimal solutions.
