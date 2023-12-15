@@ -2,9 +2,6 @@
 Building and Running a Model
 ########################################
 
-.. role:: raw-html(raw)
-    :format: HTML
-
 MicroGridsPy is a comprehensive energy optimization model designed for the strategic planning and operational management of mini-grid systems. Here below is a general introduction to the different steps in building and running a model:
 
 #. **Time Series Data Input**: Begin by providing specific data, over the lifetime of the project, about the available renewable resources and demand 
@@ -98,10 +95,6 @@ Model Configuration
 -------------------------
 These settings determine the overall configuration of the optimization model, including the number of periods within a year, the project's total duration, and the time step for the optimization process. It also encompasses financial parameters like the discount rate and investment cost limits.
 
-.. raw:: html
-
-    <div style="overflow-y: auto; height: 350px;">
-
 .. list-table:: 
    :widths: 25 25 50
    :header-rows: 1
@@ -152,19 +145,11 @@ These settings determine the overall configuration of the optimization model, in
      - [USD/Wh]
      - Value of the unmet load 
 
-.. raw:: html
-
-    </div>
-
 |nbsp|
 
 **Model Switches**
 
 This set of parameters allows users to toggle different aspects and features of the model, such as the optimization goal (NPC or operation cost), whether to use a MILP formulation and various operational considerations like partial load effects on generators and multi-objective optimization criteria.
-
-.. raw:: html
-
-    <div style="overflow-y: auto; height: 350px;"> 
 
 .. list-table:: 
    :widths: 25 25 50
@@ -210,10 +195,6 @@ This set of parameters allows users to toggle different aspects and features of 
      - 0 = batteries and generators /1 = batteries only / 2 = generators only
      - It allows to switch between different configuration of technologies (RES are always included)
 
-.. raw:: html
-
-    </div>
-
 |nbsp|
 
 (refer to :doc:`advanced`)
@@ -225,9 +206,6 @@ Technology Parameters
 
 Defines the types and characteristics of renewable energy sources, like solar PV panels and wind turbines, including their nominal capacities, efficiencies, specific costs, and associated CO2 emissions.
 
-.. raw:: html
-
-    <div style="overflow-y: auto; height: 350px;">
 
 .. list-table:: 
    :widths: 25 25 50
@@ -267,19 +245,11 @@ Defines the types and characteristics of renewable energy sources, like solar PV
      - (e.g. kgCO2/kW)
      - ???
 
-.. raw:: html
-
-    </div>
-
 |nbsp|
 
 **Generator Technology**
 
 Details the types of generators that can be included in the microgrid, their efficiencies, costs, and lifetime, as well as the fuel they require and associated CO2 emissions.
-
-.. raw:: html
-
-    <div style="overflow-y: auto; height: 350px;">
 
 .. list-table:: 
    :widths: 25 25 50
@@ -337,13 +307,6 @@ Details the types of generators that can be included in the microgrid, their eff
      - [%]
      - Percentage of the total operation cost of the generator system at full load 
 
-
-
-
-.. raw:: html
-
-    </div>
-
 |nbsp|
 
 
@@ -351,9 +314,6 @@ Details the types of generators that can be included in the microgrid, their eff
 
 Specifies the investment and operational costs, efficiencies, and other technical parameters related to battery storage solutions, critical for managing intermittent renewable energy supply.
 
-.. raw:: html
-
-    <div style="overflow-y: auto; height: 350px;">
 
 .. list-table:: 
    :widths: 25 25 50
@@ -402,9 +362,6 @@ Specifies the investment and operational costs, efficiencies, and other technica
      - Energy (e.g. Wh)
      - Nominal Capacity of each battery
 
-.. raw:: html
-
-    </div>
 
 |nbsp|
 
@@ -412,9 +369,6 @@ Specifies the investment and operational costs, efficiencies, and other technica
 
 Parameters here govern the potential connection to the national grid, including costs, distances, pricing for energy sold to or purchased from the grid, and reliability metrics.
 
-.. raw:: html
-
-    <div style="overflow-y: auto; height: 350px;">
 
 .. list-table:: 
    :widths: 25 25 50
@@ -454,10 +408,6 @@ Parameters here govern the potential connection to the national grid, including 
      - (e.g. kgCO2/kWh)
      - Specific CO2 emissions by the considered national grid
 
-.. raw:: html
-
-    </div>
-
 |nbsp|
 
 **Lost Load**
@@ -490,7 +440,7 @@ These parameters are used for the aesthetic aspects of model outputs, assigning 
   Please refer to the example gallery for a better understanding of the structure of both the set and parameter files.
 
 Time Series Data
-===============
+===================
 
 Demand 
 -------
@@ -498,24 +448,22 @@ Demand
 
 At the core of the optimization energy modelling process lies the load curve demand. This section aims to explain what load curve demand is, how it is used within MicroGridsPy, and how it can be operated or estimated with external software tools like RAMP or within the model itself using the advanced feature of demand estimation integrated into MicroGridsPy.
 
-.. raw:: html
+.. tip::
 
-    <div style="margin-bottom: 20px;"> <!-- Adds space below the expand button -->
-    <details>
-    <summary>Expand for more information</summary>
-    <div style="padding-top: 10px;">
+   **What is the load curve demand?**
 
-    <strong>What is the load curve demand?</strong><br><br>
-    Load Curve Demand represents the <strong>time-dependent electricity consumption</strong> of a given area or system. It is typically measured in <em>Watts</em> (or kilowatts, megawatts, etc.) and captures how electricity demand varies over different periods, usually in hourly or sub-hourly intervals. The Load Curve Demand curve illustrates the power required at each point in time, providing insights into when and how much electricity is needed. This curve serves as a foundational data source for MicroGridsPy since the model aims to size and operate mini-grid components, such as renewable energy sources (e.g., solar panels, wind turbines), energy storage systems (e.g., batteries), and backup generators, to meet the electricity demand of a specific area or community. The key role of Load Curve Demand in the model is <strong>optimizing resource allocation</strong>: MicroGridsPy uses the load curve demand to distribute available resources efficiently over the years, balancing the generation and storage resources to minimize costs while meeting the electricity demand throughout the day. In addition to optimizing resource allocation, the software can also predict, along the time horizon of the simulation run, when <strong>investment steps</strong> should be taken to expand the system's capacity to accommodate the projected increase in demand if such an increase is anticipated.<br><br>
-    <strong>Load curve demand estimation</strong><br><br>
-    There are two key methods for operating load curve demand:<br>
-    <ul>
-      <li>Using software tools such as <a href="https://rampdemand.readthedocs.io/en/stable/intro.html">RAMP</a> which is a bottom-up stochastic model for the generation of high-resolution multi-energy profiles, conceived for application in contexts where only rough information about users' behaviour is obtainable. Those may range from remote villages to whole countries as well as informal settlements.</li>
-      <li>Using the advanced features integrated into MicroGridsPy which allows to use built-in archetypes referring to rural villages in Sub-Saharan Africa at different latitudes (refer to <a href="#">the advanced documentation</a>).</li>
-    </ul>
-    <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/RAMP.png?raw=true" style="width: 150px; display: block; margin: auto;">
-    </div>
-    </details>
+   Load Curve Demand represents the *time-dependent electricity consumption* of a given area or system. It is typically measured in Watts (or kilowatts, megawatts, etc.) and captures how electricity demand varies over different periods, usually in hourly or sub-hourly intervals. This curve illustrates the power required at each point in time, providing insights into when and how much electricity is needed.
+
+   MicroGridsPy uses the load curve demand to optimize resource allocation, distributing resources efficiently over the years. It balances generation and storage resources to minimize costs while meeting the electricity demand throughout the day. The software can predict when investment steps should be taken to expand the system's capacity for increasing demand.
+
+   **Load curve demand estimation methods:**
+
+   - Using software tools such as `RAMP <https://rampdemand.readthedocs.io/en/stable/intro.html>`_, a bottom-up stochastic model for generating high-resolution multi-energy profiles.
+   - Using the advanced features integrated into MicroGridsPy, which allows the use of built-in archetypes for rural villages in Sub-Saharan Africa at different latitudes.
+
+.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/RAMP.png?raw=true
+   :width: 150px
+   :align: center
 
 |nbsp|
 
@@ -536,32 +484,25 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
 
 
 
-
 RES Production
--------
+----------------
 
 **Introduction**
 
 Electricity needed to meet the demand can be generated using various energy sources. MicroGridsPy considers renewable sources, such as solar and wind, and backup diesel generators as the choices for generating electricity. This section aims to explain what renewable energy production is, how it is used within MicroGridsPy, how it can be estimated with external available web tools like Renewables.ninja and PVGIS or within the model itself using the advanced feature of renewable energy production estimation integrated into MicroGridsPy.
 
-.. raw:: html
+.. tip::
 
-    <div style="margin-bottom: 20px;"> <!-- Adds space below the expand button -->
-    <details>
-    <summary>Expand for more information</summary>
-    <div style="padding-top: 10px;">
+   **What is the renewable energy production?**
 
+   Renewable energy production represents the estimated electricity production for each unitary generation technology at a specific time and location. It is typically measured in Watts (or kilowatts, megawatts, etc.) and illustrates how electricity production varies over time and by source, usually in hourly or sub-hourly intervals.
 
-    <strong>What is the renewable energy production?</strong><br><br>
-    The renewable energy production represents the estimated electricity production for each unitary generation technology at a given time for a specific location. It is typically measured in Watts (or kilowatts, megawatts, etc.) and captures how electricity production varies over time and source, usually in hourly or sub-hourly intervals. The data can be computed into a generation curve which illustrates the produced power at each point in time. This data becomes a fundamental source for MicroGridsPy to size and operate mini-grid components, such as renewable energy sources (e.g., solar panels, wind turbines) based on the unitary production of each source and complement the system with energy storage systems (e.g., batteries), and backup generators, to ensure the necessary electricity of a specific area or community. <br><br>
-    <strong>Renewable Energy Production estimation</strong><br><br>
-    There are two key methods to estimate renewable production::<br>
-    <ul>
-      <li>Using web tools such as Renewable Ninja and PVGIS. <a href="https://www.renewables.ninja/">Renewables.ninja</a> provides data and tools for assessing energy generation profiles with simulations and forecasting features. The electricity production is estimated for solar and wind sources and is computed for 1 year with 1-hour time resolution. To cover more years, more requests need to be performed for the same location. PVGIS (Photovoltaic Geographical Information System) provides solar radiation data, PV system yield estimations, and solar maps for various regions. It provides data for the typical meteorological conditions over a single year with 1-hour time resolution for a specific location.</li>
-      <li>Using the advanced features integrated into MicroGridsPy which allows estimating generation based on VRES parameters, project location, and the specific year in question. The necessary data for solar, wind, and temperature conditions is obtained from the NASA POWER platform through an Application Program Interface (API) integrated into the MGPy software. These data are used to create a Typical Meteorological Year (TMY) dataset, representing typical weather conditions for the project location, with hourly resolution, based on 20 years of historical data. This TMY dataset is then used to calculate energy generation, which is consistent across all project years. (refer to <a href="#">the advanced documentation</a>).</li>
-    </ul>
-    </div>
-    </details>
+   MicroGridsPy uses this data to size and operate mini-grid components like renewable energy sources (e.g., solar panels, wind turbines), energy storage systems (e.g., batteries), and backup generators to ensure necessary electricity for a specific area or community.
+
+   **Renewable Energy Production estimation methods:**
+
+   - Using web tools such as `Renewables.ninja <https://www.renewables.ninja/>`_, which provides data and tools for assessing energy generation profiles, including solar and wind energy production estimated for 1 year with 1-hour time resolution.
+   - Using the advanced features integrated into MicroGridsPy for estimating generation based on VRES parameters, project location, and the specific year. Data for solar, wind, and temperature conditions are obtained from the NASA POWER platform through an API integrated into the MGPy software, creating a Typical Meteorological Year (TMY) dataset for energy generation calculations.
 
 |nbsp|
 
