@@ -130,6 +130,9 @@ Below is a carousel gallery depicting the outcomes of this alternative simulatio
        <div class="carousel-item">
          <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.11.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
        </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.12.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
      </div>
      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="color: #333;">
        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-image: none;"></span>
