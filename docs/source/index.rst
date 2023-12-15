@@ -1,4 +1,5 @@
-
+.. |nbsp| unicode:: 0xA0 
+   :trim:
 
 Welcome to MicroGridsPy's documentation!
 ==========================================
@@ -11,9 +12,6 @@ Welcome to MicroGridsPy's documentation!
    :width: 500
    :align: center
 
-
-.. |nbsp| unicode:: 0xA0 
-   :trim:
 
 |nbsp|
 
