@@ -68,11 +68,13 @@ The general terminology defined here is used throughout the documentation and th
 
 As more generally in constrained optimisation, the following terms are also used:
 
-* Parameter: a fixed coefficient that enters into model equations
-* Variable: a variable coefficient (decision variable) that enters into model equations
-* Set: an index in the algebraic formulation of the equations
-* Constraint: an equality or inequality expression that constrains one or several variables
-* Text
+* **Parameter**: a fixed coefficient that enters into model equations
+* **Variable**: a variable coefficient (decision variable) that enters into model equations
+* **Set**: an index in the algebraic formulation of the equations
+* **Constraint**: an equality or inequality expression that constrains one or several variables
+* **Model**: mathematical framework representing an energy system, including its elements and operational rules. There are two types:
+  * *Concrete Model*: This type of model is directly built with specific data. It's akin to a pre-filled template where the data determines the model's structure and content.
+  * *Abstract Model*: This is a more flexible template without initial data. It defines the model's potential structure, and data is applied separately. Ideal for scenarios where the model's structure is constant but the data varies.
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -80,19 +82,19 @@ As more generally in constrained optimisation, the following terms are also used
 
 Inputs File
 ======================
-MicroGridsPy models are defined, mainly, through .py files, which are both human-readable and computer-readable, .csv files (simple tabular format) for time series and .dat files for data inputs. All the input files are collected inside a single directory called 'Inputs'. The layout of that directory typically looks roughly like this (> denotes directories, - files):
+MicroGridsPy models are defined, mainly, through .py files, which are both human-readable and computer-readable, .csv files (simple tabular format) for time series and .dat files for data inputs. All the input files are collected inside a single directory called 'Inputs'. The layout of that directory typically looks roughly like this:
 
-* >Parameters
+* Parameters.dat: it contains the primary configuration and parameters of the model. It includes system characteristics, economic parameters, and technology-specific data.
 
-       * -Parameters.dat
+* Time Series
 
-* >Time Series
+  * Demand.csv: it contains the electricity demand data in a time series format. It reflects the energy consumption pattern of the grid or area being modeled.
+  * RES Time Series.csv: it holds the renewable energy sources' (RES) generation data. It includes time series data for sources like solar and wind, reflecting their varying generation over time.
+  * Grid Availability.csv: it provides data on the availability of the grid (matrix of 0 and 1). It includes information about grid downtime, which is crucial for planning backup or alternative energy sources.
+  * Direct Emissions.csv: it contains data related to emissions directly associated with the energy system's operation. It's essential for assessing the environmental impact of the minigrid.
+  * WT Power Curve.csv: it details the power curve of wind turbines (WT). It specifies the relationship between wind speed and the generated power, crucial for modeling wind energy production.
 
-       * -Demand.csv
-       * -RES Time Series.csv
-       * -Grid Availability.csv
-       * -Direct Emissions.csv
-       * -WT Power Curve.csv
+Each of these files plays a pivotal role in the modeling process, providing necessary data inputs for an accurate representation and analysis of the energy system. They could be directly imported exogenously or simulate and generate endogenously within the model (refer to :doc:`advanced`)
 
 
 Model Configuration
@@ -200,8 +202,6 @@ This set of parameters allows users to toggle different aspects and features of 
      - 0 = batteries and generators /1 = batteries only / 2 = generators only
      - It allows to switch between different configuration of technologies (RES are always included)
 
-
-(refer to :doc:`advanced`)
 
 
 ----------------------------------------------------------------------------------------------------------------------------------
@@ -445,13 +445,39 @@ Plot settings
 These parameters are used for the aesthetic aspects of model outputs, assigning colors to different energy sources, storage options, and other model components for visual representation in plots and charts.
 
 
+.. list-table::
+:widths: 25 25 50
+:header-rows: 1
+
+Parameter Name
+Default Value
+Description
+RES_Colors
+'FF8800' (for first RES source)
+Specifies the color codes for renewable energy sources in visualizations.
+Battery_Color
+'4CC9F0'
+Defines the color code for battery storage in plots and graphs.
+Generator_Colors
+'00509D' (for first generator type)
+Sets the color codes for different types of generators in visualizations.
+Lost_Load_Color
+'F21B3F'
+Color code used for representing lost load in graphical outputs.
+Curtailment_Color
+'FFD500'
+Specifies the color for curtailment in plots and diagrams.
+Energy_To_Grid_Color
+'008000'
+Color code for depicting energy supplied to the grid.
+Energy_From_Grid_Color
+'800080'
+Designates the color for visualizing energy drawn from the grid.
+
 .. note::
   Please refer to the example gallery for a better understanding of the structure of both the set and parameter files.
 
-
-
 ----------------------------------------------------------------------------------------------------------
-
 
 
 Time Series Data
@@ -463,9 +489,8 @@ Demand
 
 At the core of the optimization energy modelling process lies the load curve demand. This section aims to explain what load curve demand is, how it is used within MicroGridsPy, and how it can be operated or estimated with external software tools like RAMP or within the model itself using the advanced feature of demand estimation integrated into MicroGridsPy.
 
-.. tip::
-
-   **What is the load curve demand?**
+.. dropdown:: What is the load curve demand?
+    :animate: fade-in-slide-down
 
    Load Curve Demand represents the *time-dependent electricity consumption* of a given area or system. It is typically measured in Watts (or kilowatts, megawatts, etc.) and captures how electricity demand varies over different periods, usually in hourly or sub-hourly intervals. This curve illustrates the power required at each point in time, providing insights into when and how much electricity is needed.
 
@@ -481,22 +506,23 @@ At the core of the optimization energy modelling process lies the load curve dem
    :align: center
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+
 
 **Demand.csv**
 
 The input file, located in the "Time Series" folder within the "Inputs" folder, must have as many numbered columns (excluding the rows labels) as the total years of the project and as many rows (excluding the columns headers) as the periods in which one year is divided (e.g. 1-hour time resolution leads to 8760 rows). 
+
+.. warning::
+    The number of columns in the csv file must coincide with the value set for the 'Years' parameter. The same for the number of rows 
+    that must coincide with the value set for 'Periods' in the model configuration.csv file! If not properly set and matched, it may arise a 'Key Error'.
 
 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Demand.png?raw=true
      :width: 700
      :align: center
 
-
-
-.. warning::
-    The number of columns in the csv file must coincide with the value set for the 'Years' parameter. The same for the number of rows 
-    that must coincide with the value set for 'Periods' in the model configuration.csv file! If not properly set and matched, it may arise a 'Key Error'.
-
+---------------------------------------------------------------------------------------------
 
 
 RES Production
@@ -506,9 +532,8 @@ RES Production
 
 Electricity needed to meet the demand can be generated using various energy sources. MicroGridsPy considers renewable sources, such as solar and wind, and backup diesel generators as the choices for generating electricity. This section aims to explain what renewable energy production is, how it is used within MicroGridsPy, how it can be estimated with external available web tools like Renewables.ninja and PVGIS or within the model itself using the advanced feature of renewable energy production estimation integrated into MicroGridsPy.
 
-.. tip::
-
-   **What is the renewable energy production?**
+.. dropdown:: What is the Renewable Energy production?
+    :animate: fade-in-slide-down
 
    Renewable energy production represents the estimated electricity production for each unitary generation technology at a specific time and location. It is typically measured in Watts (or kilowatts, megawatts, etc.) and illustrates how electricity production varies over time and by source, usually in hourly or sub-hourly intervals.
 
@@ -521,9 +546,9 @@ Electricity needed to meet the demand can be generated using various energy sour
 
 
 
-**Generation.csv**
+**RES_Time_Series.csv**
 
-The input file, located in the "Time Series" folder within the "Inputs" folder, must have as many numbered columns (excluding the rows labels) as the total years of the project and as many rows (excluding the columns headers) as the periods in which one year is divided (e.g. 1-hour time resolution leads to 8760 rows). 
+The input file within the "Inputs" folder, must have as many numbered columns (excluding the rows labels) as the total years of the project and as many rows (excluding the columns headers) as the periods in which one year is divided (e.g. 1-hour time resolution leads to 8760 rows). 
 
 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/RES.png?raw=true
@@ -532,4 +557,4 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
      :align: center
 
 
-
+----------------------------------------------------------------------------------------------------------------------------
