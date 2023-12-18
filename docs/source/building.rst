@@ -502,9 +502,11 @@ At the core of the optimization energy modelling process lies the load curve dem
         </div>
     </div>
 
-  MicroGridsPy uses the load curve demand to optimize resource allocation, distributing resources efficiently over the years. It balances generation and storage resources to minimize costs while meeting the electricity demand throughout the day. The software can predict when investment steps should be taken to expand the system's capacity for increasing demand.
 
-   **Load curve demand estimation methods:**
+
+MicroGridsPy uses the load curve demand to optimize resource allocation, distributing resources efficiently over the years. It balances generation and storage resources to minimize costs while meeting the electricity demand throughout the day. The software can predict when investment steps should be taken to expand the system's capacity for increasing demand.
+
+**Load curve demand estimation methods:**
 
    - Using software tools such as `RAMP <https://rampdemand.readthedocs.io/en/stable/intro.html>`_, a bottom-up stochastic model for generating high-resolution multi-energy profiles.
    - Using the advanced features integrated into MicroGridsPy, which allows the use of built-in archetypes for rural villages in Sub-Saharan Africa at different latitudes.
@@ -552,9 +554,11 @@ Electricity needed to meet the demand can be generated using various energy sour
         </div>
     </div>
 
-  MicroGridsPy uses this data to size and operate mini-grid components like renewable energy sources (e.g., solar panels, wind turbines), energy storage systems (e.g., batteries), and backup generators to ensure necessary electricity for a specific area or community.
 
-   **Renewable Energy Production estimation methods:**
+
+MicroGridsPy uses this data to size and operate mini-grid components like renewable energy sources (e.g., solar panels, wind turbines), energy storage systems (e.g., batteries), and backup generators to ensure necessary electricity for a specific area or community.
+
+**Renewable Energy Production estimation methods:**
 
    - Using web tools such as `Renewables.ninja <https://www.renewables.ninja/>`_, which provides data and tools for assessing energy generation profiles, including solar and wind energy production estimated for 1 year with 1-hour time resolution.
    - Using the advanced features integrated into MicroGridsPy for estimating generation based on VRES parameters, project location, and the specific year. Data for solar, wind, and temperature conditions are obtained from the NASA POWER platform through an API integrated into the MGPy software, creating a Typical Meteorological Year (TMY) dataset for energy generation calculations.
@@ -573,3 +577,30 @@ The input file within the "Inputs" folder, must have as many numbered columns (e
 
 
 ----------------------------------------------------------------------------------------------------------------------------
+
+MicroGridsPy Data Input Interface
+=================================
+
+The graphical user interface (GUI) application provides a user-friendly way to define and input data for MicroGridsPy, a powerful Pyomo energy model designed for optimizing minigrids in rural villages.
+
+The application is organized into different pages, each tailored to a specific aspect of the model. Here's a quick overview of the pages and their basic usage:
+
+- **Start Page**: Begin your data input journey by specifying fundamental parameters for your minigrid project. It serves as the central hub for configuring parameters and functionalities including duration, resolution, optimization goal,specific constraints and more. Additionally, the GUI supports advanced features like mixed-integer linear programming (MILP) formulation, multi-objective optimization, and the ability to toggle different parameters: users can enable or disable specific parameters and access tooltips for additional guidance.
+
+- **RECalculation Page**: Explore options for renewable energy calculations and estimations.
+
+- **Archetypes Page**: Define demand profiles and generation archetypes for different scenarios.
+
+- **Technologies Page**: Configure the available renewable energy sources and their properties.
+
+- **Battery Page**: If needed, set up battery-related parameters.
+
+- **Generator Page**: Define generator types and characteristics.
+
+- **Grid Page**: Specify grid connection details.
+
+- **Plot Page**: Visualize and review your input data before proceeding.
+
+- **Run Page**: Finally, save your input data and initiate the optimization process.
+
+This intuitive interface streamlines the data input process, making it easier than ever to design and optimize minigrids for rural villages using MicroGridsPy.
