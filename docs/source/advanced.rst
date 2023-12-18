@@ -224,7 +224,7 @@ Using the advanced features integrated into MicroGridsPy which allows to use bui
      - % (0-1)
      - yearly expected average percentage variation of the demand [%]
    * - cooling_period
-     - (e.g. 'NC' = No Cooling; 'AY' = All Year; 'OM' = Oct-Mar; 'AS' = Apr-Sept)
+     - ('NC' = No Cooling; 'AY' = All Year etc.)
      - Cooling period 
    * - h_tier1
      - (-)
@@ -272,7 +272,7 @@ In the present section, the focus is set on the generator models which often neg
         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Partial%20Load%202.jpg?raw=true" width="350" />
     </div>
 
-|nbsp|
+
 
 In the LP formulation, the generator can freely vary its output between 0 and 100% without any penalization for partial load. The only limitation is therefore the maximum capacity of the unit. The slope of the cost curve for the generator system (a_LP), representing the marginal cost, is calculated as shown in equation (1.1) from the price of the fuel (p_fuel), the low heating value of the fuel (〖LHV〗_(fuel ) and the efficiency of the genset (η_gen). To not exceed the generator nominal capacity C, equation (1.2) is necessary, where E(s,t) is the energy output of the genset and Δt_p the hourly timestep. Finally, the total operation cost of the generator in the period t of scenario s (Cost(s,t))is calculated with equation (1.3).
 
@@ -490,6 +490,9 @@ The reliability of a national grid's electricity supply refers to the consistent
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/GRID%20availability.png?raw=true
      :width: 500
      :align: center
+
+
+------------------------------------------------------------------------------------------------------------------------------------
 
 
 Model formulation for Load Evolution
