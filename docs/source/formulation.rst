@@ -14,7 +14,9 @@ The considered system comprises an electrical load supplied by renewable sources
    :width: 500
    :align: center
 
-|nbsp|
+
+----------------------------------------------------------------------------------------------------
+
 
 Objective function
 ===================
