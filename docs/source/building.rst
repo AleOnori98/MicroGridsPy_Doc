@@ -446,33 +446,33 @@ These parameters are used for the aesthetic aspects of model outputs, assigning 
 
 
 .. list-table::
-:widths: 25 25 50
-:header-rows: 1
+  :widths: 25 25 50
+  :header-rows: 1
 
-Parameter Name
-Default Value
-Description
-RES_Colors
-'FF8800' (for first RES source)
-Specifies the color codes for renewable energy sources in visualizations.
-Battery_Color
-'4CC9F0'
-Defines the color code for battery storage in plots and graphs.
-Generator_Colors
-'00509D' (for first generator type)
-Sets the color codes for different types of generators in visualizations.
-Lost_Load_Color
-'F21B3F'
-Color code used for representing lost load in graphical outputs.
-Curtailment_Color
-'FFD500'
-Specifies the color for curtailment in plots and diagrams.
-Energy_To_Grid_Color
-'008000'
-Color code for depicting energy supplied to the grid.
-Energy_From_Grid_Color
-'800080'
-Designates the color for visualizing energy drawn from the grid.
+  * - Parameter Name
+    - Default Value
+    - Description
+  * - RES_Colors
+    - 'FF8800' (adapt to the number of RES)
+    - Color code for renewable energy sources in visualizations.
+  * -  Battery_Color
+    - '4CC9F0'
+    - Color code for battery storage in plots and graphs.
+  * - Generator_Colors
+    - '00509D' (adapt to the number of generators)
+    - Color codes for different types of generators in visualizations.
+  * - Lost_Load_Color
+    - 'F21B3F'
+    - Color code used for representing lost load in graphical outputs.
+  * - Curtailment_Color
+    - 'FFD500'
+    - Color code for curtailment in plots and diagrams.
+  * - Energy_To_Grid_Color
+    - '008000'
+    - Color code for depicting energy supplied to the grid.
+  * - Energy_From_Grid_Color
+    - '800080'
+    - Designates the color for visualizing energy drawn from the grid.
 
 .. note::
   Please refer to the example gallery for a better understanding of the structure of both the set and parameter files.
@@ -489,12 +489,20 @@ Demand
 
 At the core of the optimization energy modelling process lies the load curve demand. This section aims to explain what load curve demand is, how it is used within MicroGridsPy, and how it can be operated or estimated with external software tools like RAMP or within the model itself using the advanced feature of demand estimation integrated into MicroGridsPy.
 
-.. dropdown:: What is the load curve demand?
-    :animate: fade-in-slide-down
+.. raw:: html
 
-   Load Curve Demand represents the *time-dependent electricity consumption* of a given area or system. It is typically measured in Watts (or kilowatts, megawatts, etc.) and captures how electricity demand varies over different periods, usually in hourly or sub-hourly intervals. This curve illustrates the power required at each point in time, providing insights into when and how much electricity is needed.
+    <div class="expandable-section">
+        <button onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">
+            <b>Show More</b>
+        </button>
+        <div style="display:none;">
+            <p><strong>What is the load curve demand?</strong></p>
+            <p>Load Curve Demand represents the time-dependent electricity consumption of a given area or system. It is typically measured in Watts (or kilowatts, megawatts, etc.) and captures how electricity demand varies over different periods, usually in hourly or sub-hourly intervals. MicroGridsPy uses the load curve demand to optimize resource allocation, distributing resources efficiently over the years. The software can predict when investment steps should be taken to expand the system's capacity for increasing demand.</p>
+            <p><a href="https://rampdemand.readthedocs.io/en/stable/intro.html">Learn more about RAMP</a></p>
+        </div>
+    </div>
 
-   MicroGridsPy uses the load curve demand to optimize resource allocation, distributing resources efficiently over the years. It balances generation and storage resources to minimize costs while meeting the electricity demand throughout the day. The software can predict when investment steps should be taken to expand the system's capacity for increasing demand.
+  MicroGridsPy uses the load curve demand to optimize resource allocation, distributing resources efficiently over the years. It balances generation and storage resources to minimize costs while meeting the electricity demand throughout the day. The software can predict when investment steps should be taken to expand the system's capacity for increasing demand.
 
    **Load curve demand estimation methods:**
 
@@ -532,12 +540,19 @@ RES Production
 
 Electricity needed to meet the demand can be generated using various energy sources. MicroGridsPy considers renewable sources, such as solar and wind, and backup diesel generators as the choices for generating electricity. This section aims to explain what renewable energy production is, how it is used within MicroGridsPy, how it can be estimated with external available web tools like Renewables.ninja and PVGIS or within the model itself using the advanced feature of renewable energy production estimation integrated into MicroGridsPy.
 
-.. dropdown:: What is the Renewable Energy production?
-    :animate: fade-in-slide-down
+.. raw:: html
 
-   Renewable energy production represents the estimated electricity production for each unitary generation technology at a specific time and location. It is typically measured in Watts (or kilowatts, megawatts, etc.) and illustrates how electricity production varies over time and by source, usually in hourly or sub-hourly intervals.
+    <div class="expandable-section">
+        <button onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">
+            <b>Show More</b>
+        </button>
+        <div style="display:none;">
+            <p><strong>What is the Renewable Energy production?</strong></p>
+            <p>Renewable energy production represents the estimated electricity production for each unitary generation technology at a specific time and location. It is typically measured in Watts (or kilowatts, megawatts, etc.) and illustrates how electricity production varies over time and by source, usually in hourly or sub-hourly intervals.</p>
+        </div>
+    </div>
 
-   MicroGridsPy uses this data to size and operate mini-grid components like renewable energy sources (e.g., solar panels, wind turbines), energy storage systems (e.g., batteries), and backup generators to ensure necessary electricity for a specific area or community.
+  MicroGridsPy uses this data to size and operate mini-grid components like renewable energy sources (e.g., solar panels, wind turbines), energy storage systems (e.g., batteries), and backup generators to ensure necessary electricity for a specific area or community.
 
    **Renewable Energy Production estimation methods:**
 
