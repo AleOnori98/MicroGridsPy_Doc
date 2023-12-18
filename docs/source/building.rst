@@ -581,26 +581,26 @@ The input file within the "Inputs" folder, must have as many numbered columns (e
 MicroGridsPy Data Input Interface
 =================================
 
-The graphical user interface (GUI) application provides a user-friendly way to define and input data for MicroGridsPy, a powerful Pyomo energy model designed for optimizing minigrids in rural villages.
+The graphical user interface (GUI) application provides a user-friendly way to define and input data for MicroGridsPy.
 
 The application is organized into different pages, each tailored to a specific aspect of the model. Here's a quick overview of the pages and their basic usage:
 
 - **Start Page**: Begin your data input journey by specifying fundamental parameters for your minigrid project. It serves as the central hub for configuring parameters and functionalities including duration, resolution, optimization goal,specific constraints and more. Additionally, the GUI supports advanced features like mixed-integer linear programming (MILP) formulation, multi-objective optimization, and the ability to toggle different parameters: users can enable or disable specific parameters and access tooltips for additional guidance.
 
-- **RECalculation Page**: Explore options for renewable energy calculations and estimations.
+- **RECalculation Page**: Explore options for renewable energy time series estimation. Users can activate or deactivate RES calculation, which dynamically enables or disables related parameters. A warning label provides instructions when RES calculation is deactivated. The layout offers a scrollable area for a comprehensive list of parameters, including latitude, longitude, time zone, and turbine information. Custom fonts and tooltips enhance the user experience, making it a user-friendly interface for setting up requried parameters.
 
-- **Archetypes Page**: Define demand profiles and generation archetypes for different scenarios.
+- **Archetypes Page**: Define demand profiles and generation archetypes for different scenarios. Users can toggle the activation of demand profile generation, which dynamically enables or disables relevant parameters. A warning label provides guidance when demand profile generation is turned off. The layout includes a scrollable area for adjusting various parameters such as demand growth, cooling period, and tiered electricity rates. 
 
-- **Technologies Page**: Configure the available renewable energy sources and their properties.
+- **Technologies Page**: Configure the available renewable energy sources and their techno-economic properties. The page defines default parameters and their initial values for renewable energy sources (RES), manages user input for RES parameters with validation and updates, creates labels, entry fields, and tooltips for RES parameters, and includes a warning label to convey important information to users. 
 
-- **Battery Page**: If needed, set up battery-related parameters.
+- **Battery Page**: If needed, set up battery-related parameters. It provides robust input validation, tooltips for parameter descriptions, and conditional parameter handling, ensuring data accuracy and usability. 
 
-- **Generator Page**: Define generator types and characteristics.
+- **Generator Page**: Define generator types and characteristics. Similarly to Technologies Page, the page defines default parameters and their initial values but the user can add new entries for different types of generators. It offers strong input validation, parameter description tooltips, and conditional parameter management, guaranteeing both data precision and user-friendliness.
 
 - **Grid Page**: Specify grid connection details.
 
-- **Plot Page**: Visualize and review your input data before proceeding.
+- **Plot Page**: Visualize the color codes for data visualization by means of a dynamic color legend.
 
-- **Run Page**: Finally, save your input data and initiate the optimization process.
+- **Run Page**: Finally, save your input data and initiate the optimization process. It includes the following functionalities: validation of integer inputs, updating and displaying output messages in a text widget, showing dispatch, size, and cash flow plots in separate windows, generating plots based on user inputs and running a model in a separate thread, displaying progress messages and results.
 
 This intuitive interface streamlines the data input process, making it easier than ever to design and optimize minigrids for rural villages using MicroGridsPy.
