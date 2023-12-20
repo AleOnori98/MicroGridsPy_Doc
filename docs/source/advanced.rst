@@ -598,9 +598,6 @@ The battery performance isn’t constant over time due to capacity and power fad
     </div>
 
 
-|nbsp|
-
-
 Understanding and estimating the battery behaviour and related parameters during operation is key to improving capacity usage and cycling techniques, and, hence, inform battery modelling accordingly. A complete battery modelling is based on the estimation of operating conditions (i.e., SOC) and the estimation of battery lifetime expectancy (i.e., SOH) at any given moment of battery operation and lifetime. Battery models can be divided into four major groups: analytical, stochastic, electrical and electrochemical models. The most basic models just portray the energy balance which simplifies the behaviour of the battery. Other models reproduce the electrical characteristics during its operation or the chemical reactions, adding more accuracy but also complexity to the methodology. To achieve a complete battery model capable of determining battery related parameters through operation and even lifetime, the aging components must be accounted for in the methodology. 
 
 A degradation model was developed and introduced into the model to account for the battery bank capacity fade. This methodology can be applied for batteries of the following chemistries: Lithium LFP and NMC, and Lead Acid. 

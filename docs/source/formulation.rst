@@ -452,15 +452,37 @@ battery min capacity (add)
 Diesel Generator
 --------------------
 
-The simple model for diesel generator operation allows it to freely vary its output within a range of 0 to 100%, without imposing any penalty for operating at partial load. The only limitation imposed is that the generator cannot exceed its maximum capacity.
+In MicroGridsPy, the diesel generator is modeled with a straightforward approach, allowing for operational flexibility within its capacity limits. The generator can function across a range of outputs, from 0 to 100% of its capacity, adapting to the varying energy demands of the mini-grid system. This flexibility is crucial for ensuring the reliability of power supply, especially in scenarios where renewable energy sources are intermittent or insufficient.
 
-.. raw:: html
+**Operational Constraints**
 
-.. math::
+The operational constraints of the diesel generator are formulated to ensure that its energy production at any given time does not exceed its nominal capacity and to meet the energy demands efficiently.
 
-    E_{\text{GEN}}(s,yt,g,t) \leq C_{\text{GEN}}(g) \times Units_{\text{GEN}}(ut,g) \times \Delta t
+1. **Maximum Generator Energy Constraint:**
 
-.. raw:: html
+   The energy production of the generator at any given time is limited by its nominal capacity. This constraint is crucial for preventing the generator from operating beyond its designed capacity, thereby ensuring safety and longevity.
+
+   .. math::
+      E_{\text{GEN}}(s,yt,g,t) \leq C_{\text{GEN}}(g) \times \text{Units}_{\text{GEN}}(ut,g) \times \Delta t
+
+2. **Demand Fulfillment Constraint:**
+
+   The generator’s output is also constrained to be less than or equal to the energy demand at each time step, ensuring that it only produces the necessary amount of energy required by the system.
+
+   .. math::
+      E_{\text{GEN}}(s,yt,g,t) \leq \text{Energy Demand}_{s,yt,t} \times \Delta t
+
+3. **Minimum Step Capacity Constraint:**
+
+   For successive investment steps, the model ensures that the nominal capacity of the generator does not decrease. This constraint maintains or increases the generator's capacity over time, supporting the system's scalability.
+
+   .. math::
+      \text{if } ut > 1: C_{\text{GEN}}(ut,g) \geq C_{\text{GEN}}(ut-1,g)
+   
+   .. math::
+      \text{if } ut = 1: C_{\text{GEN}}(ut,g) = C_{\text{GEN}}(ut,g)
+
+The model provides the option to activate an advanced feature for simulating the efficiency of the generator at partial loads. This feature, which is explained in detail in the :ref:`advanced` section of the documentation, allows for a more accurate representation of the generator's performance under varying load conditions.
 
 
 Lost Load
