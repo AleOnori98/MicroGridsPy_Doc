@@ -62,59 +62,50 @@ Refer to ..../base.yml in the MicroGridsPy repository for a full and up-to-date 
 
 Some of the key packages MicroGridsPy relies on are:
 
-Python Version
---------------
+**Python Version**
 
-- **Python 3.9.18**: The base language version for the environment.
+*  Python 3.9.18: The base language version for the environment.
 
-Data Analysis and Scientific Computing
---------------------------------------
+**Data Analysis and Scientific Computing**
 
-- **NumPy (1.26.1)**: Essential for numerical computing.
-- **Pandas (2.1.1)**: Provides high-performance data structures and analysis tools.
-- **SciPy Libraries**: Used for advanced computing tasks.
+*  NumPy (1.26.1): Essential for numerical computing.
+*  Pandas (2.1.1): Provides high-performance data structures and analysis tools.
+*  SciPy Libraries: Used for advanced computing tasks.
 
-Optimization
-------------
+**Optimization**
 
-- **Pyomo (6.6.2)**: A Python-based open-source optimization modeling language.
+*  Pyomo (6.6.2): A Python-based open-source optimization modeling language.
 
-Plotting and Visualization
---------------------------
+**Plotting and Visualization**
 
-- **Matplotlib (3.8.0)**: For creating a range of static, interactive, and animated visualizations.
-- **Seaborn**: Enhances matplotlib for statistical data visualization (commonly used alongside pandas and matplotlib).
+*  Matplotlib (3.8.0): For creating a range of static, interactive, and animated visualizations.
+*  Seaborn: Enhances matplotlib for statistical data visualization (commonly used alongside pandas and matplotlib).
 
-Development Tools
------------------
+**Development Tools**
 
-- **Spyder (5.4.3)**: An IDE for scientific programming in Python.
+*  Spyder (5.4.3): An IDE for scientific programming in Python.
 
-Data File Management
---------------------
+**Data File Management**
 
-- **Openpyxl (3.1.2)**: Reads and writes Excel 2010 xlsx/xlsm/xltx/xltm files.
+*  Openpyxl (3.1.2): Reads and writes Excel 2010 xlsx/xlsm/xltx/xltm files.
 
-Web and Internet Handling
--------------------------
+**Web and Internet Handling**
 
-- **Requests**: Essential for making HTTP requests, often used in web scraping and API interactions.
+*  Requests: Essential for making HTTP requests, often used in web scraping and API interactions.
 
-Miscellaneous
--------------
+**Miscellaneous**
 
-- Various libraries for specific functionalities, including cryptography, JSON handling, and file I/O operations.
+Various libraries for specific functionalities, including cryptography, JSON handling, and file I/O operations.
 
-Considerations
---------------
+**Final considerations**
 
-- **Python Version**: Ensure compatibility of all packages with Python 3.9.18. Upgrading Python may require updating packages.
-- **Operating System**: This setup is tailored for Windows. Adjustments may be needed for Linux or macOS.
-- **Package Versions**: Specified versions are crucial for compatibility and stable operation. Upgrading may cause issues.
-- **Additional Dependencies**: Some packages have dependencies not listed in the base.yml file. Ensure all required libraries are installed.
-- **Virtual Environment**: Recommended to use a separate virtual environment to avoid conflicts with other projects or system settings.
-- **Documentation and Support**: Refer to official documentation for detailed functionalities. Community forums like Stack Overflow are useful for troubleshooting.
-- **Customization and Extensibility**: Install additional packages or modify configurations as needed for specific project requirements.
+- *Python Version*: Ensure compatibility of all packages with Python 3.9.18. Upgrading Python may require updating packages.
+- *Operating System*: This setup is tailored for Windows. Adjustments may be needed for Linux or macOS.
+- *Package Versions*: Specified versions are crucial for compatibility and stable operation. Upgrading may cause issues.
+- *Additional Dependencies*: Some packages have dependencies not listed in the base.yml file. Ensure all required libraries are installed.
+- *Virtual Environment*: Recommended to use a separate virtual environment to avoid conflicts with other projects or system settings.
+- *Documentation and Support*: Refer to official documentation for detailed functionalities. Community forums like Stack Overflow are useful for troubleshooting.
+- *Customization and Extensibility*: Install additional packages or modify configurations as needed for specific project requirements.
 
 
 
