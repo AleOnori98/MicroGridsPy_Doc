@@ -482,7 +482,8 @@ The operational constraints of the diesel generator are formulated to ensure tha
    .. math::
       \text{if } ut = 1: C_{\text{GEN}}(ut,g) = C_{\text{GEN}}(ut,g)
 
-The model provides the option to activate an advanced feature for simulating the efficiency of the generator at partial loads. This feature, which is explained in detail in the :ref:`advanced` section of the documentation, allows for a more accurate representation of the generator's performance under varying load conditions.
+.. note::
+    The model provides the option to activate an advanced feature for simulating the efficiency of the generator at partial loads. This feature, which is explained in detail in the :ref:`advanced` section of the documentation, allows for a more accurate representation of the generator's performance under varying load conditions.
 
 
 Lost Load
