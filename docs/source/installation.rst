@@ -103,8 +103,6 @@ Various libraries for specific functionalities, including cryptography, JSON han
 - *Operating System*: This setup is tailored for Windows. Adjustments may be needed for Linux or macOS.
 - *Package Versions*: Specified versions are crucial for compatibility and stable operation. Upgrading may cause issues.
 - *Additional Dependencies*: Some packages have dependencies not listed in the base.yml file. Ensure all required libraries are installed.
-- *Virtual Environment*: Recommended to use a separate virtual environment to avoid conflicts with other projects or system settings.
-- *Documentation and Support*: Refer to official documentation for detailed functionalities. Community forums like Stack Overflow are useful for troubleshooting.
 - *Customization and Extensibility*: Install additional packages or modify configurations as needed for specific project requirements.
 
 
