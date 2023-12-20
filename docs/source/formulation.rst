@@ -294,18 +294,9 @@ The Salvage Value calculation in MicroGridsPy plays a crucial role in the financ
 
    - **Grid Connection (SV_Grid)**
 
-     .. raw:: html
-
-        <div class="equation-container">
-        <div class="scrollable-equation">
-
      .. math::
         SV_{\text{Grid}} = \frac{\text{Grid Distance} \times \text{Grid Connection Cost} \times \text{Grid Connection}}{(1 + \text{Discount Rate})^{\text{Years - Year Grid Connection}}}
 
-     .. raw:: html
-
-        </div>
-        </div>
 
 3. **Total Salvage Value**
 
@@ -360,7 +351,7 @@ The energy balance of the system is ensured by the following equation. This cons
     </div>
 
 
-RES
+Renewable Sources
 --------------------
 
 The total energy delivered by the RES generation system is estimated based on the inverter efficiency, the unitary energy production and the total installed units for each RES technology.
