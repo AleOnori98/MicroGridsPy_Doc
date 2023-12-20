@@ -431,6 +431,42 @@ The total energy output is limited by the number of gensets available:
 
     </div>
 
+Variable Fuel Cost
+-----------------------------
+MicroGridsPy introduces a valuable addition to model dynamic changes in fuel prices, a pivotal factor in the operational economics of mini-grid systems, especially those reliant on fossil fuels. 
+Fuel costs in developing countries are notably higher due to transportation expenses and lack of infrastructure. For example, in remote areas, fuel can cost up to 20-30% more than the national average. Moreover, fuel price subsidies, often used by governments to stabilize prices, can be unpredictable and subject to sudden changes, further complicating cost projections.
+
+This feature offers two methods to integrate fuel price variations into the model:
+
+1. **Linear Change Model:** Set a starting fuel cost and a linear change rate for a straightforward projection of fuel costs over the project's lifespan. The change rate can be zero, indicating stable fuel prices.
+
+2. **CSV File Import:** For more complex fuel price variations, import a CSV file with specific fuel cost values for each year of the project's timeline. 
+
+**Parameters for Variable Fuel Cost**
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter Name
+     - Unit
+     - Description
+   * - Fuel_Specific_Start_Cost
+     - [Currency/Unit]
+     - Initial cost of fuel at the start of the project.
+   * - Fuel_Specific_Cost_Rate
+     - [Currency/Unit/Year]
+     - Annual rate of change in fuel cost (can be zero).
+
+The equation for the linear change in fuel cost is as follows:
+
+.. math::
+
+    Fuel\_Cost_y = Fuel\_Cost_{\text{Start}} + y \times Fuel\_Cost_{\text{Change Rate}}
+
+Where \( Fuel\_Cost_y \) is the fuel cost in year \( y \), \( Fuel\_Cost_{\text{Start}} \) is the initial cost, and \( Fuel\_Cost_{\text{Change Rate}} \) is the yearly rate of change. This feature allows for enhanced flexibility and realism in financial analyses of mini-grid systems.
+
+The integration of this feature may substantially influences the model's outcomes, particularly for operational costs, system design, and financial assessments, aligning it more closely with real-world scenarios in regions like rural Africa where fuel prices are highly volatile. This feature enhances the accuracy of operational expense estimation over the project's lifetime, crucial for effective budgeting and financial planning, and makes the model sensitive to fuel price changes, reflecting their true impact on mini-grid system costs. In terms of system design and optimization, variable fuel costs can influence the selection of technology, potentially making renewable sources more cost-effective as fuel prices rise. This may lead the model to prefer solutions with greater storage capacity or increased renewable energy integration to mitigate fuel price risks. For financial viability and investment decisions, the feature facilitates long-term financial planning by offering realistic fuel expense projections and enables comprehensive risk assessment considering fuel price volatility. Additionally, it allows for the analysis of the impact of fuel subsidies or taxes on project economics, providing valuable insights for policy-making. Overall, this feature significantly enhances MicroGridsPy's ability to simulate and evaluate energy systems under realistic economic conditions, especially in the context of rural electrification in developing countries where fuel price fluctuations are a major concern.
 
 National Grid
 ----------------------
