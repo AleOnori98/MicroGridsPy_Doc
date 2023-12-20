@@ -73,8 +73,8 @@ As more generally in constrained optimisation, the following terms are also used
 * **Set**: an index in the algebraic formulation of the equations
 * **Constraint**: an equality or inequality expression that constrains one or several variables
 * **Model**: mathematical framework representing an energy system, including its elements and operational rules. There are two types:
-  * *Concrete Model*: This type of model is directly built with specific data. It's akin to a pre-filled template where the data determines the model's structure and content.
-  * *Abstract Model*: This is a more flexible template without initial data. It defines the model's potential structure, and data is applied separately. Ideal for scenarios where the model's structure is constant but the data varies.
+  *  *Concrete Model*: This type of model is directly built with specific data. It's akin to a pre-filled template where the data determines the model's structure and content.
+  *  *Abstract Model*: This is a more flexible template without initial data. It defines the model's potential structure, and data is applied separately. Ideal for scenarios where the model's structure is constant but the data varies.
 
 
 --------------------------------------------------------------------------------------------------------------------
