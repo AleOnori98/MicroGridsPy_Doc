@@ -245,8 +245,44 @@ When it comes to replacing the Battery Energy Storage System (BESS), the calcula
     </div>
 
 
-Salvage value
+Salvage Value
 --------------------
+
+The Salvage Value calculation in MicroGridsPy plays a crucial role in the financial analysis of mini-grid projects. It accounts for the remaining value of key components like renewable energy sources, generators, and grid connections at the project's end.
+
+**Calculation Steps**
+
+1. **Identifying Upgrades and Lifespan**
+
+   The model tracks the timing of upgrades throughout the project's lifespan using `upgrade_years_list` and calculates the time intervals between these upgrades based on `s_dur` (Step Duration).
+
+2. **Component-wise Salvage Value Calculation**
+
+   Salvage value for each component is computed considering their initial cost, operational life, and remaining value at the project's end.
+
+   - **Renewable Sources (SV_Ren)**
+
+     .. math::
+        SV_{\text{Ren}} = \sum (\text{RES Units} \times \text{RES Nominal Capacity} \times \text{RES Specific Investment Cost} \times \frac{\text{RES Lifetime} - \text{Years}}{\text{RES Lifetime}}) \times \frac{1}{(1 + \text{Discount Rate})^{\text{Years}}}
+
+   - **Generators (SV_Gen)**
+
+     .. math::
+        SV_{\text{Gen}} = \sum (\text{Generator Nominal Capacity} \times \text{Generator Specific Investment Cost} \times \frac{\text{Generator Lifetime} - \text{Years}}{\text{Generator Lifetime}}) \times \frac{1}{(1 + \text{Discount Rate})^{\text{Years}}}
+
+   - **Grid Connection (SV_Grid)**
+
+     .. math::
+        SV_{\text{Grid}} = \frac{\text{Grid Distance} \times \text{Grid Connection Cost} \times \text{Grid Connection}}{(1 + \text{Discount Rate})^{\text{Years - Year Grid Connection}}}
+
+3. **Total Salvage Value**
+
+   The total salvage value is the sum of the salvage values of all components, which is used to refine the overall project cost.
+
+This approach ensures a comprehensive economic assessment of mini-grid projects, considering the residual value of assets at the project's end.
+
+.. warning::
+   The calculation of battery salvage value is currently a work in progress within the model. Accurately modeling battery salvage value requires a detailed understanding of battery cycle life, degradation and its impact on residual capacity, which is more complex compared to other components.
 
 
 Energy
