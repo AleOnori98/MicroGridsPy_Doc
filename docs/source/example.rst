@@ -74,7 +74,7 @@ The images gallery below visualizes the interface windows, simulation outcomes, 
      </a>
    </div>
 
--------------------------------------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------------------------------------
 
 **Results Interpretation**
 
@@ -162,14 +162,14 @@ Moving away from the basic example previously discussed, this scenario within Mi
 
 **Result Interpretaion**
 
-Departing from the basic LP approach, this advanced scenario in the model engages a MILP formulation, significantly refining the model by accurately representing discrete operational choices and system behaviors, albeit with greater computational demands.
+In this updated scenario, the Levelized Cost of Energy (LCOE) has improved from 0.2562 USD/kWh to 0.2288 USD/kWh, a reduction of approximately 10.7%. This improvement in LCOE is attributed to the introduction of grid connection starting from year 10, which reduces reliance on more expensive generation options. The renewable penetration remains high at 73.96%, emphasizing the system's reliance on clean energy. Interestingly, the generator share per year has decreased dramatically to 4.6%, suggesting that the grid connection has significantly offset the need for local generation. The average national grid usage per year at 21.87% further supports this shift towards grid dependency. Battery usage remains substantial at 31.38%, indicating its continued role in energy storage and supply smoothing. These changes highlight the significant impact grid connectivity can have on optimizing the cost and operational strategies of energy systems, particularly when capacity expansion is not considered.
 
 MILP Formulation and Partial Load Effect
 ------------------------------
 
-Moving away from the basic example previously discussed, this scenario within MicroGridsPy presents a different configuration where grid connection is enabled starting from year 10. This adjustment aims to explore its influence on the simulation results, offering insights into how integrating with the grid from a specific year affects the overall energy strategy.
+Departing from the basic LP approach, this advanced scenario in MicroGridsPy engages a MILP formulation, significantly refining the model by accurately representing discrete operational choices and system behaviors, albeit with greater computational demands.
 
-- **MILP Formulation**: technologies are modeled as discrete units of capacity rather than the continuous values used in LP, allowing for a more accurate representation of real-world scenarios where capacity additions occur in quantized increments.
+- **MILP Formulation**: Technologies are modeled as discrete units of capacity rather than the continuous values used in LP, allowing for a more accurate representation of real-world scenarios where capacity additions occur in quantized increments.
 - **Partial Load Effect**: By accounting for the partial load effect on generator operation, the model now reflects the real-world efficiency variations and increased fuel consumption when generators do not operate at optimal levels, potentially altering investment and operational decisions to favor solutions that mitigate these inefficiencies.
 
 
