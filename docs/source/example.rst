@@ -159,6 +159,10 @@ Below is a carousel gallery depicting the outcomes of this alternative simulatio
      </a>
    </div>
 
+-----------------------------------------------
+
+**Result Interpretaion**
+
 In this updated scenario, the Levelized Cost of Energy (LCOE) has improved from 0.2562 USD/kWh to 0.2288 USD/kWh, a reduction of approximately 10.7%. This improvement in LCOE is attributed to the introduction of grid connection starting from year 10, which reduces reliance on more expensive generation options. The renewable penetration remains high at 73.96%, emphasizing the system's reliance on clean energy. Interestingly, the generator share per year has decreased dramatically to 4.6%, suggesting that the grid connection has significantly offset the need for local generation. The average national grid usage per year at 21.87% further supports this shift towards grid dependency. Battery usage remains substantial at 31.38%, indicating its continued role in energy storage and supply smoothing. These changes highlight the significant impact grid connectivity can have on optimizing the cost and operational strategies of energy systems, particularly when capacity expansion is not considered.
 
 MILP Formulation and Grid Connection
