@@ -91,69 +91,6 @@ Below is a carousel gallery depicting the outcomes of this alternative simulatio
 
 .. raw:: html
 
-   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-     <ol class="carousel-indicators">
-       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-       <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
-     </ol>
-     <div class="carousel-inner">
-       <div class="carousel-item active">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.1.png?raw=true" class="d-block w-100" alt="Dispatch Strategy">
-       </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.2.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.3.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.4.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.5.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.6.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.7.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.8.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.9.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.10.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.11.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.12.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
-     </div>
-     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="color: #333;">
-       <span class="carousel-control-prev-icon" aria-hidden="true" style="background-image: none;"></span>
-       <span class="sr-only">Previous</span>
-     </a>
-     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="color: #333;">
-       <span class="carousel-control-next-icon" aria-hidden="true" style="background-image: none;"></span>
-       <span class="sr-only">Next</span>
-     </a>
-   </div>
-
-MILP Formulation and Grid Connection
-------------------------------
-
-Moving away from the basic example previously discussed, this scenario within MicroGridsPy presents a different configuration where grid connection is enabled starting from year 10. This adjustment aims to explore its influence on the simulation results, offering insights into how integrating with the grid from a specific year affects the overall energy strategy.
-
-- **Grid Connection**: Activated, allowing the microgrid to interact with the main electrical grid. starting from year 10
-
-Below is a carousel gallery depicting the outcomes of this alternative simulation run. The images illustrate how the introduction of grid connectivity can influence dispatch strategies, investment decisions, and the overall economics of the microgrid.
-
 .. raw:: html
 
    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -223,3 +160,15 @@ Below is a carousel gallery depicting the outcomes of this alternative simulatio
    </div>
 
 In this updated scenario, the Levelized Cost of Energy (LCOE) has improved from 0.2562 USD/kWh to 0.2288 USD/kWh, a reduction of approximately 10.7%. This improvement in LCOE is attributed to the introduction of grid connection starting from year 10, which reduces reliance on more expensive generation options. The renewable penetration remains high at 73.96%, emphasizing the system's reliance on clean energy. Interestingly, the generator share per year has decreased dramatically to 4.6%, suggesting that the grid connection has significantly offset the need for local generation. The average national grid usage per year at 21.87% further supports this shift towards grid dependency. Battery usage remains substantial at 31.38%, indicating its continued role in energy storage and supply smoothing. These changes highlight the significant impact grid connectivity can have on optimizing the cost and operational strategies of energy systems, particularly when capacity expansion is not considered.
+
+MILP Formulation and Grid Connection
+------------------------------
+
+Moving away from the basic example previously discussed, this scenario within MicroGridsPy presents a different configuration where grid connection is enabled starting from year 10. This adjustment aims to explore its influence on the simulation results, offering insights into how integrating with the grid from a specific year affects the overall energy strategy.
+
+- **Grid Connection**: Activated, allowing the microgrid to interact with the main electrical grid. starting from year 10
+
+Below is a carousel gallery depicting the outcomes of this alternative simulation run. The images illustrate how the introduction of grid connectivity can influence dispatch strategies, investment decisions, and the overall economics of the microgrid.
+
+
+
