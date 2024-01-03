@@ -7,7 +7,6 @@ Default Scenario
 In this basic example run of MicroGridsPy, we demonstrate the foundational capabilities of the tool for microgrids simulation and optimization. The basic configuration for this run is as follows:
 
 - **Time Horizon**: 20 years
-- **Time Steps**: 4 (5 years each)
 - **Renewable Energy Sources (RES)**: Only Photovoltaic (PV) systems available.
 - **Formulation**: Linear Programming (LP)
 - **Optimization Goal**: Net Present Cost (NPC)
@@ -75,13 +74,11 @@ The images gallery below visualizes the interface windows, simulation outcomes, 
      </a>
    </div>
 
-To navigate through the gallery, click the previous and next buttons or select the corresponding indicator for the image you wish to view. 
-
 **Results Interpretation**
 
-In the default simulation, diesel generators are favored over batteries as backup due to their lower investment and replacement costs. Yet, this will change with different settings. Activating the generator's partial load effect, using a more realistic MILP formulation, and considering variable fuel costs could alter the results significantly. Moreover, MicroGridsPy allows setting minimum renewable penetration thresholds, which could tip the scales towards battery storage, especially under fluctuating fuel prices or supportive renewable energy policies. These features demonstrate the model's adaptability to various scenarios and constraints, underscoring the potential for different technologies to emerge as optimal solutions.
+In the default simulation, renewable sources significantly contribute to the energy mix with 77,38% penetration, accompanied by a 34.87% utilization of batteries and a 23,13% share from diesel generators. Notably, as illustrated in the CashFlow Plot, the reliance on generators escalates over the years due to increasing demand, making them a critical component to meet energy requirements in the absence of capacity expansion. The model's settings, including the implementation of the generator's partial load effect, the use of a more realistic MILP formulation, and variable fuel cost considerations, can substantially alter these dynamics. MicroGridsPy also enables setting minimum renewable penetration thresholds, potentially shifting focus towards battery storage, especially under fluctuating fuel prices or supportive renewable energy policies. This feature, along with the observed trend in generator usage, demonstrates the model's capacity to adapt to various scenarios and constraints, highlighting the evolving roles of different technologies as optimal solutions under specific conditions.
 
-MILP and Grid Connection
+Grid Connection
 ------------------------------
 
 In contrast to the basic example run previously discussed, here an alternative scenario within MicroGridsPy. This time, it's activated the more realistic Mixed-Integer Linear Programming (MILP) formulation and enable grid connection starting from year 10 to examine the impact on the simulation results.
