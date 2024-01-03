@@ -81,15 +81,11 @@ In the default simulation, renewable sources significantly contribute to the ene
 Grid Connection
 ------------------------------
 
-In contrast to the basic example run previously discussed, here an alternative scenario within MicroGridsPy. This time, it's activated the more realistic Mixed-Integer Linear Programming (MILP) formulation and enable grid connection starting from year 10 to examine the impact on the simulation results.
+Moving away from the basic example previously discussed, this scenario within MicroGridsPy presents a different configuration where grid connection is enabled starting from year 10. This adjustment aims to explore its influence on the simulation results, offering insights into how integrating with the grid from a specific year affects the overall energy strategy.
 
-
-- **MILP Formulation**: Enabled to capture binary decisions and more detailed system behavior.
 - **Grid Connection**: Activated, allowing the microgrid to interact with the main electrical grid. starting from year 10
 
-.. note:: The switch to MILP and the inclusion of grid interaction are likely to result in a different optimal solution, showcasing the versatility of MicroGridsPy in adapting to various operational and economic conditions.
-
-Below is a carousel gallery depicting the outcomes of this alternative simulation run. The images illustrate how the introduction of MILP and grid connectivity can influence dispatch strategies, investment decisions, and the overall economics of the microgrid.
+Below is a carousel gallery depicting the outcomes of this alternative simulation run. The images illustrate how the introduction of grid connectivity can influence dispatch strategies, investment decisions, and the overall economics of the microgrid.
 
 .. raw:: html
 
