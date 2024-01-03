@@ -2,6 +2,12 @@
 Example Gallery
 #################################
 
+Case Study
+-------------
+In this exemplative case study, the focus is on a rural village situated in the Sub-Saharan region of Africa, precisely in Bangweulu Wetlands, Zambia. This location benefits from a solar-rich environment typical of the Sub-Saharan climate, making it an ideal candidate for photovoltaic (PV) systems. With a nominal power capacity of 1000 kW, the PV installation is optimized with a tilt angle of 10 degrees to harness the high solar potential and an azimuth of 180 degrees for optimal sun tracking throughout the year.
+
+The chosen site's geographic and climatic conditions are favorable for renewable energy projects, with abundant sunlight and moderate albedo effects contributing to the efficiency of solar power generation. The specified tilt and azimuth angles are particularly well-suited to the region’s latitude, ensuring that the solar panels receive maximum irradiance during peak sun hours. 
+
 Default Scenario
 ----------------
 In this basic example run of MicroGridsPy, we demonstrate the foundational capabilities of the tool for microgrids simulation and optimization. The basic configuration for this run is as follows:
