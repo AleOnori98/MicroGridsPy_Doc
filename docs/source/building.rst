@@ -583,9 +583,17 @@ MicroGridsPy Data Input Interface
 
 The graphical user interface (GUI) application provides a user-friendly way to define and input data for MicroGridsPy.
 
+.. image:: C:\Users\onori\Documents\GitHub\MicroGridsPy_Doc\docs\source\Images\Interface.png?raw=true
+   :width: 500
+   :align: center
+
 The application is organized into different pages, each tailored to a specific aspect of the model. Here's a quick overview of the pages and their basic usage:
 
-- **Start Page**: Begin your data input journey by specifying fundamental parameters for your minigrid project. It serves as the central hub for configuring parameters and functionalities including duration, resolution, optimization goal,specific constraints and more. Additionally, the GUI supports advanced features like mixed-integer linear programming (MILP) formulation, multi-objective optimization, and the ability to toggle different parameters: users can enable or disable specific parameters and access tooltips for additional guidance.
+- **Initial Page**: Initial page with the model presentation and visualization
+
+- **Start Page**: Begin your data input journey by specifying fundamental parameters for your minigrid project. It serves as the central hub for configuring parameters and functionalities including duration, resolution, optimization goal,specific constraints and more. 
+
+- **Advanced Page**: The GUI supports advanced features like mixed-integer linear programming (MILP) formulation, multi-objective optimization, and the ability to toggle different parameters: users can enable or disable specific parameters and access tooltips for additional guidance.
 
 - **RECalculation Page**: Explore options for renewable energy time series estimation. Users can activate or deactivate RES calculation, which dynamically enables or disables related parameters. A warning label provides instructions when RES calculation is deactivated. The layout offers a scrollable area for a comprehensive list of parameters, including latitude, longitude, time zone, and turbine information. Custom fonts and tooltips enhance the user experience, making it a user-friendly interface for setting up requried parameters.
 
