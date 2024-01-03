@@ -583,7 +583,7 @@ MicroGridsPy Data Input Interface
 
 The graphical user interface (GUI) application provides a user-friendly way to define and input data for MicroGridsPy.
 
-.. image:: C:\Users\onori\Documents\GitHub\MicroGridsPy_Doc\docs\source\Images\Interface.png?raw=true
+.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Interface.png?raw=true
    :width: 500
    :align: center
 
