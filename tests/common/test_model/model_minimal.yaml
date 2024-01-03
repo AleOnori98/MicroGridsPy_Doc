@@ -1,0 +1,37 @@
+import:
+  - scenarios.yaml
+
+config:
+  init:
+    name: Minimal test model
+    time_data_path: "timeseries_data"
+  build:
+    mode: plan
+  solve:
+    solver: cbc
+
+parameters:
+  objective_cost_weights:
+    data: 1
+    index: monetary
+    dims: costs
+
+techs:
+  test_supply_elec:
+    name: Supply tech
+    carrier_out: electricity
+    parent: supply
+    flow_cap_max: 10
+    source_max: .inf
+    flow_out_eff: 0.9
+  test_demand_elec:
+    name: Demand elec tech
+    carrier_in: electricity
+    parent: demand
+
+nodes:
+  a:
+    techs:
+      test_supply_elec:
+      test_demand_elec:
+        sink_equals: file=demand_elec.csv
