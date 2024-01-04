@@ -23,9 +23,11 @@ MicroGridsPy is a comprehensive energy optimization model designed for the strat
 #. **Output Analysis**: Review the outputs, which include the sizing of system components, financial analyses like NPC and LCOE, and dispatch plots. 
 
 
-.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Mgpy_Simple_Scheme.png?raw=true
+.. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Mgpy_Simple_Scheme.png?raw=true
    :width: 500
    :align: center
+
+   Simple scheme of the model
 
 ----------------------------
 
@@ -475,7 +477,7 @@ These parameters are used for the aesthetic aspects of model outputs, assigning 
     - Designates the color for visualizing energy drawn from the grid.
 
 .. note::
-  Please refer to the example gallery for a better understanding of the structure of both the set and parameter files.
+  Please refer to the example gallery for a better understanding of the parameter use within the user interface.
 
 ----------------------------------------------------------------------------------------------------------
 
@@ -511,9 +513,11 @@ MicroGridsPy uses the load curve demand to optimize resource allocation, distrib
    - Using software tools such as `RAMP <https://rampdemand.readthedocs.io/en/stable/intro.html>`_, a bottom-up stochastic model for generating high-resolution multi-energy profiles.
    - Using the advanced features integrated into MicroGridsPy, which allows the use of built-in archetypes for rural villages in Sub-Saharan Africa at different latitudes.
 
-.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/RAMP.png?raw=true
+.. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/RAMP.png?raw=true
    :width: 150px
    :align: center
+
+   RAMP logo
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -528,9 +532,11 @@ The input file, located in the "Time Series" folder within the "Inputs" folder, 
     that must coincide with the value set for 'Periods' in the model configuration.csv file! If not properly set and matched, it may arise a 'Key Error'.
 
 
-.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Demand.png?raw=true
+.. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Demand.png?raw=true
      :width: 700
      :align: center
+
+     Example of demand csv file structure
 
 ---------------------------------------------------------------------------------------------
 
@@ -570,10 +576,12 @@ MicroGridsPy uses this data to size and operate mini-grid components like renewa
 The input file within the "Inputs" folder, must have as many numbered columns (excluding the rows labels) as the total years of the project and as many rows (excluding the columns headers) as the periods in which one year is divided (e.g. 1-hour time resolution leads to 8760 rows). 
 
 
-.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/RES.png?raw=true
+.. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/RES.png?raw=true
      :width: 200
      :height: 500
      :align: center
+
+     Example of the RES Time Series csv file structure
 
 
 ----------------------------------------------------------------------------------------------------------------------------
