@@ -193,8 +193,7 @@ The module also deals with the grid connection, including setting up parameters 
         grid_avail(average_n_outages, average_outage_duration, n_years, year_grid_connection,n_scenarios, n_periods)
     # ... and more
 
-Insights
----------
+
 
 The ``Initialize`` module provides a comprehensive setup for the optimization model, ensuring that all necessary data is loaded and parameters are set before the optimization begins. It acts as the preparatory stage, converting raw data into a structured format that the model can interpret and utilize. This module underscores the importance of initial conditions in the optimization process and ensures that the model's execution is based on accurate and up-to-date information.
 
@@ -293,91 +292,4 @@ Insights
 --------
 
 The demand generation process within MicroGridsPy is a sophisticated sequence that simulates realistic energy consumption patterns based on various factors. This module's output provides a crucial input for the optimization model, enabling it to make informed decisions about energy resource allocation and system design.
-
-RECalculation Module
-====================
-
-The ``RECalculation`` module is responsible for simulating the time series data of renewable energy sources (RES) by interfacing with the NASA POWER project server. This module processes solar and wind energy data to provide time series inputs for the MicroGridsPy optimization model.
-
-Function Descriptions
----------------------
-
-- **URL Creation**: The module begins by constructing URLs for the POWER API using the provided geographical coordinates and date range. These URLs are used to retrieve solar and wind data for specific locations.
-
-.. code-block:: python
-
-    def URL_creation_d(Data_import):
-        # ... URL creation logic for daily parameters
-
-    def URL_creation_h(Data_import):
-        # ... URL creation logic for hourly parameters
-
-- **Solar PV and Wind Turbine Parameters**: Retrieves the parameters necessary to simulate the production from solar photovoltaic (PV) systems and wind turbines.
-
-.. code-block:: python
-
-    def solarPV_parameters(Data_import):
-        # ... solar PV parameters retrieval
-
-    def wind_parameters(Data_import):
-        # ... wind turbine parameters retrieval
-
-- **Data Download and Interpolation**: Utilizes multithreading to download JSON data from the POWER API. It then interpolates the data spatially to the desired coordinates.
-
-.. code-block:: python
-
-    def multithread_data_download(URL_list):
-        # ... multithreaded download of data
-
-    def data_2D_interpolation(jsdata, date_start, date_end, lat, lon,lat_ext_1, lon_ext_1, lat_ext_2, lon_ext_2):
-        # ... interpolation of data
-
-- **Typical Year Calculation**: Determines the typical meteorological year (TMY) by comparing the long-term data with year-specific data using statistical measures.
-
-.. code-block:: python
-
-    def typical_year_daily(param_daily, date_start, date_end):
-        # ... calculation of typical daily values
-
-    def typical_year_hourly(best_years, param_hourly_interp):
-        # ... calculation of typical hourly values
-
-- **Hourly Solar Radiation**: Calculates the hourly solar radiation on a tilted surface, taking into account the location's latitude, longitude, and other factors.
-
-.. code-block:: python
-
-    def hourly_solar(H_day,lat,lon, standard_lon, day_year,tilt, azimuth, albedo):
-        # ... solar radiation calculation
-
-- **Wind Turbine Production**: Computes the power production from wind turbines based on the wind speed at rotor height and the power curve of the turbine.
-
-.. code-block:: python
-
-    def P_turb(power_curve, WS_rotor_lst, ro_air_lst, surface_area, drivetrain_efficiency):
-        # ... wind turbine production calculation
-
-Main Function
--------------
-
-The main function `RE_supply` orchestrates the execution of all the steps to simulate the RES time series data. It aggregates the data according to the defined periods and exports the final time series to a CSV file.
-
-.. code-block:: python
-
-    def RE_supply():
-        # ... execution of RES supply simulation
-
-Execution
----------
-
-The module is designed to be executed as part of the model setup, but it can also be run independently to generate RES time series data for other analyses.
-
-.. code-block:: python
-
-    if __name__ == "__main__":
-        RE_supply()
-
-Insights
---------
-
-The `RECalculation` module's output significantly impacts the MicroGridsPy model's performance by providing detailed and accurate simulations of RES availability. These simulations account for the variability in solar and wind resources, which is essential for designing and optimizing microgrid systems.
 

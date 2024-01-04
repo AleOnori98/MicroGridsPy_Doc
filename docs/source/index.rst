@@ -38,9 +38,6 @@ MicroGridsPy is developed in the open on `GitHub <https://github.com/SESAM-Polim
 Table of Contents
 -------------------
 
-User Guide
-^^^^^^^^^^^^
-
 .. toctree::
    :maxdepth: 2
    :caption: User Guide
@@ -52,12 +49,9 @@ User Guide
    advanced
    example
 
-Developers
-^^^^^^^^^^
-
 .. toctree::
    :maxdepth: 2
-   :caption: Developers
+   :caption: Developers Guide
 
    model_structure
    formulation
