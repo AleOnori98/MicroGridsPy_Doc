@@ -1,7 +1,7 @@
 
-===========================================
+=======================================
 MicroGridsPy's Documentation
-==========================================
+=======================================
 
 **MicroGridsPy** is a bottom-up, open-source optimization model, running on `Pyomo <https://pyomo.readthedocs.io/en/stable/>`_ , a Python library used to model optimisation problems, whose primary goal is to offer an open-source approach to the issue of *energy scaling and dispatch* in mini-grids in remote locations. It was first developed in 2016 by the University of Liege and the code is freely available on `GitHub <https://github.com/SESAM-Polimi/MicroGridsPy-SESAM/tree/Development_MILP>`_  . The model enables the **optimization of micro-grid size** and its **dispatch strategy** at the *1-hour temporal resolution*, also returning as output the fixed and variable costs associated with each technology and the LCOE of the system. It is based on **Linear Programming**, and it enables the choice of the installed capacities of batteries, generators, and renewable energy sources that result in the lowest **Net Present Cost (NPC)** or lowest **Operation and Maintenance expenses (O&M)** during the project's lifespan while achieving the system limitations. 
 
