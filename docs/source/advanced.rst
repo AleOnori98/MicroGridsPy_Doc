@@ -588,6 +588,10 @@ Solar irradiance exhibits minute-to-minute variations influenced by cloud dynami
 Battery Bank Degradation 
 ----------------------------
 
+.. warning::
+    The following functionalities regarding Battery Bank Degradation are currently a work in progress and not yet fully implemented in the model.
+
+
 The battery performance isn’t constant over time due to capacity and power fade as the battery is exposed to degradation processes while in both operation and storage mode. Calendar aging results from the degradation while the battery is in storage mode. Whereas cycle aging corresponds to the degradation caused by cyclic operation. The capacity fade refers to the reduction of available capacity. The battery status is provided by the State of Health (SOH) indicator. When the SOH reaches a certain threshold, the battery reached its End of Life (EOL). Temperature, State of Charge (SOC) and Depth of Discharge (DOD), are just some of the stress factors leading to degradation.
 
 .. raw:: html
