@@ -5,8 +5,7 @@ Mathematical Formulation
     :format: html
 
 
-Two-stage optimization mixed integer linear programming sizing model
----------------------------------------------------------------------
+**Two-stage optimization mixed integer linear programming sizing model**
 
 The considered system comprises an electrical load supplied by renewable sources, an inverter, a battery bank and backup generators (Fig. 1). The main optimization variables are divided into first-stage variables (rated capacities of each energy source) and second-stage variables (energy flows from the different components). The optimization is implemented in Python using Pyomo Library. 
 
@@ -19,7 +18,7 @@ The considered system comprises an electrical load supplied by renewable sources
 
 
 Objective function
-===================
+=======================
  
 The choice of the objective function is guided by the **"Optimization_Goal"** parameter, which allows users to specify the primary focus of the optimization process as well as the **Multiobjective** parameter that introduces a multi-objective optimization option to the model adding CO2 emissions of generation technologies to the already existing NPC objective function.
 
@@ -43,7 +42,7 @@ The choice of the objective function is guided by the **"Optimization_Goal"** pa
 The flexibility in choosing the objective function allows MicroGridspy to be adapted to a wide range of scenarios and policy goals, ensuring that the microgrid design is optimized not just for cost or environmental impact, but for the specific priorities of the project at hand.
 
 Net Present Cost (NPC)
-----------------------
+------------------------
 
 The objective function for minimizing the Net Present Cost (NPC) is defined as the weighted sum of the scenario-specific NPC. This function aims to minimize the total cost of the microgrid over its lifecycle, accounting for the time value of money. It captures the comprehensive cost of the microgrid for a given scenario, including investment, operational costs, and salvage value.
 
