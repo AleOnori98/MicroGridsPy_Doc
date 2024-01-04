@@ -25,6 +25,11 @@ The easiest way to get a working MicroGridsPy installation is to use the free co
 To ensure a smooth and efficient operation of MicroGridsPy, it is crucial to properly set up the development environment. This involves creating an isolated space that contains all the necessary Python packages and their specific versions as defined in the MicroGridsPy base.yml file. Key packages include Pyomo (minimum version 6.4.3 for the HiGHS solver), Pandas, NumPy, and Matplotlib.
 For code development and debugging, consider using an Integrated Development Environment (IDE) like Spyder, which is included in the created environment.
 
+.. code-block:: python
+
+   conda activate mgp
+   spyder
+
 Solvers
 =======
 
