@@ -9,8 +9,7 @@ In this exemplative case study, the focus is on a rural village situated in the 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/case%20study.png?raw=true
    :width: 700
    :align: center
-
-   Caption: Global Solar Atlas - Bangweulu Wetlands, Zambia.
+   :Caption: Global Solar Atlas - Bangweulu Wetlands, Zambia.
 
 
 The chosen site's geographic and climatic conditions are favorable for renewable energy projects, with abundant sunlight and moderate albedo effects contributing to the efficiency of solar power generation. The specified tilt and azimuth angles are particularly well-suited to the region’s latitude, ensuring that the solar panels receive maximum irradiance during peak sun hours. 
