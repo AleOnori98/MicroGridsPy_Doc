@@ -59,8 +59,8 @@ Developers
    :maxdepth: 2
    :caption: Developers
 
+   model_structure
    formulation
    troubleshooting
-   model_structure
    API
 

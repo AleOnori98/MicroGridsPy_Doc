@@ -597,7 +597,7 @@ The multi-year formulation is a crucial prerequisite for implementing a capacity
    ^^^^^^^^^^^^^
    In the capacity expansion formulation, the variables associated with component capacity are determined by decision steps (ut) within the time horizon. The user defines the number of decision steps, essentially dividing the time horizon. This user-defined parameter governs how finely the model considers the progression of time, allowing for a strategic and step-by-step approach to capacity expansion based on the evolving electricity demand.
 
- 
+  ---
 
 
 Brownfield
