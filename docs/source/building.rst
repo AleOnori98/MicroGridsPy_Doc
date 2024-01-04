@@ -491,19 +491,13 @@ Demand
 
 At the core of the optimization energy modelling process lies the load curve demand. This section aims to explain what load curve demand is, how it is used within MicroGridsPy, and how it can be operated or estimated with external software tools like RAMP or within the model itself using the advanced feature of demand estimation integrated into MicroGridsPy.
 
-.. raw:: html
+.. toggle::
 
-    <div class="expandable-section">
-        <button onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">
-            <b>Show More</b>
-        </button>
-        <div style="display:none;">
-            <p><strong>What is the load curve demand?</strong></p>
-            <p>Load Curve Demand represents the time-dependent electricity consumption of a given area or system. It is typically measured in Watts (or kilowatts, megawatts, etc.) and captures how electricity demand varies over different periods, usually in hourly or sub-hourly intervals. MicroGridsPy uses the load curve demand to optimize resource allocation, distributing resources efficiently over the years. The software can predict when investment steps should be taken to expand the system's capacity for increasing demand.</p>
-            <p><a href="https://rampdemand.readthedocs.io/en/stable/intro.html">Learn more about RAMP</a></p>
-        </div>
-    </div>
+   **What is the load curve demand?**
 
+   Load Curve Demand represents the time-dependent electricity consumption of a given area or system. It is typically measured in Watts (or kilowatts, megawatts, etc.) and captures how electricity demand varies over different periods, usually in hourly or sub-hourly intervals. MicroGridsPy uses the load curve demand to optimize resource allocation, distributing resources efficiently over the years. The software can predict when investment steps should be taken to expand the system's capacity for increasing demand.
+
+   `Learn more about RAMP <https://rampdemand.readthedocs.io/en/stable/intro.html>`_
 
 
 MicroGridsPy uses the load curve demand to optimize resource allocation, distributing resources efficiently over the years. It balances generation and storage resources to minimize costs while meeting the electricity demand throughout the day. The software can predict when investment steps should be taken to expand the system's capacity for increasing demand.
@@ -613,7 +607,7 @@ The application is organized into different pages, each tailored to a specific a
 
 - **Generator Page**: Define generator types and characteristics. Similarly to Technologies Page, the page defines default parameters and their initial values but the user can add new entries for different types of generators. It offers strong input validation, parameter description tooltips, and conditional parameter management, guaranteeing both data precision and user-friendliness.
 
-- **Grid Page**: Specify grid connection details.
+- **Grid Page**: Specify grid connection details such the year starting from which the model should take account of the national grid connection and the possibility to simulate the grid availability by means of average quantities such as number of outages and duration in a year.
 
 - **Plot Page**: Visualize the color codes for data visualization by means of a dynamic color legend.
 

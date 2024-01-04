@@ -19,7 +19,8 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.napoleon",
     "sphinx.ext.imgconverter",
-    "sphinxcontrib.images"
+    "sphinxcontrib.images",
+    "sphinx_togglebutton"
 ]
 
 intersphinx_mapping = {
