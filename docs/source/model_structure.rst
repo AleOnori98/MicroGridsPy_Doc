@@ -109,10 +109,275 @@ Here's an example of how a developer might utilize this module to set up an opti
 
     # The model is now ready to be populated with data and solved.
 
+Insights
+---------
 
 The ``Model_Creation`` encapsulates the essence of the system being modeled, from the estimation of renewable energy production and demand to the detailed configurations of the project itself.
-
 By structuring the model in this way, MicroGridsPy ensures that the optimization framework is robust, extendable, and maintainable. It also encapsulates complex optimization features like multi-objective optimization and MILP formulations, making it a powerful tool for energy system optimization.
 
 
+Initialization Module
+=====================
+
+The ``Initialize`` module in MicroGridsPy sets the stage for the entire optimization model. It is responsible for parsing input data, initializing model parameters, defining sets, and creating the initial conditions required for the optimization process to commence.
+
+Parsing Input Data
+------------------
+
+Input data is parsed from various CSV files and the Parameters.dat file, which include essential data such as scenarios, periods, years, and generator types.
+
+.. code-block:: python
+
+    # Example of parsing Scenarios, Periods, Years from Parameters.dat
+    n_scenarios = int((re.findall('\d+',Data_import[i])[0]))
+    n_years = int((re.findall('\d+',Data_import[i])[0]))
+    n_periods = int((re.findall('\d+',Data_import[i])[0]))
+    # ... and more
+
+Initializing Parameters
+-----------------------
+
+Parameters are defined using the parsed data. These parameters serve as constants throughout the model and influence the optimization's behavior and outcomes.
+
+.. code-block:: python
+
+    # Example of defining parameters for Scenarios and Periods
+    scenario = [i for i in range(1,n_scenarios+1)]
+    period = [i for i in range(1,n_periods+1)]
+    # ... and more
+
+Defining Investment Steps
+-------------------------
+
+The module calculates the number of investment steps and assigns each year to its corresponding step. This is crucial for models that incorporate multi-year capacity expansion.
+
+.. code-block:: python
+
+    def Initialize_Upgrades_Number(model):
+        # ... logic to determine the number of upgrades
+        return int(n_upgrades)
+
+Creating Multi-Indexed DataFrames
+---------------------------------
+
+Multi-indexed DataFrames are created for time-series data such as demand and renewable energy output. These DataFrames facilitate the handling of time-dependent data in the model.
+
+.. code-block:: python
+
+    # Example of creating a Multi-indexed DataFrame for Energy Demand
+    frame = [scenario,year,period]
+    index = pd.MultiIndex.from_product(frame, names=['scenario','year','period'])
+    Energy_Demand.index = index
+    # ... and more
+
+Setting Up Initialization Functions
+-----------------------------------
+
+Initialization functions are defined for various model components such as demand, renewable energy production, and grid availability. These functions are used during the model creation phase to populate the model with data.
+
+.. code-block:: python
+
+    def Initialize_Demand(model, s, y, t):
+        return float(Energy_Demand[0][(s,y,t)])
+
+    # ... more initialization functions
+
+Grid Connection and Availability
+--------------------------------
+
+The module also deals with the grid connection, including setting up parameters for grid investment costs, operation, and maintenance costs, as well as determining grid availability.
+
+.. code-block:: python
+
+    if Grid_Availability_Simulation:
+        grid_avail(average_n_outages, average_outage_duration, n_years, year_grid_connection,n_scenarios, n_periods)
+    # ... and more
+
+Insights
+---------
+
+The ``Initialize`` module provides a comprehensive setup for the optimization model, ensuring that all necessary data is loaded and parameters are set before the optimization begins. It acts as the preparatory stage, converting raw data into a structured format that the model can interpret and utilize. This module underscores the importance of initial conditions in the optimization process and ensures that the model's execution is based on accurate and up-to-date information.
+
+Demand Module
+=============
+
+The ``Demand`` module is tasked with the generation of load curves for the MicroGridsPy model. It leverages a data-driven approach, utilizing predefined archetypes that reflect the energy consumption patterns of different household tiers and service structures.
+
+Importing Data
+--------------
+
+Data importation is the first step in the load curve generation process. The module reads key parameters such as latitude, cooling periods, and household tiers from a `Parameters.dat` file. These parameters are crucial for selecting the correct archetype for demand calculation.
+
+.. code-block:: python
+
+    # Example of how the latitude parameter is used to determine the geographical zone archetype
+    if "param: lat" in value:
+        lat = (value[value.index('=')+1:value.index(';')])
+        # ... rest of the code
+        if  10 <= lat <=20:
+            F = 'F1'
+        # ... other conditions
+
+Demand Calculation
+------------------
+
+With the parameters set, the `demand_calculation` function computes the demand for each household tier and service. It aggregates hourly loads according to the defined periods to align with the model's time resolution.
+
+.. code-block:: python
+
+    # Code snippet showing the aggregation of load data
+    def aggregate_load(load_data, periods):
+        # ... aggregation logic
+        return aggregated_load
+
+Household and Service Classes
+-----------------------------
+
+Two classes, `household` and `service`, encapsulate the logic for calculating the load demands for households and services respectively. These classes take the number of entities and their respective archetypes to output the demand.
+
+.. code-block:: python
+
+    class household:
+        # ... class methods
+        def load_demand(self, h_load):
+            load = self.number/100 * h_load
+            return load
+
+    class service:
+        # ... class methods
+
+Load Profile Generation
+-----------------------
+
+The module generates a load profile for the specified number of years by combining the demand from all households and services. It accounts for annual demand growth to reflect the changes over the project's lifespan.
+
+.. code-block:: python
+
+    # Example of how load profiles are generated and grown annually
+    for column in load_total:
+        if column == 0:
+            continue
+        else: 
+            load_total[column] = load_total[column-1]*(1+demand_growth/100)
+
+Exporting Results
+-----------------
+
+Once the load curves are computed, the `excel_export` function exports the data to a CSV file, which will be used as input for the optimization model.
+
+.. code-block:: python
+
+    # Exporting the DataFrame to a CSV file
+    def excel_export(load, years):
+        # ... export logic
+
+Execution
+---------
+
+The module concludes with the `demand_generation` function, which executes the demand calculation and exports the final load curves. This function also prints out the time taken to perform the calculations.
+
+.. code-block:: python
+
+    def demand_generation():
+        # ... generation logic
+        print("Load demand calculation started...")
+        # ... more logic
+        print('\n\nLoad demand calculation completed...')
+
+Module Execution
+----------------
+
+The `Demand.py` module can be run as a standalone script to generate demand profiles. However, in the context of MicroGridsPy, it is typically called during the model setup phase.
+
+Insights
+--------
+
+The demand generation process within MicroGridsPy is a sophisticated sequence that simulates realistic energy consumption patterns based on various factors. This module's output provides a crucial input for the optimization model, enabling it to make informed decisions about energy resource allocation and system design.
+
+RECalculation Module
+====================
+
+The ``RECalculation`` module is responsible for simulating the time series data of renewable energy sources (RES) by interfacing with the NASA POWER project server. This module processes solar and wind energy data to provide time series inputs for the MicroGridsPy optimization model.
+
+Function Descriptions
+---------------------
+
+- **URL Creation**: The module begins by constructing URLs for the POWER API using the provided geographical coordinates and date range. These URLs are used to retrieve solar and wind data for specific locations.
+
+.. code-block:: python
+
+    def URL_creation_d(Data_import):
+        # ... URL creation logic for daily parameters
+
+    def URL_creation_h(Data_import):
+        # ... URL creation logic for hourly parameters
+
+- **Solar PV and Wind Turbine Parameters**: Retrieves the parameters necessary to simulate the production from solar photovoltaic (PV) systems and wind turbines.
+
+.. code-block:: python
+
+    def solarPV_parameters(Data_import):
+        # ... solar PV parameters retrieval
+
+    def wind_parameters(Data_import):
+        # ... wind turbine parameters retrieval
+
+- **Data Download and Interpolation**: Utilizes multithreading to download JSON data from the POWER API. It then interpolates the data spatially to the desired coordinates.
+
+.. code-block:: python
+
+    def multithread_data_download(URL_list):
+        # ... multithreaded download of data
+
+    def data_2D_interpolation(jsdata, date_start, date_end, lat, lon,lat_ext_1, lon_ext_1, lat_ext_2, lon_ext_2):
+        # ... interpolation of data
+
+- **Typical Year Calculation**: Determines the typical meteorological year (TMY) by comparing the long-term data with year-specific data using statistical measures.
+
+.. code-block:: python
+
+    def typical_year_daily(param_daily, date_start, date_end):
+        # ... calculation of typical daily values
+
+    def typical_year_hourly(best_years, param_hourly_interp):
+        # ... calculation of typical hourly values
+
+- **Hourly Solar Radiation**: Calculates the hourly solar radiation on a tilted surface, taking into account the location's latitude, longitude, and other factors.
+
+.. code-block:: python
+
+    def hourly_solar(H_day,lat,lon, standard_lon, day_year,tilt, azimuth, albedo):
+        # ... solar radiation calculation
+
+- **Wind Turbine Production**: Computes the power production from wind turbines based on the wind speed at rotor height and the power curve of the turbine.
+
+.. code-block:: python
+
+    def P_turb(power_curve, WS_rotor_lst, ro_air_lst, surface_area, drivetrain_efficiency):
+        # ... wind turbine production calculation
+
+Main Function
+-------------
+
+The main function `RE_supply` orchestrates the execution of all the steps to simulate the RES time series data. It aggregates the data according to the defined periods and exports the final time series to a CSV file.
+
+.. code-block:: python
+
+    def RE_supply():
+        # ... execution of RES supply simulation
+
+Execution
+---------
+
+The module is designed to be executed as part of the model setup, but it can also be run independently to generate RES time series data for other analyses.
+
+.. code-block:: python
+
+    if __name__ == "__main__":
+        RE_supply()
+
+Insights
+--------
+
+The `RECalculation` module's output significantly impacts the MicroGridsPy model's performance by providing detailed and accurate simulations of RES availability. These simulations account for the variability in solar and wind resources, which is essential for designing and optimizing microgrid systems.
 
