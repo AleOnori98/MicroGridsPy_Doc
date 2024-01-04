@@ -20,7 +20,8 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.imgconverter",
     "sphinxcontrib.images",
-    "sphinx_togglebutton"
+    "sphinx_togglebutton",
+    "sphinx_panels"
 ]
 
 intersphinx_mapping = {
