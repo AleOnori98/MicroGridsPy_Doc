@@ -98,6 +98,8 @@ MicroGridsPy models are defined, mainly, through .py files, which are both human
 
 Each of these files plays a pivotal role in the modeling process, providing necessary data inputs for an accurate representation and analysis of the energy system. They could be directly imported exogenously or simulate and generate endogenously within the model (refer to :doc:`advanced`)
 
+.. warning::
+   The Parameters.dat file is a critical and sensitive part of the Pyomo model, as it is directly read and used by the model. However, it should not be manually edited unless for active development of the model. Incorrect modifications can lead to significant errors or unexpected behavior in the optimization process. To ensure accuracy and avoid mistakes, the Python user-friendly interface should be used for data input. This interface is designed to guide users step-by-step, performing data validation and generating the Parameters.dat file correctly.
 
 Model Configuration
 -------------------------
@@ -544,7 +546,7 @@ Electricity needed to meet the demand can be generated using various energy sour
 .. toggle::
 
    **What is the Renewable energy production?**
-   
+
   Renewable energy production represents the estimated electricity production for each unitary generation technology at a specific time and location. It is typically measured in Watts (or kilowatts, megawatts, etc.) and illustrates how electricity production varies over time and by source, usually in hourly or sub-hourly intervals.
 
 

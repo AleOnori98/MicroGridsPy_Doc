@@ -1,8 +1,6 @@
 #######################################
 Mathematical Formulation
 #######################################
-.. role:: raw-html(raw)
-    :format: html
 
 
 **Two-stage optimization mixed integer linear programming sizing model**
