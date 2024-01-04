@@ -581,7 +581,8 @@ The approach introduced in [7] focuses on addressing the issue of load evolution
 
 The system has the capability to take into account changes in energy demand over time, especially in rural areas. Each year in the planning period corresponds to a unique load curve, allowing for the analysis of various patterns. This includes factors like population growth, more connections to the network, which affect overall demand but not necessarily daily load profiles. Additionally, variations in consumption habits and the use of new appliances can cause shifts in the daily load curve. In essence, the model is flexible enough to adapt to different dynamics, considering both global demand changes and shifts in daily energy usage patterns.
 
-* **In the model**: This introduction drops the old consideration about the yearly demand for project lifetime which was the same and equal to a typical year of consumption for the study area. For this new concept, all the model constraints are estimated at each time step (t) of every year (yt) along the mini-grid lifetime. Thus, all equations involving time-dependent variables must be thus verified at all time steps (yt,t) of the optimization horizon.
+.. tip::
+   **In the model**: This introduction drops the old consideration about the yearly demand for project lifetime which was the same and equal to a typical year of consumption for the study area. For this new concept, all the model constraints are estimated at each time step (t) of every year (yt) along the mini-grid lifetime. Thus, all equations involving time-dependent variables must be thus verified at all time steps (yt,t) of the optimization horizon.
 
 - **Capacity Expansion**
 
@@ -589,15 +590,9 @@ In the context of a capacity expansion formulation, the model considers the opti
 
 The multi-year formulation is a crucial prerequisite for implementing a capacity expansion concept. This approach enables the postponement of installing certain components' capacity, such as PV modules or battery banks, to later years based on the evolution of electricity demand. This flexibility helps avoid incurring large initial capital costs. Consequently, O&M costs become proportional to the actual capacity installed and utilized each year.
 
-.. panels::
-   :header: text-bg-primary
-   :icon: fa-check-circle
+.. tip::
+   **In the model**: in the capacity expansion formulation, the variables associated with component capacity are determined by decision steps (ut) within the time horizon. The user defines the number of decision steps, essentially dividing the time horizon. This user-defined parameter governs how finely the model considers the progression of time, allowing for a strategic and step-by-step approach to capacity expansion based on the evolving electricity demand.
 
-   In the model
-   ^^^^^^^^^^^^^
-   In the capacity expansion formulation, the variables associated with component capacity are determined by decision steps (ut) within the time horizon. The user defines the number of decision steps, essentially dividing the time horizon. This user-defined parameter governs how finely the model considers the progression of time, allowing for a strategic and step-by-step approach to capacity expansion based on the evolving electricity demand.
-
-  ---
 
 
 Brownfield
@@ -605,7 +600,8 @@ Brownfield
 
 The feature for brownfield investment introduced in [8], enables the optimization of mini-grids by considering technologies that were previously installed by others in the field. The model can now factor in existing components from previous installations when determining the most efficient and effective way to optimize the microgrid.
 
-* **In the model**: Regarding the constrainst related to **energy production** of each component at the first investment decision step (ut = 1) the energy yield has to be equal or higher than the energy produced by the capacity already installed on the field. 
+.. tip::
+   **In the model**: Regarding the constrainst related to **energy production** of each component at the first investment decision step (ut = 1) the energy yield has to be equal or higher than the energy produced by the capacity already installed on the field. 
 
 .. raw:: html
 
