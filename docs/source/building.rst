@@ -541,17 +541,11 @@ RES Production
 
 Electricity needed to meet the demand can be generated using various energy sources. MicroGridsPy considers renewable sources, such as solar and wind, and backup diesel generators as the choices for generating electricity. This section aims to explain what renewable energy production is, how it is used within MicroGridsPy, how it can be estimated with external available web tools like Renewables.ninja and PVGIS or within the model itself using the advanced feature of renewable energy production estimation integrated into MicroGridsPy.
 
-.. raw:: html
+.. toggle::
 
-    <div class="expandable-section">
-        <button onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">
-            <b>Show More</b>
-        </button>
-        <div style="display:none;">
-            <p><strong>What is the Renewable Energy production?</strong></p>
-            <p>Renewable energy production represents the estimated electricity production for each unitary generation technology at a specific time and location. It is typically measured in Watts (or kilowatts, megawatts, etc.) and illustrates how electricity production varies over time and by source, usually in hourly or sub-hourly intervals.</p>
-        </div>
-    </div>
+   **What is the Renewable energy production?**
+   
+  Renewable energy production represents the estimated electricity production for each unitary generation technology at a specific time and location. It is typically measured in Watts (or kilowatts, megawatts, etc.) and illustrates how electricity production varies over time and by source, usually in hourly or sub-hourly intervals.
 
 
 
