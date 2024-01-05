@@ -93,7 +93,16 @@ The images gallery below visualizes the interface windows, simulation outcomes, 
 
 **Results Interpretation**
 
-In the default simulation, renewable sources significantly contribute to the energy mix with 77,38% penetration, accompanied by a 34.87% utilization of batteries and a 23,13% share from diesel generators. Notably, as illustrated in the CashFlow Plot, the reliance on generators escalates over the years due to increasing demand, making them a critical component to meet energy requirements in the absence of capacity expansion. The model's settings, including the implementation of the generator's partial load effect, the use of a more realistic MILP formulation, and variable fuel cost considerations, can substantially alter these dynamics. MicroGridsPy also enables setting minimum renewable penetration thresholds, potentially shifting focus towards battery storage, especially under fluctuating fuel prices or supportive renewable energy policies. This feature, along with the observed trend in generator usage, demonstrates the model's capacity to adapt to various scenarios and constraints, highlighting the evolving roles of different technologies as optimal solutions under specific conditions.
+In the default simulation, renewable sources make a substantial contribution to the energy mix, accounting for 77.38% of the total energy generation. This includes a solar PV installation with a capacity of 54.18 kW, which harnesses the abundant solar energy available in the region. The battery bank, with a capacity of 187.17 kWh, plays a significant role in storing excess energy for later use.
+
+However, it's essential to note that the model's settings, which utilize LP (Linear Programming) optimization rather than MILP (Mixed-Integer Linear Programming), allow for non-integer values in the results. This flexibility in optimization techniques enables a more realistic representation of energy flows and usage. As a result, the utilization of batteries is calculated at 34.87%, indicating efficient energy storage and discharge.
+
+Additionally, the model considers diesel generators, with a total capacity of 19.99 kW. These generators play a crucial role in meeting energy demands, especially during peak load periods. Over the years, there is a noticeable increase in reliance on diesel generators due to rising energy demand.
+
+The CashFlow Plot visually represents the financial aspects of the microgrid operation, showcasing how different components contribute to the overall costs and revenues. It's evident that the model's LP optimization, combined with variable fuel cost considerations and other realistic parameters, accurately captures the evolving energy dynamics in the microgrid.
+
+MicroGridsPy also offers the flexibility to set minimum renewable penetration thresholds, allowing users to explore scenarios where renewable energy sources take on a more significant role, particularly under fluctuating fuel prices or supportive renewable energy policies. This feature highlights the adaptability of the model to various constraints and conditions, emphasizing the changing roles of different technologies as optimal solutions.
+
 
 Grid Connection
 ------------------------------
