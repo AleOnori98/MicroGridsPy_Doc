@@ -14,6 +14,8 @@ In this exemplative case study, the focus is on a rural village situated in the 
 
 
 The chosen site's geographic and climatic conditions are favorable for renewable energy projects, with abundant sunlight and moderate albedo effects contributing to the efficiency of solar power generation. The specified tilt and azimuth angles are particularly well-suited to the region’s latitude, ensuring that the solar panels receive maximum irradiance during peak sun hours. 
+The RES time series are generated endogenously using NASA POWER data. These time series represent the renewable energy potential for the chosen location, considering factors such as solar irradiance and wind speed. They provide a qualitative understanding of the renewable energy availability.
+On the other hand, the Demand time series is also generated endogenously, representing the energy consumption patterns of the village in Zambia. They are based on build-in load curve archetypes for sub-Saharan Africa and account for variables such as household demand, schools, and hospitals. 
 
 Default Scenario
 ----------------
@@ -172,12 +174,8 @@ Moving away from the basic example previously discussed, this scenario within Mi
 
 In this updated scenario, the Levelized Cost of Energy (LCOE) has improved from 0.2562 USD/kWh to 0.2288 USD/kWh, a reduction of approximately 10.7%. This improvement in LCOE is attributed to the introduction of grid connection starting from year 10, which reduces reliance on more expensive generation options. The renewable penetration remains high at 73.96%, emphasizing the system's reliance on clean energy. Interestingly, the generator share per year has decreased dramatically to 4.6%, suggesting that the grid connection has significantly offset the need for local generation. The average national grid usage per year at 21.87% further supports this shift towards grid dependency. Battery usage remains substantial at 31.38%, indicating its continued role in energy storage and supply smoothing. These changes highlight the significant impact grid connectivity can have on optimizing the cost and operational strategies of energy systems, particularly when capacity expansion is not considered.
 
-MILP Formulation and Capacity Expansion
+Capacity Expansion
 ------------------------------
 
-Departing from the basic LP approach, this advanced scenario in MicroGridsPy engages a MILP formulation, significantly refining the model by accurately representing discrete operational choices and system behaviors, albeit with greater computational demands.
-
-- **MILP Formulation**: Technologies are modeled as discrete units of capacity rather than the continuous values used in LP, allowing for a more accurate representation of real-world scenarios where capacity additions occur in quantized increments.
-- **Capacity Expansion**: 
 
 
