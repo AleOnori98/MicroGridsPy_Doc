@@ -14,8 +14,7 @@ In this exemplative case study, the focus is on a rural village situated in the 
 
 
 The chosen site's geographic and climatic conditions are favorable for renewable energy projects, with abundant sunlight and moderate albedo effects contributing to the efficiency of solar power generation. The specified tilt and azimuth angles are particularly well-suited to the region’s latitude, ensuring that the solar panels receive maximum irradiance during peak sun hours. 
-The RES time series are generated endogenously using NASA POWER data and village archetypes. These time series represent the renewable energy potential for the chosen location, considering factors such as solar irradiance and wind speed. They provide a qualitative understanding of the renewable energy availability.
-On the other hand, the Demand time series is also generated endogenously, representing the energy consumption patterns of the village in Zambia. They are based on build-in load curve archetypes for sub-Saharan Africa and account for variables such as household demand, schools, and hospitals. 
+The RES time series are generated endogenously using NASA POWER data and the build-in Sub-Sahara archetypes. 
 
 Default Scenario
 ----------------
@@ -93,14 +92,19 @@ The images gallery below visualizes the interface windows, simulation outcomes, 
 
 **Results Interpretation**
 
-In the default simulation, renewable sources significantly contribute to the energy mix with 77,38% penetration, accompanied by a 34.87% utilization of batteries and a 23,13% share from diesel generators. Notably, as illustrated in the CashFlow Plot, the reliance on generators escalates over the years due to increasing demand, making them a critical component to meet energy requirements in the absence of capacity expansion. 
+In the foundational simulation scenario, the energy composition is substantially influenced by renewable sources, resulting in a renewable penetration rate of 77.38%. This approach is bolstered by a 34.87% utilization of battery storage, which plays a critical role in energy continuity. Despite the emphasis on renewables, diesel generators contribute a notable 23.13% to the energy provision. This contribution is particularly significant given that it addresses supply shortfalls when renewable generation and battery storage do not fully meet the demand.
 
-Grid Connection
+The financial trajectory, as depicted in the Cash Flow Plot, suggests a gradual uptick in diesel generator reliance. This pattern underscores the need for expanded generation capacity to accommodate the ascending energy demand. However, such reliance on diesel generation is not statically doomed to increase unchecked. The model is equipped to simulate escalating fuel costs annually, providing an economic counterbalance to generator dependence. By incorporating the reality of rising fuel costs, the model adds an economic impetus for investing in more renewable sources and storage solutions over time.
+
+It is pivotal to recognize that the current modeling framework is built upon Linear Programming (LP) principles, without incorporating the intricacies of Mixed-Integer Linear Programming (MILP) or nuanced features like generator partial load effects. The model's financial assessments are predicated on a consistent interest rate, rather than employing the more dynamic Weighted Average Cost of Capital (WACC), which could yield a more layered financial analysis conducive to strategic planning for energy infrastructure.
+
+Anticipated enhancements to the model will include the integration of capacity expansion strategies, refined modeling of generator operations to include partial load effects, and a transition to WACC for a more detailed financial outlook. Moreover, with the capacity to simulate incremental fuel costs, the model will offer insights into how escalating operational expenses might naturally curtail reliance on fossil-fuel generators, thus reinforcing the economic viability of renewable solutions.
+
+These prospective enhancements will not only heighten the model's precision but will also facilitate the development of more sustainable and economically sound energy systems for rural mini-grids, thereby supporting the transition towards cleaner and more resilient energy infrastructures.
+
+Capacity Expansion and Increasing Fuel Cost
 ------------------------------
 
-Moving away from the basic example previously discussed, this scenario within MicroGridsPy presents a different configuration where grid connection is enabled starting from year 10. This adjustment aims to explore its influence on the simulation results, offering insights into how integrating with the grid from a specific year affects the overall energy strategy.
-
-- **Grid Connection**: Activated, allowing the microgrid to interact with the main electrical grid. starting from year 10
 
 
 .. raw:: html
