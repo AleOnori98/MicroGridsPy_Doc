@@ -93,7 +93,7 @@ The images gallery below visualizes the interface windows, simulation outcomes, 
 
 **Results Interpretation**
 
-In the default simulation, renewable sources significantly contribute to the energy mix with 77,38% penetration, accompanied by a 34.87% utilization of batteries and a 23,13% share from diesel generators. Notably, as illustrated in the CashFlow Plot, the reliance on generators escalates over the years due to increasing demand, making them a critical component to meet energy requirements in the absence of capacity expansion. The model's settings, including the implementation of the generator's partial load effect, the use of a more realistic MILP formulation, and variable fuel cost considerations, can substantially alter these dynamics. MicroGridsPy also enables setting minimum renewable penetration thresholds, potentially shifting focus towards battery storage, especially under fluctuating fuel prices or supportive renewable energy policies. This feature, along with the observed trend in generator usage, demonstrates the model's capacity to adapt to various scenarios and constraints, highlighting the evolving roles of different technologies as optimal solutions under specific conditions.
+In the default simulation, renewable sources significantly contribute to the energy mix with 77,38% penetration, accompanied by a 34.87% utilization of batteries and a 23,13% share from diesel generators. Notably, as illustrated in the CashFlow Plot, the reliance on generators escalates over the years due to increasing demand, making them a critical component to meet energy requirements in the absence of capacity expansion. 
 
 Grid Connection
 ------------------------------
