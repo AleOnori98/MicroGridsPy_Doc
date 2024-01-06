@@ -184,3 +184,4 @@ Curtailment has also increased to 11.24%, up from 4.83% in the default model. Th
 
 MILP Formulation
 ---------------------------------------------
+This iteration of the model employs a Mixed-Integer Linear Programming (MILP) framework, strategically designed to simulate a decade-long operation of mini-grids with two intervals of capacity expansion. The MILP paradigm introduces binary decision variables to address unit commitment issues, allowing for a precise representation of start-up and shut-down activities of power generation units. This inclusion significantly elevates the computational complexity due to the combinatorial nature of decision variables, which exponentially increases the solution space. Consequently, the simulation meticulously quantifies the trade-offs between generation costs and reliability over the course of 10 years, ensuring that the capacity expansion aligns with both demand projection and economic constraints. 
