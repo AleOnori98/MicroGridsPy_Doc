@@ -102,10 +102,11 @@ Anticipated enhancements to the model will include the integration of capacity e
 
 These prospective enhancements will not only heighten the model's precision but will also facilitate the development of more sustainable and economically sound energy systems for rural mini-grids, thereby supporting the transition towards cleaner and more resilient energy infrastructures.
 
+
 Capacity Expansion and Increasing Fuel Cost
-------------------------------
+---------------------------------------------
 
-
+This new simulation is designed to reflect the dynamic nature of energy needs in rural communities and the economic pressures that come with fuel-based generation. By introducing capacity expansion every five years and modeling a 5% annual increase in fuel cost, the aim is to capture the potential shifts in technology usage and financial metrics, thereby providing a more realistic depiction of a mini-grid's performance over time.
 
 .. raw:: html
 
@@ -155,12 +156,6 @@ Capacity Expansion and Increasing Fuel Cost
        <div class="carousel-item">
          <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.14.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
        </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.15.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.16.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
      </div>
     <a class="carousel-control-prev" href="#uniqueCarouselExample" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -176,10 +171,16 @@ Capacity Expansion and Increasing Fuel Cost
 
 **Result Interpretaion**
 
-In this updated scenario, the Levelized Cost of Energy (LCOE) has improved from 0.2562 USD/kWh to 0.2288 USD/kWh, a reduction of approximately 10.7%. This improvement in LCOE is attributed to the introduction of grid connection starting from year 10, which reduces reliance on more expensive generation options. The renewable penetration remains high at 73.96%, emphasizing the system's reliance on clean energy. Interestingly, the generator share per year has decreased dramatically to 4.6%, suggesting that the grid connection has significantly offset the need for local generation. The average national grid usage per year at 21.87% further supports this shift towards grid dependency. Battery usage remains substantial at 31.38%, indicating its continued role in energy storage and supply smoothing. These changes highlight the significant impact grid connectivity can have on optimizing the cost and operational strategies of energy systems, particularly when capacity expansion is not considered.
+Notably, there is an increase in average renewable penetration per year, which has risen to an impressive 96.37%. This suggests that the capacity expansion allowed every five years is effectively mitigating the increased demand, allowing renewables to maintain a dominant role in the energy mix.
 
-Capacity Expansion
-------------------------------
+The battery bank's average usage per year has also seen a significant uptick to 50.83%, likely due to the expanded capacity that supports higher levels of storage and dispatchability to manage the variability of renewable sources. This is a substantial improvement from the 34.87% utilization in the default scenario, highlighting the benefits of aligning storage capabilities with generation capacity.
+
+Diesel generator usage has dramatically decreased to a mere 4.04% share per year, down from 23.13% in the default model. This can be attributed to the dual strategy of expanding renewable capacity and the deterrent effect of the rising fuel costs, which make diesel generation less economically attractive.
+
+One of the most critical financial indicators, the Levelized Cost of Electricity (LCOE), has decreased from 0.2562 to 0.2376 USD/kWh. This reduction suggests that the increased investment in renewable capacity and the strategic use of battery storage are yielding a more cost-effective energy production mix over time, despite the initial higher investment costs and the increasing fuel costs.
+
+Curtailment has also increased to 11.24%, up from 4.83% in the default model. This is an expected outcome in systems with significant renewable energy penetration, where excess generation capacity is installed to ensure reliability. However, this also indicates that there is room for optimization, possibly through better demand-side management or further technological enhancements.
 
 
-
+MILP Formulation
+---------------------------------------------
