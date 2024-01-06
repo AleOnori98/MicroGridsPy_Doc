@@ -5,8 +5,7 @@ Model Resolution and Results
 
 The ``Model_Resolution`` module in MicroGridsPy is a comprehensive linear programming solver that facilitates the least-cost sizing of microgrid systems, considering dynamic load demands and capacity expansion over multiple years.
 
-Key Functionalities
-----------------------
+Key Functionalities:
 
 - **Model Initialization**: Reads configuration from the ``Parameters.dat`` file to set up the optimization model with essential parameters such as renewable penetration, battery independence, investment scenarios, and optimization objectives.
 
@@ -19,8 +18,7 @@ Key Functionalities
 - **Pareto Front Generation**: For multi-objective optimization scenarios, it can compute a Pareto front to visualize the trade-offs between cost and CO2 emissions.
 
 
-Implementation Highlights
-----------------------------
+Implementation Highlights:
 
 - **MILP Formulations**: The module supports Mixed Integer Linear Programming (MILP), vital for discrete decision-making processes in microgrid planning.
 
