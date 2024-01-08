@@ -32,11 +32,20 @@ The images gallery below visualizes the interface windows, simulation outcomes, 
 .. raw:: html
 
    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-     <ol class="carousel-indicators">
-       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-       <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
-     </ol>
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="11"></li>
+        </ol>
      <div class="carousel-inner">
        <div class="carousel-item active">
          <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/Default/1.1.png?raw=true" class="d-block w-100" alt="Dispatch Strategy">
@@ -74,19 +83,16 @@ The images gallery below visualizes the interface windows, simulation outcomes, 
        <div class="carousel-item">
          <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/Default/1.12.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
        </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/Default/1.13.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
      </div>
-     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="color: #333;">
-       <span class="carousel-control-prev-icon" aria-hidden="true" style="background-image: none;"></span>
-       <span class="sr-only">Previous</span>
-     </a>
-     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="color: #333;">
-       <span class="carousel-control-next-icon" aria-hidden="true" style="background-image: none;"></span>
-       <span class="sr-only">Next</span>
-     </a>
-   </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" aria-label="Previous">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" aria-label="Next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 
 -------------------------------------------------------------------------------------------------------------
 

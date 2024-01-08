@@ -95,8 +95,11 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 
     </div>
 
+It is worth noticing that being the leverage L in a [0; +infinite) domain, WACC varies depending on the parameters above mentioned, and can be 
+qualitatively depicted as:
+
 .. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/wacc.png?raw=true
-     :width: 500
+     :width: 700
      :align: center
 
      WACC as function of the leverage, for different values of return on equity and return on debt [1].
