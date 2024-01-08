@@ -3,7 +3,12 @@
 Model Resolution and Results
 ===============================
 
-The ``Model_Resolution`` module in MicroGridsPy is a comprehensive linear programming solver that facilitates the least-cost sizing of microgrid systems, considering dynamic load demands and capacity expansion over multiple years.
+The ``Model_Resolution`` module is an integral part of the model, designed for optimizing energy systems in mini-grid settings. It incorporates multi-year capacity expansion and a variety of energy optimization strategies within a linear programming framework.
+
+Overview
+--------
+
+This module orchestrates the entire optimization process, encompassing the initialization of parameters, definition of constraints, and the solving of the model. It is tailored to handle complex scenarios that involve variable load demands and infrastructure expansion over a series of years.
 
 Key Functionalities:
 
@@ -16,6 +21,80 @@ Key Functionalities:
 - **Solver Integration**: Configures and connects with solvers like Gurobi or HiGHS to solve the optimization problem, providing flexibility for advanced solver options.
 
 - **Pareto Front Generation**: For multi-objective optimization scenarios, it can compute a Pareto front to visualize the trade-offs between cost and CO2 emissions.
+
+Implementation Highlights:
+
+- **MILP Formulations**: The module supports Mixed Integer Linear Programming (MILP), vital for discrete decision-making processes in microgrid planning.
+
+- **Investment Options**: It differentiates between greenfield and brownfield investment scenarios, accommodating various project stages from planning to retrofitting.
+
+- **Partial Load Modeling**: Capable of simulating partial load operations for generators, which is essential for reflecting real-world operational constraints.
+
+- **Component Flexibility**: The module can model different microgrid components like renewable energy sources, storage systems, and conventional generators.
+
+Initialization and Parameter Parsing
+-------------------------------------
+
+The module begins by parsing key parameters from a 'Parameters.dat' file. These parameters include aspects like renewable energy penetration, battery independence, and types of investments, among others.
+
+.. code-block:: python
+
+    # Example of parsing Renewable Penetration and Battery Independence
+    Renewable_Penetration = ...
+    Battery_Independence = ...
+    # ... other parameters
+
+Constraint Definition
+---------------------
+
+A wide array of constraints is defined, ranging from economic constraints like net present cost and CO2 emissions, to technical constraints such as energy balance and generator capacities.
+
+.. code-block:: python
+
+    # Defining economic constraints
+    model.NetPresentCost = Constraint(rule=C.Net_Present_Cost)
+    # ... additional constraints
+
+Capacity Expansion and Renewable Integration
+--------------------------------------------
+
+The module excels in modeling capacity expansion scenarios. It facilitates the incorporation of new energy sources, storage solutions, and technological advancements over the planning period.
+
+.. code-block:: python
+
+    # Constraints related to capacity expansion
+    model.REScapacity = Constraint(...)
+    # ... more capacity-related constraints
+
+Solver Configuration and Execution
+----------------------------------
+
+The optimization model is solved using a configured solver. The choice of solver, such as Gurobi or HiGHS, depends on user preference and specific problem requirements.
+
+.. code-block:: python
+
+    # Solver configuration and execution
+    opt = SolverFactory('gurobi')
+    results = opt.solve(instance, ...)
+
+   
+Multi-Objective Resolution
+-------------------------------
+
+The integration of multi-objective optimization within the MicroGridsPy is a sophisticated approach that allows for the balancing of different and often conflicting objectives, such as minimizing costs while also reducing CO2 emissions.
+This method is essential in projects with multiple stakeholders having varying priorities, such as rural electrification projects.
+
+* **Objective Function Definition**. Two objectives are defined within the model: model.f1 for the Net Present Cost (NPC) and model.f2 for CO2 emissions.
+  The Objective expressions for these variables are declared, setting the sense to minimize, indicating that both objectives seek minimization.
+* **Solver Configuration and Initial Calculation**:The model employs the Gurobi solver with different settings for Mixed Integer Linear Programming (MILP) formulations and others.
+  Initial calculations are made to determine the minimum NPC and maximum CO2 emissions, and vice versa, which are crucial for understanding the range of the Pareto frontier.
+* **Epsilon Constraint Method for Pareto Frontier**: The model then uses the epsilon constraint method, a popular approach in multi-objective optimization.
+  This method involves systematically varying one objective within its feasible range (in this case, the CO2 emission) and optimizing the other objective (NPC or Operation Cost).
+  For each step, the model deactivates one objective and activates the other, ensuring that only one objective is optimized at a time.
+* **Plotting the Pareto Frontier**: A Pareto curve is plotted, displaying the trade-off between the two objectives.
+  This visualization is crucial as it provides decision-makers with a clear representation of the possible outcomes and the trade-offs involved.
+* **Selection of Optimal Solutions**: The model allows the selection of specific points on the Pareto frontier based on user preference, represented by the variable p in the code.
+  This flexibility is key in multi-objective optimization, as it accommodates different preferences and priorities.
 
 .. code-block:: python
 
@@ -40,38 +119,4 @@ Key Functionalities:
         # Plotting the Pareto Curve
         # The Pareto curve is plotted to visualize the trade-off between NPC and CO2 emissions.
         # Plotting code includes customization options for labels, legend, and resolution.
-
-   
-
-Implementation Highlights:
-
-- **MILP Formulations**: The module supports Mixed Integer Linear Programming (MILP), vital for discrete decision-making processes in microgrid planning.
-
-- **Investment Options**: It differentiates between greenfield and brownfield investment scenarios, accommodating various project stages from planning to retrofitting.
-
-- **Partial Load Modeling**: Capable of simulating partial load operations for generators, which is essential for reflecting real-world operational constraints.
-
-- **Component Flexibility**: The module can model different microgrid components like renewable energy sources, storage systems, and conventional generators.
-
-
-Usage
--------
-
-The module is crafted to function as a part of a larger microgrid optimization framework but can also be invoked independently for targeted analysis.
-
-.. code-block:: python
-
-   from Model_Resolution import Model_Resolution
-   
-   # Define the path to the data file
-   datapath = 'path_to/Parameters.dat'
-   
-   # Initialize and solve the optimization model
-   instance = Model_Resolution(model, datapath)
-
-
-Insights
------------
-
-The solutions generated by the ``Model_Resolution`` module are instrumental in the strategic deployment of microgrid systems. They provide a balanced approach to economic efficiency, reliability, and environmental considerations, essential for sustainable energy system development.
 

@@ -15,6 +15,7 @@ The multi-year formulation is a crucial prerequisite for implementing a capacity
    The variables associated with component capacity are determined by decision steps (ut) within the time horizon. The user defines the number of decision steps, essentially dividing the time horizon. This user-defined parameter governs how finely the model considers the progression of time, allowing for a strategic and step-by-step approach to capacity expansion based on the evolving electricity demand.
 
 **Parameters**
+
 The following table provides a detailed overview of the parameters used in the Capacity Expansion formulation.
 
 
@@ -104,6 +105,7 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 In general, the higher the equity E is invested in a project, the less risk is perceived by new lenders and the 
 more the cost of borrowing external capitals can reduce over the time, pushing for an increase of D. 
 Consequently, as the above graphs reflect, the WACC can be minimized by:
+
 * Maximizing the level of equity E (i.e., minimizing L) in the case that the rate of return on debt (RD)
   discounted of taxes (t) results greater than the rate of return on equity (RE); or
 * Maximizing the level of debt D (i.e., maximizing L) in the case that the rate of return on equity (RE)
@@ -115,6 +117,7 @@ a project finance approach can help in maximizing the leverage while keeping the
 solidity of future cash flows is assumed [11].
 
 **Parameters**
+
 The following table provides a detailed overview of the parameters used in the WACC (Weighted Average Cost of Capital) calculation.
 
 
@@ -160,24 +163,8 @@ Multi-objective optimization could be a solution to address economic, social and
 The result of multi-objective optimization would be a Pareto frontier providing the decision maker with a more comprehensive view of the possible alternatives and allowing him to take more informed decisions. 
 Exceptions to this are represented by Dufo-Lopez [4] that included a multi objective optimization on NPC, HDI and Job Creation and Petrelli [5] that optimizes on NPC, LCA emissions, Land Use and Job Creation.
 
-**Description of Integration**
-
-The integration of multi-objective optimization within the MicroGridsPy is a sophisticated approach that allows for the balancing of different and often conflicting objectives, such as minimizing costs while also reducing CO2 emissions.
-This method is essential in projects with multiple stakeholders having varying priorities, such as rural electrification projects.
-
-* Objective Function Definition: Two objectives are defined within the model: model.f1 for the Net Present Cost (NPC) and model.f2 for CO2 emissions.
-  The Objective expressions for these variables are declared, setting the sense to minimize, indicating that both objectives seek minimization.
-* Solver Configuration and Initial Calculation:The model employs the Gurobi solver with different settings for Mixed Integer Linear Programming (MILP) formulations and others.
-  Initial calculations are made to determine the minimum NPC and maximum CO2 emissions, and vice versa, which are crucial for understanding the range of the Pareto frontier.
-* Epsilon Constraint Method for Pareto Frontier: The model then uses the epsilon constraint method, a popular approach in multi-objective optimization.
-  This method involves systematically varying one objective within its feasible range (in this case, the CO2 emission) and optimizing the other objective (NPC or Operation Cost).
-  For each step, the model deactivates one objective and activates the other, ensuring that only one objective is optimized at a time.
-* Plotting the Pareto Frontier: A Pareto curve is plotted, displaying the trade-off between the two objectives.
-  This visualization is crucial as it provides decision-makers with a clear representation of the possible outcomes and the trade-offs involved.
-* Selection of Optimal Solutions: The model allows the selection of specific points on the Pareto frontier based on user preference, represented by the variable p in the code.
-  This flexibility is key in multi-objective optimization, as it accommodates different preferences and priorities.
-
 **Parameters**
+
 The following table provides a detailed overview of the parameters used in the Multi-Objective Optimization mode:
 
 .. list-table:: 
@@ -206,6 +193,7 @@ Multi-Scenario Optimization
 ------------------------------
 
 **Parameters**
+
 The following table provides a detailed overview of the parameters used in the Multi-Scenario Optimization mode:
 
 .. list-table:: 
@@ -581,7 +569,7 @@ This feature offers two methods to integrate fuel price variations into the mode
 
 2. **CSV File Import:** For more complex fuel price variations, import a CSV file with specific fuel cost values for each year of the project's timeline. 
 
-**Parameters for Variable Fuel Cost**
+**Parameters**
 
 .. list-table:: 
    :widths: 25 25 50
@@ -612,7 +600,7 @@ National Grid
 
 Mini-grid systems have been evolving through the years and newest generations (i.e., 3rd and 4th generation) present the possibility for connecting to the main electricity grid. The option to connect the system to the national grid is a feature embedded into the model where this can buy or sell electricity to the grid. For a realistic operation, the grid availability is also estimated based on grid power outages modelling.
 
-- **Grid constraints**
+**Parameters**
 
 Parameters here govern the potential connection to the national grid, including costs, distances, pricing for energy sold to or purchased from the grid, and reliability metrics.
 
@@ -761,15 +749,6 @@ Some of the related system **cost** such as the investment for RES, battery bank
    * - GEN_years 
      - [years]
      - How many years ago the component was installed 
-
-
-Minute Resolution
-----------------------
-In order to capture the dynamism of energy systems, a minute resolution is applied to the model by using the periods parameter equal to 525 600 minutes/year. This allows to capture the changes in demand within each hour and corresponding RES potential. By modelling the energy system every minute, rapid changes and nuances can be captured more accurately contributing to a better optimization and  maintain system stability.
-
-* **RES calculation** - **Solar potential**
-
-Solar irradiance exhibits minute-to-minute variations influenced by cloud dynamics, atmospheric losses, and the transport of pollutants. These fluctuations, occurring concurrently with changes in electricity demand, impact the effectiveness of storage and self-consumption in solar power systems. Simulations integrating electricity demand, PV supply, and storage require minute-level irradiance data to capture these effects. While calibrated minute-level irradiance datasets are limited and often result from isolated research projects, hourly weather data is more readily available but fails to capture the intermittent nature of solar irradiance. The modelling approach introduced in [9], enables the estimation of minutely irradiance from hourly weather data, such as cloud amount, wind speed and surface pressure. This methodology is applied to the RES generation potential within the model allowing for a accurate minute resolution.
 
 
 Battery Bank Degradation 

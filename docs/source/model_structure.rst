@@ -198,7 +198,7 @@ The module also deals with the grid connection, including setting up parameters 
 The ``Initialize`` module provides a comprehensive setup for the optimization model, ensuring that all necessary data is loaded and parameters are set before the optimization begins. It acts as the preparatory stage, converting raw data into a structured format that the model can interpret and utilize. This module underscores the importance of initial conditions in the optimization process and ensures that the model's execution is based on accurate and up-to-date information.
 
 Demand Module
-=============
+--------------
 
 The ``Demand`` module is tasked with the generation of load curves for the MicroGridsPy model. It leverages a data-driven approach, utilizing predefined archetypes that reflect the energy consumption patterns of different household tiers and service structures.
 
