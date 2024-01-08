@@ -1,5 +1,5 @@
 =======================================
-Folder Structure and General Overview
+General Overview
 =======================================
 MicroGridsPy folder is structured to promote ease of navigation and modularity. The directory hierarchy is organized as follows, with each folder serving a distinct purpose within the project. 
 This structure supports the separation of code, data inputs, environmental configurations, and results, thereby facilitating a clean workflow and project management.

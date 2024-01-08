@@ -71,14 +71,6 @@ MicroGridsPy in academic literature
 * Giacomo Crevani, Castro Soares, Emanuela Colombo, *"Modelling Financing Schemes for Energy System Planning: A Mini-Grid Case Study"*, ECOS **2023**, pp. 
   1958-1969 
 
-Acknowledgement
-=========================================
-
-* The development of MicroGridsPy was not possible without the kind attention and help of Professor
-  `Emanuela Colombo <https://www4.ceda.polimi.it/manifesti/manifesti/controller/ricerche/RicercaPerDocentiPublic.do?EVN_DIDATTICA=evento&k_doc=44891&lang=EN&aa=2014&tab_ricerca=1>`_.
-  We are fully grateful for having the chance to work under her supervision and would like to express our gratitude for her unwavering support.
-
-* We would also like to acknowledge .... for his kind support and guide that allows us to better understand and use .....
 
 
 License

@@ -84,17 +84,11 @@ Multi-Objective Resolution
 The integration of multi-objective optimization within the MicroGridsPy is a sophisticated approach that allows for the balancing of different and often conflicting objectives, such as minimizing costs while also reducing CO2 emissions.
 This method is essential in projects with multiple stakeholders having varying priorities, such as rural electrification projects.
 
-* **Objective Function Definition**. Two objectives are defined within the model: model.f1 for the Net Present Cost (NPC) and model.f2 for CO2 emissions.
-  The Objective expressions for these variables are declared, setting the sense to minimize, indicating that both objectives seek minimization.
-* **Solver Configuration and Initial Calculation**:The model employs the Gurobi solver with different settings for Mixed Integer Linear Programming (MILP) formulations and others.
-  Initial calculations are made to determine the minimum NPC and maximum CO2 emissions, and vice versa, which are crucial for understanding the range of the Pareto frontier.
-* **Epsilon Constraint Method for Pareto Frontier**: The model then uses the epsilon constraint method, a popular approach in multi-objective optimization.
-  This method involves systematically varying one objective within its feasible range (in this case, the CO2 emission) and optimizing the other objective (NPC or Operation Cost).
-  For each step, the model deactivates one objective and activates the other, ensuring that only one objective is optimized at a time.
-* **Plotting the Pareto Frontier**: A Pareto curve is plotted, displaying the trade-off between the two objectives.
-  This visualization is crucial as it provides decision-makers with a clear representation of the possible outcomes and the trade-offs involved.
-* **Selection of Optimal Solutions**: The model allows the selection of specific points on the Pareto frontier based on user preference, represented by the variable p in the code.
-  This flexibility is key in multi-objective optimization, as it accommodates different preferences and priorities.
+#. **Objective Function Definition**: Two objectives are defined within the model: `model.f1` for the Net Present Cost (NPC) and `model.f2` for CO2 emissions. The Objective expressions for these variables are declared, setting the sense to minimize, indicating that both objectives seek minimization.
+#. **Solver Configuration and Initial Calculation**: The model employs the Gurobi solver with different settings for Mixed Integer Linear Programming (MILP) formulations and others. Initial calculations are made to determine the minimum NPC and maximum CO2 emissions, and vice versa, which are crucial for understanding the range of the Pareto frontier.
+#. **Epsilon Constraint Method for Pareto Frontier**: The model then uses the epsilon constraint method, a popular approach in multi-objective optimization. This method involves systematically varying one objective within its feasible range (in this case, the CO2 emission) and optimizing the other objective (NPC or Operation Cost). For each step, the model deactivates one objective and activates the other, ensuring that only one objective is optimized at a time.
+#. **Plotting the Pareto Frontier**: A Pareto curve is plotted, displaying the trade-off between the two objectives. This visualization is crucial as it provides decision-makers with a clear representation of the possible outcomes and the trade-offs involved.
+#. **Selection of Optimal Solutions**: The model allows the selection of specific points on the Pareto frontier based on user preference, represented by the variable `p` in the code. This flexibility is key in multi-objective optimization, as it accommodates different preferences and priorities.
 
 .. code-block:: python
 
