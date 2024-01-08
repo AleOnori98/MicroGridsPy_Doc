@@ -231,7 +231,7 @@ This new simulation is designed to test the on-grid model, setting the grid conn
 
 -----------------------------------------------
 
-**Result Interpretaion**
+**Result Interpretation**
 
 The average renewable penetration per year is now at 78.72%, allowing for strong reliance on grid power (as it is clear also from the plots), reducing the overall proportion of energy sourced from renewables in the mini-grid system.
 Battery usage per year has decreased to 35.26% from the previous 50.83%. This reduction indicates that the connection to the main grid provides an alternate source of energy during periods when renewable generation is insufficient, thereby reducing the reliance on battery storage.
