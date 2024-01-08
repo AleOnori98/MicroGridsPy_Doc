@@ -168,8 +168,9 @@ One of the most critical financial indicators, the Levelized Cost of Electricity
 
 Curtailment has also increased to 11.24%, up from 4.83% in the default model. This is an expected outcome in systems with significant renewable energy penetration, where excess generation capacity is installed to ensure reliability. However, this also indicates that there is room for optimization, possibly through better demand-side management or further technological enhancements.
 
-Grid Connection
-------------------
+Capacity Expansion and Grid Connection
+-----------------------------------------
+This new simulation is designed to test the on-grid model, setting the grid connection starting from year 10, and compare it with the previous scenarios.
 
 .. raw:: html
 
@@ -227,6 +228,15 @@ Grid Connection
       <span class="sr-only">Next</span>
     </a>
   </div>
+
+-----------------------------------------------
+
+**Result Interpretaion**
+
+The average renewable penetration per year is now at 78.72%, allowing for strong reliance on grid power (as it is clear also from the plots), reducing the overall proportion of energy sourced from renewables in the mini-grid system.
+Battery usage per year has decreased to 35.26% from the previous 50.83%. This reduction indicates that the connection to the main grid provides an alternate source of energy during periods when renewable generation is insufficient, thereby reducing the reliance on battery storage.
+The diesel generator share per year has decreased further to 3.78%, a slight reduction from the already low 4.04%. This reduction reinforces the trend of moving away from fossil fuel-based generation in favor of cleaner energy sources and the support of grid power.
+The Levelized Cost of Electricity (LCOE) stands at 0.2185 USD/kWh, which is lower than both the previous LCOE of 0.2376 USD/kWh and the default scenario's 0.2562 USD/kWh. This indicates an improvement in the cost-effectiveness of the energy mix in the current grid-connected scenario, likely due to the lower marginal costs of drawing power from the grid as opposed to relying solely on local generation and storage.
 
 MILP Formulation
 ---------------------------------------------
