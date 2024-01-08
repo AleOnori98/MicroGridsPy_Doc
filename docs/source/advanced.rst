@@ -66,6 +66,9 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 
     </div>
 
+It is worth noticing that being the leverage L in a [0; +∞) domain, WACC varies depending on the parameters above mentioned, and can be 
+qualitatively depicted as follows:
+
 .. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/wacc.png?raw=true
      :width: 500
      :align: center
@@ -76,6 +79,7 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 In general, the higher the equity E is invested in a project, the less risk is perceived by new lenders and the 
 more the cost of borrowing external capitals can reduce over the time, pushing for an increase of D. 
 Consequently, as the above graphs reflect, the WACC can be minimized by:
+
 * maximizing the level of equity E (i.e., minimizing L) in the case that the rate of return on debt (RD)
   discounted of taxes (t) results greater than the rate of return on equity (RE); or
 * maximizing the level of debt D (i.e., maximizing L) in the case that the rate of return on equity (RE)
