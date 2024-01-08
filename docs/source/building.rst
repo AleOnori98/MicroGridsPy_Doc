@@ -3,7 +3,9 @@
 Building and Running a Model
 ########################################
 
-MicroGridsPy is a comprehensive energy optimization model designed for the strategic planning and operational management of mini-grid systems. Here below is a general introduction to the different steps in building and running a model:
+MicroGridsPy is a comprehensive energy optimization model designed for the strategic planning and operational management of mini-grid systems. 
+
+Here below is a general introduction to the different steps in building and running a model:
 
 #. **Time Series Data Input**: Begin by providing specific data, over the lifetime of the project, about the available renewable resources and demand 
    profiles. For sub-Sahara Africa it is also possible to estimate endogenously these time series data based on editable parameters and build-in load 
@@ -31,13 +33,20 @@ MicroGridsPy is a comprehensive energy optimization model designed for the strat
 
 ------------------------------------------------------------------------------------------------
 
-User Interface
-================
+Data Input Interface and Parameters
+=================================
 
+The graphical user interface (GUI) application provides a user-friendly way to define and input data for MicroGridsPy.
 
-Model Configuration
--------------------------
-These settings determine the overall configuration of the optimization model, including the number of periods within a year, the project's total duration, and the time step for the optimization process. It also encompasses financial parameters like the discount rate and investment cost limits.
+.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Interface.png?raw=true
+   :width: 500
+   :align: center
+
+The application is organized into different pages, each tailored to a specific aspect of the model. Here's a quick overview of the pages, their basic usage and the parameters included:
+
+- **Initial Page**: Initial page with the model presentation
+
+- **Basic Parameter Initialization**: Begin your data input journey by specifying fundamental parameters for your minigrid project. It serves as the central hub for configuring parameters and functionalities including duration, resolution, optimization goal,specific constraints and more. 
 
 .. list-table:: 
    :widths: 25 25 50
@@ -46,112 +55,66 @@ These settings determine the overall configuration of the optimization model, in
    * - Parameter name
      - Unit
      - Description
-   * - Periods
+   * - Time Resolution
      - Time unit (e.g. hours/year)
      - Periods considered in one year (e.g. 8760 hours/year)
-   * - Years
-     - years
+   * - Total Project Duration
+     - [years]
      - Total duration of the project (or 'time horizon')
-   * - Step_Duration
-     - years
-     - Duration of each investment decision step in which the project lifetime will be split
-   * - Min_Last_Step_Duration
-     - years
-     - Minimum duration of the last investment decision step, in case of non-homogeneous divisions of the project lifetime 
-   * - StartDate
+   * - Start Date
      - 'DD/MM/YYYY hh:mm:ss'
      - Start date of the project
-   * - Delta_Time
-     - hours
-     - Time step in hours [fixed input]
-   * - Scenarios
-     - (-)
-     - Number of scenarios to consider within the optimisation
-   * - Scenario_Weight
-     - (-)
-     - Occurrence probability of each scenario
    * - Discount_Rate
-     - unit
+     - [%] (0-1)
      - Real discount rate accounting also for inflation
-   * - Investment_Cost_Limit
-     - (e.g. USD)
+   * - Optimization_Goal
+     - NPC / Operation cost
+     - It allows to switch between an NPC-oriented optimization and a NON-ACTUALIZED Operation
+   * - Investment Cost Limit
+     - [USD]
      - Upper limit to investment cost (considered only in case Optimization_Goal='Operation cost')
+   * - Model_Components
+     - Batteries and Generators / Batteries only / Generators only
+     - It allows to switch between different configuration of backup system technologies (RES are always included)
    * - Renewable_Penetration
-     - [%]
+     - [%] (0-1)
      - Minimum renewable penetration (fraction of electricity produced by renewable sources) in the final technology mix
    * - Battery_Independence
-     - days
+     - [days]
      - Number of days of battery independence (working without backup choices)
    * - Lost_Load_Fraction
-     - [%]
-     - Maximum admittable loss of load
+     - [%] (0-1)
+     - Maximum admittable loss of load (between 0 and 1)
    * - Lost_Load_Specific_Cost
      - [USD/Wh]
-     - Value of the unmet load 
+     - Value of the unmet load
+
+-------------------------------------------------------------------------------------
 
 
----------------------------------------------------------------------------------------------------------------
+- **Advanced Model Configuration**: The GUI supports advanced modeling optimization features like mixed-integer linear programming (MILP) formulation, multi-objective optimization, and the ability to toggle different parameters: users can enable or disable specific parameters and access tooltips for additional guidance.
 
-**Model Switches**
+.. note::
+   Refer to (:doc:`advanced`) for more detail information about all the additional model configuration parameters and their implementatiion within the model.
 
-This set of parameters allows users to toggle different aspects and features of the model, such as the optimization goal (NPC or operation cost), whether to use a MILP formulation and various operational considerations like partial load effects on generators and multi-objective optimization criteria.
+----------------------------------------------------------------------------------------------------------------
 
-.. list-table:: 
-   :widths: 25 25 50
-   :header-rows: 1
+- **RES Time Series Data Simulation**: Explore options for renewable energy time series estimation. Users can activate or deactivate RES calculation, which dynamically enables or disables related parameters. The layout offers a scrollable area for a comprehensive list of parameters, including latitude, longitude, time zone, and turbine information. Custom fonts and tooltips enhance the user experience, making it a user-friendly interface for setting up requried parameters.
 
-   * - Parameter name
-     - Options
-     - Description
-   * - Optimization_Goal
-     - 1 = NPC / 0 = Operation cost
-     - It allows to switch between an NPC-oriented optimization and a NON-ACTUALIZED Operation
-   * - Multiobjective_Optimization
-     - 1 = optimization of NPC/operation cost and CO2 emissions / 0 = optimization of NPC/operation cost
-     - It allows to switch between a costs-oriented optimization and a cost and emissions optimization
-   * - Plot_Max_Cost
-     - 1 = Pareto curve has to include the point at maxNPC/maxOperationCost / 0 = otherwise
-     - It allows to shows a specific point on the Pareto curve for multi-objective optimization
-   * - MILP_Formulation
-     - 1 = MILP / 0 = LP
-     - It allows to switch between a MILP (for monodirectional energy flows) and LP formulation
-   * - Generator_Partial_Load
-     - 1 = Partial load effect / 0 = Constant efficiency
-     - It allows to activate the partial load effect on the operation costs of the generator (valid only if MILP Formulation is activated)
-   * - RE_Supply_Calculation
-     - 1 = Endogenous estimation / 0 = exogenous time series required
-     - It allows to select solar PV and wind production time series calculation (using NASA POWER data)
-   * - Demand_Profile_Generation
-     - 1 = Endogenous estimation / 0 = exogenous time series required
-     - It allows to select load demand profile generation (using demand archetypes)
-   * - Grid_Connection
-     - 1 = Grid connection / 0 = No grid connection
-     - It allows to select grid connection during project lifetime
-   * - Grid_Availability_Simulation
-     - 1 = Endogenous simulation / 0 = exogenous time series required
-     - It allows to simulate the grid availability matrix
-   * - Grid_Connection_Type
-     - 2 = sell/purchase / 0 = purchase only
-     - It allows to switch between two different types of grid connections
-   * - WACC_Calculation
-     - 1 = WACC calculation / 0 = Standard discount rate
-     - It allows to calculate and use the Weighted Average Cost of Capital rather than the real discount rate
-   * - Model_Components
-     - 0 = batteries and generators /1 = batteries only / 2 = generators only
-     - It allows to switch between different configuration of technologies (RES are always included)
+.. note::
+   Refer to (:doc:`advanced`) for all the additional model parameters and their implementatiion within the model. 
+   Refer to (:doc:`model_structure`) for insights about the specific python module functioning
+------------------------------------------------------------------------------------------------
 
+- **Archetypes Page**: Simulate demand profiles and built-in archetypes referring to rural villages in Sub-Saharan Africa at different latitudes. These are composed of different types of end-users like households according to the wealth tier (i.e., from 1 to 5), hospitals with the same wealth scale and schools. The possibility for demand growth and specific cooling period are also integrated within this feature.
 
+.. note::
+   Refer to (:doc:`advanced`) for all the additional model parameters and their implementatiion within the model.
+   Refer to (:doc:`model_structure`) for insights about the specific python module functioning 
 
-----------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 
-
-Technology Parameters
-----------------------
-
-**RES Technology**
-
-Defines the types and characteristics of renewable energy sources, like solar PV panels and wind turbines, including their nominal capacities, efficiencies, specific costs, and associated CO2 emissions.
-
+- **Technologies Page**: Configure the available renewable energy sources and their techno-economic properties. The page defines default parameters and their initial values for renewable energy sources (RES), manages user input for RES parameters with validation and updates, creates labels, entry fields, and tooltips for RES parameters.
 
 .. list-table:: 
    :widths: 25 25 50
@@ -161,7 +124,7 @@ Defines the types and characteristics of renewable energy sources, like solar PV
      - Unit
      - Description
    * - RES_Sources
-     - (-)
+     - [-]
      - Number of Renewable Energy Sources (RES) types
    * - RES_Names
      - (e.g. 'PV panels', 'Wind turbines')
@@ -170,98 +133,24 @@ Defines the types and characteristics of renewable energy sources, like solar PV
      - Power (e.g. W)
      - Single unit capacity of each type of Renewable Energy Source (RES)
    * - RES_Inverter_Efficiency
-     - [%]
+     - [%] (0-1)
      - Efficiency of the inverter connected to each Renewable Energy Source (RES) (put 1 in case of AC bus)
    * - RES_Specific_Investment_Cost
-     - (e.g. USD/W)
+     - [USD/W]
      - Specific investment cost for each type of Renewable Energy Source (RES) 
    * - RES_Specific_OM_Cost
-     - [%]
+     - [%] (0-1)
      - O&M cost for each type of Renewable Energy Source (RES) as a fraction of the specific investment cost 
    * - RES_Lifetime
-     - years
+     - [years]
      - Lifetime of each Renewable Energy Source (RES)   
-   * - RES_units
-     - (-)
-     - Existing RES units of nominal capacity (if Brownfield investment activated)
-   * - RES_years
-     - years
-     - How many years ago the component was installed 
    * - RES_unit_CO2_emission
      - (e.g. kgCO2/kW)
-     - ???
+     - Emissions for each kW of capacity installed (indirect emissions)
 
+-------------------------------------------------------------------------------
 
-----------------------------------------------------------------------------------------------------------
-
-
-**Generator Technology**
-
-Details the types of generators that can be included in the microgrid, their efficiencies, costs, and lifetime, as well as the fuel they require and associated CO2 emissions.
-
-.. list-table:: 
-   :widths: 25 25 50
-   :header-rows: 1
-
-   * - Parameter name
-     - Unit
-     - Description
-   * - Generator_Types 
-     - (-)
-     - Number of different types of gensets 
-   * - Generator_Names 
-     - (e.g. 'Diesel Genset 1')
-     - Generator names
-   * - Generator_Efficiency 
-     - [%]
-     - Average generator efficiency of each generator type
-   * - Generator_Specific_Investment_Cost 
-     - (e.g. USD/W)
-     - Specific investment cost for each generator type 
-   * - Generator_Specific_OM_Cost 
-     - [%]
-     - O&M cost for each generator type as a fraction of specific investment cost [%]
-   * - Generator_Lifetime 
-     - years
-     - Lifetime of each generator type  
-   * - Fuel_Names 
-     - (e.g. 'Diesel')
-     - Fuel names (to be specified for each generator, even if they use the same fuel)
-   * - Fuel_Specific_Cost 
-     - (e.g. USD/lt)
-     - Specific fuel cost for each generator type 
-   * - Fuel_LHV 
-     - (e.g. Wh/lt)
-     - Fuel lower heating value (LHV) for each generator type 
-   * - Generator_capacity 
-     - Power (e.g. W)
-     - Existing Generator capacity (if Brownfield investment activated)
-   * - GEN_years 
-     - years
-     - How many years ago the component was installed 
-   * - GEN_unit_CO2_emission 
-     - (e.g. kgCO2/kW)
-     - ????????
-   * - FUEL_unit_CO2_emission 
-     - (e.g. kgCO2/lt)
-     - ????????
-   * - Generator_Min_output 
-     - [%]
-     - Minimum percentage of energy output for the generator in part load 
-   * - Generator_Nominal_Capacity_milp 
-     - Power (e.g. W)
-     - Nominal capacity of each generator       
-   * - Generator_pgen 
-     - [%]
-     - Percentage of the total operation cost of the generator system at full load 
-
-
-
-
-**Battery Technology**
-
-Specifies the investment and operational costs, efficiencies, and other technical parameters related to battery storage solutions, critical for managing intermittent renewable energy supply.
-
+- **Battery Page**: If needed, set up battery-related parameters. It provides robust input validation, tooltips for parameter descriptions, and conditional parameter handling, ensuring data accuracy and usability. 
 
 .. list-table:: 
    :widths: 25 25 50
@@ -271,50 +160,42 @@ Specifies the investment and operational costs, efficiencies, and other technica
      - Unit
      - Description
    * - Battery_Specific_Investment_Cost
-     - (e.g. USD/Wh)
+     - [USD/Wh]
      - Specific investment cost of the battery bank [USD/Wh]            
    * - Battery_Specific_Electronic_Investment_Cost
-     - (e.g. USD/Wh)
+     - [USD/Wh]
      - Specific investment cost of non-replaceable parts (electronics) of the battery bank
    * - Battery_Specific_OM_Cost
-     - (-)
+     - [-] (0-1)
      - O&M cost of the battery bank as a fraction of the specific investment cost
    * - Battery_Discharge_Battery_Efficiency
-     - [%]
+     - [%] (0-1)
      - Discharge efficiency of the battery bank
    * - Battery_Charge_Battery_Efficiency
-     - [%]
+     - [%] (0-1)
      - Charge efficiency of the battery bank 
    * - Battery_Depth_of_Discharge
-     - [%]
+     - [%] (0-1)
      - Depth of discharge of the battery bank (maximum amount of discharge)
    * - Maximum_Battery_Discharge_Time
-     - hours
+     - [hours]
      - Maximum time to discharge the battery bank
    * - Maximum_Battery_Charge_Time
-     - hours
+     - [hours]
      - Maximum time to charge the battery bank
    * - Battery_Cycles
-     - (-)
+     - [-]
      - Maximum number of cycles before degradation of the battery
    * - Battery_Initial_SOC
-     - [%]
+     - [%] (0-1)
      - Battery initial state of charge
-   * - Battery_capacity
-     - Energy (e.g. Wh)
-     - Existing Battery capacity (if Brownfield investment activated)
    * - BESS_unit_CO2_emission
-     - (e.g. kgCO2/kWh)
-     - ????
-   * - Battery_Nominal_Capacity_Milp
-     - Energy (e.g. Wh)
-     - Nominal Capacity of each battery
+     - [kgCO2/kWh]
+     - Emissions for each kWh of capacity installed (indirect emissions)
 
+-----------------------------------------------------------------------------------
 
-
-**Lost Load**
-
-Specific parameters for Lost Load regarding maximum value and related costs.
+- **Generator Page**: Define generator types and characteristics. Similarly to Technologies Page, the page defines default parameters and their initial values but the user can add new entries for different types of generators. It offers strong input validation, parameter description tooltips, and conditional parameter management.
 
 .. list-table:: 
    :widths: 25 25 50
@@ -323,20 +204,49 @@ Specific parameters for Lost Load regarding maximum value and related costs.
    * - Parameter name
      - Unit
      - Description
-   * - Lost_Load_Fraction 
-     - (-)
-     - Maximum admittable loss of load          
-   * - Lost_Load_Specific_Cost 
-     - (e.g. USD/Wh)
-     - Value of the unmet load
+   * - Generator_Types 
+     - [units]
+     - Number of different types of gensets 
+   * - Generator_Names 
+     - (e.g. 'Diesel Genset 1')
+     - Generator names
+   * - Generator_Efficiency 
+     - [%] (0-1)
+     - Average generator efficiency of each generator type
+   * - Generator_Specific_Investment_Cost 
+     - [USD/W]
+     - Specific investment cost for each generator type 
+   * - Generator_Specific_OM_Cost 
+     - [%] (0-1)
+     - O&M cost for each generator type as a fraction of specific investment cost [%]
+   * - Generator_Lifetime 
+     - [years]
+     - Lifetime of each generator type  
+   * - Fuel_Names 
+     - (e.g. 'Diesel')
+     - Fuel names (to be specified for each generator, even if they use the same fuel)
+   * - Fuel_Specific_Cost 
+     - [USD/lt]
+     - Specific fuel cost for each generator type 
+   * - Fuel_LHV 
+     - [Wh/lt]
+     - Fuel lower heating value (LHV) for each generator type 
+   * - Generator_capacity 
+     - Power (e.g. W)
+     - Existing Generator capacity (if Brownfield investment activated)
+   * - GEN_years 
+     - [years]
+     - How many years ago the component was installed 
+   * - GEN_unit_CO2_emission 
+     - [kgCO2/kW]
+     - Emissions for each kW of capacity installed (indirect emissions)
+   * - FUEL_unit_CO2_emission 
+     - [kgCO2/lt]
+     - Emissions for each lt of fuel consumed (direct emissions) 
 
+- **Grid Page**: Specify grid connection details such the year starting from which the model should take account of the national grid connection and the possibility to simulate the grid availability by means of average quantities such as number of outages and duration in a year.
 
-
-Plot settings
---------------
-
-These parameters are used for the aesthetic aspects of model outputs, assigning colors to different energy sources, storage options, and other model components for visual representation in plots and charts.
-
+- **Plot Page**: Visualize the color codes for data visualization by means of a dynamic color legend. These parameters are used for the aesthetic aspects of model outputs, assigning colors to different energy sources, storage options, and other model components for visual representation in plots and charts.
 
 .. list-table::
   :widths: 25 25 50
@@ -346,26 +256,38 @@ These parameters are used for the aesthetic aspects of model outputs, assigning 
     - Default Value
     - Description
   * - RES_Colors
-    - 'FF8800' (adapt to the number of RES)
+    - Coler hex code (e.g. 'FF8800')
     - Color code for renewable energy sources in visualizations.
   * -  Battery_Color
-    - '4CC9F0'
+    - Coler hex code (e.g. '4CC9F0')
     - Color code for battery storage in plots and graphs.
   * - Generator_Colors
-    - '00509D' (adapt to the number of generators)
+    - Coler hex code (e.g. '00509D')
     - Color codes for different types of generators in visualizations.
   * - Lost_Load_Color
-    - 'F21B3F'
+    - Coler hex code (e.g. 'F21B3F')
     - Color code used for representing lost load in graphical outputs.
   * - Curtailment_Color
-    - 'FFD500'
+    - Coler hex code (e.g. 'FFD500')
     - Color code for curtailment in plots and diagrams.
   * - Energy_To_Grid_Color
-    - '008000'
+    - Coler hex code (e.g. '008000')
     - Color code for depicting energy supplied to the grid.
   * - Energy_From_Grid_Color
-    - '800080'
+    - Coler hex code (e.g. '800080')
     - Designates the color for visualizing energy drawn from the grid.
+
+--------------------------------------------------------------------------------------------
+
+- **Run Page**: Finally, save your input data and initiate the optimization process. It includes the following functionalities: validation of integer inputs, updating and displaying output messages in a text widget, showing dispatch, size, and cash flow plots in separate windows, generating plots based on user inputs and running a model in a separate thread, displaying progress messages and results.
+
+This intuitive interface streamlines the data input process, making it easier than ever to design and optimize minigrids for rural villages using MicroGridsPy.
+
+
+
+
+
+
 
 .. note::
   Please refer to the example gallery for a better understanding of the parameter use within the user interface.
@@ -464,37 +386,3 @@ The input file within the "Inputs" folder, must have as many numbered columns (e
 
 ----------------------------------------------------------------------------------------------------------------------------
 
-MicroGridsPy Data Input Interface
-=================================
-
-The graphical user interface (GUI) application provides a user-friendly way to define and input data for MicroGridsPy.
-
-.. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Interface.png?raw=true
-   :width: 500
-   :align: center
-
-The application is organized into different pages, each tailored to a specific aspect of the model. Here's a quick overview of the pages and their basic usage:
-
-- **Initial Page**: Initial page with the model presentation and visualization
-
-- **Start Page**: Begin your data input journey by specifying fundamental parameters for your minigrid project. It serves as the central hub for configuring parameters and functionalities including duration, resolution, optimization goal,specific constraints and more. 
-
-- **Advanced Page**: The GUI supports advanced features like mixed-integer linear programming (MILP) formulation, multi-objective optimization, and the ability to toggle different parameters: users can enable or disable specific parameters and access tooltips for additional guidance.
-
-- **RECalculation Page**: Explore options for renewable energy time series estimation. Users can activate or deactivate RES calculation, which dynamically enables or disables related parameters. A warning label provides instructions when RES calculation is deactivated. The layout offers a scrollable area for a comprehensive list of parameters, including latitude, longitude, time zone, and turbine information. Custom fonts and tooltips enhance the user experience, making it a user-friendly interface for setting up requried parameters.
-
-- **Archetypes Page**: Define demand profiles and generation archetypes for different scenarios. Users can toggle the activation of demand profile generation, which dynamically enables or disables relevant parameters. A warning label provides guidance when demand profile generation is turned off. The layout includes a scrollable area for adjusting various parameters such as demand growth, cooling period, and tiered electricity rates. 
-
-- **Technologies Page**: Configure the available renewable energy sources and their techno-economic properties. The page defines default parameters and their initial values for renewable energy sources (RES), manages user input for RES parameters with validation and updates, creates labels, entry fields, and tooltips for RES parameters, and includes a warning label to convey important information to users. 
-
-- **Battery Page**: If needed, set up battery-related parameters. It provides robust input validation, tooltips for parameter descriptions, and conditional parameter handling, ensuring data accuracy and usability. 
-
-- **Generator Page**: Define generator types and characteristics. Similarly to Technologies Page, the page defines default parameters and their initial values but the user can add new entries for different types of generators. It offers strong input validation, parameter description tooltips, and conditional parameter management, guaranteeing both data precision and user-friendliness.
-
-- **Grid Page**: Specify grid connection details such the year starting from which the model should take account of the national grid connection and the possibility to simulate the grid availability by means of average quantities such as number of outages and duration in a year.
-
-- **Plot Page**: Visualize the color codes for data visualization by means of a dynamic color legend.
-
-- **Run Page**: Finally, save your input data and initiate the optimization process. It includes the following functionalities: validation of integer inputs, updating and displaying output messages in a text widget, showing dispatch, size, and cash flow plots in separate windows, generating plots based on user inputs and running a model in a separate thread, displaying progress messages and results.
-
-This intuitive interface streamlines the data input process, making it easier than ever to design and optimize minigrids for rural villages using MicroGridsPy.

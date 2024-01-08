@@ -3,8 +3,36 @@ Advanced Features
 
 MicroGridsPy allows the user to choose different advanced features embedded into the model. These are designed to elevate the energy modelling by addressing evolving challenges of mini-grid system components and optimization.
 
-.. role:: raw-html(raw)
-    :format: html
+Capacity Expansion
+----------------------
+
+In the context of a capacity expansion formulation, the model considers the option of adding more capacity to a system in a step-by-step manner over a defined time horizon. This approach is driven by the idea of strategically expanding the installed capacity of various components, such as power generation units or storage, to manage costs effectively, especially during the initial years when lower energy demand is anticipated.
+
+The multi-year formulation is a crucial prerequisite for implementing a capacity expansion concept. This approach enables the postponement of installing certain components' capacity, such as PV modules or battery banks, to later years based on the evolution of electricity demand. This flexibility helps avoid incurring large initial capital costs. Consequently, O&M costs become proportional to the actual capacity installed and utilized each year.
+
+.. tip::
+   **Multi-Year Formulation and Capacity Expansion in the model**: This approach drops the old consideration about the yearly demand for project lifetime which was the same and equal to a typical year of consumption for the study area. For this new concept, all the model constraints are estimated at each time step (t) of every year (yt) along the mini-grid lifetime. Thus, all equations involving time-dependent variables must be thus verified at all time steps (yt,t) of the optimization horizon.
+   The variables associated with component capacity are determined by decision steps (ut) within the time horizon. The user defines the number of decision steps, essentially dividing the time horizon. This user-defined parameter governs how finely the model considers the progression of time, allowing for a strategic and step-by-step approach to capacity expansion based on the evolving electricity demand.
+
+**Parameters**
+The following table provides a detailed overview of the parameters used in the Capacity Expansion formulation.
+
+
+.. list-table::
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter Name
+     - Unit
+     - Description
+   * - Step Duration
+     - [years]
+     - Duration of each investment decision step in which the project lifetime will be split
+   * - Minimum Last Step Duration
+     - [years]
+     - Minimum duration of the last investment decision step, in case of non-homogeneous divisions of the project lifetime
+
+-----------------------------------------------------------------------------------------
 
 Weighted Average Cost of Capital
 ---------------------------------
@@ -66,9 +94,6 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 
     </div>
 
-It is worth noticing that being the leverage L in a [0; +∞) domain, WACC varies depending on the parameters above mentioned, and can be 
-qualitatively depicted as follows:
-
 .. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/wacc.png?raw=true
      :width: 500
      :align: center
@@ -79,16 +104,44 @@ qualitatively depicted as follows:
 In general, the higher the equity E is invested in a project, the less risk is perceived by new lenders and the 
 more the cost of borrowing external capitals can reduce over the time, pushing for an increase of D. 
 Consequently, as the above graphs reflect, the WACC can be minimized by:
-
-* maximizing the level of equity E (i.e., minimizing L) in the case that the rate of return on debt (RD)
+* Maximizing the level of equity E (i.e., minimizing L) in the case that the rate of return on debt (RD)
   discounted of taxes (t) results greater than the rate of return on equity (RE); or
-* maximizing the level of debt D (i.e., maximizing L) in the case that the rate of return on equity (RE)
+* Maximizing the level of debt D (i.e., maximizing L) in the case that the rate of return on equity (RE)
   results greater than the rate of return on debt (RD) discounted of taxes (t).
 
 Finally, it is worth mentioning that the figures of RD and RE strongly depend on the 
 financing structure adopted for the project. As will be advanced in the following sections, a structure built with 
 a project finance approach can help in maximizing the leverage while keeping the return on debt low, if the 
 solidity of future cash flows is assumed [11].
+
+**Parameters**
+The following table provides a detailed overview of the parameters used in the WACC (Weighted Average Cost of Capital) calculation.
+
+
+.. list-table::
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter Name
+     - Unit
+     - Description
+   * - cost_of_equity
+     - [%] (0-1)
+     - Cost of equity (i.e., the return required by the equity shareholders)
+   * - cost_of_debt
+     - [%] (0-1)
+     - Cost of debt (i.e., the interest rate)
+   * - tax
+     - [%] (0-1)
+     - Corporate tax deduction (debt is assumed as tax deducible)
+   * - equity_share
+     - [%] (0-1)
+     - Total level of equity as a proportion of the total capital
+   * - debt_share
+     - [%] (0-1)
+     - Total level of debt as a proportion of the total capital
+
+-----------------------------------------------------------------------------------------
 
 Multi-Objective Optimization
 --------------------------------
@@ -109,7 +162,7 @@ Exceptions to this are represented by Dufo-Lopez [4] that included a multi objec
 
 **Description of Integration**
 
-The integration of multi-objective optimization within the MicroGridsPy model is a sophisticated approach that allows for the balancing of different and often conflicting objectives, such as minimizing costs while also reducing CO2 emissions. 
+The integration of multi-objective optimization within the MicroGridsPy is a sophisticated approach that allows for the balancing of different and often conflicting objectives, such as minimizing costs while also reducing CO2 emissions.
 This method is essential in projects with multiple stakeholders having varying priorities, such as rural electrification projects.
 
 * Objective Function Definition: Two objectives are defined within the model: model.f1 for the Net Present Cost (NPC) and model.f2 for CO2 emissions.
@@ -124,29 +177,52 @@ This method is essential in projects with multiple stakeholders having varying p
 * Selection of Optimal Solutions: The model allows the selection of specific points on the Pareto frontier based on user preference, represented by the variable p in the code.
   This flexibility is key in multi-objective optimization, as it accommodates different preferences and priorities.
 
-.. code-block:: python
+**Parameters**
+The following table provides a detailed overview of the parameters used in the Multi-Objective Optimization mode:
 
-    if Optimization_Goal == 1:
-        # Define the objective functions
-        model.f1 = Var()
-        model.C_f1 = Constraint(expr=model.f1 == model.Net_Present_Cost)
-        model.ObjectiveFunction = Objective(expr=model.f1, sense=minimize)
-        model.f2 = Var()
-        model.C_f2 = Constraint(expr=model.f2 == model.CO2_emission)
-        model.ObjectiveFunction1 = Objective(expr=model.f2, sense=minimize)
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
 
-        # Example of solver options and NPC, CO2 emission calculations
-        opt = SolverFactory('gurobi')
-        # Solver options vary based on the problem formulation (MILP or others)
-        opt.set_options('Method=3 BarHomogeneous=1 Crossover=1 MIPfocus=1 BarConvTol=1e-3 OptimalityTol=1e-3 FeasibilityTol=1e-4 TimeLimit=10000')
-        instance = model.create_instance(datapath)
-        opt.solve(instance, tee=True)
-        NPC_min = value(instance.ObjectiveFunction)
-        CO2emission_max = value(instance.ObjectiveFunction1)
+   * - Parameter name
+     - Unit
+     - Description
+   * - Multiobjective_Optimization
+     - Optimization of NPC or Operation cost and CO2 emissions
+     - It allows to switch between a costs-oriented optimization and a cost and emissions optimization
+   * - Plot Max Cost
+     - Pareto curve has to include the point at maxNPC/maxOperationCost
+     - It allows to shows a specific point on the Pareto curve for multi-objective optimization
+   * - Pareto points
+     - [-]
+     - It allows to specify the Pareto curve points to be analysed during optimization
+   * - Pareto solution
+     - [-]
+     - It allows to specify the Multi-Objective optimization solution to be displayed
 
-        # Plotting the Pareto Curve
-        # The Pareto curve is plotted to visualize the trade-off between NPC and CO2 emissions.
-        # Plotting code includes customization options for labels, legend, and resolution.
+----------------------------------------------------------------------------------------------
+
+Multi-Scenario Optimization
+------------------------------
+
+**Parameters**
+The following table provides a detailed overview of the parameters used in the Multi-Scenario Optimization mode:
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter name
+     - Unit
+     - Description
+   * - Scenarios
+     - [-]
+     - Number of scenarios to consider within the optimisation
+   * - Scenario_Weight
+     - [%] (0-1)
+     - Occurrence probability of each scenario (between 0 and 1)
+
+-------------------------------------------------------------------------
 
 
 RES Time Series Estimation
@@ -279,12 +355,12 @@ RES parameters which are non-editable. Advanced parameters used for developers:
      - 'anonymous'
      - User key
 
+-----------------------------------------------------------------------
 
+MILP Formulation
+---------------------
 
-Load Demand Estimation
-------------------------
-
-Using the advanced features integrated into MicroGridsPy which allows to use built-in archetypes referring to rural villages in Sub-Saharan Africa at different latitudes. These are composed of different types of end-users like households according to the wealth tier (i.e., from 1 to 5), hospitals with the same wealth scale and schools. The possibility for demand growth and specific cooling period are also integrated within this feature. The following parameters present in **Parameters.dat** define all the possible demand archetypes within the current model.
+**Parameters**
 
 .. list-table:: 
    :widths: 25 25 50
@@ -293,45 +369,14 @@ Using the advanced features integrated into MicroGridsPy which allows to use bui
    * - Parameter name
      - Unit
      - Description
-   * - demand_growth
-     - % (0-1)
-     - yearly expected average percentage variation of the demand [%]
-   * - cooling_period
-     - ('NC' = No Cooling; 'AY' = All Year etc.)
-     - Cooling period 
-   * - h_tier1
-     - (-)
-     - number of households in the wealth tier 1
-   * - h_tier2
-     - (-)
-     - number of households in the wealth tier 2
-   * - h_tier3
-     - (-)
-     - number of households in the wealth tier 3
-   * - h_tier4
-     - (-)
-     - number of households in the wealth tier 4
-   * - h_tier5
-     - (-)
-     - number of households in the wealth tier 5
-   * - schools
-     - (-)
-     - number of schools
-   * - hospital_1
-     - (-)
-     - number of hospitals of type 1
-   * - hospital_2
-     - (-)
-     - number of hospitals of type 2
-   * - hospital_3
-     - (-)
-     - number of hospitals of type 3
-   * - hospital_4
-     - (-)
-     - number of hospitals of type 4
-   * - hospital_5
-     - (-)
-     - number of hospitals of type 5
+   * - Battery_Nominal_Capacity_Milp
+     - Energy (e.g. Wh)
+     - Nominal Capacity of each battery
+   * - Generator_Nominal_Capacity_milp 
+     - Power (e.g. W)
+     - Nominal capacity of each generator
+
+---------------------------------------------------------------------------
 
 
 Generator Partial Load Effect
@@ -504,6 +549,27 @@ The total energy output is limited by the number of gensets available:
 
     </div>
 
+**Parameters**
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter name
+     - Unit
+     - Description
+   * - Generator_Min_output 
+     - [%] (0-1)
+     - Minimum percentage of energy output for the generator in part load 
+   * - Generator_Nominal_Capacity_milp 
+     - Power (e.g. W)
+     - Nominal capacity of each generator       
+   * - Generator_pgen 
+     - [%] (0-1)
+     - Percentage of the total operation cost of the generator system at full load 
+
+--------------------------------------------------------------------------------------------------
+
 Variable Fuel Cost
 -----------------------------
 MicroGridsPy introduces a valuable addition to model dynamic changes in fuel prices, a pivotal factor in the operational economics of mini-grid systems, especially those reliant on fossil fuels. 
@@ -645,29 +711,6 @@ The reliability of a national grid's electricity supply refers to the consistent
 ------------------------------------------------------------------------------------------------------------------------------------
 
 
-Model formulation for Load Evolution
----------------------------------------
-
-The approach introduced in [7] focuses on addressing the issue of load evolution in the long term. This model is designed to make informed decisions about expanding capacity throughout the specified time horizon. To simulate realistic load profiles, the model is integrated with a tool for generating stochastic load profiles. This formulation demonstrates advantages in making robust investment decisions under different load evolution scenarios.
-
-- **Multi-Year formulation**
-
-The system has the capability to take into account changes in energy demand over time, especially in rural areas. Each year in the planning period corresponds to a unique load curve, allowing for the analysis of various patterns. This includes factors like population growth, more connections to the network, which affect overall demand but not necessarily daily load profiles. Additionally, variations in consumption habits and the use of new appliances can cause shifts in the daily load curve. In essence, the model is flexible enough to adapt to different dynamics, considering both global demand changes and shifts in daily energy usage patterns.
-
-.. tip::
-   **In the model**: This introduction drops the old consideration about the yearly demand for project lifetime which was the same and equal to a typical year of consumption for the study area. For this new concept, all the model constraints are estimated at each time step (t) of every year (yt) along the mini-grid lifetime. Thus, all equations involving time-dependent variables must be thus verified at all time steps (yt,t) of the optimization horizon.
-
-- **Capacity Expansion**
-
-In the context of a capacity expansion formulation, the model considers the option of adding more capacity to a system in a step-by-step manner over a defined time horizon. This approach is driven by the idea of strategically expanding the installed capacity of various components, such as power generation units or storage, to manage costs effectively, especially during the initial years when lower energy demand is anticipated.
-
-The multi-year formulation is a crucial prerequisite for implementing a capacity expansion concept. This approach enables the postponement of installing certain components' capacity, such as PV modules or battery banks, to later years based on the evolution of electricity demand. This flexibility helps avoid incurring large initial capital costs. Consequently, O&M costs become proportional to the actual capacity installed and utilized each year.
-
-.. tip::
-   **In the model**: in the capacity expansion formulation, the variables associated with component capacity are determined by decision steps (ut) within the time horizon. The user defines the number of decision steps, essentially dividing the time horizon. This user-defined parameter governs how finely the model considers the progression of time, allowing for a strategic and step-by-step approach to capacity expansion based on the evolving electricity demand.
-
-
-
 Brownfield
 ----------------------
 
@@ -693,6 +736,31 @@ Some of the related system **cost** such as the investment for RES, battery bank
     Units_{\text{x}}(ut = 1) - Units_{\text{x}}(inst)
 
 .. raw:: html
+
+**Parameters**
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter name
+     - Unit
+     - Description
+   * - RES_capacity
+     - Power (e.g. W)
+     - Existing RES nominal capacity
+   * - RES_years
+     - [years]
+     - How many years ago the component was installed 
+   * - Battery_capacity
+     - Energy (e.g. Wh)
+     - Existing Battery capacity
+   * - Generator_capacity 
+     - Power (e.g. W)
+     - Existing Generator capacity
+   * - GEN_years 
+     - [years]
+     - How many years ago the component was installed 
 
 
 Minute Resolution

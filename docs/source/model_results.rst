@@ -17,6 +17,31 @@ Key Functionalities:
 
 - **Pareto Front Generation**: For multi-objective optimization scenarios, it can compute a Pareto front to visualize the trade-offs between cost and CO2 emissions.
 
+.. code-block:: python
+
+    if Optimization_Goal == 1:
+        # Define the objective functions
+        model.f1 = Var()
+        model.C_f1 = Constraint(expr=model.f1 == model.Net_Present_Cost)
+        model.ObjectiveFunction = Objective(expr=model.f1, sense=minimize)
+        model.f2 = Var()
+        model.C_f2 = Constraint(expr=model.f2 == model.CO2_emission)
+        model.ObjectiveFunction1 = Objective(expr=model.f2, sense=minimize)
+
+        # Example of solver options and NPC, CO2 emission calculations
+        opt = SolverFactory('gurobi')
+        # Solver options vary based on the problem formulation (MILP or others)
+        opt.set_options('Method=3 BarHomogeneous=1 Crossover=1 MIPfocus=1 BarConvTol=1e-3 OptimalityTol=1e-3 FeasibilityTol=1e-4 TimeLimit=10000')
+        instance = model.create_instance(datapath)
+        opt.solve(instance, tee=True)
+        NPC_min = value(instance.ObjectiveFunction)
+        CO2emission_max = value(instance.ObjectiveFunction1)
+
+        # Plotting the Pareto Curve
+        # The Pareto curve is plotted to visualize the trade-off between NPC and CO2 emissions.
+        # Plotting code includes customization options for labels, legend, and resolution.
+
+   
 
 Implementation Highlights:
 

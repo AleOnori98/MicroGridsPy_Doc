@@ -95,6 +95,7 @@ As more generally in constrained optimisation, the following terms are also used
 --------------------------------------------------------------------------------------------------------------------
 
 
+
 Inputs
 -------------
 MicroGridsPy models are defined, mainly, through .py files, which are both human-readable and computer-readable, .csv files (simple tabular format) for time series and .dat files for data inputs. All the input files are collected inside a single directory called 'Inputs'. The layout of that directory typically looks roughly like this:
