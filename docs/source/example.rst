@@ -97,11 +97,8 @@ These prospective enhancements will not only heighten the model's precision but 
 
 Capacity Expansion and Increasing Fuel Cost
 ---------------------------------------------
-
 This new simulation is designed to reflect the dynamic nature of energy needs in rural communities and the economic pressures that come with fuel-based generation. 
 By introducing capacity expansion every five years and modeling a 5% annual increase in fuel cost, the aim is to capture the potential shifts in technology usage and financial metrics, thereby providing a more realistic depiction of a mini-grid's performance over time.
-
-.. raw:: html
 
 .. raw:: html
 
@@ -146,9 +143,6 @@ By introducing capacity expansion every five years and modeling a 5% annual incr
        <div class="carousel-item">
          <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.13.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
        </div>
-       <div class="carousel-item">
-         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/1/2.14.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
-       </div>
      </div>
     <a class="carousel-control-prev" href="#uniqueCarouselExample" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -174,7 +168,68 @@ One of the most critical financial indicators, the Levelized Cost of Electricity
 
 Curtailment has also increased to 11.24%, up from 4.83% in the default model. This is an expected outcome in systems with significant renewable energy penetration, where excess generation capacity is installed to ensure reliability. However, this also indicates that there is room for optimization, possibly through better demand-side management or further technological enhancements.
 
+Grid Connection
+------------------
+
+.. raw:: html
+
+  <div id="uniqueCarouselExample" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/2/2.1.png?raw=true" class="d-block w-100" alt="Dispatch Strategy">
+      </div>
+      <div class="carousel-item">
+        <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/2/2.2.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+      </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/2/2.3.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/2/2.4.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/2/2.5.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/2/2.6.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/2/2.7.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/2/2.8.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/2/2.9.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/2/2.10.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/2/2.11.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/2/2.12.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/2/2.13.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/2/2.14.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+     </div>
+    <a class="carousel-control-prev" href="#uniqueCarouselExample" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#uniqueCarouselExample" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
 MILP Formulation
 ---------------------------------------------
-This iteration of the model employs a Mixed-Integer Linear Programming (MILP) framework, strategically designed to simulate a decade-long operation of mini-grids with two intervals of capacity expansion. The MILP paradigm introduces binary decision variables to address unit commitment issues, allowing for a precise representation of start-up and shut-down activities of power generation units. This inclusion significantly elevates the computational complexity due to the combinatorial nature of decision variables, which exponentially increases the solution space. Consequently, the simulation meticulously quantifies the trade-offs between generation costs and reliability over the course of 10 years, ensuring that the capacity expansion aligns with both demand projection and economic constraints. 
+This iteration of the model employs a Mixed-Integer Linear Programming (MILP) framework, strategically designed to simulate a decade-long operation of mini-grids with two intervals of capacity expansion. The MILP paradigm introduces binary decision variables to address unit commitment issues, allowing for a precise representation of start-up and shut-down activities of power generation units. 
+This inclusion significantly elevates the computational complexity due to the combinatorial nature of decision variables, which exponentially increases the solution space. 
+Consequently, the simulation quantifies the trade-offs between generation costs and reliability over the course of 10 years.
