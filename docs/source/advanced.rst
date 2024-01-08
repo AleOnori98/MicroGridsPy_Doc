@@ -66,14 +66,83 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 
     </div>
 
+.. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/wacc.png?raw=true
+     :width: 500
+     :align: center
+
+     WACC as function of the leverage, for different values of return on equity and return on debt [1].
+
+  
+In general, the higher the equity E is invested in a project, the less risk is perceived by new lenders and the 
+more the cost of borrowing external capitals can reduce over the time, pushing for an increase of D. 
+Consequently, as the above graphs reflect, the WACC can be minimized by:
+* maximizing the level of equity E (i.e., minimizing L) in the case that the rate of return on debt (RD)
+  discounted of taxes (t) results greater than the rate of return on equity (RE); or
+* maximizing the level of debt D (i.e., maximizing L) in the case that the rate of return on equity (RE)
+  results greater than the rate of return on debt (RD) discounted of taxes (t).
+
+Finally, it is worth mentioning that the figures of RD and RE strongly depend on the 
+financing structure adopted for the project. As will be advanced in the following sections, a structure built with 
+a project finance approach can help in maximizing the leverage while keeping the return on debt low, if the 
+solidity of future cash flows is assumed [11].
 
 Multi-Objective Optimization
 --------------------------------
-The design of a reliable and appropriate off-grid energy system is usually critical. The energy needs of people who are susceptible to the uncertainty of possible energy consumption evolution through time must be considered, taking into consideration the site-specific characteristics of each target community.
+The design of a reliable and appropriate off-grid energy system is usually critical. 
+The energy needs of people who are susceptible to the uncertainty of possible energy consumption evolution through time must be considered, 
+taking into consideration the site-specific characteristics of each target community.
 
-In this field, energy system models can play a pivotal role in guiding informed policy decisions trying to capture the complexities related to the time-evolving boundary conditions, comparing alternative energy system configurations and energy mix combinations to find the optimal solution. One of the challenges identified in the current state-of-the-art microgrid optimal sizing tools is that the Net Present Cost alone is not a sufficient decision parameter in energy system sizing [2]
+In this field, energy system models can play a pivotal role in guiding informed policy decisions trying to capture the complexities related to the 
+time-evolving boundary conditions, comparing alternative energy system configurations and energy mix combinations to find the optimal solution. 
+One of the challenges identified in the current state-of-the-art microgrid optimal sizing tools is that the Net Present Cost alone is not a sufficient decision parameter in energy system sizing [2]
 
-Most optimization tools are focused on single-objective optimization that does not allow to capture the complexity of an intervention of rural electrification. A multi-objective two-stage stochastic approach is presented by Gou et al. [3]. The goals are to minimize the net present cost (NPC) and the pollutants emission using chance-constrained programming and a genetic algorithm as optimization techniques. Multi-objective optimization could be a solution to address economic, social and environmental objectives by evaluating different trade-off between these criteria, especially in the rural electrification sector where different stakeholders (companies, public institutions, NGOs) with different priorities are involved. This is crucial in this type of projects given the multiplicity of impacts on the community involved and the interconnection between them. The result of multi-objective optimization would be a Pareto frontier providing the decision maker with a more comprehensive view of the possible alternatives and allowing him to take more informed decisions. Exceptions to this are represented by Dufo-Lopez [4] that included a multi objective optimization on NPC, HDI and Job Creation and Petrelli [5] that optimizes on NPC, LCA emissions, Land Use and Job Creation.
+Most optimization tools are focused on single-objective optimization that does not allow to capture the complexity of an intervention of rural electrification. 
+A multi-objective two-stage stochastic approach is presented by Gou et al. [3]. The goals are to minimize the net present cost (NPC) and the pollutants emission using chance-constrained programming and a genetic algorithm as optimization techniques. 
+Multi-objective optimization could be a solution to address economic, social and environmental objectives by evaluating different trade-off between these criteria, especially in the rural electrification sector where different stakeholders 
+(companies, public institutions, NGOs) with different priorities are involved. This is crucial in this type of projects given the multiplicity of impacts on the community involved and the interconnection between them. 
+The result of multi-objective optimization would be a Pareto frontier providing the decision maker with a more comprehensive view of the possible alternatives and allowing him to take more informed decisions. 
+Exceptions to this are represented by Dufo-Lopez [4] that included a multi objective optimization on NPC, HDI and Job Creation and Petrelli [5] that optimizes on NPC, LCA emissions, Land Use and Job Creation.
+
+**Description of Integration**
+
+The integration of multi-objective optimization within the MicroGridsPy model is a sophisticated approach that allows for the balancing of different and often conflicting objectives, such as minimizing costs while also reducing CO2 emissions. 
+This method is essential in projects with multiple stakeholders having varying priorities, such as rural electrification projects.
+
+* Objective Function Definition: Two objectives are defined within the model: model.f1 for the Net Present Cost (NPC) and model.f2 for CO2 emissions.
+  The Objective expressions for these variables are declared, setting the sense to minimize, indicating that both objectives seek minimization.
+* Solver Configuration and Initial Calculation:The model employs the Gurobi solver with different settings for Mixed Integer Linear Programming (MILP) formulations and others.
+  Initial calculations are made to determine the minimum NPC and maximum CO2 emissions, and vice versa, which are crucial for understanding the range of the Pareto frontier.
+* Epsilon Constraint Method for Pareto Frontier: The model then uses the epsilon constraint method, a popular approach in multi-objective optimization.
+  This method involves systematically varying one objective within its feasible range (in this case, the CO2 emission) and optimizing the other objective (NPC or Operation Cost).
+  For each step, the model deactivates one objective and activates the other, ensuring that only one objective is optimized at a time.
+* Plotting the Pareto Frontier: A Pareto curve is plotted, displaying the trade-off between the two objectives.
+  This visualization is crucial as it provides decision-makers with a clear representation of the possible outcomes and the trade-offs involved.
+* Selection of Optimal Solutions: The model allows the selection of specific points on the Pareto frontier based on user preference, represented by the variable p in the code.
+  This flexibility is key in multi-objective optimization, as it accommodates different preferences and priorities.
+
+.. code-block:: python
+
+    if Optimization_Goal == 1:
+        # Define the objective functions
+        model.f1 = Var()
+        model.C_f1 = Constraint(expr=model.f1 == model.Net_Present_Cost)
+        model.ObjectiveFunction = Objective(expr=model.f1, sense=minimize)
+        model.f2 = Var()
+        model.C_f2 = Constraint(expr=model.f2 == model.CO2_emission)
+        model.ObjectiveFunction1 = Objective(expr=model.f2, sense=minimize)
+
+        # Example of solver options and NPC, CO2 emission calculations
+        opt = SolverFactory('gurobi')
+        # Solver options vary based on the problem formulation (MILP or others)
+        opt.set_options('Method=3 BarHomogeneous=1 Crossover=1 MIPfocus=1 BarConvTol=1e-3 OptimalityTol=1e-3 FeasibilityTol=1e-4 TimeLimit=10000')
+        instance = model.create_instance(datapath)
+        opt.solve(instance, tee=True)
+        NPC_min = value(instance.ObjectiveFunction)
+        CO2emission_max = value(instance.ObjectiveFunction1)
+
+        # Plotting the Pareto Curve
+        # The Pareto curve is plotted to visualize the trade-off between NPC and CO2 emissions.
+        # Plotting code includes customization options for labels, legend, and resolution.
 
 
 RES Time Series Estimation
@@ -837,3 +906,5 @@ References
        Renewable and Sustainable Energy Transition 2023, 3, 100053
 .. [9] J.M. Bright, C.J. Smith, P.G. Taylor, R. Crook, Stochastic generation of synthetic minutely irradiance time series derived from mean hourly weather                 observation data, Solar Energy, Volume 115, 2015, pp. 229-242,
 .. [10] Petrelli, M.; Fioriti, D.; Berizzi, A.; Poli, D. “Multi-Year Planning of a Rural Microgrid Considering Storage Degradation.” IEEE Transactions on Power             Systems 2021, 36, 1459–1469
+.. [11] Baker R, Benoit P. How project finance can advance the clean energy transition in developing countries. 
+        Oxford Institute for Energy Studies; 2022
