@@ -32,6 +32,7 @@ Below is the detailed folder structure:
     │   ├── tmp
     │   │   └── ...
     │   └── User Interface
+    │   │   └── app_main.py
     │   │   └── ...
     |   └── README.txt
     ├── .gitignore

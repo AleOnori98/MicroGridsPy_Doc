@@ -34,7 +34,7 @@ Here below is a general introduction to the different steps in building and runn
 ------------------------------------------------------------------------------------------------
 
 Data Input Interface and Parameters
-=================================
+======================================
 
 The graphical user interface (GUI) application provides a user-friendly way to define and input data for MicroGridsPy. 
 Run the ``app_main.py`` file located into the **Code/User Interface** folder using the prefered IDE (e.g. Spyder) to open the interface and interact with it.
