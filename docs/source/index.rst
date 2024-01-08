@@ -53,6 +53,7 @@ Table of Contents
    :maxdepth: 2
    :caption: Developers Guide
 
+   folder
    model_structure
    formulation
    model_results
