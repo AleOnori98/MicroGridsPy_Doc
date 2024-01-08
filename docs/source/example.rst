@@ -4,7 +4,8 @@ Example Gallery
 
 Case Study
 -------------
-In this exemplative case study, the focus is on a rural village situated in the Sub-Saharan region of Africa, precisely in Bangweulu Wetlands, Zambia. This location benefits from a solar-rich environment typical of the Sub-Saharan climate, making it an ideal candidate for photovoltaic (PV) systems. With a nominal power capacity of 1000 kW, the PV installation is optimized with a tilt angle of 10 degrees to harness the high solar potential and an azimuth of 180 degrees for optimal sun tracking throughout the year.
+In this exemplative case study, the focus is on a rural village situated in the Sub-Saharan region of Africa, precisely in Bangweulu Wetlands, Zambia. 
+This location benefits from a solar-rich environment typical of the Sub-Saharan climate, making it an ideal candidate for photovoltaic (PV) systems. With a nominal power capacity of 1000 kW, the PV installation is optimized with a tilt angle of 10 degrees to harness the high solar potential and an azimuth of 180 degrees for optimal sun tracking throughout the year.
 
 .. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/case%20study.png?raw=true
    :width: 700
@@ -13,8 +14,17 @@ In this exemplative case study, the focus is on a rural village situated in the 
    Global Solar Atlas - Bangweulu Wetlands, Zambia.
 
 
-The chosen site's geographic and climatic conditions are favorable for renewable energy projects, with abundant sunlight and moderate albedo effects contributing to the efficiency of solar power generation. The specified tilt and azimuth angles are particularly well-suited to the region’s latitude, ensuring that the solar panels receive maximum irradiance during peak sun hours. 
-The RES time series are generated endogenously using NASA POWER data and the build-in Sub-Sahara archetypes. 
+The chosen site's geographic and climatic conditions are favorable for renewable energy projects, with abundant sunlight and moderate albedo effects contributing to the efficiency of solar power generation. 
+The specified tilt and azimuth angles are particularly well-suited to the region’s latitude, ensuring that the solar panels receive maximum irradiance during peak sun hours. 
+The RES time series are generated endogenously using NASA POWER data ad well as the load curve demand starting from the built-in archetypes.
+
+.. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/demand_curve.png?raw=true
+   :width: 700
+   :align: center
+   
+   Case study estimated load curve demand.
+
+
 
 Default Scenario
 ----------------
