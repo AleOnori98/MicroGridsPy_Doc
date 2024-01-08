@@ -32,20 +32,6 @@ The images gallery below visualizes the interface windows, simulation outcomes, 
 .. raw:: html
 
    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to=""></li>
-        </ol>
      <div class="carousel-inner">
        <div class="carousel-item active">
          <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/Default/1.1.png?raw=true" class="d-block w-100" alt="Dispatch Strategy">
