@@ -38,6 +38,7 @@ The following table provides a detailed overview of the parameters used in the C
 
 Weighted Average Cost of Capital
 ---------------------------------
+
 The financial modeling approach introduced in [1] aims to go beyond traditional energy modeling by incorporating the Weighted Average Cost of Capital (WACC) in place of the standard discount rate. The WACC represents the average cost of capital based on the project's financing structure and is defined as the minimum return that would make the investment profitable.
 
 **Financing Mini-Grids in Africa**
@@ -51,18 +52,7 @@ The mini-grid sector in sub-Saharan Africa, although a cost-effective solution f
 
 These financial parameters are used to calculate the Weighted Average Cost of Capital (WACC), including the costs of equity and debt, the corporate tax rate, and the proportions of equity and debt in the total investment.
 
-.. raw:: html
 
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
-
-.. raw:: html
-
-    <div class="equation-container">
 
 .. math::
 
@@ -80,9 +70,7 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 
     L = \frac{D}{E} \quad (3)
 
-.. raw:: html
 
-    </div>
 
 .. raw:: html
 
@@ -224,26 +212,10 @@ RES Time Series Estimation
 
 temperature on the PV cell
 
-.. raw:: html
-
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
-
-.. raw:: html
-
-    <div class="equation-container">
-
 .. math::
 
    T^{PV} = T^{amb} + \frac{NOCT-20}{800} \times I^{T,\beta}
 
-.. raw:: html
-
-    </div>
 
 - **Wind turbine generation**
 
@@ -348,6 +320,86 @@ RES parameters which are non-editable. Advanced parameters used for developers:
      - User key
 
 -----------------------------------------------------------------------
+
+Load Demand Estimation
+------------------------
+MicroGridsPy's Load Demand Estimation feature, as detailed in [12], employs a unique approach by categorizing rural energy users into specific archetypes based on factors such as location, socio-economic status, and facility type. 
+For example, it differentiates between residential users, schools, and health centers, recognizing the varied energy usage patterns of each group. 
+This allows for more accurate and tailored predictions of energy demand, crucial for effective planning and management of microgrids in Sub-Saharan Africa. 
+The model addresses regional differences by adjusting for latitude and climate variations, ensuring relevance and adaptability to diverse rural environments.
+
+The methodology utilizes three primary parameters: Wealth Tier, Latitude, and Number of Cooling Days, to create user archetypes for households, schools, and health centers. These archetypes consider variations in appliance usage, climate impacts on energy demand, and geographic differences. 
+This approach results in 100 (5×5×4) archetypes of household users, characterized by different set of appliances (wealth parameter), seasonal variations in the time of use of the appliances (latitude parameter) and different seasonal use of ambient cooling devices (climate zone parameter). 
+The methodology is adept at capturing variations in energy usage without needing extensive field surveys, making it suitable for diverse geographic and socio-economic contexts.
+
+Five Health Facilities archetypical loads based on the kind of Health Centre and 1 archetypical load for a rural primary school. Such user classes are then used to feed the bottom-up stochastic load curve generator model RAMP and built up into the community load following:
+
+.. math::
+
+   P_{total} = \sum_{i} N_{i,j,k} \times P_{i,j,k} + N_{health} \times P_{health} + N_{school} \times P_{school}
+
+where:
+
+- :math:`P_{total}` is the total load of the designed village
+- :math:`N_{i,j,k}` is the number of households in wealth tier :math:`i`, climate zone :math:`j`, and latitude :math:`k`
+- :math:`P_{i,j,k}` is the load of the household in wealth tier :math:`i`, climate zone :math:`j`, and latitude :math:`k`
+- :math:`N_{health}` is the number of health facilities in the village
+- :math:`P_{health}` is the load of the health facility
+- :math:`N_{school}` is the number of schools in the village
+- :math:`P_{school}` is the load of the school
+
+**Parameters**
+
+The archetypical load curves are located into the 'Demand_Archetypes' folder and the related parameters are listed below:
+
+.. list-table:: 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Parameter Name
+     - Unit
+     - Description
+   * - demand_growth
+     - [%]
+     - Yearly expected average variation of the demand
+   * - cooling_period
+     - Text
+     - Cooling period (NC = No Cooling; AY = All Year; OM = Oct-Mar; AS = Apr-Sept)
+   * - h_tier1
+     - [-]
+     - Number of households in wealth tier 1
+   * - h_tier2
+     - [-]
+     - Number of households in wealth tier 2
+   * - h_tier3
+     - [-]
+     - Number of households in wealth tier 3
+   * - h_tier4
+     - [-]
+     - Number of households in wealth tier 4
+   * - h_tier5
+     - [-]
+     - Number of households in wealth tier 5
+   * - schools
+     - [-]
+     - Number of schools
+   * - hospital_1
+     - [-]
+     - Number of hospitals of type 1
+   * - hospital_2
+     - [-]
+     - Number of hospitals of type 2
+   * - hospital_3
+     - [-]
+     - Number of hospitals of type 3
+   * - hospital_4
+     - [-]
+     - Number of hospitals of type 4
+   * - hospital_5
+     - [-]
+     - Number of hospitals of type 5
+
+-----------------------------------------------------------------------------------
 
 MILP Formulation
 ---------------------
@@ -963,3 +1015,5 @@ References
 .. [10] Petrelli, M.; Fioriti, D.; Berizzi, A.; Poli, D. “Multi-Year Planning of a Rural Microgrid Considering Storage Degradation.” IEEE Transactions on Power             Systems 2021, 36, 1459–1469
 .. [11] Baker R, Benoit P. How project finance can advance the clean energy transition in developing countries. 
         Oxford Institute for Energy Studies; 2022
+.. [12] N. Stevanato, I. Sangiorgio, R. Mereu and E. Colombo, "Archetypes of Rural Users in Sub-Saharan Africa for Load Demand Estimation," 
+        2023 IEEE PES/IAS PowerAfrica, Marrakech, Morocco, 2023, pp. 1-5, doi: 10.1109/PowerAfrica57932.2023.10363287.
