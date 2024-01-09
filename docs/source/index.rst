@@ -7,7 +7,7 @@ MicroGridsPy's Documentation
 
 
 
-.. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Mgpy_Scheme.png?raw=true
+.. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Mgpy_Scheme.png
    :width: 500
    :align: center
 
@@ -61,5 +61,5 @@ Table of Contents
    formulation
    model_results
    troubleshooting
-   API
+   api
 
