@@ -46,6 +46,7 @@ html_extra_path = ['robots.txt']
 #    "use_repository_button": True,
 #    "show_navbar_depth": 1,
 #}
+
 html_theme = 'pydata_sphinx_theme'
 
 html_static_path = ['_static']
