@@ -12,31 +12,33 @@
 }
 
 /* Increase the base text color contrast */
-body {
+.wy-nav-content p, .wy-nav-content li, .wy-nav-content span {
     color: #1a1a1a; /* very dark gray, almost black */
 }
 
-/* Make code elements stand out */
-code, pre {
+.wy-nav-content code, 
+.wy-nav-content pre {
     color: #000000; /* black */
     background-color: #f8f8f8; /* very light gray */
     border: 1px solid #eaeaea; /* light gray border */
 }
 
-/* Enhance headers for better visibility */
-h1, h2, h3, h4, h5, h6 {
+.wy-nav-content h1, 
+.wy-nav-content h2, 
+.wy-nav-content h3, 
+.wy-nav-content h4, 
+.wy-nav-content h5, 
+.wy-nav-content h6 {
     color: #333333; /* dark gray */
     font-weight: bold; /* makes the font bold */
 }
 
-/* Adjust note background */
-div.admonition.note {
+.wy-nav-content div.admonition.note {
     background-color: #e7f5fe; /* Light blue background for notes */
     border-color: #b3d4fc; /* Matching light blue border */
 }
 
-/* Adjust warning background */
-div.admonition.warning {
+.wy-nav-content div.admonition.warning {
     background-color: #fff3cd; /* Light yellow background for warnings */
     border-color: #ffeeba; /* Matching light yellow border */
 }
