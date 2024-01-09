@@ -88,15 +88,13 @@ The images gallery below visualizes the interface windows, simulation outcomes, 
 
 **Results Interpretation**
 
-In the foundational simulation scenario, the energy composition is substantially influenced by renewable sources, resulting in a renewable penetration rate of 77.38%. This approach is bolstered by a 34.87% utilization of battery storage, which plays a critical role in energy continuity. Despite the emphasis on renewables, diesel generators contribute a notable 23.13% to the energy provision. This contribution is particularly significant given that it addresses supply shortfalls when renewable generation and battery storage do not fully meet the demand.
+In the default scenario, the energy composition is substantially influenced by renewable sources, resulting in a renewable penetration rate of 77.38%. This approach is bolstered by a 34.87% utilization of battery storage, which plays a critical role in energy continuity. 
+Despite the emphasis on renewables, diesel generators contribute a notable 23.13% to the energy provision. This contribution is particularly significant given that it addresses supply shortfalls when renewable generation and battery storage do not fully meet the demand.
+Reguarding costs, Net Present Cost (NPC) is equal to about 132 kUSD while LCOE (representing an ideal and simplified tariff for the users) is 0.2562 USD/kWh. 
 
 The financial trajectory, as depicted in the Cash Flow Plot, suggests a gradual uptick in diesel generator reliance. This pattern underscores the need for expanded generation capacity to accommodate the ascending energy demand. However, such reliance on diesel generation is not statically doomed to increase unchecked. The model is equipped to simulate escalating fuel costs annually, providing an economic counterbalance to generator dependence. By incorporating the reality of rising fuel costs, the model adds an economic impetus for investing in more renewable sources and storage solutions over time.
 
-It is pivotal to recognize that the current modeling framework is built upon Linear Programming (LP) principles, without incorporating the intricacies of Mixed-Integer Linear Programming (MILP) or nuanced features like generator partial load effects. The model's financial assessments are predicated on a consistent interest rate, rather than employing the more dynamic Weighted Average Cost of Capital (WACC), which could yield a more layered financial analysis conducive to strategic planning for energy infrastructure.
-
-Anticipated enhancements to the model will include the integration of capacity expansion strategies, refined modeling of generator operations to include partial load effects, and a transition to WACC for a more detailed financial outlook. Moreover, with the capacity to simulate incremental fuel costs, the model will offer insights into how escalating operational expenses might naturally curtail reliance on fossil-fuel generators, thus reinforcing the economic viability of renewable solutions.
-
-These prospective enhancements will not only heighten the model's precision but will also facilitate the development of more sustainable and economically sound energy systems for rural mini-grids, thereby supporting the transition towards cleaner and more resilient energy infrastructures.
+The following simulations will include the integration of capacity expansion strategies, refined modeling of generator operations to include partial load effects, and a transition to WACC for a more detailed financial outlook. Moreover, with the capacity to simulate incremental fuel costs, the model will offer insights into how escalating operational expenses might naturally curtail reliance on fossil-fuel generators, thus reinforcing the economic viability of renewable solutions.
 
 
 Capacity Expansion and Increasing Fuel Cost
@@ -163,13 +161,9 @@ By introducing capacity expansion every five years and modeling a 5% annual incr
 **Result Interpretaion**
 
 Notably, there is an increase in average renewable penetration per year, which has risen to an impressive 96.37%. This suggests that the capacity expansion allowed every five years is effectively mitigating the increased demand, allowing renewables to maintain a dominant role in the energy mix.
-
 The battery bank's average usage per year has also seen a significant uptick to 50.83%, likely due to the expanded capacity that supports higher levels of storage and dispatchability to manage the variability of renewable sources. This is a substantial improvement from the 34.87% utilization in the default scenario, highlighting the benefits of aligning storage capabilities with generation capacity.
-
 Diesel generator usage has dramatically decreased to a mere 4.04% share per year, down from 23.13% in the default model. This can be attributed to the dual strategy of expanding renewable capacity and the deterrent effect of the rising fuel costs, which make diesel generation less economically attractive.
-
 One of the most critical financial indicators, the Levelized Cost of Electricity (LCOE), has decreased from 0.2562 to 0.2376 USD/kWh. This reduction suggests that the increased investment in renewable capacity and the strategic use of battery storage are yielding a more cost-effective energy production mix over time, despite the initial higher investment costs and the increasing fuel costs.
-
 Curtailment has also increased to 11.24%, up from 4.83% in the default model. This is an expected outcome in systems with significant renewable energy penetration, where excess generation capacity is installed to ensure reliability. However, this also indicates that there is room for optimization, possibly through better demand-side management or further technological enhancements.
 
 Capacity Expansion and Grid Connection
@@ -304,6 +298,14 @@ This simulation is designed to test the Multi-Objective Optimization mode, setti
   </div>
 
 -----------------------------------------------
+
+**Results Interpretation**
+
+In the new scenario with Multi-Objective Optimization employing 3 Pareto points focusing on minimum emissions, there's a marked improvement in sustainability metrics. The high renewable penetration (89.82%) and significant battery utilization (44.61%) reflect an optimized balance between environmental goals and energy reliability. 
+The lowered generator share to 10.7% suggests a strategic reduction in carbon footprint.
+
+Contrastingly, the default scenario's Net Present Cost (NPC) of approximately 132 kUSD and a Levelized Cost of Energy (LCOE) of 0.2562 USD/kWh indicate a less sustainable but potentially more cost-effective initial setup. 
+The new scenario's higher NPC (143.6 kUSD) and LCOE (0.2788 USD/kWh) may represent increased upfront costs for greater long-term sustainability and lower emissions. This shift aligns with global trends towards decarbonizing energy systems, even at a higher initial investment.
 
 MILP Formulation
 ---------------------------------------------
