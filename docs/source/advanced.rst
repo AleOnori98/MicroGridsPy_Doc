@@ -12,6 +12,7 @@ In the context of a capacity expansion formulation, the model considers the opti
 The multi-year formulation is a crucial prerequisite for implementing a capacity expansion concept. This approach enables the postponement of installing certain components' capacity, such as PV modules or battery banks, to later years based on the evolution of electricity demand. This flexibility helps avoid incurring large initial capital costs. Consequently, O&M costs become proportional to the actual capacity installed and utilized each year.
 
 .. tip::
+
    **Multi-Year Formulation and Capacity Expansion in the model**: This approach drops the old consideration about the yearly demand for project lifetime which was the same and equal to a typical year of consumption for the study area. For this new concept, all the model constraints are estimated at each time step (t) of every year (yt) along the mini-grid lifetime. Thus, all equations involving time-dependent variables must be thus verified at all time steps (yt,t) of the optimization horizon.
    The variables associated with component capacity are determined by decision steps (ut) within the time horizon. The user defines the number of decision steps, essentially dividing the time horizon. This user-defined parameter governs how finely the model considers the progression of time, allowing for a strategic and step-by-step approach to capacity expansion based on the evolving electricity demand.
 
@@ -377,7 +378,7 @@ where:
 
 **Parameters**
 
-The archetypical load curves are located into the 'Demand_Archetypes' folder and the related parameters are listed below:
+The archetypesload curves are located into the 'Demand_Archetypes' folder and the related parameters are listed below:
 
 .. list-table:: 
    :widths: 25 25 50
@@ -670,11 +671,20 @@ This feature offers two methods to integrate fuel price variations into the mode
 
 The equation for the linear change in fuel cost is as follows:
 
+.. raw:: html
+
+    <div class="equation-container">
+
 .. math::
 
-    Fuel\_Cost_y = Fuel\_Cost_{\text{Start}} + y \times Fuel\_Cost_{\text{Change Rate}}
+    Fuel\_Cost_y = Fuel\_Cost_{\text{Start}} + y \times Fuel\_Cost_{\text{Change Rate}} 
 
-Where \( Fuel\_Cost_y \) is the fuel cost in year \( y \), \( Fuel\_Cost_{\text{Start}} \) is the initial cost, and \( Fuel\_Cost_{\text{Change Rate}} \) is the yearly rate of change. This feature allows for enhanced flexibility and realism in financial analyses of mini-grid systems.
+.. raw:: html
+
+    </div>
+
+
+where \( Fuel\_Cost_y \) is the fuel cost in year \( y \), \( Fuel\_Cost_{\text{Start}} \) is the initial cost, and \( Fuel\_Cost_{\text{Change Rate}} \) is the yearly rate of change. This feature allows for enhanced flexibility and realism in financial analyses of mini-grid systems.
 
 The integration of this feature may substantially influences the model's outcomes, particularly for operational costs, system design, and financial assessments, aligning it more closely with real-world scenarios in regions like rural Africa where fuel prices are highly volatile. This feature enhances the accuracy of operational expense estimation over the project's lifetime, crucial for effective budgeting and financial planning, and makes the model sensitive to fuel price changes, reflecting their true impact on mini-grid system costs. In terms of system design and optimization, variable fuel costs can influence the selection of technology, potentially making renewable sources more cost-effective as fuel prices rise. This may lead the model to prefer solutions with greater storage capacity or increased renewable energy integration to mitigate fuel price risks. For financial viability and investment decisions, the feature facilitates long-term financial planning by offering realistic fuel expense projections and enables comprehensive risk assessment considering fuel price volatility. Additionally, it allows for the analysis of the impact of fuel subsidies or taxes on project economics, providing valuable insights for policy-making. Overall, this feature significantly enhances MicroGridsPy's ability to simulate and evaluate energy systems under realistic economic conditions, especially in the context of rural electrification in developing countries where fuel price fluctuations are a major concern.
 
@@ -838,6 +848,7 @@ Battery Bank Degradation
 ----------------------------
 
 .. warning::
+  
     The following functionalities regarding Battery Bank Degradation are currently a work in progress and not yet fully implemented in the model.
 
 
