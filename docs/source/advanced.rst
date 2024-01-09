@@ -192,18 +192,23 @@ The following table provides a detailed overview of the parameters used in the M
 
 RES Time Series Estimation
 -----------------------------
-- **Solar PV generation**
+Renewable Energy Sources (RES) time series estimation in MicroGridsPy is an essential process for modeling and simulation of solar PV and wind turbine generation. This section outlines the key parameters and equations used for accurately estimating the energy production from these renewable sources.
 
+**Solar PV generation**
 
-temperature on the PV cell
+The energy production from solar PV is influenced by various factors including the temperature on the PV cell, calculated as follows:
 
 .. math::
 
    T^{PV} = T^{amb} + \frac{NOCT-20}{800} \times I^{T,\beta}
 
+where :math:`T^{PV}` is the temperature of the PV cell, :math:`T^{amb}` is the ambient temperature, :math:`NOCT` is the Nominal Operating Cell Temperature, and :math:`I^{T,\beta}` is the incident solar radiation.
 
-- **Wind turbine generation**
+**Wind turbine generation**
 
+Wind turbine generation is modeled considering factors like turbine type, efficiency, and wind speed. The power output from a wind turbine, given a specific wind speed, is calculated based on the turbine's power curve.
+
+**Parameters**
 
 RES parameters for production time series estimation in MicroGridsPy:
 
