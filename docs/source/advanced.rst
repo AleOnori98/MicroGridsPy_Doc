@@ -77,6 +77,15 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 
 .. raw:: html
 
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+.. raw:: html
+
     <div class="equation-container">
 
 .. math::
@@ -87,6 +96,14 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 
     </div>
 
+.. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
 
 .. raw:: html
 
@@ -520,6 +537,15 @@ The constraint to prevent the generator from exceeding its nominal capacity \( C
 
 .. raw:: html
 
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+.. raw:: html
+
     <div class="equation-container">
 
 .. math::
@@ -531,6 +557,15 @@ The constraint to prevent the generator from exceeding its nominal capacity \( C
     </div>
 
 The total operation cost of the generator for a period \( t \) and scenario \( s \) is represented as:
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
 
 .. raw:: html
 
@@ -572,6 +607,15 @@ The slope of the cost curve for part load generators is described as follows:
 
 .. raw:: html
 
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+.. raw:: html
+
     <div class="equation-container">
 
 .. math::
@@ -583,6 +627,15 @@ The slope of the cost curve for part load generators is described as follows:
     </div>
 
 The origin of the cost curve for part load generators, represented as a percentage of full load operational costs, is given by:
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
 
 .. raw:: html
 
@@ -624,6 +677,16 @@ The energy output of the genset, comprising full load and part load outputs, is 
 
 .. raw:: html
 
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+
+.. raw:: html
+
     <div class="equation-container">
 
 .. math::
@@ -636,6 +699,16 @@ The energy output of the genset, comprising full load and part load outputs, is 
 
 The total energy output is limited by the number of gensets available:
 
+.. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+  
 .. raw:: html
 
     <div class="equation-container">
@@ -852,6 +925,14 @@ The reliability of a national grid's electricity supply refers to the consistent
 
     </div>
 
+.. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
 
 .. raw:: html
 
