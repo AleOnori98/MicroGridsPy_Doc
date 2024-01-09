@@ -476,9 +476,6 @@ The archetypesload curves are located into the 'Demand_Archetypes' folder and th
 MILP Formulation
 ---------------------
 
-MILP Formulation
----------------------
-
 This section outlines the MILP formulation used in the model, which includes an integrated unit commitment approach to determine the optimal operation schedule of technologies units.
 
 The MILP optimization variables are integers, reflecting the discrete nature of the decision-making process in committing generator units. Capacity is now a parameter, indicative of fixed attributes of the system components.

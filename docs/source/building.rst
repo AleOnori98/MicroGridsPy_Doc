@@ -107,7 +107,7 @@ The application is organized into different pages, each tailored to a specific a
 
 .. note::
 
-   Refer to (:doc:`advanced`) for all the additional model parameters and their implementatiion within the model. 
+   Refer to (:doc:`advanced`#RES Time Series Estimation) for all the additional model parameters and their implementatiion within the model. 
    Refer to (:doc:`model_structure`) for insights about the specific python module functioning
 ------------------------------------------------------------------------------------------------
 
@@ -115,7 +115,7 @@ The application is organized into different pages, each tailored to a specific a
 
 .. note::
 
-   Refer to (:doc:`advanced`) for all the additional model parameters and their implementatiion within the model.
+   Refer to (:doc:`advanced`#Load Demand Estimation) for all the additional model parameters and their implementatiion within the model.
    Refer to (:doc:`model_structure`) for insights about the specific python module functioning 
 
 ------------------------------------------------------------------------------------------------
@@ -301,7 +301,7 @@ The application is organized into different pages, each tailored to a specific a
 This intuitive interface streamlines the data input process, making it easier than ever to design and optimize minigrids for rural villages using MicroGridsPy.
 
 .. note::
-  
+
   Please refer to the (:doc:`example`) for a better understanding of the parameter use within the user interface.
 
 ----------------------------------------------------------------------------------------------------------
