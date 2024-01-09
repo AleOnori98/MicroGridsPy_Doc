@@ -293,3 +293,74 @@ Insights
 
 The demand generation process within MicroGridsPy is a sophisticated sequence that simulates realistic energy consumption patterns based on various factors. This module's output provides a crucial input for the optimization model, enabling it to make informed decisions about energy resource allocation and system design.
 
+RES Time Series Estimation Module
+=================================
+
+Introduction
+------------
+The RES Time Series Estimation module is a core component of the MicroGridsPy framework. It is designed to accurately estimate solar and wind energy potential using data from NASA's POWER API. This module processes and interpolates the collected data to create a representative Typical Meteorological Year (TMY) for energy modeling.
+
+Data Collection and URL Generation
+----------------------------------
+The module starts by importing necessary parameters, including geographical coordinates and technological specifications. It constructs URLs for accessing NASA's POWER API data, tailored for both daily and hourly resolutions.
+
+.. code-block:: python
+
+    # Sample function to create API URLs
+    def URL_creation_d(Data_import):
+        # Logic to construct daily and hourly data URLs
+        return URL_1, URL_2
+
+Data Processing and Interpolation
+---------------------------------
+After data retrieval, the module processes the JSON responses. Bilinear interpolation is applied to estimate relevant daily and hourly parameters such as temperature, wind speed, and solar irradiance.
+
+.. code-block:: python
+
+    # Function for data processing and interpolation
+    def data_2D_interpolation(jsdata, ...):
+        # Bilinear interpolation logic for daily and hourly data
+        return param_daily_interp, param_hourly_interp
+
+Typical Meteorological Year (TMY) Calculation
+---------------------------------------------
+One of the module's key functions is to compute a TMY, using statistical methods to select the most representative year from the historical data.
+
+.. code-block:: python
+
+    # Function to determine the TMY
+    def typical_year_daily(param_daily, ...):
+        # Statistical analysis for TMY calculation
+        return best_years, param_typical_daily
+
+RES Calculation Module
+------------------------
+The module calculates the potential energy supply from solar and wind resources. It includes specific algorithms to determine solar irradiation on tilted surfaces and to estimate wind turbine electricity production.
+
+.. code-block:: python
+
+    # Solar energy calculation function
+    def hourly_solar(H_day, lat, ...):
+        # Solar irradiation estimation logic
+
+    # Wind energy production function
+    def P_turb(power_curve, ...):
+        # Wind turbine energy calculation logic
+
+Data Export
+-----------
+The final step involves aggregating the estimated data and exporting it to CSV format for further analysis and optimization within MicroGridsPy.
+
+.. code-block:: python
+
+    # Function for data export
+    def export(energy_PV, ...):
+        # Data aggregation and export logic
+
+Module Execution
+----------------
+The module can be executed as part of the larger MicroGridsPy setup or as a standalone script. The precision of the RES time series estimation is critical for the optimization and planning of microgrid systems.
+
+Insights
+----------
+The `RE_calculation.py` module exemplifies the comprehensive approach of MicroGridsPy in modeling renewable energy systems. Its accurate data processing and analysis capabilities are pivotal in optimizing microgrid solutions.
