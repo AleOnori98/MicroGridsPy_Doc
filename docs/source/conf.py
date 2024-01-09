@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'MicroGridsPy 2.0'
+project = 'MicroGridsPy'
 copyright = '2024, SESAM Polimi'
 author = 'SESAM Polimi'
 
 release = '0.1'
-version = '0.1.0'
+version = '2.0'
 
 # -- General configuration
 
