@@ -700,6 +700,15 @@ The equation for the linear change in fuel cost is as follows:
 
 .. raw:: html
 
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+.. raw:: html
+
     <div class="equation-container">
 
 .. math::
@@ -767,11 +776,24 @@ Regarding the **energy constraint** on this component, the maximum possible ener
 
 .. raw:: html
 
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+.. raw:: html
+
+    <div class="equation-container">
+
 .. math::
 
     E_{\text{grid}}(s,yt,t) \leq P_{\text{max grid}} * 1000
 
 .. raw:: html
+
+    </div>
 
 
 - **Grid Availability**
@@ -784,17 +806,43 @@ The reliability of a national grid's electricity supply refers to the consistent
 
 .. raw:: html
 
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+
+.. raw:: html
+
+    <div class="equation-container">
+
 .. math::
 
     G_{\text{yt,t}} = 0
 
 .. raw:: html
 
+    </div>
+
+
 
 - After grid-connection:
 
+.. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
 
 .. raw:: html
+
+    <div class="equation-container">
 
 .. math::
 
@@ -802,13 +850,21 @@ The reliability of a national grid's electricity supply refers to the consistent
 
 .. raw:: html
 
+    </div>
+
+
 .. raw:: html
+
+    <div class="equation-container">
 
 .. math::
 
     G_{\text{yt,t}} = 1 ; \text{if grid availability}
 
 .. raw:: html
+
+    </div>
+  
 
 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/GRID%20availability.png?raw=true
@@ -825,9 +881,21 @@ Brownfield
 The feature for brownfield investment introduced in [8], enables the optimization of mini-grids by considering technologies that were previously installed by others in the field. The model can now factor in existing components from previous installations when determining the most efficient and effective way to optimize the microgrid.
 
 .. tip::
+
    **In the model**: Regarding the constrainst related to **energy production** of each component at the first investment decision step (ut = 1) the energy yield has to be equal or higher than the energy produced by the capacity already installed on the field. 
 
 .. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+.. raw:: html
+
+    <div class="equation-container">
 
 .. math::
 
@@ -835,15 +903,30 @@ The feature for brownfield investment introduced in [8], enables the optimizatio
 
 .. raw:: html
 
+    </div>
+
 Some of the related system **cost** such as the investment for RES, battery bank and back-up generators and salvage value for RES and back-up generators, also suffer a slight modification so the already existing units aren't accounted in these calculation. Thus, at the cost of each technology at the first investment decision step is equal to the investment cost due to the total capacity installed in the first step minus the investment cost of the capacity already connected to the microgrid. In the equation shown previously the units section is changed into:
 
 .. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+.. raw:: html
+
+    <div class="equation-container">
 
 .. math::
 
     Units_{\text{x}}(ut = 1) - Units_{\text{x}}(inst)
 
 .. raw:: html
+
+    </div>
 
 **Parameters**
 
