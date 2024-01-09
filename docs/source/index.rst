@@ -52,6 +52,7 @@ Table of Contents
    running
    advanced
    example
+   contributors
 
 .. toctree::
    :maxdepth: 2
@@ -63,3 +64,8 @@ Table of Contents
    model_results
    troubleshooting
 
+.. toctree::
+   :maxdepth: 2
+   :caption: API Reference
+
+   api
