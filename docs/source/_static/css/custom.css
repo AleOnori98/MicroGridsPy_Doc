@@ -42,3 +42,9 @@
     background-color: #fff3cd; /* Light yellow background for warnings */
     border-color: #ffeeba; /* Matching light yellow border */
 }
+
+.side-by-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
