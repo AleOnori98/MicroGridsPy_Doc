@@ -1,4 +1,5 @@
 
+=============
 Contributors
 =============
 
@@ -22,6 +23,7 @@ Authors:
   EVN_DIDATTICA=evento&k_doc=44891&lang=EN&aa=2014&tab_ricerca=1>`_ : Scientific coordination
 
 Based on the original model by:
+
 * Sergio Balderrama  - Department of Mechanical and Aerospace Engineering, University of Liège / San Simon University, Centro Universitario de Investigacion 
   en Energia
 * Sylvain Quoilin    - Department of Mechanical Engineering Technology, KU Leuven
@@ -29,9 +31,9 @@ Based on the original model by:
 
 Communication, issues, bugs and contributions
 ----------------------------------------------
-We use github for tracking bugs, issues and suggestions related to Hypatia. Any communications
+We use github for tracking bugs, issues and suggestions related to MicroGridsPy. Any communications
 through email are welcomed.
 
 You may also follow us on social media like twitter or our official website to follow last news
-on Hypatia or our research. We are looking forward for future communications and contributions.
+on MicroGridsPy or our research. We are looking forward for future communications and contributions.
 

@@ -37,6 +37,7 @@ Techniques for optimization under uncertainty
 
 Why MicroGridsPy is developed?
 =========================================
+
 **MicroGridsPy** is a *sophisticated and comprehensive analytical model* which provides a solution to the problem of sizing and dispatch of energy in microgrids in isolated places at a village scale with a time resolution of 1 hour and time-evolving load demand. The model is based on *two-stage stochastic optimization*, where the main optimization variables are divided into first-stage variables (rated capacities of each energy source) and second-stage variables (energy flows from the different components), to deal with the high level of uncertainty associated with renewable energy potential forecasts and the complex dynamics that govern the current and future evolution of electricity consumption in rural settings (parametric uncertainty), while LP or MILP formulation can be used to tackle the imperfect mathematical representation of component operation (structural uncertainty), mainly related to the modelling of non-linear behaviour. 
 
 MicroGridsPy has been developed in a collaborative effort aiming at providing a **free and easy-to-access tool** for practitioners in the field of microgrids. Therefore it is released as `open-source <https://github.com/SESAM-Polimi/MicroGridsPy-SESAM>`_ and it can also be adapted to user needs, projects characteristics and/or technical and/or economic context of each project. This **open-science approach** is also selected to increase the transparency and reproducibility of the proposed methods [8].
@@ -60,6 +61,10 @@ MicroGridsPy in academic literature
 
 * Giacomo Crevani, Castro Soares, Emanuela Colombo, *"Modelling Financing Schemes for Energy System Planning: A Mini-Grid Case Study"*, ECOS **2023**, pp. 
   1958-1969 
+
+* N. Stevanato, I. Sangiorgio, R. Mereu and E. Colombo, "*Archetypes of Rural Users in Sub-Saharan Africa for Load Demand Estimation*", 
+  2023 IEEE PES/IAS PowerAfrica, Marrakech, Morocco, **2023**, pp. 1-5, doi: 10.1109/PowerAfrica57932.2023.10363287.
+
 
 
 
