@@ -234,6 +234,15 @@ The energy production from solar PV is influenced by various factors including t
 
 .. raw:: html
 
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+    
+.. raw:: html
+
     <div class="equation-container">
 
 .. math::
@@ -366,6 +375,15 @@ This approach results in 100 (5×5×4) archetypes of household users, characteri
 The methodology is adept at capturing variations in energy usage without needing extensive field surveys, making it suitable for diverse geographic and socio-economic contexts.
 
 Five Health Facilities archetypical loads based on the kind of Health Centre and 1 archetypical load for a rural primary school. Such user classes are then used to feed the bottom-up stochastic load curve generator model RAMP and built up into the community load following:
+
+.. raw:: html
+
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
 
 .. raw:: html
 
