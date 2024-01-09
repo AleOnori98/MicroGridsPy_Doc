@@ -53,36 +53,21 @@ The mini-grid sector in sub-Saharan Africa, although a cost-effective solution f
 These financial parameters are used to calculate the Weighted Average Cost of Capital (WACC), including the costs of equity and debt, the corporate tax rate, and the proportions of equity and debt in the total investment.
 
 
-
 .. math::
 
     V = D + E \quad (2)
 
-.. raw:: html
-
-    </div>
-
-.. raw:: html
-
-    <div class="equation-container">
 
 .. math::
 
     L = \frac{D}{E} \quad (3)
 
 
-
-.. raw:: html
-
-    <div class="equation-container">
-
 .. math::
 
     WACC = \frac{R_D \cdot (1 - t)}{1 + L} + \frac{R_E}{1 + L} \quad (4)
 
-.. raw:: html
 
-    </div>
 
 It is worth noticing that being the leverage L in a [0; +infinite) domain, WACC varies depending on the parameters above mentioned, and can be 
 qualitatively depicted as:
