@@ -18,12 +18,6 @@ The chosen site's geographic and climatic conditions are favorable for renewable
 The specified tilt and azimuth angles are particularly well-suited to the region’s latitude, ensuring that the solar panels receive maximum irradiance during peak sun hours. 
 The RES time series are generated endogenously using NASA POWER data ad well as the load curve demand starting from the built-in archetypes.
 
-.. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/demand_curve.png?raw=true
-   :width: 700
-   :align: center
-   
-   Case study estimated load curve demand.
-
 
 
 Default Scenario
