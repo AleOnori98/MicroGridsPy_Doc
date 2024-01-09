@@ -55,6 +55,15 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 
 .. raw:: html
 
+    <style>
+    .equation-container {
+        width: 100%;
+        display: block;
+    }
+    </style>
+
+.. raw:: html
+
     <div class="equation-container">
 
 .. math::
@@ -373,8 +382,8 @@ Five Health Facilities archetypical loads based on the kind of Health Centre and
 
 where:
 
-- P  is the total load of the designed village
-- N is the number of households in wealth tier i, climate zone j and latitude k
+* P  is the total load of the designed village
+* N is the number of households in wealth tier i, climate zone j and latitude k
 
 **Parameters**
 
@@ -848,7 +857,7 @@ Battery Bank Degradation
 ----------------------------
 
 .. warning::
-  
+
     The following functionalities regarding Battery Bank Degradation are currently a work in progress and not yet fully implemented in the model.
 
 
