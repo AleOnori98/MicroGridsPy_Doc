@@ -45,6 +45,7 @@ Table of Contents
    :maxdepth: 2
    :caption: User Guide
 
+   index
    intro
    installation
    building
