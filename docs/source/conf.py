@@ -43,9 +43,9 @@ html_extra_path = ['robots.txt']
 html_theme = 'pydata_sphinx_theme'
 
 html_theme_options = {
-    "repository_url": "https://github.com/SESAM-Polimi/MicroGridsPy-SESAM",
-    "use_repository_button": True,
-    "show_navbar_depth": 1,
+#    "repository_url": "https://github.com/SESAM-Polimi/MicroGridsPy-SESAM",
+#    "use_repository_button": True,
+#    "show_navbar_depth": 1,
 }
 
 html_static_path = ['_static']
