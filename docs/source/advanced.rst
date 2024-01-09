@@ -52,20 +52,44 @@ The mini-grid sector in sub-Saharan Africa, although a cost-effective solution f
 
 These financial parameters are used to calculate the Weighted Average Cost of Capital (WACC), including the costs of equity and debt, the corporate tax rate, and the proportions of equity and debt in the total investment.
 
+.. raw:: html
+
+    <div class="equation-container">
 
 .. math::
 
     V = D + E \quad (2)
 
+.. raw:: html
+
+    </div>
+
+
+.. raw:: html
+
+    <div class="equation-container">
 
 .. math::
 
     L = \frac{D}{E} \quad (3)
 
+.. raw:: html
+
+    </div>
+
+
+.. raw:: html
+
+    <div class="equation-container">
 
 .. math::
 
     WACC = \frac{R_D \cdot (1 - t)}{1 + L} + \frac{R_E}{1 + L} \quad (4)
+
+.. raw:: html
+
+    </div>
+    
 
 
 
@@ -198,11 +222,20 @@ Renewable Energy Sources (RES) time series estimation in MicroGridsPy is an esse
 
 The energy production from solar PV is influenced by various factors including the temperature on the PV cell, calculated as follows:
 
+.. raw:: html
+
+    <div class="equation-container">
+
 .. math::
 
-   T^{PV} = T^{amb} + \frac{NOCT-20}{800} \times I^{T,\beta}
+    T^{PV} = T^{amb} + \frac{NOCT-20}{800} \times I^{T,\beta}
 
-where :math:`T^{PV}` is the temperature of the PV cell, :math:`T^{amb}` is the ambient temperature, :math:`NOCT` is the Nominal Operating Cell Temperature, and :math:`I^{T,\beta}` is the incident solar radiation.
+.. raw:: html
+
+    </div>
+
+
+where T is the temperature NOCT is the Nominal Operating Cell Temperature, and I is the incident solar radiation.
 
 **Wind turbine generation**
 
@@ -324,19 +357,23 @@ The methodology is adept at capturing variations in energy usage without needing
 
 Five Health Facilities archetypical loads based on the kind of Health Centre and 1 archetypical load for a rural primary school. Such user classes are then used to feed the bottom-up stochastic load curve generator model RAMP and built up into the community load following:
 
+.. raw:: html
+
+    <div class="equation-container">
+
 .. math::
 
-   P_{total} = \sum_{i} N_{i,j,k} \times P_{i,j,k} + N_{health} \times P_{health} + N_{school} \times P_{school}
+    P_{total} = \sum_{i} N_{i,j,k} \times P_{i,j,k} + N_{health} \times P_{health} + N_{school} \times P_{school}
+
+.. raw:: html
+
+    </div>
+
 
 where:
 
-- :math:`P_{total}` is the total load of the designed village
-- :math:`N_{i,j,k}` is the number of households in wealth tier :math:`i`, climate zone :math:`j`, and latitude :math:`k`
-- :math:`P_{i,j,k}` is the load of the household in wealth tier :math:`i`, climate zone :math:`j`, and latitude :math:`k`
-- :math:`N_{health}` is the number of health facilities in the village
-- :math:`P_{health}` is the load of the health facility
-- :math:`N_{school}` is the number of schools in the village
-- :math:`P_{school}` is the load of the school
+- P  is the total load of the designed village
+- N is the number of households in wealth tier i, climate zone j and latitude k
 
 **Parameters**
 
