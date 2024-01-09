@@ -107,7 +107,7 @@ The application is organized into different pages, each tailored to a specific a
 
 .. note::
 
-   Refer to (:doc:`advanced`#RES Time Series Estimation) for all the additional model parameters and their implementatiion within the model. 
+   Refer to (:doc:`advanced`) for all the additional model parameters and their implementatiion within the model. 
    Refer to (:doc:`model_structure`) for insights about the specific python module functioning
 ------------------------------------------------------------------------------------------------
 
@@ -115,7 +115,7 @@ The application is organized into different pages, each tailored to a specific a
 
 .. note::
 
-   Refer to (:doc:`advanced`#Load Demand Estimation) for all the additional model parameters and their implementatiion within the model.
+   Refer to (:doc:`advanced`) for all the additional model parameters and their implementatiion within the model.
    Refer to (:doc:`model_structure`) for insights about the specific python module functioning 
 
 ------------------------------------------------------------------------------------------------
