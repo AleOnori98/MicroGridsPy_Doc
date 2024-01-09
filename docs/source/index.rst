@@ -16,7 +16,7 @@ MicroGridsPy's Documentation
 
 
 The main inputs required by the tool to initialize the variables and formulate linear constraints are **time series of load demand** at 1-hour resolution for one year (or more years); **time series of RES production** at 1-hour resolution for one year; **techno-economic parameters** of the technologies and project parameters. 
-The approach introduced in [1] focuses on addressing the issue of load evolution in the long term. This model is designed to make informed decisions about expanding capacity throughout the specified time horizon. To simulate realistic load profiles, the model is integrated with a tool for generating stochastic load profiles. This formulation demonstrates advantages in making robust investment decisions under different load evolution scenarios.
+The approach of the model focuses on addressing the issue of load evolution in the long term. This model is designed to make informed decisions about expanding capacity throughout the specified time horizon. To simulate realistic load profiles, the model is integrated with a tool for generating stochastic load profiles. This formulation demonstrates advantages in making robust investment decisions under different load evolution scenarios.
 
 In the latest version of MicroGridsPy the following advanced features (:doc:`advanced`) have been implemented:
 
