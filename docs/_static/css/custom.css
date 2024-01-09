@@ -10,3 +10,20 @@
 .wy-nav-content-wrap {
     max-width: 100%; /* You can adjust this value to control the width of the content */
 }
+
+/* Adjust main text color */
+body {
+    color: #333; /* Darker grey for better contrast */
+}
+
+/* Adjust note background */
+div.admonition.note {
+    background-color: #e7f5fe; /* Light blue background for notes */
+    border-color: #b3d4fc; /* Matching light blue border */
+}
+
+/* Adjust warning background */
+div.admonition.warning {
+    background-color: #fff3cd; /* Light yellow background for warnings */
+    border-color: #ffeeba; /* Matching light yellow border */
+}
