@@ -307,6 +307,10 @@ The lowered generator share to 10.7% suggests a strategic reduction in carbon fo
 Contrastingly, the default scenario's Net Present Cost (NPC) of approximately 132 kUSD and a Levelized Cost of Energy (LCOE) of 0.2562 USD/kWh indicate a less sustainable but potentially more cost-effective initial setup. 
 The new scenario's higher NPC (143.6 kUSD) and LCOE (0.2788 USD/kWh) may represent increased upfront costs for greater long-term sustainability and lower emissions. This shift aligns with global trends towards decarbonizing energy systems, even at a higher initial investment.
 
+Incorporating a larger set of Pareto points in the optimization framework can provide a broader understanding of potential trade-offs between different objectives. This allows for a more comprehensive exploration of the solution space, helping stakeholders to better gauge the spectrum of available options. 
+With an increased number of Pareto points, the optimization process can reveal subtler nuances between cost, sustainability, and other factors, supporting a more refined approach to decision-making. 
+It aids in identifying potentially advantageous solutions that could be overlooked with a limited set of options, ultimately leading to a more balanced and strategic development of energy systems.
+
 MILP Formulation
 ---------------------------------------------
 This iteration of the model employs a Mixed-Integer Linear Programming (MILP) framework, strategically designed to simulate a decade-long operation of mini-grids with two intervals of capacity expansion. The MILP paradigm introduces binary decision variables to address unit commitment issues, allowing for a precise representation of start-up and shut-down activities of power generation units. 
