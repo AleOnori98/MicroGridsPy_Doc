@@ -4,3 +4,4 @@ sphinxcontrib-images
 sphinx-gallery
 sphinx-togglebutton
 sphinx-panels
+sphinx-sitemap

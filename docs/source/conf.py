@@ -21,7 +21,8 @@ extensions = [
     "sphinx.ext.imgconverter",
     "sphinxcontrib.images",
     "sphinx_togglebutton",
-    "sphinx_panels"
+    "sphinx_panels",
+    "sphinx_sitemap"
 ]
 
 intersphinx_mapping = {
@@ -31,6 +32,10 @@ intersphinx_mapping = {
 intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
+
+html_baseurl = 'https://mgpy-docs.readthedocs.io/en/latest/'
+
+html_extra_path = ['robots.txt']
 
 # -- Options for HTML output
 
