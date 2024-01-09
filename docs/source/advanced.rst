@@ -476,6 +476,30 @@ The archetypesload curves are located into the 'Demand_Archetypes' folder and th
 MILP Formulation
 ---------------------
 
+MILP Formulation
+---------------------
+
+This section outlines the MILP formulation used in the model, which includes an integrated unit commitment approach to determine the optimal operation schedule of technologies units.
+
+The MILP optimization variables are integers, reflecting the discrete nature of the decision-making process in committing generator units. Capacity is now a parameter, indicative of fixed attributes of the system components.
+
+.. code-block:: python
+
+    # Example MILP Formulation in Python
+    model.Generator_Units = Var(model.steps, 
+                                model.generator_types,
+                                within=NonNegativeIntegers)                # Total number of generators
+    model.Generator_Nominal_Capacity_milp = Param(model.generator_types,
+                                                  within=NonNegativeReals)  # Capacity as a parameter
+
+The Mixed-Integer Linear Programming (MILP) Formulation in energy system modeling is a sophisticated approach that offers a balance between computational tractability and model fidelity. 
+This formulation is beneficial because it allows for the precise scheduling of discrete operational decisions, such as the commitment of generation units, which is more aligned with real-world operations. 
+It can accurately approximate non-linear behaviors, such as start-up costs and minimum up/down time constraints, which are essential for representing the operational characteristics of power generation units.
+
+However, there are trade-offs to consider. MILP problems are more complex and computationally intensive than their Linear Programming (LP) counterparts, potentially leading to longer solution times. 
+This can be particularly challenging when dealing with large-scale systems or when multiple scenarios are being evaluated.
+Additionally, the need for high-quality, site-specific data to characterize the operational profile of components like diesel generators can be a barrier, as this data may not always be readily available.
+
 **Parameters**
 
 .. list-table:: 
