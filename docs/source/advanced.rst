@@ -1,10 +1,11 @@
+=========================
 Advanced Features
 =========================
 
 MicroGridsPy allows the user to choose different advanced features embedded into the model. These are designed to elevate the energy modelling by addressing evolving challenges of mini-grid system components and optimization.
 
 Capacity Expansion
-----------------------
+---------------------------------
 
 In the context of a capacity expansion formulation, the model considers the option of adding more capacity to a system in a step-by-step manner over a defined time horizon. This approach is driven by the idea of strategically expanding the installed capacity of various components, such as power generation units or storage, to manage costs effectively, especially during the initial years when lower energy demand is anticipated.
 
@@ -50,50 +51,14 @@ The mini-grid sector in sub-Saharan Africa, although a cost-effective solution f
 
 These financial parameters are used to calculate the Weighted Average Cost of Capital (WACC), including the costs of equity and debt, the corporate tax rate, and the proportions of equity and debt in the total investment.
 
-.. raw:: html
-
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
-
-.. raw:: html
-
-    <div class="equation-container">
-
 .. math::
-
     V = D + E \quad (2)
 
-.. raw:: html
-
-    </div>
-
-.. raw:: html
-
-    <div class="equation-container">
-
 .. math::
-
     L = \frac{D}{E} \quad (3)
 
-.. raw:: html
-
-    </div>
-
-.. raw:: html
-
-    <div class="equation-container">
-
 .. math::
-
     WACC = \frac{R_D \cdot (1 - t)}{1 + L} + \frac{R_E}{1 + L} \quad (4)
-
-.. raw:: html
-
-    </div>
 
 It is worth noticing that being the leverage L in a [0; +infinite) domain, WACC varies depending on the parameters above mentioned, and can be 
 qualitatively depicted as:
@@ -150,7 +115,7 @@ The following table provides a detailed overview of the parameters used in the W
 -----------------------------------------------------------------------------------------
 
 Multi-Objective Optimization
---------------------------------
+---------------------------------
 The design of a reliable and appropriate off-grid energy system is usually critical. 
 The energy needs of people who are susceptible to the uncertainty of possible energy consumption evolution through time must be considered, 
 taking into consideration the site-specific characteristics of each target community.
@@ -193,7 +158,7 @@ The following table provides a detailed overview of the parameters used in the M
 ----------------------------------------------------------------------------------------------
 
 Multi-Scenario Optimization
-------------------------------
+---------------------------------
 
 **Parameters**
 
@@ -217,7 +182,7 @@ The following table provides a detailed overview of the parameters used in the M
 
 
 RES Time Series Estimation
------------------------------
+---------------------------------
 - **Solar PV generation**
 
 
@@ -349,7 +314,7 @@ RES parameters which are non-editable. Advanced parameters used for developers:
 -----------------------------------------------------------------------
 
 MILP Formulation
----------------------
+---------------------------------
 
 **Parameters**
 
@@ -371,7 +336,8 @@ MILP Formulation
 
 
 Generator Partial Load Effect
--------------------------------
+---------------------------------
+
 In the present section, the focus is set on the generator models which often neglect decreased part-load efficiencies or minimum load constraints which can lead to significantly overestimated performance and therefore biased system planning. The model is therefore modified to consider more complex operating characteristics of a genset operating in partial load. A diesel genset optimally optimises efficiency in a fixed optimal power output. A reduction in power output results in a reduction in the efficiency. This effect has a non-linear behaviour, although diesel generators are often modelled with constant efficiency due to the limitations of the LP formulation. The MILP approach allows many ways to model these effects: a specific set of equations affecting the total operation costs of the energy produced by the generator has been implemented following the example of Balderrama et al. [6]. This formulation is relatively simple to implement, as it does not disrupt the structure of the entire model in terms of equations, it requires few parameters with an advantage in terms of computational effort, but it is closely linked to costs and not directly to the efficiency value leading to some limitations in case of null operation cost. For comparison, the partial load effect formulation is compared to the original LP model. This is further explained in the following figures.
 
 .. raw:: html
@@ -562,7 +528,8 @@ The total energy output is limited by the number of gensets available:
 --------------------------------------------------------------------------------------------------
 
 Variable Fuel Cost
------------------------------
+---------------------------------
+
 MicroGridsPy introduces a valuable addition to model dynamic changes in fuel prices, a pivotal factor in the operational economics of mini-grid systems, especially those reliant on fossil fuels. 
 Fuel costs in developing countries are notably higher due to transportation expenses and lack of infrastructure. For example, in remote areas, fuel can cost up to 20-30% more than the national average. Moreover, fuel price subsidies, often used by governments to stabilize prices, can be unpredictable and subject to sudden changes, further complicating cost projections.
 
@@ -703,7 +670,7 @@ The reliability of a national grid's electricity supply refers to the consistent
 
 
 Brownfield
-----------------------
+---------------------------------
 
 The feature for brownfield investment introduced in [8], enables the optimization of mini-grids by considering technologies that were previously installed by others in the field. The model can now factor in existing components from previous installations when determining the most efficient and effective way to optimize the microgrid.
 
@@ -755,7 +722,7 @@ Some of the related system **cost** such as the investment for RES, battery bank
 
 
 Battery Bank Degradation 
-----------------------------
+---------------------------------
 
 .. warning::
     The following functionalities regarding Battery Bank Degradation are currently a work in progress and not yet fully implemented in the model.
