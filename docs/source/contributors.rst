@@ -21,7 +21,7 @@ Authors:
 
 Based on the original model by:
 
-* Sergio Balderrama  - Department of Mechanical and Aerospace Engineering, University of Liège / San Simon University, Centro Universitario de Investigacion 
+* Sergio Balderrama  - Department of Mechanical and Aerospace Engineering, University of Liège, San Simon University, Centro Universitario de Investigacion 
   en Energia
 * Sylvain Quoilin    - Department of Mechanical Engineering Technology, KU Leuven
 
