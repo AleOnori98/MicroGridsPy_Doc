@@ -2,8 +2,8 @@
 
 # -- Project information
 
-project = 'MicroGridsPy'
-copyright = '2021, SESAM Polimi'
+project = 'MicroGridsPy 2.0'
+copyright = '2024, SESAM Polimi'
 author = 'SESAM Polimi'
 
 release = '0.1'
@@ -47,11 +47,11 @@ html_theme_options = {
     'prev_next_buttons_location': 'both',  # Location of the Next and Previous buttons (bottom, top, both, or None)
     'style_external_links': False,  # Whether to add an icon next to external links
     'vcs_pageview_mode': 'blob',  # Changes how view/edit links are generated (blob or edit)
-    'style_nav_header_background': 'white',  # Changes the background color of the header
+    'style_nav_header_background': 'blue',  # Changes the background color of the header
     # Toc options
     'collapse_navigation': True,  # Whether to collapse the navigation entries
     'sticky_navigation': True,  # Whether to make the sidebar stick to the top of the screen
-    'navigation_depth': 4,  # Maximum depth of the table of contents tree
+    'navigation_depth': 2,  # Maximum depth of the table of contents tree
     'includehidden': True,  # Shows hidden table of contents entries
     'titles_only': False,  # Only display the titles of documents in the navigation bar
     "repository_url": "https://github.com/SESAM-Polimi/MicroGridsPy-SESAM",

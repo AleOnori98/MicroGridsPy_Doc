@@ -1,19 +1,9 @@
 
-.. image:: https://raw.githubusercontent.com/SESAM-Polimi/MARIO/767d2c0e9e42ae0b6acf7c3a1cc379d7bcd367fa/doc/source/_static/images/polimi.svg
-   :width: 100
-   :align: right
-
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-   
-#######################################
-Introduction
-#######################################
-
-Within the context of rural electrification, **hybrid microgrids** stand out as e one of the *most cost-effective solutions* to meet the need for access to **affordable, reliable and sustainable electricity** in areas where national grid connectivity is unfeasible, both financially and technically. They also serve to lessen *reliance on high-carbon* as well as imported energy through the exploitation of *locally available renewables (RES)* [1]. Nonetheless, the uncertainties associated with the **natural variability of RES** and the **unpredictable evolution of the electricity demand** among other factors [2] pose challenges to the technical and economic optimization and robust sizing of these systems [3].
-
+=========================================
 Energy Optimization Models
 =========================================
+
+Within the context of rural electrification, **hybrid microgrids** stand out as e one of the *most cost-effective solutions* to meet the need for access to **affordable, reliable and sustainable electricity** in areas where national grid connectivity is unfeasible, both financially and technically. They also serve to lessen *reliance on high-carbon* as well as imported energy through the exploitation of *locally available renewables (RES)* [1]. Nonetheless, the uncertainties associated with the **natural variability of RES** and the **unpredictable evolution of the electricity demand** among other factors [2] pose challenges to the technical and economic optimization and robust sizing of these systems [3].
 
 In rural regions where access to the main power grid is limited and the cost of bringing electricity to each individual can be prohibitively high, it's crucial to use available resources wisely. This means that when planning for rural electrification, one must consider several factors that impact the effectiveness and efficiency of the project. Key considerations include determining the **appropriate size and configuration** of the system to meet local needs, **strategizing the dispatch** of electricity to maintain efficiency and reliability, selecting suitable energy generation and storage technologies based on local resources, costs, and technical capabilities, and designing a **robust and sustainable network** for electricity transmission and distribution. To address these challenges, accurate models for sizing and dispatching mini-grid systems are indispensable. There are three main types of energy optimization methods used for this purpose: intuitive, numerical, and analytical.
 
