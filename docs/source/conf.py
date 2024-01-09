@@ -47,23 +47,6 @@ html_extra_path = ['robots.txt']
 #    "show_navbar_depth": 1,
 #}
 html_theme = 'pydata_sphinx_theme'
-html_theme_options = {
-    "external_links": [
-        {"name": "Project Home", "url": "https://github.com/SESAM-Polimi/MicroGridsPy-SESAM"}
-    ],
-    "github_url": "https://github.com/SESAM-Polimi/MicroGridsPy-SESAM",
-    "show_prev_next": False,
-    "navigation_depth": 2,
-    "collapse_navigation": True,
-    "navigation_with_keys": True,
-    "show_toc_level": 2,
-    "search_bar_text": "Search the docs...",
-    "show_relbars": True,
-}
-
-html_sidebars = {
-    "**": ["sidebar-nav-bs.html", "search-field.html"]
-}
 
 html_static_path = ['_static']
 html_css_files = [
