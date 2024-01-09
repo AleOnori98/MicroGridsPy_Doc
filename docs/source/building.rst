@@ -98,6 +98,7 @@ The application is organized into different pages, each tailored to a specific a
 - **Advanced Model Configuration**: The GUI supports advanced modeling optimization features like mixed-integer linear programming (MILP) formulation, multi-objective optimization, and the ability to toggle different parameters: users can enable or disable specific parameters and access tooltips for additional guidance.
 
 .. note::
+
    Refer to (:doc:`advanced`) for more detail information about all the additional model configuration parameters and their implementatiion within the model.
 
 ----------------------------------------------------------------------------------------------------------------
@@ -105,6 +106,7 @@ The application is organized into different pages, each tailored to a specific a
 - **RES Time Series Data Simulation**: Explore options for renewable energy time series estimation. Users can activate or deactivate RES calculation, which dynamically enables or disables related parameters. The layout offers a scrollable area for a comprehensive list of parameters, including latitude, longitude, time zone, and turbine information. Custom fonts and tooltips enhance the user experience, making it a user-friendly interface for setting up requried parameters.
 
 .. note::
+
    Refer to (:doc:`advanced`) for all the additional model parameters and their implementatiion within the model. 
    Refer to (:doc:`model_structure`) for insights about the specific python module functioning
 ------------------------------------------------------------------------------------------------
@@ -112,6 +114,7 @@ The application is organized into different pages, each tailored to a specific a
 - **Archetypes Page**: Simulate demand profiles and built-in archetypes referring to rural villages in Sub-Saharan Africa at different latitudes. These are composed of different types of end-users like households according to the wealth tier (i.e., from 1 to 5), hospitals with the same wealth scale and schools. The possibility for demand growth and specific cooling period are also integrated within this feature.
 
 .. note::
+
    Refer to (:doc:`advanced`) for all the additional model parameters and their implementatiion within the model.
    Refer to (:doc:`model_structure`) for insights about the specific python module functioning 
 
@@ -298,6 +301,7 @@ The application is organized into different pages, each tailored to a specific a
 This intuitive interface streamlines the data input process, making it easier than ever to design and optimize minigrids for rural villages using MicroGridsPy.
 
 .. note::
+  
   Please refer to the (:doc:`example`) for a better understanding of the parameter use within the user interface.
 
 ----------------------------------------------------------------------------------------------------------
