@@ -39,7 +39,8 @@ html_extra_path = ['robots.txt']
 
 # -- Options for HTML output
 
-html_theme = 'sphinx_rtd_theme'
+# html_theme = 'sphinx_rtd_theme'
+html_theme = 'pydata_sphinx_theme'
 
 html_theme_options = {
     "repository_url": "https://github.com/SESAM-Polimi/MicroGridsPy-SESAM",
