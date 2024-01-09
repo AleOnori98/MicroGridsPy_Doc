@@ -63,7 +63,7 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 It is worth noticing that being the leverage L in a [0; +infinite) domain, WACC varies depending on the parameters above mentioned, and can be 
 qualitatively depicted as:
 
-.. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/wacc.png?raw=true
+.. figure:: source\Images\wacc.png
      :width: 700
      :align: center
 
@@ -338,158 +338,78 @@ In the LP formulation, the generator can freely vary its output between 0 and 10
 
 The slope of the cost curve for the generator system, representing the marginal cost, is given by:
 
-.. raw:: html
-
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
-
-.. raw:: html
-
-    <div class="equation-container">
-
 .. math::
 
     a_{LP} = \frac{p_{fuel}}{LHV_{fuel} \cdot \eta_{gen}} \quad (1.1)
 
-.. raw:: html
-
-    </div>
 
 The constraint to prevent the generator from exceeding its nominal capacity \( C \) is given by:
-
-.. raw:: html
-
-    <div class="equation-container">
 
 .. math::
 
     C \cdot \Delta t_p \geq E(s, t) \quad \forall s, t \quad (1.2)
 
-.. raw:: html
-
-    </div>
 
 The total operation cost of the generator for a period \( t \) and scenario \( s \) is represented as:
-
-.. raw:: html
-
-    <div class="equation-container">
 
 .. math::
 
     Cost(s, t) = E(s, t) \cdot a_{LP} \quad \forall s, t \quad (1.3)
 
-.. raw:: html
-
-    </div>
-
 
 In an isolated system, typically a predetermined number of diesel generators are coordinated to fulfil the fluctuating energy demands. To accurately represent this scenario, as well as account for the part load effect in each generator, the optimization approach is modified to a MILP (Mixed-Integer Linear Programming) formulation. The cost, denoted as Cost and calculated using equation (1.4), considers various factors including the number of generators operating at full load (N_full), the energy output of generators operating at part load (E_part), the slope of the cost curve for part load generators (α_MILP) as defined in equation (1.5), and the origin of the cost curve for part load generators (Cost_part). In this study, the value of Cost_part is determined as a percentage (p_gen) of the total operational cost of the generator system at full load, as elaborated in equation (1.6). Lastly, the binary variable B determines whether a generator operates in part load at a given time t.
 
-.. raw:: html
+.. container:: scrollable-math-container
 
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
+    .. math::
+        :nowrap:
 
-.. raw:: html
+        Cost = N_{\text{full}} \cdot C \cdot a_{LP} \cdot \Delta t_p + E_{\text{part}} \cdot a_{MILP} + Cost_{\text{part}} \cdot B \quad \forall s, t \quad (1.4)
 
-    <div class="equation-container">
-
-.. math::
-
-    Cost = N_{\text{full}} \cdot C \cdot a_{LP} \cdot \Delta t_p + E_{\text{part}} \cdot a_{MILP} + Cost_{\text{part}} \cdot B \quad \forall s, t \quad (1.4)
-
-.. raw:: html
-
-    </div>
 
 The slope of the cost curve for part load generators is described as follows:
 
-.. raw:: html
+.. container:: scrollable-math-container
 
-    <div class="equation-container">
+    .. math::
+        :nowrap:
 
-.. math::
+        a_{MILP} = \frac{C \cdot a_{LP} \cdot \Delta t_p - Cost_{\text{part}}}{C_{\text{gen}} \cdot \Delta t_p} \quad (1.5)
 
-    a_{MILP} = \frac{C \cdot a_{LP} \cdot \Delta t_p - Cost_{\text{part}}}{C_{\text{gen}} \cdot \Delta t_p} \quad (1.5)
-
-.. raw:: html
-
-    </div>
 
 The origin of the cost curve for part load generators, represented as a percentage of full load operational costs, is given by:
 
-.. raw:: html
-
-    <div class="equation-container">
 
 .. math::
 
     Cost_{\text{part}} = C \cdot a_{LP} \cdot p_{\text{gen}} \cdot \Delta t_p \quad (1.6)
 
-.. raw:: html
-
-    </div>
 
 
 The minimum and maximum energy output of the generator in partial load is limited as shown in (1.7), where 𝑀𝑖𝑛𝑝𝑎𝑟𝑡 is the minimum percentage of energy output for the generator in part load. In addition, 𝑁 is the number of gensets and is determined with the last equation. It is important to note that during the MILP optimization 𝐶 is defined as a parameter and 𝑁 is the variable to optimize.
 
-.. raw:: html
+.. container:: scrollable-math-container
 
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
+    .. math::
+        :nowrap:
 
-.. raw:: html
+        C \cdot \text{Min}_{\text{part}} \cdot B[s, t] \cdot \Delta t_p \leq E_{\text{part}}(s, t) \leq C \cdot B[s, t] \cdot \Delta t_p \quad \forall s, t \quad (1.7)
 
-    <div class="equation-container">
-
-.. math::
-
-    C \cdot \text{Min}_{\text{part}} \cdot B[s, t] \cdot \Delta t_p \leq E_{\text{part}}(s, t) \leq C \cdot B[s, t] \cdot \Delta t_p \quad \forall s, t \quad (1.7)
-
-.. raw:: html
-
-    </div>
 
 The energy output of the genset, comprising full load and part load outputs, is expressed as:
-
-.. raw:: html
-
-    <div class="equation-container">
 
 .. math::
 
     E[s, t] = N_{\text{full}} \cdot C \cdot \Delta t_p + E_{\text{part}} 
 
-.. raw:: html
-
-    </div>
 
 The total energy output is limited by the number of gensets available:
 
-.. raw:: html
-
-    <div class="equation-container">
 
 .. math::
 
     E[s, t] \leq C \cdot N \cdot \Delta t_p \quad \forall s, t 
 
-.. raw:: html
-
-    </div>
 
 **Parameters**
 
@@ -546,6 +466,7 @@ The equation for the linear change in fuel cost is as follows:
 
     Fuel\_Cost_y = Fuel\_Cost_{\text{Start}} + y \times Fuel\_Cost_{\text{Change Rate}}
 
+
 Where \( Fuel\_Cost_y \) is the fuel cost in year \( y \), \( Fuel\_Cost_{\text{Start}} \) is the initial cost, and \( Fuel\_Cost_{\text{Change Rate}} \) is the yearly rate of change. This feature allows for enhanced flexibility and realism in financial analyses of mini-grid systems.
 
 The integration of this feature may substantially influences the model's outcomes, particularly for operational costs, system design, and financial assessments, aligning it more closely with real-world scenarios in regions like rural Africa where fuel prices are highly volatile. This feature enhances the accuracy of operational expense estimation over the project's lifetime, crucial for effective budgeting and financial planning, and makes the model sensitive to fuel price changes, reflecting their true impact on mini-grid system costs. In terms of system design and optimization, variable fuel costs can influence the selection of technology, potentially making renewable sources more cost-effective as fuel prices rise. This may lead the model to prefer solutions with greater storage capacity or increased renewable energy integration to mitigate fuel price risks. For financial viability and investment decisions, the feature facilitates long-term financial planning by offering realistic fuel expense projections and enables comprehensive risk assessment considering fuel price volatility. Additionally, it allows for the analysis of the impact of fuel subsidies or taxes on project economics, providing valuable insights for policy-making. Overall, this feature significantly enhances MicroGridsPy's ability to simulate and evaluate energy systems under realistic economic conditions, especially in the context of rural electrification in developing countries where fuel price fluctuations are a major concern.
@@ -600,13 +521,10 @@ Parameters here govern the potential connection to the national grid, including 
 
 Regarding the **energy constraint** on this component, the maximum possible energy exchange is directly related to the maximum active power that can be injected or withdrawn to or from the grid.
 
-.. raw:: html
 
 .. math::
 
     E_{\text{grid}}(s,yt,t) \leq P_{\text{max grid}} * 1000
-
-.. raw:: html
 
 
 - **Grid Availability**
@@ -617,33 +535,25 @@ The reliability of a national grid's electricity supply refers to the consistent
 
 - When the mini-grid isn't yet grid-connected:
 
-.. raw:: html
 
 .. math::
 
     G_{\text{yt,t}} = 0
 
-.. raw:: html
 
 
 - After grid-connection:
 
 
-.. raw:: html
-
 .. math::
 
     G_{\text{yt,t}} = 0 ; \text{if grid outage}
 
-.. raw:: html
-
-.. raw:: html
 
 .. math::
 
     G_{\text{yt,t}} = 1 ; \text{if grid availability}
 
-.. raw:: html
 
 
 .. image:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/GRID%20availability.png?raw=true
@@ -662,23 +572,23 @@ The feature for brownfield investment introduced in [8], enables the optimizatio
 .. tip::
    **In the model**: Regarding the constrainst related to **energy production** of each component at the first investment decision step (ut = 1) the energy yield has to be equal or higher than the energy produced by the capacity already installed on the field. 
 
-.. raw:: html
+
 
 .. math::
 
     C_{\text{x}}(ut = 1) \geq C_{\text{x}}(inst)
 
-.. raw:: html
+
 
 Some of the related system **cost** such as the investment for RES, battery bank and back-up generators and salvage value for RES and back-up generators, also suffer a slight modification so the already existing units aren't accounted in these calculation. Thus, at the cost of each technology at the first investment decision step is equal to the investment cost due to the total capacity installed in the first step minus the investment cost of the capacity already connected to the microgrid. In the equation shown previously the units section is changed into:
 
-.. raw:: html
+
 
 .. math::
 
     Units_{\text{x}}(ut = 1) - Units_{\text{x}}(inst)
 
-.. raw:: html
+
 
 **Parameters**
 
@@ -715,12 +625,15 @@ Battery Bank Degradation
 
 The battery performance isn’t constant over time due to capacity and power fade as the battery is exposed to degradation processes while in both operation and storage mode. Calendar aging results from the degradation while the battery is in storage mode. Whereas cycle aging corresponds to the degradation caused by cyclic operation. The capacity fade refers to the reduction of available capacity. The battery status is provided by the State of Health (SOH) indicator. When the SOH reaches a certain threshold, the battery reached its End of Life (EOL). Temperature, State of Charge (SOC) and Depth of Discharge (DOD), are just some of the stress factors leading to degradation.
 
-.. raw:: html
+.. container:: side-by-side
 
-    <div style="display: flex; justify-content: center; align-items: center;">
-        <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/SOH_temperature.png?raw=true" width="350" style="margin-right: 10px;"/>
-        <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/SOH_DOD.png?raw=true" width="350" />
-    </div>
+    .. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/SOH_temperature.png?raw=true
+        :width: 350px
+        :align: center
+
+    .. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/SOH_DOD.png?raw=true
+        :width: 350px
+        :align: center
 
 
 Understanding and estimating the battery behaviour and related parameters during operation is key to improving capacity usage and cycling techniques, and, hence, inform battery modelling accordingly. A complete battery modelling is based on the estimation of operating conditions (i.e., SOC) and the estimation of battery lifetime expectancy (i.e., SOH) at any given moment of battery operation and lifetime. Battery models can be divided into four major groups: analytical, stochastic, electrical and electrochemical models. The most basic models just portray the energy balance which simplifies the behaviour of the battery. Other models reproduce the electrical characteristics during its operation or the chemical reactions, adding more accuracy but also complexity to the methodology. To achieve a complete battery model capable of determining battery related parameters through operation and even lifetime, the aging components must be accounted for in the methodology. 
@@ -743,125 +656,55 @@ The model has the following algorithm:
 
 In initialize, the coefficients alpha and beta are firstly estimated by the following equation, where c and d are specific parameters for each chemistry:
 
-.. raw:: html
-
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
-
-.. raw:: html
-
-    <div class="equation-container">
 
 .. math::
 
    \alpha_{hour} = c_{1} \times y^{3} + c_{2} \times y^{2} + c_{3} \times y + c_{4} 
 
-.. raw:: html
-
-    </div>
-
-.. raw:: html
 
 .. math::
 
     y = \frac{T_{amb}}{10}
 
-.. raw:: html
+
 
 
 - **For Li-ion chemistry**
 
-.. raw:: html
-
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
-
-.. raw:: html
-
-    <div class="equation-container">
 
 .. math::
 
    \beta_{hour} = d_{1} \times y^{3} + d_{2} \times y^{2} + d_{3} \times y + d_{4} 
 
-.. raw:: html
-
-    </div>
-
-.. raw:: html
 
 .. math::
 
     y = \frac{T_{amb}}{10}
 
-.. raw:: html
 
 
 
 - **For Lead Acid chemistry**
 
-.. raw:: html
-
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
-
-.. raw:: html
-
-    <div class="equation-container">
-
 .. math::
 
    \beta_{hour} = d_{1} \times z^{3} + d_{2} \times z^{2} + d_{3} \times z + d_{4} 
 
-.. raw:: html
-
-    </div>
-
-.. raw:: html
 
 .. math::
 
     z = \frac{DOD-20}{10}
-
-.. raw:: html
 
 
 
 * **Current capacity**
 The following function estimates the current battery bank capacity (energy constraint in the model). Based on the previous bank capacity, initial bank capacity and hourly power exchange.
 
-.. raw:: html
-
-    <style>
-    .equation-container {
-        width: 100%;
-        display: block;
-    }
-    </style>
-
-.. raw:: html
-
-    <div class="equation-container">
-
 .. math::
 
    E^{DB}_t = E^{DB}_{t-1} - \alpha \times E^{B} - \beta \times P^{BE}_t
 
-.. raw:: html
 
-    </div>
 
 
 * **Results**

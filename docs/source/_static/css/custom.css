@@ -48,3 +48,10 @@
     justify-content: center;
     align-items: center;
 }
+
+.scrollable-math-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+}
