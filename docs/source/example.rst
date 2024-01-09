@@ -242,6 +242,69 @@ Battery usage per year has decreased to 35.26% from the previous 50.83%. This re
 The diesel generator share per year has decreased further to 3.78%, a slight reduction from the already low 4.04%. This reduction reinforces the trend of moving away from fossil fuel-based generation in favor of cleaner energy sources and the support of grid power.
 The Levelized Cost of Electricity (LCOE) stands at 0.2185 USD/kWh, which is lower than both the previous LCOE of 0.2376 USD/kWh and the default scenario's 0.2562 USD/kWh. This indicates an improvement in the cost-effectiveness of the energy mix in the current grid-connected scenario, likely due to the lower marginal costs of drawing power from the grid as opposed to relying solely on local generation and storage.
 
+Multi-Objective Optimization
+---------------------------------------------
+This simulation is designed to test the Multi-Objective Optimization mode, setting 3 Pareto points, showing the result with minimum emissions to compare it with the previous scenarios.
+
+.. raw:: html
+
+  <div id="uniqueCarouselExample" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/3/2.1.png?raw=true" class="d-block w-100" alt="Dispatch Strategy">
+      </div>
+      <div class="carousel-item">
+        <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/3/2.2.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+      </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/3/2.3.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/3/2.4.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/3/2.5.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/3/2.6.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/3/2.7.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/3/2.8.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/3/2.9.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/3/2.10.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/3/2.11.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/3/2.12.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/3/2.13.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+       <div class="carousel-item">
+         <img src="https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Examples/3/2.14.png?raw=true" class="d-block w-100" alt="Cash Flow Analysis">
+       </div>
+     </div>
+    <a class="carousel-control-prev" href="#uniqueCarouselExample" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#uniqueCarouselExample" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+-----------------------------------------------
+
 MILP Formulation
 ---------------------------------------------
 This iteration of the model employs a Mixed-Integer Linear Programming (MILP) framework, strategically designed to simulate a decade-long operation of mini-grids with two intervals of capacity expansion. The MILP paradigm introduces binary decision variables to address unit commitment issues, allowing for a precise representation of start-up and shut-down activities of power generation units. 
