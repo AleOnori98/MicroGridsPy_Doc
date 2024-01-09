@@ -44,7 +44,7 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     'canonical_url': 'https://mgpy-docs.readthedocs.io/en/latest/',
     'display_version': True,  # Whether to show the documentation version
-    'prev_next_buttons_location': 'both',  # Location of the Next and Previous buttons (bottom, top, both, or None)
+    'prev_next_buttons_location': 'bottom',  # Location of the Next and Previous buttons (bottom, top, both, or None)
     'style_external_links': False,  # Whether to add an icon next to external links
     'vcs_pageview_mode': 'blob',  # Changes how view/edit links are generated (blob or edit)
     # Toc options
