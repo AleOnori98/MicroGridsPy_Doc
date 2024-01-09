@@ -357,9 +357,6 @@ The final step involves aggregating the estimated data and exporting it to CSV f
     def export(energy_PV, ...):
         # Data aggregation and export logic
 
-Module Execution
-----------------
-The module can be executed as part of the larger MicroGridsPy setup or as a standalone script. The precision of the RES time series estimation is critical for the optimization and planning of microgrid systems.
 
 Insights
 ----------
