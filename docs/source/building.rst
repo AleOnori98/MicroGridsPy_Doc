@@ -391,6 +391,3 @@ The input file within the "Inputs" folder, must have as many numbered columns (e
 
      Example of the RES Time Series csv file structure
 
-
-----------------------------------------------------------------------------------------------------------------------------
-

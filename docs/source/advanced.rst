@@ -63,7 +63,7 @@ These financial parameters are used to calculate the Weighted Average Cost of Ca
 It is worth noticing that being the leverage L in a [0; +infinite) domain, WACC varies depending on the parameters above mentioned, and can be 
 qualitatively depicted as:
 
-.. figure:: source\Images\wacc.png
+.. figure:: source/Images/wacc.png
      :width: 700
      :align: center
 
@@ -326,11 +326,11 @@ In the present section, the focus is set on the generator models which often neg
 
 .. container:: side-by-side
 
-    .. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Partial%20load%201.png?raw=true
+    .. figure:: source/Images/Partial load 1.png
         :width: 350px
         :align: center
 
-    .. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Partial%20Load%202.jpg?raw=true
+    .. figure:: source/Images/Partial load 2.png
         :width: 350px
         :align: center
 
@@ -698,6 +698,7 @@ In initialize, the coefficients alpha and beta are firstly estimated by the foll
 
 
 * **Current capacity**
+
 The following function estimates the current battery bank capacity (energy constraint in the model). Based on the previous bank capacity, initial bank capacity and hourly power exchange.
 
 .. math::
@@ -708,6 +709,7 @@ The following function estimates the current battery bank capacity (energy const
 
 
 * **Results**
+
 The **current battery bank capacity** is exported in the **time-series** for each time step.
 
 * **Replacement**
@@ -728,8 +730,10 @@ Regarding the battery replacement, a new approach is introduced when the model a
  - **2.** This has a direct impact on the energy balance of the model, and more batteries need to be installed to overcome this fade.
  - **3.** At the moment, this feature does not work with capacity expansion. When considering a battery bank, all batteries should be the same in terms of type, model, capacity and age. When adding new batteries at different investment steps can impact the performance of the bank and overall degradation of the batteries. Now the model installs all needed units at the beginning of the project. 
  - **4.** In the case of brownfield: 
+
         * If we consider existing battery units, the model won't install new units. With this input, the current SOH for these batteries is also considered and the degradation model will start from that specific capacity.
         * If no previous batteries are present, the model will proceed with the same methodology as the greenfield approach.
+ 
  - **5.** A option for battery bank replacement is integrated in the model when the degradation feature is activated. 
 
 
