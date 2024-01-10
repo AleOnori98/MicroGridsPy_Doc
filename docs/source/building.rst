@@ -26,7 +26,7 @@ Here below is a general introduction to the different steps in building and runn
 
 
 .. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Mgpy_Simple_Scheme.png?raw=true
-   :width: 500
+   :width: 700
    :align: center
 
    Simple scheme of the model

@@ -8,7 +8,7 @@ MicroGridsPy Documentation
 
 
 .. figure:: https://github.com/AleOnori98/MicroGridsPy_Doc/blob/main/docs/source/Images/Mgpy_Scheme_2.png?raw=true
-   :width: 500
+   :width: 700
    :align: center
 
    Visualization of the model conceptual structure
